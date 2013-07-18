@@ -63,7 +63,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_LOCKSCREEN_ROTATION = "lockscreen_rotation";
     private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
-    private static final String KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
+    private static final String KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED = "wake_when_plugged_or_unplugged";
 
     // Strings used for building the summary
     private static final String ROTATION_ANGLE_0 = "0";
@@ -83,7 +83,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private PreferenceScreen mBatteryPulse;
     private PreferenceCategory mWakeUpOptions;
     private CheckBoxPreference mVolumeWake;
-    private CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;   
+    private CheckBoxPreference mWakeWhenPluggedOrUnplugged;   
 
     private final Configuration mCurConfig = new Configuration();
     
@@ -190,18 +190,16 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             }
         }
 
-        mWakeUpWhenPluggedOrUnplugged =
-            (CheckBoxPreference) findPreference(KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED);
-        // hide option if device is already set to never wake up
-        if(!getResources().getBoolean(
-                com.android.internal.R.bool.config_unplugTurnsOnScreen)) {
-                mWakeUpOptions.removePreference(mWakeUpWhenPluggedOrUnplugged);
-                counter++;
-        } else {
-            mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getInt(resolver,
-                        Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED, 1) == 1);
-            mWakeUpWhenPluggedOrUnplugged.setOnPreferenceChangeListener(this);
-        }
+        mWakeWhenPluggedOrUnplugged =
+                (CheckBoxPreference) findPreference(KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED);
+
+        // Default value for wake-on-plug behavior from config.xml
+        boolean wakeUpWhenPluggedOrUnpluggedConfig = getResources().getBoolean(
+                com.android.internal.R.bool.config_unplugTurnsOnScreen);
+
+        mWakeWhenPluggedOrUnplugged.setChecked(Settings.Global.getInt(resolver,
+                Settings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
+                (wakeUpWhenPluggedOrUnpluggedConfig ? 1 : 0)) == 1);
 
         if (counter == 2) {
             prefSet.removePreference(mWakeUpOptions);
@@ -448,6 +446,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(), Settings.System.NOTIFICATION_LIGHT_PULSE,
                     value ? 1 : 0);
             return true;
+        } else if (preference == mWakeWhenPluggedOrUnplugged) {
+            Settings.Global.putInt(getContentResolver(),
+                    Settings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
+                    mWakeWhenPluggedOrUnplugged.isChecked() ? 1 : 0);
+            return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }   
@@ -470,11 +473,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (KEY_VOLUME_WAKE.equals(key)) {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.VOLUME_WAKE_SCREEN,
-                    (Boolean) objValue ? 1 : 0);
-        }
-	if (KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED.equals(key)) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED,
                     (Boolean) objValue ? 1 : 0);
         }
         return true;
