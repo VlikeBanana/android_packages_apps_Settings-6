@@ -28,6 +28,11 @@
     <string name="mod_version">The Schism version</string>
     <string name="mod_version_default">Unknown</string>
 
+    <!-- OTA Strings; About phone screen -->
+    <string name="system_update_settings_list_item_title">The Schism updates</string>
+    <string name="system_update_settings_list_item_summary"></string>
+
+
     <!-- About phone screen, Build date of ROM -->
     <string name="build_date">Build date</string>
     <string name="build_date_default">2012-01-01-0000</string>
