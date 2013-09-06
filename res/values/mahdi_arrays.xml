@@ -1212,9 +1212,13 @@
         <item>keep awake</item>
         <item>monitor location</item>
         <item>monitor high power location</item>
+        <item>@string/app_ops_summaries_wifi_change</item>
         <item>@string/app_ops_summaries_bluetooth_change</item>
         <item>@string/app_ops_summaries_data_change</item>
         <item>@string/app_ops_summaries_alarm_wakeup</item>
+        <item>@string/app_ops_summaries_send_mms</item>
+        <item>@string/app_ops_summaries_read_mms</item>
+        <item>@string/app_ops_summaries_write_mms</item>
         <item>@string/app_ops_summaries_auto_start</item>
     </string-array>
 
@@ -1262,9 +1266,13 @@
         <item>Keep awake</item>
         <item>Location</item>
         <item>Location</item>
+        <item>@string/app_ops_labels_wifi_change</item>
         <item>@string/app_ops_labels_bluetooth_change</item>
         <item>@string/app_ops_labels_data_change</item>
         <item>@string/app_ops_labels_alarm_wakeup</item>
+        <item>@string/app_ops_labels_send_mms</item>
+        <item>@string/app_ops_labels_read_mms</item>
+        <item>@string/app_ops_labels_write_mms</item>
         <item>@string/app_ops_labels_auto_start</item>
     </string-array>
 
@@ -1276,6 +1284,13 @@
         <item>Media</item>
         <item>Device</item>
         <item>@string/app_ops_categories_bootup</item>
+    </string-array>
+
+    <!-- App ops permissions -->
+    <string-array name="app_ops_permissions">
+        <item>Allowed</item>
+        <item>Denied</item>
+        <item>Always ask</item>
     </string-array>
 
     <!-- CRT off animation mode -->
