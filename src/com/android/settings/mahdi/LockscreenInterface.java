@@ -18,6 +18,8 @@ package com.android.settings.mahdi;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
@@ -50,17 +52,28 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 
     private static final String TAG = "LockscreenInterface";
 
-    private static final String LOCKSCREEN_SHORTCUTS_CATEGORY = "lockscreen_shortcuts_category";
-    private static final String KEY_ADDITIONAL_OPTIONS = "options_group";
+    private static final int DLG_ENABLE_EIGHT_TARGETS = 0;
+
+    private static final String LOCKSCREEN_GENERAL_CATEGORY = "lockscreen_general_category";
+    private static final String KEY_LOCKSCREEN_MODLOCK_ENABLED = "lockscreen_modlock_enabled";
     private static final String KEY_BATTERY_STATUS = "lockscreen_battery_status";
     private static final String BATTERY_AROUND_LOCKSCREEN_RING = "battery_around_lockscreen_ring";
-    private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
+    private static final String LOCKSCREEN_SHORTCUTS_CATEGORY = "lockscreen_shortcuts_category";
+    private static final String PREF_LOCKSCREEN_EIGHT_TARGETS = "lockscreen_eight_targets";
     private static final String PREF_LOCKSCREEN_TORCH = "lockscreen_glowpad_torch";
+    private static final String PREF_LOCKSCREEN_SHORTCUTS = "lockscreen_shortcuts";
+    private static final String LOCKSCREEN_BACKGROUND_STYLE = "lockscreen_background_style";
+
+    private static final String LOCKSCREEN_WALLPAPER_TEMP_NAME = ".lockwallpaper";
+
+    private static final int REQUEST_PICK_WALLPAPER = 201;
         
     private PreferenceCategory mAdditionalOptions;
     private ListPreference mBatteryStatus;
     private CheckBoxPreference mLockRingBattery;
+    private CheckBoxPreference mLockscreenEightTargets;
     private CheckBoxPreference mGlowpadTorch;
+    private Preference mShortcuts;
 
     private boolean mCheckPreferences;
 
@@ -101,6 +114,16 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         mLockRingBattery = (CheckBoxPreference)findPreference(BATTERY_AROUND_LOCKSCREEN_RING);
         mLockRingBattery.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.BATTERY_AROUND_LOCKSCREEN_RING, 0) == 1);
+
+        mLockscreenEightTargets = (CheckBoxPreference) findPreference(
+                PREF_LOCKSCREEN_EIGHT_TARGETS);
+        mLockscreenEightTargets.setChecked(Settings.System.getInt(
+                getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.LOCKSCREEN_EIGHT_TARGETS, 0) == 1);
+        mLockscreenEightTargets.setOnPreferenceChangeListener(this);
+
+        mShortcuts = (Preference) findPreference(PREF_LOCKSCREEN_SHORTCUTS);
+        mShortcuts.setEnabled(!mLockscreenEightTargets.isChecked());
 
         // Remove lockscreen button actions if device doesn't have hardware keys
         if (!hasButtons()) {
@@ -167,16 +190,98 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         ContentResolver cr = getActivity().getContentResolver();
-
+        if (!mCheckPreferences) {
+            return false;
+        }
         if (preference == mBatteryStatus) {
             int value = Integer.valueOf((String) objValue);
             int index = mBatteryStatus.findIndexOfValue((String) objValue);
             Settings.System.putInt(cr, Settings.System.LOCKSCREEN_BATTERY_VISIBILITY, value);
             mBatteryStatus.setSummary(mBatteryStatus.getEntries()[index]);
             return true;
-        } else if (!mCheckPreferences) {
-        return false;
+        } else if (preference == mLockscreenEightTargets) {
+            showDialogInner(DLG_ENABLE_EIGHT_TARGETS, (Boolean) objValue);
+            return true;
         }
-     return true;
-    }            
+        return false;
+    }
+
+    private void showDialogInner(int id, boolean state) {
+        DialogFragment newFragment = MyAlertDialogFragment.newInstance(id, state);
+        newFragment.setTargetFragment(this, 0);
+        newFragment.show(getFragmentManager(), "dialog " + id);
+    }
+
+    public static class MyAlertDialogFragment extends DialogFragment {
+
+        public static MyAlertDialogFragment newInstance(int id, boolean state) {
+            MyAlertDialogFragment frag = new MyAlertDialogFragment();
+            Bundle args = new Bundle();
+            args.putInt("id", id);
+            args.putBoolean("state", state);
+            frag.setArguments(args);
+            return frag;
+        }
+
+        LockscreenInterface getOwner() {
+            return (LockscreenInterface) getTargetFragment();
+        }
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            int id = getArguments().getInt("id");
+            final boolean state = getArguments().getBoolean("state");
+            switch (id) {
+                case DLG_ENABLE_EIGHT_TARGETS:
+                    String message = getOwner().getResources()
+                                .getString(R.string.lockscreen_enable_eight_targets_dialog);
+                    if (state) {
+                        message = message + " " + getOwner().getResources().getString(
+                                R.string.lockscreen_enable_eight_targets_enabled_dialog);
+                    }
+                    return new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.attention)
+                    .setMessage(message)
+                    .setNegativeButton(R.string.dlg_cancel,
+                        new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    })
+                    .setPositiveButton(R.string.dlg_ok,
+                        new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            Settings.System.putInt(getOwner().getContentResolver(),
+                                    Settings.System.LOCKSCREEN_EIGHT_TARGETS, state ? 1 : 0);
+                            getOwner().mShortcuts.setEnabled(!state);
+                            Settings.System.putString(getOwner().getContentResolver(),
+                                    Settings.System.LOCKSCREEN_TARGETS, null);
+                            for (File pic : getOwner().getActivity().getFilesDir().listFiles()) {
+                                if (pic.getName().startsWith("lockscreen_")) {
+                                    pic.delete();
+                                }
+                            }
+                            if (state) {
+                                Toast.makeText(getOwner().getActivity(),
+                                        R.string.lockscreen_target_reset,
+                                        Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    })
+                    .create();
+            }
+            throw new IllegalArgumentException("unknown id " + id);
+        }
+
+        @Override
+        public void onCancel(DialogInterface dialog) {
+            int id = getArguments().getInt("id");
+            boolean state = getArguments().getBoolean("state");
+            switch (id) {
+                case DLG_ENABLE_EIGHT_TARGETS:
+                    getOwner().mLockscreenEightTargets.setChecked(!state);
+                    break;
+             }
+        }
+    }
 }

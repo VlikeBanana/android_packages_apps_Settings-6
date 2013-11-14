@@ -507,6 +507,8 @@ public class ButtonsListViewSettings extends ListFragment implements
                     mActivity, mActionValuesKey, mActionEntriesKey);
             case NOTIFICATION_SHORTCUT:
                 return ButtonsHelper.getNotificationsShortcutConfig(mActivity);
+            case LOCKSCREEN_SHORTCUT:
+                return ButtonsHelper.getLockscreenShortcutConfig(mActivity);
         }
         return null;
     }
@@ -531,6 +533,10 @@ public class ButtonsListViewSettings extends ListFragment implements
                     loadAdditionalFragment();
                 }
                 break;
+            case LOCKSCREEN_SHORTCUT:
+                ButtonsHelper.setLockscreenShortcutConfig(mActivity, buttonConfigs, reset);
+                break;
+
         }
     }
 
