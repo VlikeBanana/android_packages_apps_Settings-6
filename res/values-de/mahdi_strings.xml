@@ -62,11 +62,8 @@ limitations under the License.
     <string name="picker_arrow">→</string>
     <string name="default_time">Normal</string>
     <string name="custom_time">Angepasst</string>
-    <string name="dialog_test">Test</string>
     <string name="dialog_delete_title">Löschen</string>
     <string name="dialog_delete_message">Anpassung für diese App entfernen?</string>
-    <string name="dialog_test_message">Display ausschalten, um diese Einstellung zu testen oder Abbrechen um den Test zu beenden.</string>
-    <string name="dialog_test_button">Abbrechen</string>
 
     <!-- Values for the notification light pulse spinners -->
     <string name="pulse_length_always_on">Immer an</string>
