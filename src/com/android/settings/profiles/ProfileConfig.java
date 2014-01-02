@@ -72,6 +72,8 @@ public class ProfileConfig extends SettingsPreferenceFragment
 
     private ListPreference mScreenLockModePreference;
 
+    private ListPreference mGlobalImmersiveModePreference;
+
     // constant value that can be used to check return code from sub activity.
     private static final int PROFILE_GROUP_DETAILS = 1;
 
@@ -270,6 +272,20 @@ public class ProfileConfig extends SettingsPreferenceFragment
             }
 
             systemPrefs.addPreference(mScreenLockModePreference);
+
+            // Expanded Desktop
+            mGlobalImmersiveModePreference = new ListPreference(getActivity());
+            mGlobalImmersiveModePreference.setTitle(R.string.power_menu_immersive_mode);
+            mGlobalImmersiveModePreference.setEntries(R.array.profile_global_immersive_entries);
+            mGlobalImmersiveModePreference.setEntryValues(R.array.profile_global_immersive_values);
+            mGlobalImmersiveModePreference.setPersistent(false);
+            mGlobalImmersiveModePreference.setSummary(getResources().getStringArray(
+                    R.array.profile_global_immersive_entries)[mProfile.getGlobalImmersiveMode()]);
+            mGlobalImmersiveModePreference.setValue(String.valueOf(mProfile
+                    .getGlobalImmersiveMode()));
+            mGlobalImmersiveModePreference.setOnPreferenceChangeListener(this);
+
+            systemPrefs.addPreference(mGlobalImmersiveModePreference);
         }
 
         // Populate the audio streams list
@@ -287,8 +303,8 @@ public class ProfileConfig extends SettingsPreferenceFragment
                 StreamVolumePreference pref = new StreamVolumePreference(getActivity());
                 pref.setKey("stream_" + stream.mStreamId);
                 pref.setTitle(stream.mLabel);
-                pref.setSummary(getString(R.string.volume_override_summary) + " " + settings.getValue() 
-                        + "/" + am.getStreamMaxVolume(stream.mStreamId)); 
+                pref.setSummary(getString(R.string.volume_override_summary) + " " + settings.getValue()
+                        + "/" + am.getStreamMaxVolume(stream.mStreamId));
                 pref.setPersistent(false);
                 pref.setStreamItem(stream);
                 stream.mCheckbox = pref;
@@ -368,6 +384,10 @@ public class ProfileConfig extends SettingsPreferenceFragment
             mProfile.setScreenLockMode(Integer.valueOf((String) newValue));
             mScreenLockModePreference.setSummary(getResources().getStringArray(
                     R.array.profile_lockmode_summaries)[mProfile.getScreenLockMode()]);
+        } else if (preference == mGlobalImmersiveModePreference) {
+            mProfile.setGlobalImmersiveMode(Integer.valueOf((String) newValue));
+            mGlobalImmersiveModePreference.setSummary(getResources().getStringArray(
+                    R.array.profile_global_immersive_entries)[mProfile.getGlobalImmersiveMode()]);
         }
         return true;
     }

@@ -145,6 +145,20 @@
         <item>2</item>
     </string-array>
 
+    <!-- Profile global immersive mode options. Do not translate. -->
+    <string-array name="profile_global_immersive_entries" translatable="false">
+        <item>@string/profile_lockmode_default</item>
+        <item>@string/connection_state_enabled</item>
+        <item>@string/connection_state_disabled</item>
+    </string-array>
+
+    <!-- Values for profile global immersive mode. Do not translate. -->
+    <string-array name="profile_global_immersive_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <!-- Ring mode options. -->
     <string-array name="ring_mode_entries" translatable="false">
         <item>@string/ring_mode_normal</item>
