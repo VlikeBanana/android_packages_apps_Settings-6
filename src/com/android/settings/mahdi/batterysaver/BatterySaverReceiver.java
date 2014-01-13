@@ -1,11 +1,11 @@
 /*
- * Copyright (C) 2013 Android Open Kang Project
+ * Copyright (C) 2014 The OmniROM Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,22 +14,19 @@
  * limitations under the License.
  */
 
-package com.android.settings.mahdi.service;
+package com.android.settings.mahdi.batterysaver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import com.android.settings.mahdi.batterysaver.BatterySaverHelper;
-
-public class BootReceiver extends BroadcastReceiver {
+public class BatterySaverReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        SmsCallHelper.scheduleService(context);
-
         if (BatterySaverHelper.deviceSupportsMobileData(context)) {
-                BatterySaverHelper.scheduleService(context);
+            BatterySaverHelper.scheduleService(context);
         }
     }
+
 }
