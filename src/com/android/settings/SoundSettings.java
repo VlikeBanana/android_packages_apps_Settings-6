@@ -218,7 +218,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
         int userMillis = Settings.System.getInt(resolver,
                 Settings.System.MINIMUM_VIBRATION_DURATION, 0);
-
         mVibrationDuration = (SlimSeekBarPreference) findPreference(KEY_VIBRATION_DURATION);
         mVibrationDuration.setInterval(1);
         mVibrationDuration.setDefault(0);

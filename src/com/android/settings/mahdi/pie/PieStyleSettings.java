@@ -302,7 +302,7 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
         float controlSizeValue = ((controlSize - PIE_CONTROL_SIZE_MIN) /
                     ((PIE_CONTROL_SIZE_MAX - PIE_CONTROL_SIZE_MIN) / 100)) / 100;
         mPieControlSize.setInitValue((int) (controlSizeValue * 100));
-        mPieControlSize.disableText(true);
+        mPieControlSize.disableText(false);
 
         mCheckPreferences = true;
     }
