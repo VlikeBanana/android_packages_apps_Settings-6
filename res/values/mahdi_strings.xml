@@ -1091,6 +1091,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_target_empty">Empty</string>
     <string name="lockscreen_target_edit_title">Edit shortcut and icon</string>
     <string name="lockscreen_target_edit_msg">Select or change the desired application or activity and the associated icon</string>
+    <string name="lockscreen_glowpad_torch_title">Slider torch</string>
+    <string name="lockscreen_glowpad_torch_summary">Double-tap and hold the slider to start torch</string>
 
     <!-- Lock screen shortcuts -->
     <string name="picker_activities">Activities</string>

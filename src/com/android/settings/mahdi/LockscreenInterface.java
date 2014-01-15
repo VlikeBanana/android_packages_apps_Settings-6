@@ -36,6 +36,8 @@ import android.view.Display;
 import android.view.Window;
 import android.widget.Toast;
 
+import com.android.internal.util.mahdi.DeviceUtils;
+
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
@@ -53,10 +55,12 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String KEY_BATTERY_STATUS = "lockscreen_battery_status";
     private static final String BATTERY_AROUND_LOCKSCREEN_RING = "battery_around_lockscreen_ring";
     private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
+    private static final String PREF_LOCKSCREEN_TORCH = "lockscreen_torch";
         
     private PreferenceCategory mAdditionalOptions;
     private ListPreference mBatteryStatus;
     private CheckBoxPreference mLockRingBattery;
+    private CheckBoxPreference mGlowpadTorch;
 
     private boolean mCheckPreferences;
 
@@ -83,7 +87,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.lockscreen_interface_settings);
         prefs = getPreferenceScreen();           
 
-    // Find categories
+        // Find categories
         PreferenceCategory generalCategory = (PreferenceCategory)
                 findPreference(LOCKSCREEN_SHORTCUTS_CATEGORY);
         mAdditionalOptions = (PreferenceCategory) 
@@ -98,9 +102,14 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         mLockRingBattery.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.BATTERY_AROUND_LOCKSCREEN_RING, 0) == 1);
 
-    // Remove lockscreen button actions if device doesn't have hardware keys
+        // Remove lockscreen button actions if device doesn't have hardware keys
         if (!hasButtons()) {
             generalCategory.removePreference(findPreference(KEY_LOCKSCREEN_BUTTONS));
+        }
+
+        // Remove glowpad torch if device doesn't have a torch
+        if (!DeviceUtils.deviceSupportsTorch(getActivity())) {
+            prefs.removePreference(mGlowpadTorch);
         }
 
         // Update battery status
