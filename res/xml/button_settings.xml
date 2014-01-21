@@ -35,8 +35,8 @@
 
     <PreferenceScreen
         android:key="hardware_keys"
-        android:title="@string/hardware_keys_title"
-        android:summary="@string/hardware_keys_summary"
+        android:title="@string/button_keys_title"
+        android:summary="@string/button_keys_summary"
         android:fragment="com.android.settings.mahdi.HardwareKeys" />
 
     </PreferenceCategory>
