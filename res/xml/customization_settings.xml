@@ -67,17 +67,6 @@
         android:summary="@string/lock_screen_summary"
         android:icon="@drawable/ic_settings_lockscreen"
         android:fragment="com.android.settings.mahdi.LockscreenInterface" />
-
-    <PreferenceScreen
-        android:id="@+id/themes_settings"
-        android:icon="@drawable/ic_settings_themes"
-        android:title="@string/themes_settings_title"
-        android:summary="@string/themes_settings_summary">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="com.tmobile.themechooser"
-            android:targetClass="com.tmobile.themechooser.ThemeChooser" />
-    </PreferenceScreen>
    
     <PreferenceScreen
         android:id="@+id/halo_settings"                

@@ -18,15 +18,11 @@
     <string name="customization_settings_title">Customization</string>
 
     <!-- About phone screen,  Mod Version -->
-    <string name="mod_version">Mahdi Rom version</string>
+    <string name="mod_version">The Schism Version</string>
     <string name="mod_version_default">Unknown</string>
     <!-- About phone screen, Build date of ROM -->
-    <string name="build_date">Build date</string>
+    <string name="build_date">The Schism Build Date</string>
     <string name="build_date_default">2012-01-01-0000</string>
-    <!-- About device screen, Cpu info. -->
-    <string name="cpu_info">CPU</string>
-    <!-- About phone screen, Free memory info -->
-    <string name="mem_info">Memory</string>
     <!-- About phone screen, status item label --> 
 
     <!-- General strings -->
@@ -1275,10 +1271,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="ime_switcher_notify">Selector notification</string>
     <string name="ime_switcher_notify_summary">Display input method selector notification</string>
 
-    <!-- Themes settings  -->
-    <string name="themes_settings_title">Themes</string>
-    <string name="themes_settings_summary">Change themes with T-Mobiles theme engine</string>
-
     <!-- Notification drawer background -->
     <string name="notification_style_title">Style</string>    
     <string name="notification_background_title">Background style</string>
@@ -1355,5 +1347,4 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Emulate menu key -->
     <string name="emulate_menu_key_title">Emulate hardware menu key</string>
     <string name="emulate_menu_key_summary">Pressing the navbar menu key will open the overflow menu at the bottom</string>
-
 </resources>
