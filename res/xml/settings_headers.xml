@@ -229,7 +229,7 @@
         android:id="@+id/customization_settings"
         android:fragment="com.android.settings.mahdi.CustomizationSettings"
         android:title="@string/customization_settings_title"
-        android:icon="@drawable/ic_settings_mahdi" />
+        android:icon="@drawable/ic_settings_schism" />
 
     <!-- Performance Controls -->
     <header
