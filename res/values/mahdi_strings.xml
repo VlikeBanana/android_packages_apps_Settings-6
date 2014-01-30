@@ -23,7 +23,6 @@
     <!-- About phone screen, Build date of ROM -->
     <string name="build_date">The Schism Build Date</string>
     <string name="build_date_default">2012-01-01-0000</string>
-    <!-- About phone screen, status item label --> 
 
     <!-- General strings -->
     <string name="ok">OK</string>
