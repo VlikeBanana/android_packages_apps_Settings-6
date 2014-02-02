@@ -19,6 +19,7 @@
     <style name="info_label">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/grey_text</item>
         <item name="android:textAppearance">@style/TextAppearance.info_label</item>
         <item name="android:paddingEnd">4dip</item>
     </style>
@@ -26,12 +27,14 @@
     <style name="info_value">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/grey_text</item>
         <item name="android:textAppearance">@style/TextAppearance.info_value</item>
     </style>
 
     <style name="info_small">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/grey_text</item>
         <item name="android:textAppearance">@style/TextAppearance.info_small</item>
     </style>
 
@@ -63,16 +66,19 @@
     <style name="TextAppearance.info_label">
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/grey_text</item>
     </style>
 
     <style name="TextAppearance.info_small">
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/grey_text</item>
     </style>
 
     <style name="TextAppearance.info_value">
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/grey_text</item>
     </style>
 
     <style name="TallTitleBarTheme" parent="android:Theme.NoTitleBar">
