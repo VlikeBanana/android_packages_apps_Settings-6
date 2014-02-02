@@ -248,8 +248,13 @@
     <!-- Superuser -->
     <header
         android:id="@+id/superuser"
+<<<<<<< HEAD
         android:fragment="com.koushikdutta.superuser.PolicyNativeFragment"
         android:icon="@drawable/ic_settings_superuser"
+=======
+        android:fragment="com.android.settings.mahdi.superuser.PolicyNativeFragment"
+        android:icon="@drawable/ic_action_permission"
+>>>>>>> 9d2d6c320bfbee4f197ebe6a4a24a654d3a7c40a
         android:title="@string/superuser" />
 
     <!-- About Device -->
