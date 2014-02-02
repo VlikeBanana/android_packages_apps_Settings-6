@@ -17,12 +17,9 @@
     <!-- Customization Interface settings  -->
     <string name="customization_settings_title">Customization</string>
 
-    <!-- About phone screen,  Mod Version -->
+    <!-- About phone screen,  ROM Version -->
     <string name="mod_version">The Schism Version</string>
     <string name="mod_version_default">Unknown</string>
-    <!-- About phone screen, Build date of ROM -->
-    <string name="build_date">The Schism Build Date</string>
-    <string name="build_date_default">2012-01-01-0000</string>
 
     <!-- General strings -->
     <string name="ok">OK</string>
