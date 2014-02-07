@@ -2029,5 +2029,17 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Peek Notifications -->
     <string name="peek_notifications_title">Peek notifications</string>
     <string name="peek_notifications_summary">Show latest notifications after picking up your device</string>
-    
+
+    <!-- Battery Bar -->
+    <string name="battery_bar_title">Battery Bar</string>
+    <string name="battery_bar_summary">View or change battery bar settings</string>
+    <string name="battery_bar">Battery bar location</string>
+    <string name="battery_bar_color">Battery bar color</string>
+    <string name="battery_bar_cat">Battery bar style</string>
+    <string name="battery_bar_style_title">Battery bar alignment</string>
+    <string name="battery_bar_thickness_title">Battery bar thickness</string>
+    <string name="battery_bar_animate_title">Charging animation</string>
+    <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion</string>
+    <string name="battery_bar_reset_message">Reset battery bar style to default?</string>
+
 </resources>
