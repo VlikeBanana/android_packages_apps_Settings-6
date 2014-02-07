@@ -30,6 +30,18 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="pie_settings"
+        android:title="@string/pie_settings_category_title" >
+
+    <PreferenceScreen
+        android:key="pie_settings"
+        android:fragment="com.android.settings.mahdi.PieControl"
+        android:title="@string/pie_control_title" 
+        android:summary="@string/pie_control_summary_real" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="hardware_keys_category"
         android:title="@string/button_keys_title" >      
 

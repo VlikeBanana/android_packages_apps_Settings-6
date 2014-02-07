@@ -30,6 +30,7 @@ public class SeekBarPreferenceSlim extends Preference
     boolean mDisablePercentageValue = false;
     boolean mZeroDefault = false;
     boolean mIsMilliSeconds = false;
+    boolean mDisableText = false;
     boolean mSameValue = false;
 
     private OnPreferenceChangeListener changer;
@@ -57,7 +58,7 @@ public class SeekBarPreferenceSlim extends Preference
         bar.setProgress(progress);
         if (progress == 0 && mZeroDefault) {
             monitorBox.setText(R.string.default_string);
-        } else {
+        } else if (!mDisableText) {
             if (mIsMilliSeconds) {
                 monitorBox.setText(progress + " ms");
             } else if (!mDisablePercentageValue) {
@@ -132,6 +133,10 @@ public class SeekBarPreferenceSlim extends Preference
 
     public void disablePercentageValue(boolean disable) {
         mDisablePercentageValue = disable;
+    }
+
+    public void disableText(boolean disable) {
+        mDisableText = disable;
     }
 
     public void setProperty(String property) {

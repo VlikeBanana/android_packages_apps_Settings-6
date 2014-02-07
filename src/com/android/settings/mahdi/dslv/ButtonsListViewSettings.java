@@ -499,6 +499,12 @@ public class ButtonsListViewSettings extends ListFragment implements
             case NAV_RING:
                 return ButtonsHelper.getNavRingConfigWithDescription(
                     mActivity, mActionValuesKey, mActionEntriesKey);
+            case PIE:
+                return ButtonsHelper.getPieConfigWithDescription(
+                    mActivity, mActionValuesKey, mActionEntriesKey);
+            case PIE_SECOND:
+                return ButtonsHelper.getPieSecondLayerConfigWithDescription(
+                    mActivity, mActionValuesKey, mActionEntriesKey);
             case NOTIFICATION_SHORTCUT:
                 return ButtonsHelper.getNotificationsShortcutConfig(mActivity);
         }
@@ -512,6 +518,12 @@ public class ButtonsListViewSettings extends ListFragment implements
                 break;
             case NAV_RING:
                 ButtonsHelper.setNavRingConfig(mActivity, buttonConfigs, reset);
+                break;
+            case PIE:
+                ButtonsHelper.setPieConfig(mActivity, buttonConfigs, reset);
+                break;
+            case PIE_SECOND:
+                ButtonsHelper.setPieSecondLayerConfig(mActivity, buttonConfigs, reset);
                 break;
             case NOTIFICATION_SHORTCUT:
                 ButtonsHelper.setNotificationShortcutConfig(mActivity, buttonConfigs, reset);
@@ -767,15 +779,15 @@ public class ButtonsListViewSettings extends ListFragment implements
                     String buttonMode;
                     String icon = "";
                     switch (getOwner().mButtonMode) {
-                        // case LOCKSCREEN_SHORTCUT:
+                        case LOCKSCREEN_SHORTCUT:
                         case NOTIFICATION_SHORTCUT:
                         case POWER_MENU_SHORTCUT:
                             buttonMode = res.getString(R.string.shortcut_action_help_shortcut);
                             break;
                         case NAV_BAR:
                         case NAV_RING:
-                        // case PIE:
-                        // case PIE_SECOND:
+                        case PIE:
+                        case PIE_SECOND:
                         default:
                             buttonMode = res.getString(R.string.shortcut_action_help_button);
                             break;
@@ -787,7 +799,9 @@ public class ButtonsListViewSettings extends ListFragment implements
                         R.string.shortcut_action_help_main, buttonMode, icon);
                     if (!getOwner().mDisableDeleteLastEntry) {
                         finalHelpMessage += " " + res.getString(
-                            R.string.shortcut_action_help_delete_last_entry, buttonMode);
+                                getOwner().mButtonMode == PIE_SECOND
+                                ? R.string.shortcut_action_help_pie_second_layer_delete_last_entry
+                                : R.string.shortcut_action_help_delete_last_entry, buttonMode);
                     }
                     return new AlertDialog.Builder(getActivity())
                     .setTitle(R.string.help_label)
