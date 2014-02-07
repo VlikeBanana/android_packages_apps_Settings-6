@@ -276,7 +276,6 @@
         android:id="@+id/superuser"
         android:fragment="com.koushikdutta.superuser.PolicyNativeFragment"
         android:icon="@drawable/ic_settings_superuser"
-        android:icon="@drawable/ic_action_permission" 
         android:layout_gravity="fill" />
 
     <!-- About Device -->
