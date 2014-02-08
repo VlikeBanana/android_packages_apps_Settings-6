@@ -1277,6 +1277,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="ime_switcher_notify">Selector notification</string>
     <string name="ime_switcher_notify_summary">Display input method selector notification</string>
 
+    <!-- Themes settings  -->
+    <string name="themes_settings_title">Themes</string>
+    <string name="themes_settings_summary">Change themes with T-Mobiles theme engine</string>
+
     <!-- Notification drawer background -->
     <string name="notification_style_title">Style</string>    
     <string name="notification_background_title">Background style</string>
