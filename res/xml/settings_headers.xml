@@ -18,7 +18,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <!-- WIRELESS and NETWORKS -->
+    <!-- Networking Section -->
     <header android:id="@+id/wireless_section"
         android:title="@string/header_category_wireless_networks" />
 
@@ -36,6 +36,14 @@
         android:fragment="com.android.settings.bluetooth.BluetoothSettings"
         android:title="@string/bluetooth_settings_title"
         android:icon="@drawable/ic_settings_bluetooth2" 
+        android:layout_gravity="fill" />
+    
+    <!-- Location -->
+    <header
+        android:fragment="com.android.settings.location.LocationSettings"
+        android:icon="@drawable/ic_settings_location"
+        android:title="@string/location_settings_title"
+        android:id="@+id/location_settings" 
         android:layout_gravity="fill" />
 
     <!-- Data Usage -->
@@ -62,7 +70,27 @@
         android:icon="@drawable/empty_icon" 
         android:layout_gravity="fill" />    
 
-    <!-- DEVICE -->
+    <!-- The Schism Settings Section -->
+    <header android:id="@+id/rom_settings"
+        android:title="@string/rom_settings_title" />
+
+    <!-- Customization -->
+    <header
+        android:id="@+id/customization_settings"
+        android:fragment="com.android.settings.mahdi.CustomizationSettings"
+        android:title="@string/customization_settings_title"
+        android:icon="@drawable/ic_settings_schism" 
+        android:layout_gravity="fill" />
+
+    <!-- Lockscreen --> 
+    <header
+        android:id="@+id/lockscreen_settings"
+        android:fragment="com.android.settings.mahdi.LockscreenInterface" 
+        android:title="@string/lock_screen_title"
+        android:icon="@drawable/ic_settings_lockscreen"
+        android:layout_gravity="fill" />
+
+    <!-- Device Section -->
     <header android:id="@+id/device_section"
         android:title="@string/header_category_device" />
 
@@ -72,14 +100,6 @@
         android:icon="@drawable/ic_settings_home"
         android:fragment="com.android.settings.HomeSettings"
         android:title="@string/home_settings" 
-        android:layout_gravity="fill" />
-
-    <!-- Customization -->
-    <header
-        android:id="@+id/customization_settings"
-        android:fragment="com.android.settings.mahdi.CustomizationSettings"
-        android:title="@string/customization_settings_title"
-        android:icon="@drawable/ic_settings_schism" 
         android:layout_gravity="fill" />
 
     <!-- Sound -->
@@ -114,14 +134,6 @@
         android:title="@string/power_usage_summary_title" 
         android:layout_gravity="fill" />
 
-    <!-- Application Settings -->
-    <header
-        android:fragment="com.android.settings.applications.ManageApplications"
-        android:icon="@drawable/ic_settings_applications"
-        android:title="@string/applications_settings"
-        android:id="@+id/application_settings" 
-        android:layout_gravity="fill" />
-
     <!-- Manage users -->
     <header
         android:fragment="com.android.settings.users.UserSettings"
@@ -145,44 +157,16 @@
         <intent android:action="com.android.settings.MANUFACTURER_APPLICATION_SETTING" />
     </header>
 
-    <!-- DeviceParts Device Specific settings -->
-    <header
-        android:id="@+id/advanced_settings"
-        android:title="@string/advanced_settings_title"
-        android:icon="@drawable/ic_settings_advanced"
-        android:layout_gravity="fill">
-        <intent
-            android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
-            android:targetPackage="com.cyanogenmod.settings.device"
-            android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
-    </header>
-
-    <!-- PERSONAL -->
+    <!-- Personal Section -->
     <header android:id="@+id/personal_section"
         android:title="@string/header_category_personal" />
 
-    <!-- Profiles -->
+    <!-- Application Settings -->
     <header
-        android:id="@+id/profiles_settings"
-        android:icon="@drawable/ic_settings_profiles"
-        android:fragment="com.android.settings.profiles.ProfilesSettings"
-        android:title="@string/profiles_settings_title" 
-        android:layout_gravity="fill" />
-
-    <!-- Location -->
-    <header
-        android:fragment="com.android.settings.location.LocationSettings"
-        android:icon="@drawable/ic_settings_location"
-        android:title="@string/location_settings_title"
-        android:id="@+id/location_settings" 
-        android:layout_gravity="fill" />
-
-    <!-- Security -->
-    <header
-        android:fragment="com.android.settings.SecuritySettings"
-        android:icon="@drawable/ic_settings_security"
-        android:title="@string/security_settings_title"
-        android:id="@+id/security_settings" 
+        android:fragment="com.android.settings.applications.ManageApplications"
+        android:icon="@drawable/ic_settings_applications"
+        android:title="@string/applications_settings"
+        android:id="@+id/application_settings" 
         android:layout_gravity="fill" />
 
     <!-- Mahdi Privacy Settings -->
@@ -194,6 +178,22 @@
         android:id="@+id/privacy_settings_mahdi" 
         android:layout_gravity="fill" />
 
+    <!-- Security -->
+    <header
+        android:fragment="com.android.settings.SecuritySettings"
+        android:icon="@drawable/ic_settings_security"
+        android:title="@string/security_settings_title"
+        android:id="@+id/security_settings" 
+        android:layout_gravity="fill" />
+
+    <!-- Profiles -->
+    <header
+        android:id="@+id/profiles_settings"
+        android:icon="@drawable/ic_settings_profiles"
+        android:fragment="com.android.settings.profiles.ProfilesSettings"
+        android:title="@string/profiles_settings_title" 
+        android:layout_gravity="fill" />
+
     <!-- Language -->
     <header
         android:id="@+id/language_settings"
@@ -203,9 +203,6 @@
         android:layout_gravity="fill" />
 
     <!-- Backup and reset -->
-    <!-- Google for some reason calls this class PrivacySettings even though it is "Backup & reset"
-         we are leaving it as-is in order to not complicate future merges but rather adding a new
-         PrivacySettings class under .cyanogenmod above to handle the 'real' privacy items -->
     <header
         android:fragment="com.android.settings.PrivacySettings"
         android:icon="@drawable/ic_settings_backup"
@@ -213,7 +210,7 @@
         android:id="@+id/privacy_settings" 
         android:layout_gravity="fill" />
 
-    <!--  ACCOUNTS section -->
+    <!--  Accounts section -->
     <header
             android:id="@+id/account_settings"
             android:title="@string/account_settings" />
@@ -227,7 +224,7 @@
             android:action="android.settings.ADD_ACCOUNT_SETTINGS"/>
     </header>
 
-    <!-- SYSTEM -->
+    <!-- System Section -->
     <header android:id="@+id/system_section"
         android:title="@string/header_category_system" />
 
@@ -255,13 +252,9 @@
         android:title="@string/print_settings" 
         android:layout_gravity="fill" />
 
-    <!-- Performance Controls -->
-    <header
-        android:id="@+id/performance_controls"
-        android:fragment="com.brewcrewfoo.performance.activities.MainActivity"
-        android:icon="@drawable/ic_settings_performance"
-        android:title="@string/performance_settings" 
-        android:layout_gravity="fill" />
+    <!-- Advanced Section -->
+    <header android:id="@+id/advanced_section"
+        android:title="@string/advanced_section_title" />
 
     <!-- Development -->
     <header
@@ -271,11 +264,20 @@
         android:title="@string/development_settings_title" 
         android:layout_gravity="fill" />
 
+    <!-- Performance Controls -->
+    <header
+        android:id="@+id/performance_controls"
+        android:fragment="com.brewcrewfoo.performance.activities.MainActivity"
+        android:icon="@drawable/ic_settings_performance"
+        android:title="@string/performance_settings" 
+        android:layout_gravity="fill" />
+
     <!-- Superuser -->
     <header
         android:id="@+id/superuser"
         android:fragment="com.koushikdutta.superuser.PolicyNativeFragment"
         android:icon="@drawable/ic_settings_superuser"
+        android:title="@string/superuser_text"
         android:layout_gravity="fill" />
 
     <!-- About Device -->
@@ -285,5 +287,4 @@
         android:icon="@drawable/ic_settings_about"
         android:title="@string/about_settings" 
         android:layout_gravity="fill" />
-
 </preference-headers>

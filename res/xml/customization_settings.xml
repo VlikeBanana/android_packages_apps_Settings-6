@@ -54,12 +54,6 @@
         android:icon="@drawable/ic_settings_halo"
         android:fragment="com.android.settings.mahdi.Halo" />
 
-    <PreferenceScreen
-        android:key="lock_screen_settings"
-        android:title="@string/lock_screen_title"
-        android:summary="@string/lock_screen_summary"
-        android:icon="@drawable/ic_settings_lockscreen"
-        android:fragment="com.android.settings.mahdi.LockscreenInterface" />
  <!--
     <PreferenceScreen
         android:id="@+id/themes_settings"
