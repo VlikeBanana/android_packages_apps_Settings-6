@@ -82,14 +82,6 @@
         android:icon="@drawable/ic_settings_schism" 
         android:layout_gravity="fill" />
 
-    <!-- Lockscreen --> 
-    <header
-        android:id="@+id/lockscreen_settings"
-        android:fragment="com.android.settings.mahdi.LockscreenInterface" 
-        android:title="@string/lock_screen_title"
-        android:icon="@drawable/ic_settings_lockscreen"
-        android:layout_gravity="fill" />
-
     <!-- Device Section -->
     <header android:id="@+id/device_section"
         android:title="@string/header_category_device" />
