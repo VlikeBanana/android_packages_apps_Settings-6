@@ -15,6 +15,7 @@
 -->
 
 <resources>
+    <dimen name="preference_item_padding_side">0dip</dimen>
     <dimen name="device_memory_usage_button_width">16dip</dimen>
     <dimen name="device_memory_usage_button_height">32dip</dimen>
     <dimen name="action_bar_switch_padding">16dip</dimen>
@@ -44,9 +45,10 @@
     <dimen name="setup_item_margin">16dip</dimen>
 
     <dimen name="divider_height">3dip</dimen>
-    <dimen name="divider_margin_top">0dip</dimen>
-    <dimen name="divider_margin_bottom">0dip</dimen>
+    <dimen name="divider_margin_top">6dip</dimen>
+    <dimen name="divider_margin_bottom">7dip</dimen>
     <dimen name="vert_divider_width">2dip</dimen>
+    <dimen name="vert_divider_side">0dip</dimen>
 
     <!--  Size of icons in the top-level of settings  -->
     <dimen name="header_icon_width">48dp</dimen>
