@@ -2054,6 +2054,30 @@
                 android:resource="@id/interface_animation" />
         </activity>
 
+        <!-- Shortcuts -->
+        <activity
+            android:name="CreateSlimShortcut"
+            android:label="@string/shortcut_picker"
+            android:icon="@drawable/slim_lock"
+            android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"
+            android:excludeFromRecents="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.android.settings.mahdi.slim.SlimActionShortcut"
+            android:theme="@android:style/Theme.NoDisplay"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
         <!-- Mahdi-Rom activities End -->
 
         <receiver android:name=".widget.SettingsAppWidgetProvider"
@@ -2085,6 +2109,11 @@
                 <action android:name="android.provider.Contacts.PROFILE_CHANGED" />
             </intent-filter>
         </receiver>
+
+        <activity
+             android:name=".mahdi.batterysaver.BatterySaverSettings"
+             android:label="@string/data_usage_enable_batterysaver" >
+        </activity>
 
         <receiver
             android:name="com.android.settings.mahdi.batterysaver.BatterySaverReceiver">

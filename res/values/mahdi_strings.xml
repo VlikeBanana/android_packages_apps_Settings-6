@@ -764,6 +764,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcut_action_notifications">Notifications</string>
     <string name="shortcut_action_menu_big">Menu</string>
     <string name="shortcut_action_qs">Quicksettings panel</string>
+    <string name="shortcut_action_smart">Smart pulldown</string>
     <string name="shortcut_action_none">None</string>
     <string name="shortcut_action_power_menu">Power menu</string>
     <string name="shortcut_action_ring_vib">Ring/Vib</string>
@@ -1975,5 +1976,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_saver_network_gsm_title">GSM Networks</string>
     <string name="battery_saver_network_cdma_title">CDMA Networks</string>
     <string name="battery_saver_system_title">System options</string>
+
+    <!-- Shortcuts -->
+    <string name="shortcut_picker">Actions</string>  
 
 </resources>
