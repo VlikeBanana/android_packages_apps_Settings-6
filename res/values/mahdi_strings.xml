@@ -1902,7 +1902,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_style">Style and dimension</string>
     <string name="pie_style_title">Style</string>
     <string name="pie_dimens_title">Dimension</string>
-    <string name="pie_additional_options">Additional options</string>
     <string name="pie_show_snap_title">Show snap points</string>
     <string name="pie_show_snap_summary">Shows snap points to change the trigger edge dynamically</string>
     <string name="pie_show_text_title">Show status and clock</string>
@@ -1914,5 +1913,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_button_second_layer_summary">Change second layer buttons</string>
     <string name="pie_button_style_summary">Change pie button style</string>
     <string name="pie_style_reset_message">Reset style entries to default?</string>
+    <string name="pie_disable_ime_triggers_title">Reduce trigger size on keyboard</string>
+    <string name="pie_disable_ime_triggers_summary">Reduces left and right trigger size if keyboard is active</string>
 
 </resources>
