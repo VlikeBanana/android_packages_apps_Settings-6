@@ -17,6 +17,9 @@
 <resources>
     <color name="holo_bright">#ffCCCCCC</color>
     <color name="holo_light">#ff999999</color>
+    <color name="holo_grey">#ff666666</color>
+    <color name="holo_grey_trans">#c0666666</color>
+    <color name="holo_grey_transparent">#66666666</color>
     <color name="grey_text">#ff5c5c5c</color>
     <color name="white">#FFF</color>
     <color name="black">#000</color>
@@ -51,5 +54,7 @@
     <color name="auto_brightness_preview_markers">@android:color/holo_blue_light</color>
     <color name="auto_brightness_preview_grid">#44ffffff</color>
 
-    <color name="tab_selector">#FFFFFFFF</color>
+    <color name="tab_selector">#FF666666</color>
+    <color name="purple_data">#FF9933CC</color>
+    <color name="purple_data_trans">#c06
 </resources>

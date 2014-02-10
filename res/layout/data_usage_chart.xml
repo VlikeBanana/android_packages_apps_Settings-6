@@ -38,16 +38,16 @@
         settings:primaryDrawable="@drawable/data_grid_primary"
         settings:secondaryDrawable="@drawable/data_grid_secondary"
         settings:borderDrawable="@drawable/data_grid_border"
-        settings:labelColor="@android:color/holo_blue_light" />
+        settings:labelColor="@color/purple_data" />
 
     <com.android.settings.widget.ChartNetworkSeriesView
         android:id="@+id/series"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start|bottom"
-        settings:strokeColor="@android:color/holo_blue_light"
-        settings:fillColor="#c033b5e5"
-        settings:fillColorSecondary="#6633b5e5" />
+        settings:strokeColor="@color/purple_data"
+        settings:fillColor="@color/holo_grey_trans"
+        settings:fillColorSecondary="@color/holo_grey_transparent" />
 
     <com.android.settings.widget.ChartNetworkSeriesView
         android:id="@+id/detail_series"
@@ -74,6 +74,7 @@
         settings:followAxis="horizontal"
         settings:neighborMargin="5dip" />
 
+    <!-- Data Orange -->
     <com.android.settings.widget.ChartSweepView
         android:id="@+id/sweep_warning"
         android:layout_width="match_parent"
@@ -86,6 +87,7 @@
         settings:labelTemplate="@string/data_usage_sweep_warning"
         settings:labelColor="#f7931d" />
 
+    <!-- Data Red -->
     <com.android.settings.widget.ChartSweepView
         android:id="@+id/sweep_limit"
         android:layout_width="match_parent"
@@ -97,5 +99,4 @@
         settings:labelSize="60dip"
         settings:labelTemplate="@string/data_usage_sweep_limit"
         settings:labelColor="#c01a2c" />
-
 </com.android.settings.widget.ChartDataUsageView>
