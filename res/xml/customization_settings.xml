@@ -47,17 +47,13 @@
         android:icon="@drawable/ic_settings_recents"  
         android:fragment="com.android.settings.mahdi.RecentsPanelSettings" />
 
- <!--
-    <PreferenceScreen
-        android:id="@+id/themes_settings"
-        android:icon="@drawable/ic_settings_themes"
-        android:title="@string/themes_settings_title"
-        android:summary="@string/themes_settings_summary">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="com.tmobile.themechooser"
-            android:targetClass="com.tmobile.themechooser.ThemeChooser" />
-    </PreferenceScreen> -->
+    <PreferenceScreen 
+        android:id="@+id/interface_animation"
+        android:title="@string/interface_animation_title"
+        android:summary="@string/interface_animation_summary"
+        android:breadCrumbTitle="@string/interface_animation_title"
+        android:fragment="com.android.settings.mahdi.aokp.AnimationInterfaceSettings"
+        android:icon="@drawable/ic_rom_control_animations" />
    
     <PreferenceScreen
         android:key="button_settings"
@@ -86,5 +82,5 @@
         android:summary="@string/power_menu_summary"
         android:icon="@drawable/ic_settings_power_menu"
         android:fragment="com.android.settings.mahdi.PowerMenu" />
-
+       
 </PreferenceScreen>
