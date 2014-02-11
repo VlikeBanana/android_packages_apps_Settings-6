@@ -1115,10 +1115,14 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_vibrate_enabled_title">Vibrate</string>
     <string name="lockscreen_vibrate_enabled_head">Vibrate when unlocking</string>
 
-    <!-- security settings menu unlock -->
+    <!-- Lockscreen See Through -->
+    <string name="see_through_title">See through</string>
+    <string name="see_through_summary">Shows the content behind your lockscreen, your data may be visible to those around you</string>
+
+    <!-- Security settings menu unlock -->
     <string name="unlock_menu_unlock_title">Menu unlock</string>
     <string name="unlock_menu_unlock_summary">Pressing the menu button unlocks the device</string>
-    <!-- security settings home unlock -->
+    <!-- Security settings home unlock -->
     <string name="unlock_home_unlock_title">Home unlock</string>
     <string name="unlock_home_unlock_summary">Pressing the home button unlocks the device</string>
     <!--Quick unlock -->
