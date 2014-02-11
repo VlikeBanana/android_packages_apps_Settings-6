@@ -1383,7 +1383,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="app_ops_reset_counters">Reset allow/deny counters</string>
     <string name="app_ops_reset_confirm_title">Confirm counters reset</string>
     <string name="app_ops_reset_confirm_mesg">Are you sure you wish to reset AppOps counters ?</string>
-
+   
     <!-- Screen off animation options -->
     <string name="system_power_crt_mode_title">CRT animation </string>
     <string name="system_power_crt_mode_dialog_title">CRT animation</string>
