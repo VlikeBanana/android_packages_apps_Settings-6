@@ -23,16 +23,17 @@
     <color name="grey_text">#ff5c5c5c</color>
     <color name="white">#FFF</color>
     <color name="black">#000</color>
+    <color name="black_data">#80666666</color>
     <color name="red">#F00</color>
 
     <color name="memory_used">#F00</color>
     <color name="memory_avail">#333333</color>
-    <color name="memory_apps_usage">#77831A</color>
-    <color name="memory_downloads">#476093</color>
-    <color name="memory_dcim">#793A7F</color>
-    <color name="memory_music">#8E562A</color>
-    <color name="memory_cache">#479392</color>
-    <color name="memory_misc">#7C3030</color>
+    <color name="memory_apps_usage">#99CC00</color>
+    <color name="memory_downloads">#33B5E5</color>
+    <color name="memory_dcim">#9933CC</color>
+    <color name="memory_music">#FF8800</color>
+    <color name="memory_cache">#FFF200</color>
+    <color name="memory_misc">#FF4444</color>
     <color name="memory_user_light">#479392</color>
     <color name="memory_user_dark">#316665</color>
 

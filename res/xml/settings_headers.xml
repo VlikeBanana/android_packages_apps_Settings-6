@@ -16,7 +16,7 @@
 
 <preference-headers
         xmlns:android="http://schemas.android.com/apk/res/android"
-        style="@style/Theme.Settings.Main">
+        android:theme="@style/Theme.Settings.Main">
 
     <!-- Networking Section -->
     <header android:id="@+id/wireless_section"
