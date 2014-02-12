@@ -41,7 +41,7 @@ public class ColorPanelView extends View {
     private static float mDensity = 1f;
 
     private int mBorderColor = 0xff6E6E6E;
-    private int mColor = 0xff000000;
+    private int mColor = 0xff5C5C5C;
 
     private Paint mBorderPaint;
     private Paint mColorPaint;

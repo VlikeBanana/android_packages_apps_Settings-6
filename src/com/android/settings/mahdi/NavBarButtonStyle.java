@@ -83,7 +83,7 @@ public class NavBarButtonStyle extends SettingsPreferenceFragment implements
                     com.android.internal.R.color.white);
             mNavigationBarButtonColor.setSummary(getResources().getString(R.string.default_string));
         } else {
-            String hexColor = String.format("#%08x", (0xffffffff & intColor));
+            String hexColor = String.format("#%08x", (0xff5c5c5c & intColor));
             mNavigationBarButtonColor.setSummary(hexColor);
         }
         mNavigationBarButtonColor.setNewPreviewColor(intColor);
@@ -97,7 +97,7 @@ public class NavBarButtonStyle extends SettingsPreferenceFragment implements
                     com.android.internal.R.color.white);
             mNavigationBarGlowColor.setSummary(getResources().getString(R.string.default_string));
         } else {
-            String hexColor = String.format("#%08x", (0xffffffff & intColor));
+            String hexColor = String.format("#%08x", (0xff5c5c5c & intColor));
             mNavigationBarGlowColor.setSummary(hexColor);
         }
         mNavigationBarGlowColor.setNewPreviewColor(intColor);

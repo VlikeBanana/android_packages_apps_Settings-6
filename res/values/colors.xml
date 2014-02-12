@@ -21,8 +21,8 @@
     <color name="holo_grey_trans">#c0666666</color>
     <color name="holo_grey_transparent">#66666666</color>
     <color name="grey_text">#ff5c5c5c</color>
-    <color name="white">#FFF</color>
-    <color name="black">#000</color>
+    <color name="white">#FF5C5C5C</color>
+    <color name="black">#FF5C5C5C</color>
     <color name="black_data">#80666666</color>
     <color name="red">#F00</color>
 
@@ -42,7 +42,7 @@
     <color name="crypt_keeper_clock_am_pm">#ff9a9a9a</color>
 
     <color name="divider_color">#ff999999</color>
-    <color name="title_color">@android:color/holo_blue_light</color>
+    <color name="title_color">#ff5c5c5c</color>
     <color name="setup_divider_color_dark">#335c5c5c</color>
     <color name="setup_divider_color_light">#335c5c5c</color>
 
@@ -52,10 +52,9 @@
 
     <color name="auto_brightness_preview_background">@android:color/black</color>
     <color name="auto_brightness_preview_foreground">@android:color/white</color>
-    <color name="auto_brightness_preview_markers">@android:color/holo_blue_light</color>
+    <color name="auto_brightness_preview_markers">#ffa4a4a4</color>
     <color name="auto_brightness_preview_grid">#44ffffff</color>
 
     <color name="tab_selector">#FF666666</color>
     <color name="purple_data">#FF9933CC</color>
-    <color name="purple_data_trans">#c06
 </resources>
