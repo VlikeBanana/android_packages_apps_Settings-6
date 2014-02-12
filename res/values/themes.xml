@@ -71,8 +71,8 @@
         <item name="wifi_signal">@drawable/wifi_signal_light</item>
         <item name="android:actionBarStyle">@style/ActionBar</item>
         <item name="android:textColor">@color/grey_text</item>
+        <item name="android:textColorPrimary">@color/grey_text</item>
         <item name="android:listDivider">@android:color/transparent</item>
-
     </style>
 
     <style name="Theme.Settings.Main" parent="@android:style/Theme.Holo.Light">
@@ -83,6 +83,7 @@
         <item name="wifi_signal">@drawable/wifi_signal_light</item>
         <item name="android:actionBarStyle">@style/ActionBar</item>
         <item name="android:textColor">@color/grey_text</item>
+        <item name="android:textColorPrimary">@color/grey_text</item>
         <item name="android:listDivider">@android:color/transparent</item>
         <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector_holo_light</item>
     </style>

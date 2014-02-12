@@ -88,11 +88,20 @@
     <style name="Theme.CreateShortCut" parent="android:Theme.Holo.Light.DialogWhenLarge">
     </style>
 
-    <style name="VertDivider">
+    <style name="VertDivider" parent="@style/Theme.Settings.Main">
         <item name="android:layout_width">@dimen/vert_divider_width</item>
         <item name="android:layout_height">fill_parent</item>
         <item name="android:left">@dimen/vert_divider_width</item>        
         <item name="android:right">@dimen/vert_divider_width</item>
+        <item name="android:background">@color/divider_color</item>
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">false</item>
+        <item name="android:layout_marginLeft">@dimen/vert_divider_side</item>
+    </style>
+
+    <style name="VertDividerSub" parent="@style/Theme.Settings">
+        <item name="android:layout_width">@dimen/vert_divider_width</item>
+        <item name="android:layout_height">fill_parent</item>
         <item name="android:background">@color/divider_color</item>
         <item name="android:focusable">false</item>
         <item name="android:clickable">false</item>
