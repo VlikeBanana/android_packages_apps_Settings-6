@@ -33,6 +33,7 @@
     <string name="attention">Attention</string>
     <string name="default_string">Default</string>
     <string name="enabled">Enabled</string>
+    <string name="disabled">Disabled</string>
     <string name="add">Add</string>
     <string name="reset_message">Reset all entries to default?</string>
     <string name="style_title">Style</string>  
@@ -1680,5 +1681,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="time_quarter_to">Quarter till</string>
     <string name="time_ten_to">Ten till</string>
     <string name="time_five_to">Five till</string>
+
+    <!-- Notification Reminders -->
+    <string name="noti_reminder_category">Notification reminder</string>
+    <string name="noti_reminder_enable_title">Enable notification reminder</string>
+    <string name="noti_reminder_sound_title">Notify sound</string>
+    <string name="noti_reminder_sound_looping">Until dismissed</string>
+    <string name="noti_reminder_ringtone">Notify ringtone</string>
 
 </resources>

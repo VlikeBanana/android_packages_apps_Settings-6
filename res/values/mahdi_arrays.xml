@@ -1569,7 +1569,7 @@
         <item>5</item>
         <item>10</item>
     </string-array>
-    
+
     <!-- Driving Mode OMNI -->
      <string-array name="voice_tts_annoy_notif_entries">
         <item>@string/voice_tts_annoy_notif_default</item>
@@ -1595,6 +1595,19 @@
         <item>60000</item>
         <item>120000</item>
         <item>300000</item>
+    </string-array>
+
+    <!-- Notification reminder sounds -->
+    <string-array name="noti_reminder_sound_entries">
+        <item>@string/disabled</item>
+        <item>@string/enabled</item>
+        <item>@string/noti_reminder_sound_looping</item>
+    </string-array>
+
+    <string-array name="noti_reminder_sound_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
     </string-array>
 
 </resources>
