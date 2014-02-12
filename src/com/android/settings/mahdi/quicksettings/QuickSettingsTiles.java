@@ -27,6 +27,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.Fragment;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.CursorLoader;
 import android.content.Intent;
@@ -37,6 +38,7 @@ import android.content.res.Resources;
 import android.content.res.Resources.NotFoundException;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -65,9 +67,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.internal.util.mahdi.AppHelper;
+import com.android.internal.util.mahdi.Converter;
 import com.android.internal.util.mahdi.DeviceUtils;
+import com.android.internal.util.mahdi.ImageHelper;
 import com.android.internal.util.mahdi.LockscreenTargetUtils;
 import com.android.internal.util.mahdi.QSConstants;
+
 import com.android.settings.mahdi.quicksettings.DraggableGridView;
 import com.android.settings.mahdi.quicksettings.QuickSettingsUtil.TileInfo;
 import com.android.settings.mahdi.util.IconPicker;
@@ -79,6 +84,7 @@ import com.android.settings.R;
 import android.util.Log;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.text.Collator;
@@ -518,15 +524,23 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
 
         Drawable icon = null;
         if (uri != null) {
+            String extraIconPath = uri.replaceAll(".*?hasExtraIcon=", "");
             String iconUri = QuickSettingsUtil.getActionsAtIndex(getActivity(),
                 index, 2, mCurrentCustomTile);
-            if (iconUri != null && iconUri.length() > 0) {
-                File f = new File(Uri.parse(iconUri).getPath());
+            if ((iconUri != null && iconUri.length() > 0)
+                    || (extraIconPath != null && extraIconPath.length() > 0)) {
+                File f = new File(Uri.parse(
+                        (iconUri != null ? iconUri : extraIconPath)).getPath());
                 if (f.exists()) {
                     icon = new BitmapDrawable(
                             getResources(), f.getAbsolutePath());
-                    }
-                } else {
+                }
+                if (icon != null) {
+                    icon = ImageHelper.resize(
+                        getActivity(), icon, Converter.dpToPx(getActivity(), 48));
+                }
+            }
+            if (icon == null) {
                 try {
                     Intent intent = Intent.parseUri(uri, 0);
                     icon = LockscreenTargetUtils.getDrawableFromIntent(getActivity(), intent);
@@ -601,7 +615,7 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
                             null, path, null, null, null, null);
                     setResolvedImage();
                 } else {
-                    deleteCustomIcon();  // Delete current icon if it exists before saving new.
+                    deleteCustomIcon(-1);  // Delete current icon if it exists before saving new.
                     QuickSettingsUtil.saveCustomActions(getActivity(), mCurrentAction, 2,
                             path, mCurrentCustomTile);
 
@@ -616,13 +630,11 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
     }
 
     @Override
-    public void shortcutPicked(String uri, String friendlyName, boolean isApplication) {
+    public void shortcutPicked(String uri,
+            String friendlyName, Bitmap bmp, boolean isApplication) {
         if (uri == null || mCurrentAction == -1) {
             return;
         }
-
-        Drawable icon = null;
-
         boolean changeIcon = false;
         int setting = 0;
 
@@ -636,8 +648,25 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
             setting = 1;
         }
 
+        if (bmp != null && changeIcon) {
+            // Icon is present, save it for future use and add the file path to the action.
+            String fileName = getActivity().getFilesDir()
+                    + File.separator + "shortcut_" + System.currentTimeMillis() + ".png";
+            try {
+                FileOutputStream out = new FileOutputStream(fileName);
+                bmp.compress(Bitmap.CompressFormat.PNG, 100, out);
+                out.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                uri = uri + "?hasExtraIcon=" + fileName;
+                File image = new File(fileName);
+                image.setReadable(true, false);
+            }
+        }
+
         if (changeIcon) {
-            deleteCustomIcon();
+            deleteCustomIcon(setting);
         }
 
         QuickSettingsUtil.saveCustomActions(getActivity(),
@@ -646,7 +675,7 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
         setDialogIconsAndText(mCurrentAction);
     }
 
-    private void deleteCustomIcon() {
+    private void deleteCustomIcon(int setting) {
         String path = QuickSettingsUtil.getActionsAtIndex(getActivity(),
                 mCurrentAction, 2, mCurrentCustomTile);
 
@@ -654,6 +683,17 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
             File f = new File(path);
             if (f != null && f.exists()) {
                 f.delete();
+            }
+        }
+
+        if (setting != -1) {
+            String uri = QuickSettingsUtil.getActionsAtIndex(getActivity(),
+                    mCurrentAction, setting, mCurrentCustomTile);
+            if (uri != null) {
+                File f = new File(uri.replaceAll(".*?hasExtraIcon=", ""));
+                if (f.exists()) {
+                    f.delete();
+                }
             }
         }
         QuickSettingsUtil.saveCustomActions(getActivity(),
@@ -708,6 +748,10 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
             case R.id.reset_five:
                 deleteAction(4);
                 break;
+            case R.id.icon_extra:
+                mCurrentAction = 5;
+                beginImagePick();
+                break;
         }
     }
 
@@ -745,20 +789,25 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
         }
 
         if (uri != null) {
-            try {
-                mTemporaryImage.createNewFile();
-                mTemporaryImage.setWritable(true, false);
-                // Layout will scale down for us
-                mIconPicker.pickGalleryWithSize(
-                    getId(), mTemporaryImage, 360);
-            } catch (IOException e) {
-                Log.d(TAG, "Could not create temporary icon", e);
-            }
+            beginImagePick();
         } else {
             Toast.makeText(getActivity(), R.string.custom_tile_null_warning,
                     Toast.LENGTH_LONG).show();
         }
     }
+
+    private void beginImagePick() {
+        try {
+            mTemporaryImage.createNewFile();
+            mTemporaryImage.setWritable(true, false);
+            // Layout will scale down for us
+            mIconPicker.pickGalleryWithSize(
+                getId(), mTemporaryImage, 360);
+        } catch (IOException e) {
+            Log.d(TAG, "Could not create temporary icon", e);
+        }
+    }
+
 
     private void prepareCustomAction(int action, boolean shortpress) {
         mCurrentAction = action;
@@ -919,12 +968,16 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
                         intent = null;
                         checkClick = QuickSettingsUtil.getActionsAtIndex(getActivity(),
                                 i, 0, tileKey);
-                        if (checkClick != null) {
+                    if (checkClick != null) {
                             actions++;
                             try {
                                 intent = Intent.parseUri(checkClick, 0);
-                                String intentClass = intent.getComponent().getClassName();
-                                className = intentClass.substring(intentClass.lastIndexOf(".") + 1);
+                                ComponentName comp = intent.getComponent();
+                                if (comp != null) {
+                                    String intentClass = comp.getClassName();
+                                    className = intentClass.substring(
+                                            intentClass.lastIndexOf(".") + 1);
+                                }
                             } catch (URISyntaxException e) {
                                 // Tricky user
                             }
