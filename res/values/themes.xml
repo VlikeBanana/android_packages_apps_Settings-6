@@ -90,4 +90,5 @@
 
     <style name="ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
         <item name="android:icon">@mipmap/ic_settings_actionbar</item>
+    </style>
 </resources>
