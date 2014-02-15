@@ -72,7 +72,6 @@
         <item name="android:actionBarStyle">@style/ActionBar</item>
         <item name="android:textColor">@color/grey_text</item>
         <item name="android:textColorPrimary">@color/grey_text</item>
-        <item name="android:listDivider">@android:color/transparent</item>
     </style>
 
     <style name="Theme.Settings.Main" parent="@android:style/Theme.Holo.Light">
@@ -84,8 +83,8 @@
         <item name="android:actionBarStyle">@style/ActionBar</item>
         <item name="android:textColor">@color/grey_text</item>
         <item name="android:textColorPrimary">@color/grey_text</item>
-        <item name="android:listDivider">@android:color/transparent</item>
         <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector_holo_light</item>
+        <item name="android:listSelector">@drawable/list_selector_holo_light</item>
     </style>
 
     <style name="ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">

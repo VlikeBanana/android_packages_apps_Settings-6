@@ -72,7 +72,7 @@ public class NotificationsShortcutFragment extends SettingsPreferenceFragment {
             mNotificationShortcutsColor.setSummary(
                 getResources().getString(R.string.default_string));
         } else {
-            String hexColor = String.format("#%08x", (0xffffffff & intColor));
+            String hexColor = String.format("#%08x", (0xff5c5c5c & intColor));
             mNotificationShortcutsColor.setSummary(hexColor);
         }
         mNotificationShortcutsColor.setNewPreviewColor(intColor);

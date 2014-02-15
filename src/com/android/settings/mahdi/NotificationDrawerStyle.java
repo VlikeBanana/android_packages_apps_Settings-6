@@ -358,7 +358,7 @@ public class NotificationDrawerStyle extends SettingsPreferenceFragment implemen
                                 getOwner().getContentResolver(),
                                 Settings.System.NOTIFICATION_BACKGROUND,
                                 "color=" + String.format("#%06X",
-                                (0xFFFFFF & colorView.getColor())));
+                                (0x5C5C5C & colorView.getColor())));
                             getOwner().updateCustomBackgroundSummary();
                         }
                     })
