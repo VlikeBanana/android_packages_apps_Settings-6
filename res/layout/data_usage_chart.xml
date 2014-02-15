@@ -35,9 +35,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start|bottom"
-        settings:primaryDrawable="@color/holo_grey"
-        settings:secondaryDrawable="@color/black_data"
-        settings:borderDrawable="@color/holo_grey"
+        settings:primaryDrawable="@color/data_grid_primary"
+        settings:secondaryDrawable="@color/data_grid_secondary"
+        settings:borderDrawable="@drawable/date_grid_border"
         settings:labelColor="@color/purple_data" />
 
     <com.android.settings.widget.ChartNetworkSeriesView
