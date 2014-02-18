@@ -56,5 +56,8 @@
     <color name="auto_brightness_preview_grid">#44ffffff</color>
 
     <color name="tab_selector">#FF666666</color>
+    <!-- Data Chart Colors -->
     <color name="purple_data">#FF9933CC</color>
+    <color name="purple_data_trans">#c0aa66cc</color>
+    <color name="purple_data_transparent">#66aa66cc</color>
 </resources>
