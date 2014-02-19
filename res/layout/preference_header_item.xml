@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 
-<!-- Layout of a header item in PreferenceActivity. - Main Menus Theming -->
+<!-- Layout of a header item in PreferenceActivity. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

@@ -46,6 +46,7 @@
         <item name="android:paddingBottom">10dip</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/grey_text</item>
     </style>
 
     <style name="entry_layout">
@@ -88,7 +89,7 @@
     <style name="Theme.CreateShortCut" parent="android:Theme.Holo.Light.DialogWhenLarge">
     </style>
 
-    <style name="VertDivider" parent="@style/Theme.Settings">
+    <style name="VertDivider">
         <item name="android:layout_width">@dimen/vert_divider_width</item>
         <item name="android:layout_height">fill_parent</item>
         <item name="android:background">@color/divider_color</item>
@@ -97,7 +98,7 @@
         <item name="android:layout_marginLeft">@dimen/vert_divider_side</item>
     </style>
 
-    <style name="VertDivider" parent="@style/Theme.Settings.Main">
+    <style name="VertDividerMain">
         <item name="android:layout_width">@dimen/vert_divider_width</item>
         <item name="android:layout_height">fill_parent</item>    
         <item name="android:right">@dimen/vert_divider_width</item>
