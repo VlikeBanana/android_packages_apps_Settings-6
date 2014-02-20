@@ -45,6 +45,7 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
     Preference mXposed;
     Preference mXposedMod;
     Preference mGerrit;
+    Preference mGoogleCamera;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,6 +60,7 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
         mXposed = findPreference("xposed");
         mXposedMod = findPreference("xposed_mod");
         mGerrit = findPreference("gerrit");
+        mGoogleCamera = findPreference("google_camera");
     }
 
     @Override
@@ -90,6 +92,11 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
             return true;
         } else if (preference == mGerrit) {
             Uri uri = Uri.parse("http://goo.gl/kecgnt");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+            return true;
+        } else if (preference == mGoogleCamera) {
+            Uri uri = Uri.parse("http://goo.gl/PM7W6t");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;
