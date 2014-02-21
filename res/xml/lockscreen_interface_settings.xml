@@ -25,7 +25,7 @@
     </PreferenceScreen>
 
     <PreferenceCategory
-        android:title="@string/style_title"
+        android:title="@string/title_general"
         android:key="lockscreen_general_category" >
 
 	<PreferenceScreen
@@ -50,18 +50,6 @@
       	    android:summary="@string/battery_around_lockscreen_ring_summary"
             android:defaultValue="true" />
 
-        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
-            android:key="lockscreen_see_through"
-            android:title="@string/lockscreen_see_through_title"
-            android:summary="@string/lockscreen_see_through_summary"
-            android:defaultValue="false" />
-
-        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
-	    android:key="global_immersive_mode_system_bars_visibility"
-	    android:title="@string/global_immersive_mode_system_bars_visibility"
-	    android:summary="@string/global_immersive_mode_system_bars_visibility_summary"
-	    android:defaultValue="false" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -85,6 +73,51 @@
             android:key="lockscreen_buttons"
             android:title="@string/lockscreen_buttons_title"
             android:summary="@string/lockscreen_buttons_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/style_title"
+        android:key="lockscreen_style_category" >
+
+        <CheckBoxPreference
+            android:key="see_through"
+            android:title="@string/lockscreen_see_through_title"
+            android:summary="@string/lockscreen_see_through_summary"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="blur_behind"
+            android:title="@string/blur_behind_title"
+            android:summary="@string/blur_behind_summary"
+            android:defaultValue="false" />
+
+        <SeekBarPreference
+            android:key="blur_radius"
+            android:title="@string/blur_radius_title"
+            android:summary="@string/blur_radius_summary"
+            android:max="25"
+            android:defaultValue="12" />
+
+        <ListPreference
+            android:key="lockscreen_background_style"
+            android:persistent="false"
+            android:dialogTitle="@string/lockscreen_background_style_title"
+            android:title="@string/lockscreen_background_style_title"
+            android:entries="@array/lockscreen_background_entries"
+            android:entryValues="@array/lockscreen_background_values" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="lockscreen_background_color_fill"
+            android:title="@string/background_color_fill_title"
+            android:defaultValue="0xff000000"
+            alphaSlider="true" />
+
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+            android:key="global_immersive_mode_system_bars_visibility"
+            android:title="@string/global_immersive_mode_system_bars_visibility"
+            android:summary="@string/global_immersive_mode_system_bars_visibility_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 	    
