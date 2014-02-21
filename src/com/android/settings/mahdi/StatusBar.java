@@ -47,12 +47,14 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private static final String NETWORK_TRAFFIC_STATE = "network_traffic_state";
     private static final String NETWORK_TRAFFIC_UNIT = "network_traffic_unit";
     private static final String NETWORK_TRAFFIC_PERIOD = "network_traffic_period";
+    private static final String STATUS_BAR_BATTERY = "status_bar_battery";
 
     private PreferenceScreen mClockStyle;
     private CheckBoxPreference mStatusBarBrightnessControl;
     private ListPreference mNetTrafficState;
     private ListPreference mNetTrafficUnit;
     private ListPreference mNetTrafficPeriod;
+    private ListPreference mStatusBarBattery;
 
     private int mNetTrafficVal;
     private int MASK_UP;
@@ -69,7 +71,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         addPreferencesFromResource(R.xml.status_bar);
 
         PreferenceScreen prefSet = getPreferenceScreen();
-        ContentResolver resolver = getActivity().getContentResolver();
+        ContentResolver resolver = getActivity().getContentResolver();        
 
         // Start observing for changes on auto brightness
         StatusBarBrightnessChangedObserver statusBarBrightnessChangedObserver =
@@ -86,6 +88,13 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mStatusBarBrightnessControl.setChecked((Settings.System.getInt(getContentResolver(),
                             Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0) == 1));
         mStatusBarBrightnessControl.setOnPreferenceChangeListener(this);
+
+        mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY);
+
+        int batteryStyle = Settings.System.getInt(resolver, Settings.System.STATUS_BAR_BATTERY, 0);
+        mStatusBarBattery.setValue(String.valueOf(batteryStyle));
+        mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
+        mStatusBarBattery.setOnPreferenceChangeListener(this);
 
         mNetTrafficState = (ListPreference) prefSet.findPreference(NETWORK_TRAFFIC_STATE);
         mNetTrafficUnit = (ListPreference) prefSet.findPreference(NETWORK_TRAFFIC_UNIT);
@@ -128,7 +137,12 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         if (preference == mStatusBarBrightnessControl) {
             boolean value = (Boolean) objValue;
             Settings.System.putInt(resolver, Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL,
-                    value ? 1 : 0);        
+                    value ? 1 : 0);
+        } else if (preference == mStatusBarBattery) {
+            int batteryStyle = Integer.valueOf((String) objValue);
+            int index = mStatusBarBattery.findIndexOfValue((String) objValue);
+            Settings.System.putInt(resolver, Settings.System.STATUS_BAR_BATTERY, batteryStyle);
+            mStatusBarBattery.setSummary(mStatusBarBattery.getEntries()[index]);
         } else if (preference == mNetTrafficState) {
             int intState = Integer.valueOf((String)objValue);
             mNetTrafficVal = setBit(mNetTrafficVal, MASK_UP, getBit(intState, MASK_UP));
@@ -159,7 +173,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             return false;
         }
         return true;
-    }
+    }        
 
     @Override
     public void onResume() {
