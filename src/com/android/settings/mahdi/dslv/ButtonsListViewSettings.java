@@ -500,6 +500,70 @@ public class ButtonsListViewSettings extends ListFragment implements
         }
     }
 
+    private void pickIcon() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
+        builder.setTitle(R.string.icon_picker_type)
+                .setItems(R.array.icon_types, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch(which) {
+                            case 0: // Default
+                                updateButton(null, null,
+                                    ButtonsConstants.ICON_EMPTY, mPendingIndex, false);
+                                mPendingIndex = -1;
+                                break;
+                            case 1: // System defaults
+                                ListView list = new ListView(mActivity);
+                                list.setAdapter(new IconAdapter());
+                                final Dialog holoDialog = new Dialog(mActivity);
+                                holoDialog.setTitle(R.string.icon_picker_choose_icon_title);
+                                holoDialog.setContentView(list);
+                                list.setOnItemClickListener(new OnItemClickListener() {
+                                    @Override
+                                    public void onItemClick(AdapterView<?> parent, View view,
+                                            int position, long id) {
+                                        IconAdapter adapter = (IconAdapter) parent.getAdapter();
+                                        updateButton(null, null,
+                                            adapter.getItemReference(position),
+                                            mPendingIndex, false);
+                                        mPendingIndex = -1;
+                                        holoDialog.cancel();
+                                    }
+                                });
+                                holoDialog.show();
+                                break;
+                            case 2: // Custom user icon
+                                Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+                                intent.setType("image/*");
+                                intent.putExtra("crop", "true");
+                                intent.putExtra("scale", true);
+                                intent.putExtra("outputFormat",
+                                    Bitmap.CompressFormat.PNG.toString());
+                                intent.putExtra("aspectX", 100);
+                                intent.putExtra("aspectY", 100);
+                                intent.putExtra("outputX", 100);
+                                intent.putExtra("outputY", 100);
+                                try {
+                                    mImageTmp.createNewFile();
+                                    mImageTmp.setWritable(true, false);
+                                    intent.putExtra(MediaStore.EXTRA_OUTPUT,
+                                        Uri.fromFile(mImageTmp));
+                                    intent.putExtra("return-data", false);
+                                    startActivityForResult(intent, REQUEST_PICK_CUSTOM_ICON);
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                } catch (ActivityNotFoundException e) {
+                                    e.printStackTrace();
+                                }
+                                break;
+                        }
+                    }
+                }
+        );
+        builder.setNegativeButton(R.string.cancel, null);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
     private class ViewHolder {
         public TextView longpressActionDescriptionView;
         public ImageView iconView;
@@ -539,24 +603,69 @@ public class ButtonsListViewSettings extends ListFragment implements
                 holder.longpressActionDescriptionView.setText(
                     getResources().getString(R.string.shortcut_action_longpress)
                     + " " + getItem(position).getLongpressActionDescription());
-            } else {
-                holder.iconView.setImageDrawable(ImageHelper.resize(
-                        mActivity, ButtonsHelper.getButtonIconImage(mActivity,
-                        getItem(position).getClickAction(),
-                        getItem(position).getIcon()), 36));
             }
+            holder.iconView.setImageDrawable(ButtonsHelper.getButtonIconImage(mActivity,
+                    getItem(position).getClickAction(), getItem(position).getIcon()));
 
-            if (!mDisableIconPicker && holder.iconView.getDrawable() != null) {
+            if (!mDisableIconPicker) {
                 holder.iconView.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         mPendingIndex = position;
-                        showDialogInner(DLG_SHOW_ICON_PICKER, 0, false, false);
+                        pickIcon();
                     }
                 });
             }
 
             return v;
+        }
+    }
+
+    public class IconAdapter extends BaseAdapter {
+
+        TypedArray icons;
+        String[] labels;
+
+        public IconAdapter() {
+            labels = getResources().getStringArray(R.array.shortcut_icon_picker_labels);
+            icons = getResources().obtainTypedArray(R.array.shortcut_icon_picker_icons);
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return icons.getDrawable(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public int getCount() {
+            return labels.length;
+        }
+
+        public String getItemReference(int position) {
+            String name = icons.getString(position);
+            int separatorIndex = name.lastIndexOf(File.separator);
+            int periodIndex = name.lastIndexOf('.');
+            return ButtonsConstants.SYSTEM_ICON_IDENTIFIER
+                + name.substring(separatorIndex + 1, periodIndex);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View iView = convertView;
+            if (convertView == null) {
+                iView = View.inflate(mActivity, android.R.layout.simple_list_item_1, null);
+            }
+            TextView tt = (TextView) iView.findViewById(android.R.id.text1);
+            tt.setText(labels[position]);
+            Drawable ic = ((Drawable) getItem(position)).mutate();
+            tt.setCompoundDrawablePadding(15);
+            tt.setCompoundDrawablesWithIntrinsicBounds(ic, null, null, null);
+            return iView;
         }
     }
 
