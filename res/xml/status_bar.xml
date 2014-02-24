@@ -28,11 +28,11 @@
             android:summary="@string/status_bar_toggle_brightness_summary"
             android:defaultValue="false" />
 
-        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
-	    android:key="double_tap_sleep_gesture"
-	    android:title="@string/double_tap_to_sleep"
-	    android:summary="@string/double_tap_to_sleep_summary"
-	    android:defaultValue="false" />
+        <PreferenceScreen
+            android:fragment="com.android.settings.mahdi.DoubleTapToSleepSettings"
+            android:key="double_tap_sleep"
+            android:title="@string/double_tap_sleep_title"
+            android:summary="@string/double_tap_to_sleep_summary" />
 
     </PreferenceCategory>
 

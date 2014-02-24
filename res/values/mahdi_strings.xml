@@ -1333,10 +1333,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="notif_wallpaper_alpha_title">Background transparency</string>
     <string name="notif_alpha_title">Notification transparency</string>
 
-    <!-- Double tap to sleep -->
-    <string name="double_tap_to_sleep">Double tap to sleep</string>
-    <string name="double_tap_to_sleep_summary">If this option is enabled you can put the device to sleep by double tapping the statusbar</string>
-
     <!-- Title for PreferenceScreen to change encryption password [CHAR LIMIT=22] -->
     <string name="change_crypt_password_title">Change password</string>
     <!-- Summary for PreferenceScreen to change encryption password [CHAR LIMIT=45] -->
@@ -1706,6 +1702,19 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Lockscreen see through -->
     <string name="lockscreen_see_through_title">See through</string>
-    <string name="lockscreen_see_through_summary">Shows the content behind your lockscreen but your data may be visible to those around you.</string>
+    <string name="lockscreen_see_through_summary">Shows the content behind your lockscreen but your data may be visible to those around you!</string>
+
+    <!-- Double-tap to sleep -->
+    <string name="double_tap_sleep_title">Double-tap to sleep</string>
+    <string name="double_tap_to_sleep_summary">View or change double-tap to sleep options</string>
+    <string name="double_tap_sleep_secure_lockscreen_category">Secure lockscreen</string>
+    <string name="status_bar_double_tap_sleep_status_bar_title">Status bar</string>
+    <string name="status_bar_double_tap_sleep_status_bar_summary">Double tap anywhere on the status bar</string>
+    <string name="status_bar_double_tap_sleep_glowpad_title">Glow pad</string>
+    <string name="status_bar_double_tap_sleep_glowpad_summary">Double tap the glow pad</string>
+    <string name="status_bar_double_tap_sleep_pin_password_title">Pin and Password</string>
+    <string name="status_bar_double_tap_sleep_pin_password_summary">Double tap the text entry view</string>
+    <string name="status_bar_double_tap_sleep_pattern_title">Pattern</string>
+    <string name="status_bar_double_tap_sleep_pattern_summary">Double tap anywhere on the pattern view</string>
 
 </resources>
