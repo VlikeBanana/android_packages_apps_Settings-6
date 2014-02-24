@@ -52,6 +52,7 @@
             android:fragment="com.android.settings.mahdi.QuickSettingsTiles" >
             <extra android:name="config_ribbon" android:value="true" />
         </PreferenceScreen>
+
     </PreferenceCategory>
 
     <PreferenceCategory
