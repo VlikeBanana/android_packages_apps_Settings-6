@@ -1555,4 +1555,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pref_battery_saver_enable_no_mobiledata_summary">This will automatically manage your device battery usage to user-defined</string>
     <string name="pref_battery_saver_wifi_title">Disable WiFi</string>
     <string name="pref_battery_saver_wifi_summary">Disable wifi connection when power saving activated</string>
+
+    <string name="global_immersive_mode_system_bars_visibility">System bars visibility</string>
+    <string name="global_immersive_mode_system_bars_visibility_summary">Show panels on lockscreen in global immersive mode</string>
 </resources>
