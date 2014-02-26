@@ -48,11 +48,13 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
     private static final String STATUS_BAR_CUSTOM_HEADER = "custom_status_bar_header";
     private static final String PREF_NOTI_REMINDER_SOUND = "noti_reminder_sound";
     private static final String PREF_NOTI_REMINDER_ENABLED = "noti_reminder_enabled";
+    private static final String PREF_NOTI_REMINDER_INTERVAL = "noti_reminder_interval";
     private static final String PREF_NOTI_REMINDER_RINGTONE = "noti_reminder_ringtone";
 
     private ListPreference mHideLabels;
     private CheckBoxPreference mStatusBarCustomHeader;
     private CheckBoxPreference mReminder;
+    private ListPreference mReminderInterval;
     private ListPreference mReminderMode;
     private RingtonePreference mReminderRingtone;
 
@@ -80,6 +82,12 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
         mReminder.setChecked(Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.REMINDER_ALERT_ENABLED, 0, UserHandle.USER_CURRENT) == 1);
         mReminder.setOnPreferenceChangeListener(this);
+
+        mReminderInterval = (ListPreference) findPreference(PREF_NOTI_REMINDER_INTERVAL);
+        int interval = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.REMINDER_ALERT_INTERVAL, 0, UserHandle.USER_CURRENT);
+        mReminderInterval.setOnPreferenceChangeListener(this);
+        updateReminderIntervalSummary(interval);
 
         mReminderMode = (ListPreference) findPreference(PREF_NOTI_REMINDER_SOUND);
         int mode = Settings.System.getIntForUser(getContentResolver(),
@@ -145,6 +153,12 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
                     Settings.System.REMINDER_ALERT_ENABLED,
                     (Boolean) objValue ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
+        } else if (preference == mReminderInterval) {
+            int interval = Integer.valueOf((String) objValue);
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.REMINDER_ALERT_INTERVAL,
+                    interval, UserHandle.USER_CURRENT);
+            updateReminderIntervalSummary(interval);
         } else if (preference == mReminderMode) {
             int mode = Integer.valueOf((String) objValue);
             Settings.System.putIntForUser(getContentResolver(),
@@ -184,6 +198,35 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
         text.append(" " + res.getString(R.string.notification_hide_labels_text));
 
         mHideLabels.setSummary(text.toString());
+    }
+
+    private void updateReminderIntervalSummary(int value) {
+        int resId;
+        switch (value) {
+            case 1000:
+                resId = R.string.noti_reminder_interval_1s;
+                break;
+            case 2000:
+                resId = R.string.noti_reminder_interval_2s;
+                break;
+            case 2500:
+                resId = R.string.noti_reminder_interval_2dot5s;
+                break;
+            case 3000:
+                resId = R.string.noti_reminder_interval_3s;
+                break;
+            case 3500:
+                resId = R.string.noti_reminder_interval_3dot5s;
+                break;
+            case 4000:
+                resId = R.string.noti_reminder_interval_4s;
+                break;
+            default:
+                resId = R.string.noti_reminder_interval_1dot5s;
+                break;
+        }
+        mReminderInterval.setValue(Integer.toString(value));
+        mReminderInterval.setSummary(getResources().getString(resId));
     }
 
     private void updateReminderModeSummary(int value) {
