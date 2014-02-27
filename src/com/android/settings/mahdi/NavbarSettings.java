@@ -93,14 +93,9 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         mEnableNavigationBar.setOnPreferenceChangeListener(this);
 
         mNavigationBarCanMove = (CheckBoxPreference) findPreference(PREF_NAVIGATION_BAR_CAN_MOVE);
-        if (DeviceUtils.isPhone(getActivity())) {
-            mNavigationBarCanMove.setChecked(Settings.System.getInt(getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_CAN_MOVE, 1) == 0);
-            mNavigationBarCanMove.setOnPreferenceChangeListener(this);
-        } else {
-            prefs.removePreference(mNavigationBarCanMove);
-            mNavigationBarCanMove = null;
-        }
+        mNavigationBarCanMove.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.NAVIGATION_BAR_CAN_MOVE, 1) == 0);
+        mNavigationBarCanMove.setOnPreferenceChangeListener(this);
 
         mEmulateMenuKey = (CheckBoxPreference) findPreference(EMULATE_MENU_KEY);
         mEmulateMenuKey.setChecked(Settings.System.getInt(getContentResolver(),
@@ -112,10 +107,10 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         updateNavbarPreferences(enableNavigationBar);
 
         if (!Utils.isPhone(getActivity())) {
-            PreferenceCategory navCategory =
+            PreferenceCategory advanced_cat =
                 (PreferenceCategory) findPreference(CATEGORY_ADVANCED);
-            navCategory.removePreference(mNavigationBarLeftPref);
-            navCategory.removePreference(mNavigationBarCanMove);
+            advanced_cat.removePreference(mNavigationBarLeftPref);
+            advanced_cat.removePreference(mNavigationBarCanMove);
         }
     }
 
