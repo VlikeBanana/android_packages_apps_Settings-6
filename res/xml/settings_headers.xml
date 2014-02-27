@@ -16,7 +16,8 @@
 
 <preference-headers
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:theme="@style/Theme.Settings.Main">
+        android:theme="@style/Theme.Settings.Main"
+        android:background="@drawable/background_list_view">
 
     <!-- Networking Section -->
     <header android:id="@+id/wireless_section"
@@ -167,24 +168,24 @@
         android:fragment="com.android.settings.mahdi.PrivacySettings"
         android:icon="@drawable/ic_settings_privacy"
         android:title="@string/privacy_settings_mahdi_title"
-        android:id="@+id/privacy_settings_mahdi" 
-        android:layout_gravity="fill" />
+        android:id="@+id/privacy_settings_mahdi"  />
 
     <!-- Security -->
     <header
+        android:id="@+id/security_settings_header"
         android:fragment="com.android.settings.SecuritySettings"
         android:icon="@drawable/ic_settings_security"
         android:title="@string/security_settings_title"
-        android:id="@+id/security_settings" 
-        android:layout_gravity="fill" />
+        android:layout_gravity="fill" 
+        android:background="@drawable/background_list_view" />
 
-    <!-- Profiles -->
+    <!-- Profiles
     <header
         android:id="@+id/profiles_settings"
         android:icon="@drawable/ic_settings_profiles"
         android:fragment="com.android.settings.profiles.ProfilesSettings"
         android:title="@string/profiles_settings_title" 
-        android:layout_gravity="fill" />
+        android:layout_gravity="fill" /> -->
 
     <!-- Language -->
     <header
@@ -216,7 +217,7 @@
             android:action="android.settings.ADD_ACCOUNT_SETTINGS"/>
     </header>
 
-    <!-- System Section -->
+    <!-- System Settings -->
     <header android:id="@+id/system_section"
         android:title="@string/header_category_system" />
 
@@ -244,7 +245,7 @@
         android:title="@string/print_settings" 
         android:layout_gravity="fill" />
 
-    <!-- Advanced Section -->
+    <!-- Advanced Settings -->
     <header android:id="@+id/advanced_section"
         android:title="@string/advanced_section_title" />
 

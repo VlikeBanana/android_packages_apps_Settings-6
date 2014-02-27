@@ -160,7 +160,7 @@ public class Settings extends PreferenceActivity
             R.id.battery_settings,
             R.id.personal_section,
             R.id.location_settings,
-            R.id.security_settings,
+            R.id.security_settings_header,
             R.id.language_settings,
             R.id.user_settings,
             R.id.account_settings,
@@ -544,7 +544,7 @@ public class Settings extends PreferenceActivity
                 BlacklistSettings.class.getName().equals(fragmentName) ||
                 BluetoothSettings.class.getName().equals(fragmentName) ||
                 DreamSettings.class.getName().equals(fragmentName) ||
-		ProfilesSettings.class.getName().equals(fragmentName) ||
+        ProfilesSettings.class.getName().equals(fragmentName) ||
                 ProfileConfig.class.getName().equals(fragmentName) ||
                 AppGroupConfig.class.getName().equals(fragmentName) ||
                 LocationSettings.class.getName().equals(fragmentName) ||
@@ -636,7 +636,7 @@ public class Settings extends PreferenceActivity
                 if (!showDev) {
                     target.remove(i);
                 }
-	    } else if (id == R.id.performance_controls) {
+        } else if (id == R.id.performance_controls) {
                 if (!showDev) {
                     target.remove(i);
                 }
@@ -824,7 +824,7 @@ public class Settings extends PreferenceActivity
         private final BluetoothEnabler mBluetoothEnabler;
         private AuthenticatorHelper mAuthHelper;
         private DevicePolicyManager mDevicePolicyManager;
-	private final ProfileEnabler mProfileEnabler;
+    private final ProfileEnabler mProfileEnabler;
 
         private static class HeaderViewHolder {
             ImageView icon;
@@ -844,7 +844,7 @@ public class Settings extends PreferenceActivity
                      || header.id == R.id.bluetooth_settings
                      || header.id == R.id.profiles_settings) {
                 return HEADER_TYPE_SWITCH;
-            } else if (header.id == R.id.security_settings) {
+            } else if (header.id == R.id.security_settings_header) {
                 return HEADER_TYPE_BUTTON;
             } else {
                 return HEADER_TYPE_NORMAL;
@@ -889,7 +889,7 @@ public class Settings extends PreferenceActivity
             mWifiEnabler = new WifiEnabler(context, new Switch(context));
             mBluetoothEnabler = new BluetoothEnabler(context, new Switch(context));
             mDevicePolicyManager = dpm;
-	    mProfileEnabler = new ProfileEnabler(context, new Switch(context));
+        mProfileEnabler = new ProfileEnabler(context, new Switch(context));
         }
 
         @Override
@@ -917,6 +917,7 @@ public class Settings extends PreferenceActivity
                         holder.summary = (TextView)
                                 view.findViewById(com.android.internal.R.id.summary);
                         holder.switch_ = (Switch) view.findViewById(R.id.switchWidget);
+                        holder.divider_ = view.findViewById(R.id.divider);
                         break;
 
                     case HEADER_TYPE_BUTTON:
@@ -940,6 +941,7 @@ public class Settings extends PreferenceActivity
                                 view.findViewById(com.android.internal.R.id.title);
                         holder.summary = (TextView)
                                 view.findViewById(com.android.internal.R.id.summary);
+                        holder.divider_ = view.findViewById(R.id.divider);
                         break;
                 }
                 view.setTag(holder);
@@ -960,18 +962,18 @@ public class Settings extends PreferenceActivity
                         mWifiEnabler.setSwitch(holder.switch_);
                     } else if (header.id == R.id.bluetooth_settings) {
                         mBluetoothEnabler.setSwitch(holder.switch_);
-		    } else if (header.id == R.id.profiles_settings) {
+            } else if (header.id == R.id.profiles_settings) {
                         mProfileEnabler.setSwitch(holder.switch_);
                     }
                     updateCommonHeaderView(header, holder);
                     break;
 
                 case HEADER_TYPE_BUTTON:
-                    if (header.id == R.id.security_settings) {
+                    if (header.id == R.id.security_settings_header) {
                         boolean hasCert = DevicePolicyManager.hasAnyCaCertsInstalled();
                         if (hasCert) {
-                            holder.button_.setVisibility(View.VISIBLE);
-                            holder.divider_.setVisibility(View.VISIBLE);
+                            holder.button_.setVisibility(View.GONE);
+                            holder.divider_.setVisibility(View.GONE);
                             boolean isManaged = mDevicePolicyManager.getDeviceOwner() != null;
                             if (isManaged) {
                                 holder.button_.setImageResource(R.drawable.ic_settings_about);
@@ -1035,13 +1037,13 @@ public class Settings extends PreferenceActivity
         public void resume() {
             mWifiEnabler.resume();
             mBluetoothEnabler.resume();
-	    mProfileEnabler.resume();
+        mProfileEnabler.resume();
         }
 
         public void pause() {
             mWifiEnabler.pause();
             mBluetoothEnabler.pause();
-	    mProfileEnabler.pause();
+        mProfileEnabler.pause();
         }
     }
 

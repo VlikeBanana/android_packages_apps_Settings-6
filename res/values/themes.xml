@@ -24,7 +24,7 @@
     <style name="SetupWizardWifiTheme" parent="android:Theme.Holo.Light.NoActionBar">
         <item name="android:windowSoftInputMode">adjustPan</item>
         <item name="@*android:preferencePanelStyle">@*android:style/PreferencePanel.Dialog</item>
-        <item name="android:alertDialogTheme">@style/Theme.WifiDialog</item>
+        <item name="android:alertDialogTheme">@style/Theme.Light.WifiDialog</item>
         <item name="ic_menu_add">@drawable/ic_menu_add_light</item>
         <item name="ic_menu_moreoverflow">@*android:drawable/ic_menu_moreoverflow_holo_light</item>
         <item name="ic_wps">@drawable/ic_wps_light</item>
@@ -73,6 +73,7 @@
         <item name="android:textColor">@color/grey_text</item>
         <item name="android:textColorPrimary">@color/grey_text</item>
         <item name="android:textColorSecondary">@color/grey_text</item>
+        <item name="android:listSeparatorTextViewStyle">@style/ListSeparator</item>
     </style>
 
     <style name="Theme.Settings.Main" parent="@android:style/Theme.Holo.Light">
@@ -85,12 +86,19 @@
         <item name="android:textColor">@color/grey_text</item>
         <item name="android:textColorPrimary">@color/grey_text</item>
         <item name="android:textColorSecondary">@color/grey_text</item>
-        <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector_holo_light</item>
-        <item name="android:listSelector">@drawable/list_selector_holo_light</item>
+        <item name="android:listChoiceBackgroundIndicator">@drawable/background_list_view</item>
+        <item name="android:listSelector">@drawable/background_list_view</item>
+        <item name="android:listSeparatorTextViewStyle">@style/ListSeparator</item>
     </style>
 
     <style name="ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
         <item name="android:icon">@mipmap/ic_settings_actionbar</item>
+    </style>
+
+    <style name="ListSeparator" parent="@*android:style/Widget.Holo.Light.TextView.ListSeparator">
+        <item name="android:textColor">@color/grey_text</item>
+        <item name="android:divider">@color/list_divider</item>   
+        <item name="android:dividerHeight">@dimen/list_divider</item>
     </style>
 
 </resources>

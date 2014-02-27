@@ -20,6 +20,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:textColor="@color/grey_text"
     android:orientation="vertical">
 
     <include layout="@layout/title" />
@@ -38,6 +39,7 @@
         android:layout_height="0dip"
         android:layout_weight="1"
         android:clipToPadding="false"
+        android:textColor="@color/grey_text"
         android:scrollbarStyle="@*android:integer/preference_fragment_scrollbarStyle" />
 
     <TextView android:id="@+id/sync_settings_error_info"
@@ -45,12 +47,14 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dip"
         android:text="@string/sync_is_failing"
+        android:textColor="@color/grey_text"
         android:drawablePadding="8dip"
         android:drawableLeft="@drawable/ic_sync_error_holo" />
 
     <RelativeLayout android:id="@+id/finish_button_area"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:textColor="@color/grey_text"
         android:background="@android:drawable/bottom_bar"
         android:visibility="gone">
         
@@ -62,6 +66,7 @@
             android:drawableEnd="@drawable/ic_btn_next"
             android:drawablePadding="3dip"
             android:text="@string/finish_button_label"
+            android:textColor="@color/grey_text"
         />
         
     </RelativeLayout>

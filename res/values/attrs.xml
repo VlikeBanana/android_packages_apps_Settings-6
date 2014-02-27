@@ -83,4 +83,5 @@
     </declare-styleable>
 
     <attr name="apnPreferenceStyle" format="reference" />
+    
 </resources>

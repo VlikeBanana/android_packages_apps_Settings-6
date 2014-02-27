@@ -22,6 +22,7 @@
     <color name="holo_grey_transparent">#66666666</color>
     <color name="grey_text">#ff5c5c5c</color>
     <color name="white">#FF5C5C5C</color>
+    <color name="white_listview">#FFFFFFFF</color>
     <color name="black">#FF5C5C5C</color>
     <color name="black_data">#80666666</color>
     <color name="red">#F00</color>
@@ -56,8 +57,13 @@
     <color name="auto_brightness_preview_grid">#44ffffff</color>
 
     <color name="tab_selector">#FF666666</color>
+    
     <!-- Data Chart Colors -->
     <color name="purple_data">#FF9933CC</color>
     <color name="purple_data_trans">#c0aa66cc</color>
     <color name="purple_data_transparent">#66aa66cc</color>
+
+    <!-- Theming Colors -->
+    <color name="list_divider">#4d333333</color>
+    
 </resources>

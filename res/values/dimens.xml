@@ -75,4 +75,7 @@
 
     <dimen name="captioning_preview_height">200dp</dimen>
 
+    <!-- Dimensions for Themed Settings -->
+    <dimen name="list_divider">0.5dip</dimen>
+
 </resources>
