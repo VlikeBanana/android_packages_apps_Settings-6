@@ -52,9 +52,10 @@
     <dimen name="vert_divider_side">0dip</dimen>
 
     <!--  Size of icons in the top-level of settings  -->
-    <dimen name="header_icon_width">48dp</dimen>
+    <dimen name="header_icon_width">44dp</dimen>
     <dimen name="appwidget_min_width">280dip</dimen>
     <dimen name="appwidget_min_height">40dip</dimen>
+    <dimen name="listview_width">48dp</dimen>
 
     <dimen name="pager_tabs_padding">0dp</dimen>
 

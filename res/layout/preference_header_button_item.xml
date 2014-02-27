@@ -34,8 +34,8 @@
     <ImageView
         android:id="@+id/icon"
         android:background="@drawable/ic_settings_background"
-        android:layout_width="@dimen/header_icon_width"
-        android:layout_height="@dimen/header_icon_width"
+        android:layout_width="@dimen/listview_width"
+        android:layout_height="@dimen/listview_width"
         android:layout_gravity="fill" />
     
     <TextView
