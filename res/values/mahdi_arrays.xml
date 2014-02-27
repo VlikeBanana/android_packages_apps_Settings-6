@@ -1460,9 +1460,6 @@
         <item>1500</item>
         <item>2000</item>
     </string-array>
-<<<<<<< HEAD
-    
-=======
 
     <!-- Battery saver mode -->
     <string-array name="enabled_networks_gsm_choices" translatable="false">
@@ -1490,5 +1487,5 @@
         <item>5</item>
         <item>10</item>
     </string-array>
->>>>>>> 2a36d60... [3/3] Settings: Battery Saver mode
+
 </resources>
