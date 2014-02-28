@@ -50,13 +50,11 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String TAG = "ButtonSettings";
 
     private static final String CATEGORY_VOLUME = "button_volume_keys";
-    private static final String BUTTON_VOLUME_WAKE = "button_volume_wake_screen";
     private static final String BUTTON_VOLUME_DEFAULT = "button_volume_default_screen";
     private static final String KEY_HARDWARE_KEYS_CATEGORY = "hardware_keys_category";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
     private static final String CATEGORY_BACK = "button_back_key";    
 
-    private CheckBoxPreference mVolumeWake;
     private ListPreference mVolumeDefault;
     private PreferenceScreen mHardwareKeys;    
 
@@ -73,7 +71,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         final PreferenceCategory volumeCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_VOLUME);		
 
-    // Only show the hardware keys config on a device that does not have a navbar
+        // Only show the hardware keys config on a device that does not have a navbar
         mHardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
         if (mHardwareKeys != null) {
             if (!res.getBoolean(R.bool.config_has_hardware_buttons)) {
@@ -83,20 +81,11 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         } 
 
         if (hasVolumeRocker()) {
-            mVolumeWake = (CheckBoxPreference) findPreference(BUTTON_VOLUME_WAKE);
             mVolumeDefault = (ListPreference) findPreference(BUTTON_VOLUME_DEFAULT);
-            if (!res.getBoolean(R.bool.config_show_volumeRockerWake)) {
-                prefScreen.removePreference(mVolumeWake);
-            } else {
-                mVolumeWake.setChecked(Settings.System.getInt(resolver,
-                    Settings.System.VOLUME_WAKE_SCREEN, 0) != 0);
-            }
             String currentDefault = Settings.System.getString(resolver, Settings.System.VOLUME_KEYS_DEFAULT);
-
             if (!Utils.isVoiceCapable(getActivity())) {
                 removeListEntry(mVolumeDefault, String.valueOf(AudioSystem.STREAM_RING));
             }
-
             if (currentDefault == null) {
                 currentDefault = mVolumeDefault.getEntryValues()[mVolumeDefault.getEntryValues().length - 1].toString();
             }
@@ -109,17 +98,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
     private boolean hasVolumeRocker() {
         return getActivity().getResources().getBoolean(R.bool.config_has_volume_rocker);
-    }
-    
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mVolumeWake) {
-            boolean checked = ((CheckBoxPreference)preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.VOLUME_WAKE_SCREEN, checked ? 1:0);
-            return true;
-        }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
