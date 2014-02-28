@@ -373,7 +373,8 @@ public class Settings extends PreferenceActivity
         ProfileConfig.class.getName(),
         NavbarSettings.class.getName(),
         com.android.settings.mahdi.PrivacySettings.class.getName(),
-        com.android.settings.mahdi.superuser.PolicyNativeFragment.class.getName()       
+        com.android.settings.mahdi.superuser.PolicyNativeFragment.class.getName(),
+        com.android.settings.mahdi.quicksettings.QuickSettingsTiles.class.getName()     
     };
 
     @Override
@@ -1181,5 +1182,5 @@ public class Settings extends PreferenceActivity
     public static class DisplayRotationSettingsActivity extends Settings { /* empty */ }
     public static class ProfilesSettingsActivity extends Settings { /* empty */ }
     public static class NavbarSettingsActivity extends Settings { /* empty */ }
-    public static class MainActivity extends Settings { /* empty */ }    
+    public static class MainActivity extends Settings { /* empty */ }   
 }

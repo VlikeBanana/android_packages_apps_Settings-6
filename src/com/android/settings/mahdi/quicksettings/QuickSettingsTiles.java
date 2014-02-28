@@ -143,6 +143,8 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
         mEmptyIcon = getResources().getDrawable(R.drawable.ic_empty);
         mTemporaryImage = new File(getActivity().getCacheDir() + "/custom_tile.tmp");
 
+        QuickSettingsUtil.removeUnsupportedTiles(getActivity());
+
         PackageManager pm = getActivity().getPackageManager();
         if (pm != null) {
             try {
