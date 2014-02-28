@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.mahdi;
+package com.android.settings.mahdi.ribbons;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
@@ -47,7 +47,8 @@ import android.widget.TextView;
 import com.android.internal.util.mahdi.QSConstants;
 import com.android.settings.R;
 import com.android.settings.Utils;
-import com.android.settings.mahdi.QuickSettingsUtil.TileInfo;
+import com.android.settings.mahdi.ribbons.QuickSettingsUtil.TileInfo;
+import com.android.settings.mahdi.quicksettings.DraggableGridView;
 
 import java.text.Collator;
 import java.util.ArrayList;

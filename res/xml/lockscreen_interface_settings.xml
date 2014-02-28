@@ -50,6 +50,12 @@
       	    android:summary="@string/battery_around_lockscreen_ring_summary"
             android:defaultValue="true" />
 
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+	    android:key="global_immersive_mode_system_bars_visibility"
+	    android:title="@string/global_immersive_mode_system_bars_visibility"
+	    android:summary="@string/global_immersive_mode_system_bars_visibility_summary"
+	    android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

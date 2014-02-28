@@ -135,6 +135,12 @@
             android:title="@string/pointer_location"
             android:summary="@string/pointer_location_summary"/>
 
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+            android:key="edge_service_for_gestures"
+            android:title="@string/edge_gesture_service_title"
+            android:summary="@string/edge_gesture_service_summary"
+            android:defaultValue="1"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory android:key="debug_drawing_category"
@@ -290,6 +296,12 @@
             android:title="@string/show_all_anrs"
             android:summary="@string/show_all_anrs_summary"/>
 
+        <PreferenceScreen
+            android:id="@+id/wakelock_blocker"
+            android:layout="@layout/preference_wakelockblocker"
+            android:title="@string/wakelock_blocker"
+            android:fragment="com.android.settings.mahdi.WakeLockBlocker" />
+
     </PreferenceCategory>
 
     <PreferenceCategory android:key="debug_LAN_category"
@@ -307,5 +319,14 @@
             android:persistent="false" />
 
      </PreferenceCategory>    
+
+     <!-- Must remain at bottom -->
+     <Preference
+         android:key="chamber_of_secrets"
+         android:title="\n \n" />
+
+     <CheckBoxPreference
+         android:key="chamber_of_unlocked_secrets"
+         android:title="@string/chamber_title" />
 
 </PreferenceScreen>

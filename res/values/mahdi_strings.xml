@@ -30,7 +30,9 @@
     <string name="attention">Attention</string>
     <string name="default_string">Default</string>
     <string name="enabled">Enabled</string>
-    <string name="add">Add</string>  
+    <string name="add">Add</string>
+    <string name="reset_message">Reset all entries to default?</string>
+    <string name="style_title">Style</string>  
 
     <!-- Display settings screen, notification light settings -->
     <string name="display_category_light_options_title">Light options</string>
@@ -116,7 +118,7 @@
     <string name="profile_profile_name_prompt">Enter a name for the new profile</string>
     <string name="menu_new_profile">New profile</string>
     <string name="menu_new_profile_summary">Add and configure a new profile</string>
-    <string name="new_profile_name">&lt;new profile&gt;</string>
+    <string name="new_profile_name">\u003Cnew profile\u003E</string>
 
     <!-- Rename Dialog  -->
     <string name="rename_dialog_title">Rename</string>
@@ -297,7 +299,7 @@
 
     <string name="volume_adjust_sounds_enable_title">Volume adjust sound</string>
     <string name="volume_adjust_sounds_enable_summary">Play sound when adjusting volume with hard keys</string>
-    <string name="link_volume_ringtones">Link ringtone &amp; notifications volumes</string>
+    <string name="link_volume_ringtones">Link ringtone \u0026 notifications volumes</string>
     <string name="volume_ring_only_description">Ringtone</string>
     <string name="volume_overlay_title">Volume panel style</string>
 
@@ -411,6 +413,17 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_network_speed">Network speed</string>
     <string name="title_tile_music">Music</string>
     <string name="title_tile_quick_record">Quick Record</string>
+    <string name="title_tile_contact">Contact</string>
+    <string name="title_tile_custom">Custom</string>
+    <string name="custom_tile_dialog_text">Each action will add a new state to the tile. Each click changes to the next state. Long-press to add long-press actions. If no click action exists the long-action icon will be used for the tile. This allows you to change states by clicking and launch actions by long-pressing.</string>
+    <string name="custom_tile_dialog_title">Custom tile actions</string>
+    <string name="custom_tile_dialog_extra_text">Advanced tile detected. Your tile will now change states when adjusted from anywhere. You may optionally input an icon and label for the toggle to switch to if it doesn\'t recognize the state it\'s in.</string>
+    <string name="custom_toggle_extras">Custom tile extras</string>
+    <string name="custom_toggle_collapse_check">Collapse notification shade</string>
+    <string name="custom_toggle_match_state_check">Click action matches icon</string>
+    <string name="custom_tile_long_press">Longpress:</string>
+    <string name="custom_tile_null_warning">An action must be set first</string>
+    <string name="custom_tile_resolve_name">Unknown</string>
 
     <string name="title_dynamic_tiles">Dynamic tiles</string>
     <string name="dynamic_tiles_note_title">Note</string>
@@ -440,9 +453,21 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="smart_pulldown_dismissable">Dismissable</string>
     <string name="smart_pulldown_persistent">Persistent</string>
 
+    <!-- QuickSettings: Custom Tile -->
+    <string name="custom_tile_dialog_text">Each action will add a new state to the tile. Each click changes to the next state. Long-press to add long-press actions. If no click action exists the long-action icon will be used for the tile. This allows you to change states by clicking and launch actions by long-pressing.</string>
+     <string name="custom_tile_dialog_title">Custom tile actions</string>
+     <string name="custom_toggle_extras">Custom tile extras</string>
+     <string name="custom_toggle_collapse_check">Collapse notification shade</string>
+     <string name="custom_toggle_match_state_check">Click action matches icon</string>
+     <string name="custom_tile_long_press">Longpress:</string>
+     <string name="custom_tile_null_warning">An action must be set first</string>
+
     <string name="pref_network_mode_title">Network modes</string>
     <string name="pref_screentimeout_mode_title">Screen timeout modes</string>
     <string name="pref_ring_mode_title">Sound modes</string>
+    <string name="pref_music_mode_title">Music mode</string>
+    <string name="music_tile_mode_background">Show album artwork</string>
+    <string name="music_tile_mode_tracktitle">Show track title</string>
 
     <!-- Quick access ribbon -->
     <string name="category_quick_access">Quick Access ribbon</string>
@@ -462,6 +487,14 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quick_tiles_text_color_title">Tiles text color</string>
     <string name="quick_tiles_alpha_title">Tiles background transparency</string>
     <string name="qs_style_reset_message">Reset all colors to default?</string>
+
+    <!-- QuickSettings fliptiles -->
+    <string name="flip_qs_tiles_title">Flip tiles</string>
+    <string name="flip_qs_tiles_summary">Flips the tiles on touch</string>
+
+    <!-- QuickSettings haptic feedback -->
+    <string name="haptic_qs_tiles_title">Vibrate on touch</string>
+    <string name="haptic_qs_tiles_summary">Vibrate when touching tiles</string>
 
     <!-- This exists as part of Power widget already, re-use them
          If Power widget is removed, re-enable these -->
@@ -555,26 +588,14 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="clock_date_format_custom">Custom java format</string>
     <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
 
-    <!-- StatusBar Battery Settings -->
-    <string name="battery_icon_title">Battery icon</string>
-    <string name="battery_icon_summary">View or change the battery style settings</string>
-    <string name="battery_status_icon">Icon</string>
-    <string name="battery_status_percentage">Percentage</string>
-    <string name="battery_status_icon_percentage">Icon with percentage</string>
-    <string name="battery_status_circle">Circle</string>
-    <string name="battery_status_circle_percentage">Circle with percentage</string>
-    <string name="battery_status_dotted_circle_percentage">Dotted Circle with percentage</string>
-    <string name="battery_status_dotted_circle">Dotted Circle</string>
-    <string name="battery_color_title">Battery color</string>
-    <string name="circle_battery_animation_speed">Circle animation speed</string>
-    <string name="circle_battery_animation_speed_none">None</string>
-    <string name="circle_battery_animation_speed_slow">Slow</string>
-    <string name="circle_battery_animation_speed_stock">Normal</string>
-    <string name="circle_battery_animation_speed_fast">Fast</string>
-    <string name="battery_text_color">Percentage text color</string>
-    <string name="battery_bolt_color">Bolt charging color</string>
-    <string name="battery_text_charging_color">Percentage text charging color</string>
-    <string name="battery_style_reset_message">Reset all battery colors?</string>
+    <!-- StatusBar Battery Settings -->    
+    <string name="status_bar_battery_title">Battery status style</string>
+    <string name="status_bar_style_icon_portrait">Icon portrait</string>
+    <string name="status_bar_style_icon_landscape">Icon landscape</string>
+    <string name="status_bar_style_circle">Circle</string>
+    <string name="status_bar_style_text">Text</string>
+    <string name="status_bar_style_hidden">Hidden</string>
+    <string name="status_bar_battery_show_percent_title">Show battery status percent</string>
 
     <!-- StatusBar Brightness Control -->
     <string name="status_bar_toggle_brightness">Brightness control</string>
@@ -707,6 +728,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcut_action_ring_silent">Ring/Silent</string>
     <string name="shortcut_action_ring_vib_silent">Ring/Vib/Silent</string>
     <string name="shortcut_action_torch">Torch</string>
+    <string name="shortcut_action_omniswitch">OmniSwitch</string>
     <string name="shortcut_action_longpress">Longpress:</string>
     <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
     <string name="shortcut_action_select_action">Choose action:</string>
@@ -785,14 +807,19 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcuts_icon_picker_twitter">Twitter</string>
     <string name="shortcuts_icon_picker_unlock">Unlock</string>
 
+    <string name="icon_picker_type">Select icon type:</string>
+    <string name="icon_default">Default</string>
+    <string name="icon_presets">System icons</string>
+    <string name="icon_custom">Gallery</string>
+    <string name="icon_pack">Icon pack</string>
+    <string name="icon_picker_choose_icon_title">Choose icon</string>
     <string name="icon_color_mode_all_icons">All icons</string>
     <string name="icon_color_mode_system_icons">System icons</string>
     <string name="icon_color_mode_system_custom_icons">System and custom icons</string>
-    <string name="icon_picker_choose_icon_title">Choose icon</string>
     <string name="group_applications">Applications</string>
     <string name="select_custom_app_title">Select custom application</string>
-    <string name="shortcuts_color_title">Shortcut icon color</string>
-    <string name="shortcuts_color_summary">Colorize the shortcut icons</string>
+    <string name="shortcuts_text_color_title">Text color</string>
+    <string name="shortcuts_color_title">Icon color</string>
     <string name="shortcuts_color_mode_title">Icon color mode</string>
     <string name="shortcuts_color_mode_summary">Change the shorcuts icon color mode</string>
 
@@ -840,6 +867,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="summary_pref_menu_display">How and when do you want the menu buttons to appear?</string>
     <string name="navbar_enable_bar">Enable navigation bar</string>
     <string name="navbar_enable_bar_summary">Enable the navigation bar</string>
+    <string name="navigation_bar_left_title">Left handed mode</string>
+    <string name="navigation_bar_left_summary">Place the navigation bar on the left side of the screen in landscape mode</string>
     <string name="navigation_bar_height_title">Navigation bar height</string>
     <string name="navigation_bar_height_summary">Navigation bar height while in portrait.</string>
     <string name="navigation_bar_height_landscape_title">Navigation bar height landscape</string>
@@ -853,17 +882,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="navbar_targets_title">Ring targets</string>
     <string name="navbar_cat">Navigation bar</string>
     <string name="navbar_dimensions_reset_message">Reset all dimensions entries to default?</string>
-    <string name="navbar_button_style_reset_message">Reset all style entries to default?</string>
 
     <!-- Navigation bar button style -->
-    <string name="nav_bar_button_style">Button style</string>
-    <string name="nav_bar_button_style_summary">Change navigation bar button style</string>
+    <string name="nav_bar_button_style_summary">Change navigation bar button colors</string>
     <string name="button_transparency_title">Button transparency</string>
-    <string name="navigation_bar_icon_tint_title">Button color</string>
-    <string name="nav_button_color_mode_title">Color mode</string>
-    <string name="nav_button_color_mode_dialog_title">Colorize</string>
     <string name="nav_button_color_mode_summary">Change the navigation bar button color mode</string>
-    <string name="navigation_bar_glow_tint_title">Button glow color</string>
+    <string name="navigation_bar_glow_tint_title">Glow color</string>
 
     <!-- Basic Numbers -->
     <string name="two">Two</string>
@@ -931,22 +955,25 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="start_time_title">Start</string>
     <string name="end_time_title">End</string>
 
-    <!-- Network speed -->
+    <!-- Network traffic -->
     <string name="network_traffic_title">Network traffic</string>
-    <string name="network_traffic_summary">View or change network traffic options</string>
-    <string name="status_bar_show_network_stats_title">Network traffic indicator</string>
-    <string name="status_bar_show_network_stats_summary">Show network speeds in statusbar</string>
-    <string name="status_bar_network_stats_update_title">Update frequency</string>
-    <string name="status_bar_network_stats_update_summary">How often is indicator updated</string>
+    <string name="show_network_traffic_state">Status bar traffic monitor</string>
+    <string name="show_network_traffic_unit">Display unit</string>
+    <string name="show_network_traffic_frequency">Update interval</string>
+    <string name="show_network_traffic_disable">Disabled</string>
+    <string name="show_network_traffic_up">Outgoing</string>
+    <string name="show_network_traffic_down">Incoming</string>
+    <string name="show_network_traffic_all">Outgoing and incoming</string>
+    <string name="show_network_traffic_bit">Bits per second</string>
+    <string name="show_network_traffic_byte">Bytes per second</string>
+    <string name="show_network_traffic_500">500 ms</string>
+    <string name="show_network_traffic_1000">1000 ms</string>
+    <string name="show_network_traffic_1500">1500 ms</string>
+    <string name="show_network_traffic_2000">2000 ms</string>
 
-    <!-- Network stats hide if there's no traffic -->
-    <string name="hide_network_speed">Hide when there is no traffic</string>
-    <string name="hide_network_speed_summary">Hide network stats indicator when there is no traffic</string>
-
-    <!-- Network stats custm colors -->
-    <string name="status_bar_network_usage_color_style">Color style</string>
-    <string name="status_bar_network_usage_color_reset">Reset color</string>
-    <string name="status_bar_network_usage_color_reset_message">Reset network stats color to default?</string>
+    <!-- Status Bar Activity Indicators -->
+    <string name="show_activity_indicators_on_status_bar_title">Activity indicators</string>
+    <string name="show_activity_indicators_on_status_bar_summary">Show indicators in signal bars</string>
 
     <!-- Screen recorder -->
     <string name="screen_recorder_title">Screen recorder</string>
@@ -1243,7 +1270,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Message of dialog confirming that user wants to restart their device with a new runtime -->
     <string name="custom_runtime_warning_title">Warning</string>
-    <string name="custom_runtime_warning_message">ART is not supported by Mahdi-Rom. This setting is included for experimentation only and has the potential to cause instability, crashes, data loss or prevent the proper boot of your device. Visit &lt;a href=\"http://source.android.com/devices/tech/dalvik/art.html\"&gt;Introducing ART&lt;/a&gt; for more information.&lt;br/&gt;&lt;br/&gt;We request you do not file bug reports if you have enabled ART as your runtime.&lt;br/&gt;&lt;br/&gt;Are you sure you want to reboot to change runtime from <xliff:g id="old" example="libdvm.so">%1$s</xliff:g> to <xliff:g id="new" example="libart.so">%2$s</xliff:g>?</string> 
+    <string name="custom_runtime_warning_message">ART is not supported by Mahdi-Rom. This setting is included for experimentation only and has the potential to cause instability, crashes, data loss or prevent the proper boot of your device. Visit \u003Ca href=\"http://source.android.com/devices/tech/dalvik/art.html\"\u003EIntroducing ART\u003C/a\u003E for more information.\u003Cbr/\u003E\u003Cbr/\u003EWe request you do not file bug reports if you have enabled ART as your runtime.\u003Cbr/\u003E\u003Cbr/\u003EAre you sure you want to reboot to change runtime from <xliff:g id="old" example="libdvm.so">%1$s</xliff:g> to <xliff:g id="new" example="libart.so">%2$s</xliff:g>?</string> 
 
     <!-- Less Notification sounds -->
     <string name="notifications_category_title">Notifications</string>
@@ -1341,10 +1368,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Superuser header name -->
     <string name="superuser">Superuser</string>
 
-    <!-- Status Bar Activity Indicators -->
-    <string name="show_activity_indicators_on_status_bar_title">Network activity indicator</string>
-    <string name="show_activity_indicators_on_status_bar_summary">Show network activity in statusbar wifi icon</string>
-
     <!-- Emulate menu key -->
     <string name="emulate_menu_key_title">Emulate hardware menu key</string>
     <string name="emulate_menu_key_summary">Pressing the navbar menu key will open the overflow menu at the bottom</string>
@@ -1412,7 +1435,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="listview_cache_none">No Cache</string>
     <string name="listview_cache_anim">Animation Cache</string>
     <string name="listview_cache_scroll">Scrolling Cache</string>
-    <string name="listview_cache_all">Animation &amp; Scrolling</string>
+    <string name="listview_cache_all">Animation \u0026; Scrolling</string>
     <string name="listview_blacklist_title">Excluded applications</string>
     <string name="listview_blacklist_summary">Prevent Apps from animating</string>
     <string name="listview_test">Test ListView</string>
@@ -1487,4 +1510,60 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="ime_exit_animation_title">Exit Animation</string>
     <string name="ime_interpolator_title">Interpolator</string>
     <string name="ime_duration_title">IME Duration</string>
+
+    <!-- Chamber of Secrets -->
+    <string name="chamber_title">Chamber of secrets</string>
+    <string name="chamber_toast">The chamber of secrets has opened</string>
+
+    <!-- EdgeGesture service -->
+    <string name="edge_gesture_service_title">Block gesture touch events</string>
+    <string name="edge_gesture_service_summary">Don\'t send touch events for navigation and status bar gestures to apps</string>
+
+    <!-- Wakelock blocker -->
+    <string name="wakelock_blocker">Wakelock Blocker</string>
+    <string name="wakelock_blocker_title">Enable</string>
+    <string name="wakelock_blocker_summary">Activate blocking for checked wakelocks</string>
+    <string name="wakelock_blocker_save">Save</string>
+    <string name="wakelock_list_header">Available Wakelocks</string>
+    <string name="wakelock_blocker_reload">Reload</string>
+    <string name="wakelock_blocker_warning_title">Proceed with Caution</string>
+    <string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss.</string>
+
+    <!-- Toggle switch title for enabling battery saver connections. [CHAR LIMIT=32] -->
+    <string name="data_usage_enable_batterysaver">Battery saver</string>
+
+    <!-- Battery saver mode -->
+    <string name="network_lte">LTE (recommended)</string>
+    <string name="network_4G">4G (recommended)</string>
+    <string name="network_3G_only">3G Only</string>
+    <string name="network_3G_auto">2G/3G Auto</string>
+    <string name="network_3G">2G/3G Preferred</string>
+    <string name="network_2G">2G Only</string>
+    <string name="network_1x">1x</string>
+    <string name="network_global">Global</string>
+    <string name="battery_saver_action_undefined">Undefined</string>
+    <string name="battery_saver_title">Battery saver mode</string>
+    <string name="battery_saver_summary">Choose power saving modes for mobile data and WiFi connections</string>
+    <string name="pref_battery_saver_enable_title">Battery saver</string>
+    <string name="pref_battery_saver_enable_summary">This will automatically switch your network to user-defined power saving mode or normal mode depending on mobile data and WiFi connection states</string>
+    <string name="pref_battery_saver_normal_mode_title">Normal network mode</string>
+    <string name="pref_battery_saver_power_saving_mode_title">Power saving network mode</string>
+    <string name="pref_battery_saver_screen_off_title">When screen turns off</string>
+    <string name="pref_battery_saver_screen_off_summary">Activate power saving mode when screen turns off</string>
+    <string name="pref_battery_saver_ignore_locked_title">Ignore while locked</string>
+    <string name="pref_battery_saver_ignore_locked_summary">When screen turns on, power saving mode won\'t be deactivated until keyguard is unlocked</string>
+    <string name="pref_battery_saver_mode_change_delay_title">Change mode delay</string>
+    <string name="pref_battery_saver_mode_change_delay_summary">Delays changing of power saving mode by specified number of seconds</string>
+    <string name="pref_battery_saver_battery_title">When battery low</string>
+    <string name="pref_battery_saver_battery_summary">Activate power saving mode when battery low</string>
+    <string name="pref_battery_saver_mode_battery_level_title">Battery level</string>
+    <string name="pref_battery_saver_mode_battery_level_summary">Change to power saving mode at: </string>
+    <string name="pref_battery_saver_data_title">Disable mobile data</string>
+    <string name="pref_battery_saver_data_summary">Disable mobile data connection when power saving activated</string>
+    <string name="pref_battery_saver_enable_no_mobiledata_summary">This will automatically manage your device battery usage to user-defined</string>
+    <string name="pref_battery_saver_wifi_title">Disable WiFi</string>
+    <string name="pref_battery_saver_wifi_summary">Disable wifi connection when power saving activated</string>
+
+    <string name="global_immersive_mode_system_bars_visibility">System bars visibility</string>
+    <string name="global_immersive_mode_system_bars_visibility_summary">Show panels on lockscreen in global immersive mode</string>
 </resources>
