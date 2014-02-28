@@ -80,8 +80,8 @@ public class AnimationInterfaceSettings extends SettingsPreferenceFragment imple
         final String key = preference.getKey();
 
         if (preference == mCrtMode) {
-            int value = Integer.parseInt((String) objValue);
-            int index = mCrtMode.findIndexOfValue((String) objValue);
+            int value = Integer.parseInt((String) newValue);
+            int index = mCrtMode.findIndexOfValue((String) newValue);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.SYSTEM_POWER_CRT_MODE,
                     value);
