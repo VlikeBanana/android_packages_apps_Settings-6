@@ -21,16 +21,18 @@ package com.android.settings.mahdi.aokp;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 
+import android.widget.Toast;
+import android.app.ActivityManager;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
-import android.widget.Toast;
-
+import android.content.ContentResolver;
 
 public class AnimationInterfaceSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -41,14 +43,13 @@ public class AnimationInterfaceSettings extends SettingsPreferenceFragment imple
     private static final String KEY_TOAST_ANIMATION = "toast_animation";
 
     private ListPreference mToastAnimation;
-
     private ListPreference mCrtMode; 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
         addPreferencesFromResource(R.xml.animation_interface_settings);
-
         PreferenceScreen prefSet = getPreferenceScreen();
 
         mCrtMode = (ListPreference) prefSet.findPreference(KEY_POWER_CRT_MODE);
@@ -75,8 +76,9 @@ public class AnimationInterfaceSettings extends SettingsPreferenceFragment imple
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        final String key = preference.getKey();
+
         if (preference == mCrtMode) {
             int value = Integer.parseInt((String) objValue);
             int index = mCrtMode.findIndexOfValue((String) objValue);
