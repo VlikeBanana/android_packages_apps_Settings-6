@@ -83,6 +83,7 @@ import com.android.settings.location.LocationSettings;
 import com.android.settings.mahdi.CustomizationSettings;
 import com.android.settings.mahdi.DisplayRotation;
 import com.android.settings.mahdi.NavbarSettings;
+import com.android.settings.mahdi.quicksettings.QuickSettingsTiles;
 import com.android.settings.mahdi.QuietHours;
 import com.android.settings.mahdi.superuser.PolicyNativeFragment;
 import com.android.settings.nfc.AndroidBeam;
@@ -1175,6 +1176,7 @@ public class Settings extends PreferenceActivity
     public static class ApnSettingsActivity extends Settings { /* empty */ }
     public static class ApnEditorActivity extends Settings { /* empty */ }
     public static class CustomizationSettingsActivity extends Settings { /* empty */ }
+    public static class QuickSettingsTilesSettingsActivity extends Settings { /* empty */ }
     public static class QuietHoursSettingsActivity extends Settings { /* empty */ }
     public static class DisplayRotationSettingsActivity extends Settings { /* empty */ }
     public static class ProfilesSettingsActivity extends Settings { /* empty */ }

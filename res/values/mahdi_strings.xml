@@ -117,7 +117,7 @@
     <string name="profile_profile_name_prompt">Enter a name for the new profile</string>
     <string name="menu_new_profile">New profile</string>
     <string name="menu_new_profile_summary">Add and configure a new profile</string>
-    <string name="new_profile_name">&lt;new profile&gt;</string>
+    <string name="new_profile_name">\u003Cnew profile\u003E</string>
 
     <!-- Rename Dialog  -->
     <string name="rename_dialog_title">Rename</string>
@@ -298,7 +298,7 @@
 
     <string name="volume_adjust_sounds_enable_title">Volume adjust sound</string>
     <string name="volume_adjust_sounds_enable_summary">Play sound when adjusting volume with hard keys</string>
-    <string name="link_volume_ringtones">Link ringtone &amp; notifications volumes</string>
+    <string name="link_volume_ringtones">Link ringtone \u0026 notifications volumes</string>
     <string name="volume_ring_only_description">Ringtone</string>
     <string name="volume_overlay_title">Volume panel style</string>
 
@@ -412,6 +412,17 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_network_speed">Network speed</string>
     <string name="title_tile_music">Music</string>
     <string name="title_tile_quick_record">Quick Record</string>
+    <string name="title_tile_contact">Contact</string>
+    <string name="title_tile_custom">Custom</string>
+    <string name="custom_tile_dialog_text">Each action will add a new state to the tile. Each click changes to the next state. Long-press to add long-press actions. If no click action exists the long-action icon will be used for the tile. This allows you to change states by clicking and launch actions by long-pressing.</string>
+    <string name="custom_tile_dialog_title">Custom tile actions</string>
+    <string name="custom_tile_dialog_extra_text">Advanced tile detected. Your tile will now change states when adjusted from anywhere. You may optionally input an icon and label for the toggle to switch to if it doesn\'t recognize the state it\'s in.</string>
+    <string name="custom_toggle_extras">Custom tile extras</string>
+    <string name="custom_toggle_collapse_check">Collapse notification shade</string>
+    <string name="custom_toggle_match_state_check">Click action matches icon</string>
+    <string name="custom_tile_long_press">Longpress:</string>
+    <string name="custom_tile_null_warning">An action must be set first</string>
+    <string name="custom_tile_resolve_name">Unknown</string>
 
     <string name="title_dynamic_tiles">Dynamic tiles</string>
     <string name="dynamic_tiles_note_title">Note</string>
@@ -441,9 +452,21 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="smart_pulldown_dismissable">Dismissable</string>
     <string name="smart_pulldown_persistent">Persistent</string>
 
+    <!-- QuickSettings: Custom Tile -->
+    <string name="custom_tile_dialog_text">Each action will add a new state to the tile. Each click changes to the next state. Long-press to add long-press actions. If no click action exists the long-action icon will be used for the tile. This allows you to change states by clicking and launch actions by long-pressing.</string>
+     <string name="custom_tile_dialog_title">Custom tile actions</string>
+     <string name="custom_toggle_extras">Custom tile extras</string>
+     <string name="custom_toggle_collapse_check">Collapse notification shade</string>
+     <string name="custom_toggle_match_state_check">Click action matches icon</string>
+     <string name="custom_tile_long_press">Longpress:</string>
+     <string name="custom_tile_null_warning">An action must be set first</string>
+
     <string name="pref_network_mode_title">Network modes</string>
     <string name="pref_screentimeout_mode_title">Screen timeout modes</string>
     <string name="pref_ring_mode_title">Sound modes</string>
+    <string name="pref_music_mode_title">Music mode</string>
+    <string name="music_tile_mode_background">Show album artwork</string>
+    <string name="music_tile_mode_tracktitle">Show track title</string>
 
     <!-- Quick access ribbon -->
     <string name="category_quick_access">Quick Access ribbon</string>
@@ -463,6 +486,14 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quick_tiles_text_color_title">Tiles text color</string>
     <string name="quick_tiles_alpha_title">Tiles background transparency</string>
     <string name="qs_style_reset_message">Reset all colors to default?</string>
+
+    <!-- QuickSettings fliptiles -->
+    <string name="flip_qs_tiles_title">Flip tiles</string>
+    <string name="flip_qs_tiles_summary">Flips the tiles on touch</string>
+
+    <!-- QuickSettings haptic feedback -->
+    <string name="haptic_qs_tiles_title">Vibrate on touch</string>
+    <string name="haptic_qs_tiles_summary">Vibrate when touching tiles</string>
 
     <!-- This exists as part of Power widget already, re-use them
          If Power widget is removed, re-enable these -->
@@ -696,6 +727,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcut_action_ring_silent">Ring/Silent</string>
     <string name="shortcut_action_ring_vib_silent">Ring/Vib/Silent</string>
     <string name="shortcut_action_torch">Torch</string>
+    <string name="shortcut_action_omniswitch">OmniSwitch</string>
     <string name="shortcut_action_longpress">Longpress:</string>
     <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
     <string name="shortcut_action_select_action">Choose action:</string>
@@ -1237,7 +1269,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Message of dialog confirming that user wants to restart their device with a new runtime -->
     <string name="custom_runtime_warning_title">Warning</string>
-    <string name="custom_runtime_warning_message">ART is not fully supported by The Schism. This setting is included for experimentation only and has the potential to cause instability, crashes, data loss or prevent the proper boot of your device. Visit &lt;a href=\"http://source.android.com/devices/tech/dalvik/art.html\"&gt;Introducing ART&lt;/a&gt; for more information.&lt;br/&gt;&lt;br/&gt;We request you do not file bug reports if you have enabled ART as your runtime.&lt;br/&gt;&lt;br/&gt;Are you sure you want to reboot to change runtime from <xliff:g id="old" example="libdvm.so">%1$s</xliff:g> to <xliff:g id="new" example="libart.so">%2$s</xliff:g>?</string> 
+    <string name="custom_runtime_warning_message">ART is not supported by The Schism. This setting is included for experimentation only and has the potential to cause instability, crashes, data loss or prevent the proper boot of your device. Visit \u003Ca href=\"http://source.android.com/devices/tech/dalvik/art.html\"\u003EIntroducing ART\u003C/a\u003E for more information.\u003Cbr/\u003E\u003Cbr/\u003EWe request you do not file bug reports if you have enabled ART as your runtime.\u003Cbr/\u003E\u003Cbr/\u003EAre you sure you want to reboot to change runtime from <xliff:g id="old" example="libdvm.so">%1$s</xliff:g> to <xliff:g id="new" example="libart.so">%2$s</xliff:g>?</string> 
 
     <!-- Less Notification sounds -->
     <string name="notifications_category_title">Notifications</string>
@@ -1406,7 +1438,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="listview_cache_none">No Cache</string>
     <string name="listview_cache_anim">Animation Cache</string>
     <string name="listview_cache_scroll">Scrolling Cache</string>
-    <string name="listview_cache_all">Animation &amp; Scrolling</string>
+    <string name="listview_cache_all">Animation \u0026; Scrolling</string>
     <string name="listview_blacklist_title">Excluded applications</string>
     <string name="listview_blacklist_summary">Prevent Apps from animating</string>
     <string name="listview_test">Test ListView</string>
@@ -1500,6 +1532,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="toast_Translucent_animation">Translucent Animation</string>
     <string name="toast_SlideLeftRight_animation">Slide Left To Right Animation</string>
     <string name="toast_SlideRightLeft_animation">Slide Right To Left Animation</string>
+   
+    <!-- Chamber of Secrets -->
+    <string name="chamber_title">Chamber of secrets</string>
+    <string name="chamber_toast">The chamber of secrets has opened</string>
 
     <!-- EdgeGesture service -->
     <string name="edge_gesture_service_title">Block gesture touch events</string>
