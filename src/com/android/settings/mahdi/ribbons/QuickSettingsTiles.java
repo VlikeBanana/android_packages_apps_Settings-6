@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+
 
 package com.android.settings.mahdi.ribbons;
 
@@ -159,7 +159,7 @@ public class QuickSettingsTiles extends Fragment {
      * @param iconSysId - resource id for icon in systemui
      * @param iconRegId - resource id for icon in local package
      * @param newTile - whether a new tile is being added by user
-     */
+     
     void addTile(int titleId, String iconSysId, int iconRegId, boolean newTile) {
         View tileView = null;
         if (iconRegId != 0) {
@@ -378,3 +378,4 @@ public class QuickSettingsTiles extends Fragment {
         }
     }
 }
+*/ 
