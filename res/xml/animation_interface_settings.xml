@@ -60,4 +60,10 @@
         android:entryValues="@array/toast_animation_values"
         android:persistent="false" />
 
+    <PreferenceScreen
+        android:key="progressbar_settings"
+        android:fragment="com.android.settings.mahdi.aokp.ProgressBar"
+        android:title="@string/progressbar_title"
+        android:summary="@string/progressbar_summary" />
+
 </PreferenceScreen>
