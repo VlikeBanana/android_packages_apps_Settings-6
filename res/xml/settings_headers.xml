@@ -154,6 +154,14 @@
     <header android:id="@+id/personal_section"
         android:title="@string/header_category_personal" />
 
+    <!-- Profiles -->
+    <header
+        android:id="@+id/profiles_settings"
+        android:icon="@drawable/ic_settings_profiles"
+        android:fragment="com.android.settings.profiles.ProfilesSettings"
+        android:title="@string/profiles_settings_title" 
+        android:layout_gravity="fill" />
+
     <!-- Application Settings -->
     <header
         android:fragment="com.android.settings.applications.ManageApplications"
@@ -176,16 +184,7 @@
         android:fragment="com.android.settings.SecuritySettings"
         android:icon="@drawable/ic_settings_security"
         android:title="@string/security_settings_title"
-        android:layout_gravity="fill" 
-        android:background="@drawable/background_list_view" />
-
-    <!-- Profiles
-    <header
-        android:id="@+id/profiles_settings"
-        android:icon="@drawable/ic_settings_profiles"
-        android:fragment="com.android.settings.profiles.ProfilesSettings"
-        android:title="@string/profiles_settings_title" 
-        android:layout_gravity="fill" /> -->
+        android:layout_gravity="fill" />
 
     <!-- Language -->
     <header
