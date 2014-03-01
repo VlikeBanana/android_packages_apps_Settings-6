@@ -27,6 +27,7 @@
     <color name="black_data">#80666666</color>
     <color name="red">#F00</color>
 
+    <!-- Storage Colors -->
     <color name="memory_used">#F00</color>
     <color name="memory_avail">#333333</color>
     <color name="memory_apps_usage">#99CC00</color>
@@ -65,5 +66,6 @@
 
     <!-- Theming Colors -->
     <color name="list_divider">#4d333333</color>
-    
+    <color name="icon_background">#fff0f0f0</color>
+
 </resources>

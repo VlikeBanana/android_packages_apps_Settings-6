@@ -71,9 +71,6 @@
         <item name="wifi_signal">@drawable/wifi_signal_light</item>
         <item name="android:actionBarStyle">@style/ActionBar</item>
         <item name="android:textColor">@color/grey_text</item>
-        <item name="android:textColorPrimary">@color/grey_text</item>
-        <item name="android:textColorSecondary">@color/grey_text</item>
-        <item name="android:listSeparatorTextViewStyle">@style/ListSeparator</item>
     </style>
 
     <style name="Theme.Settings.Main" parent="@android:style/Theme.Holo.Light">
@@ -84,11 +81,6 @@
         <item name="wifi_signal">@drawable/wifi_signal_light</item>
         <item name="android:actionBarStyle">@style/ActionBar</item>
         <item name="android:textColor">@color/grey_text</item>
-        <item name="android:textColorPrimary">@color/grey_text</item>
-        <item name="android:textColorSecondary">@color/grey_text</item>
-        <item name="android:listChoiceBackgroundIndicator">@drawable/background_list_view</item>
-        <item name="android:listSelector">@drawable/background_list_view</item>
-        <item name="android:listSeparatorTextViewStyle">@style/ListSeparator</item>
     </style>
 
     <style name="ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">

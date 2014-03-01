@@ -34,7 +34,8 @@
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:gravity="center"
-                  android:textSize="18sp"/>
+                  android:textSize="18sp"
+                  android:textColor="@color/grey_text"/>
 
         <!-- footer can show a message, or confirm / restart buttons -->
         <RelativeLayout
@@ -54,14 +55,16 @@
                     style="@style/SecurityPreferenceButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/lockpattern_restart_button_text"/>
+                    android:text="@string/lockpattern_restart_button_text"
+                    android:textColor="@color/grey_text"/>
 
                 <!-- right / bottom button: confirm or ok -->
                 <Button android:id="@+id/footerRightButton"
                     style="@style/SecurityPreferenceButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/lockpattern_confirm_button_text"/>
+                    android:text="@string/lockpattern_confirm_button_text"
+                    android:textColor="@color/grey_text"/>
 
             </LinearLayout>
 
@@ -72,7 +75,8 @@
                 android:layout_above="@+id/buttonContainer"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="4dip"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+                android:textColor="@color/grey_text"/>
 
         </RelativeLayout>
     </LinearLayout>

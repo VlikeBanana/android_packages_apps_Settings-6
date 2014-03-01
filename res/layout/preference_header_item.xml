@@ -18,11 +18,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:minHeight="48dp"
+    android:minHeight="52dp"
     android:theme="@style/Theme.Settings.Main"
-    android:background="@drawable/background_list_view"
-    android:divider="@drawable/background_border"
-    android:dividerHeight="@drawable/background_border">
+    android:background="@drawable/background_list_view">
     
     <LinearLayout
         android:layout_width="wrap_content"
@@ -31,19 +29,28 @@
         android:layout_marginLeft="3dip"
         android:layout_marginStart="0dip">
 
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="@dimen/header_icon_width"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@drawable/background_border"
+        android:dividerHeight="1dp"
+        android:listSelector="@drawable/background_list_view" />
+
     <ImageView
         android:id="@+id/icon"
-        android:background="@drawable/ic_settings_background"
         android:layout_width="@dimen/header_icon_width"
         android:layout_height="@dimen/header_icon_width"
-        android:layout_gravity="fill" />
+        android:background="@drawable/icon_background" />
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/text"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:layout_marginLeft="10dp" />
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginLeft="15dp" />
+
     </LinearLayout>
 
     <!-- Only for sub menus -->
