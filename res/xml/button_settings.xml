@@ -30,26 +30,6 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="button_volume_keys"
-        android:title="@string/button_volume_keys_title" >
-
-	<com.android.settings.mahdi.SystemSettingCheckBoxPreference
-            android:key="volbtn_music_controls"
-            android:title="@string/volbtn_music_controls_title"
-            android:summary="@string/volbtn_music_controls_summary"
-            android:defaultValue="false" />
-
-        <ListPreference
-            android:key="button_volume_default_screen"
-            android:title="@string/button_volume_default_title"
-            android:summary="@string/button_volume_default_summary"
-            android:entries="@array/button_volume_default_entries"
-            android:entryValues="@array/button_volume_default_values"
-            android:defaultValue="0" />
-
-    </PreferenceCategory>    
-
-    <PreferenceCategory
         android:key="hardware_keys_category"
         android:title="@string/hardware_keys_category" >      
 
