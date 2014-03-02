@@ -19,8 +19,8 @@
     <string name="rom_settings_title">Schism Settings</string>
     <string name="advanced_section_title">Advanced Settings</string>
 
-    <!-- About phone screen,  ROM Version -->
-    <string name="mod_version">The Schism Version</string>
+    <!-- About phone screen, ROM Version -->
+    <string name="mod_version">The Schism version</string>
     <string name="mod_version_default">Unknown</string>
 
     <!-- General strings -->
@@ -1413,7 +1413,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Animation Control -->
     <string name="interface_animation_title">Animation Control</string>
-    <string name="interface_animation_summary">Choose alternative animations for System, Listview, Scroll and Keyboard</string>
+    <string name="interface_animation_summary">Choose alternative animations for System, Listview, Scroll, Keyboard and Toast</string>
 
     <!-- ListView animation -->
     <string name="system_animation_title">System</string>

@@ -593,26 +593,14 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     <string name="clock_date_format_custom">Formato java personalizado</string>
     <string name="status_bar_clock_style_reset_message">¿Resetear colores de reloj?</string>
 
-    <!-- StatusBar Battery Settings -->
-    <string name="battery_icon_title">Icono de batería</string>
-    <string name="battery_icon_summary">Ver o cambiar la configuración de estilo de la batería</string>
-    <string name="battery_status_icon">Icono</string>
-    <string name="battery_status_percentage">Porcentaje</string>
-    <string name="battery_status_icon_percentage">Icono con percentaje</string>
-    <string name="battery_status_circle">Círculo</string>
-    <string name="battery_status_circle_percentage">Círculo con porcentaje</string>
-    <string name="battery_status_dotted_circle_percentage">Círculo de puntos con un porcentaje</string>
-    <string name="battery_status_dotted_circle">Círculo de puntos</string>
-    <string name="battery_color_title">Color de batería</string>
-    <string name="circle_battery_animation_speed">Velocidad de la animación de círculo</string>
-    <string name="circle_battery_animation_speed_none">Ninguna</string>
-    <string name="circle_battery_animation_speed_slow">Lenta</string>
-    <string name="circle_battery_animation_speed_stock">Normal</string>
-    <string name="circle_battery_animation_speed_fast">Rápida</string>
-    <string name="battery_text_color">Color de texto de porcentaje</string>
-    <string name="battery_bolt_color">Color de carga</string>
-    <string name="battery_text_charging_color">Color de texto de porcentaje de carga</string>
-    <string name="battery_style_reset_message">¿Resetear todos los colores de batería?</string>
+    <!-- StatusBar Battery Settings -->    
+    <string name="status_bar_battery_title">Estilo estado de batería</string>
+    <string name="status_bar_style_icon_portrait">Icono en vertical</string>
+    <string name="status_bar_style_icon_landscape">Icono en horizontal</string>
+    <string name="status_bar_style_circle">Circulo</string>
+    <string name="status_bar_style_text">Texto</string>
+    <string name="status_bar_style_hidden">Oculto</string>
+    <string name="status_bar_battery_show_percent_title">Mostrar porcentaje de batería</string>
 
     <!-- StatusBar Brightness Control -->
     <string name="status_bar_toggle_brightness">Control de brillo</string>
@@ -632,7 +620,7 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     <string name="privacy_guard_filter_does_not_match">No hay aplicaciones con permisos relevantes instaladas</string>
     <string name="privacy_guard_help_title">Ayuda</string>
     <string name="privacy_guard_reset_title">Resetear</string>
-	<string name="privacy_guard_reset_text">¿Resetear permisos?</string>
+    <string name="privacy_guard_reset_text">¿Resetear permisos?</string>
     <string name="privacy_guard_help_text">En esta pantalla puede elegir para qué aplicaciones Privacy Guard debe activarse con un simple toque. Las aplicaciones seleccionadas no podrán acceder a sus datos personales, como contactos, mensajes y registros de llamadas. Pulsación larga abre pantalla de detalles sobre esa app.\n\nPor defecto apps de sistema no se muestran. Si desea mostrarlos, seleccione la opción correspondiente en el menú.</string>
     <string name="privacy_guard_manager_show_system_apps">Mostrar apps de sistema</string>
     <string name="privacy_guard_manager_filter_permissions">Filtro de permisos</string>
@@ -972,22 +960,25 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     <string name="start_time_title">Inicio</string>
     <string name="end_time_title">Final</string>
 
-    <!-- Network speed -->
+    <!-- Network traffic -->
     <string name="network_traffic_title">Tráfico de red</string>
-    <string name="network_traffic_summary">Ver o cambiar opciones de tráfico de red</string>
-    <string name="status_bar_show_network_stats_title">Indicador de tráfico de red</string>
-    <string name="status_bar_show_network_stats_summary">Mostrar velocidades de red en la barra de estado</string>
-    <string name="status_bar_network_stats_update_title">Frecuencia de actualización</string>
-    <string name="status_bar_network_stats_update_summary">¿Con qué frecuencia se actualiza el indicador?</string>
+    <string name="show_network_traffic_state">Monitor de tráfico barra de estado</string>
+    <string name="show_network_traffic_unit">Ver unidad</string>
+    <string name="show_network_traffic_frequency">Intervalo de actualización</string>
+    <string name="show_network_traffic_disable">Desactivado</string>
+    <string name="show_network_traffic_up">Saliente</string>
+    <string name="show_network_traffic_down">Entrante</string>
+    <string name="show_network_traffic_all">Saliente y entrante</string>
+    <string name="show_network_traffic_bit">Bits por segundo</string>
+    <string name="show_network_traffic_byte">Bytes por segundo</string>
+    <string name="show_network_traffic_500">500 ms</string>
+    <string name="show_network_traffic_1000">1000 ms</string>
+    <string name="show_network_traffic_1500">1500 ms</string>
+    <string name="show_network_traffic_2000">2000 ms</string>
 
-    <!-- Network stats hide if there's no traffic -->
-    <string name="hide_network_speed">Ocultar cuando no hay tráfico</string>
-    <string name="hide_network_speed_summary">Ocultar indicador de estadísticas de la red cuando no hay tráfico</string>
-
-    <!-- Network stats custm colors -->
-    <string name="status_bar_network_usage_color_style">Estilo de color</string>
-    <string name="status_bar_network_usage_color_reset">Reestablecer color</string>
-    <string name="status_bar_network_usage_color_reset_message">Reestablecer color de estadísticas de red por defecto?</string>
+    <!-- Status Bar Activity Indicators -->
+    <string name="show_activity_indicators_on_status_bar_title">Indicadores de actividad</string>
+    <string name="show_activity_indicators_on_status_bar_summary">Ver indicadores en barra de señal</string>
 	
     <!-- Screen recorder -->
     <string name="screen_recorder_title">Grabadora de pantalla</string>
@@ -1539,5 +1530,53 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     <!-- EdgeGesture service -->
     <string name="edge_gesture_service_title">Bloquear gesto de toque de eventos</string>
     <string name="edge_gesture_service_summary">No emitir gesto de toque de eventos en navbar y barra de estado</string>
-</resources>
 
+    <!-- Wakelock blocker -->
+    <string name="wakelock_blocker">Bloqueador de Wakelock</string>
+    <string name="wakelock_blocker_title">Activar</string>
+    <string name="wakelock_blocker_summary">Activar Bloqueador de Wakelocks para revisar wakelocks</string>
+    <string name="wakelock_blocker_save">Guardar</string>
+    <string name="wakelock_list_header">Wakelocks disponible</string>
+    <string name="wakelock_blocker_reload">Recargar</string>
+    <string name="wakelock_blocker_warning_title">Proceder con precaución</string>
+    <string name="wakelock_blocker_warning">Bloqueador de Wakelocks puede causar inestabilidad, accidentes o pérdida de datos.</string>
+	
+    <!-- Toggle switch title for enabling battery saver connections. [CHAR LIMIT=32] -->
+    <string name="data_usage_enable_batterysaver">Ahorro de batería</string>
+
+    <!-- Battery saver mode -->
+    <string name="network_lte">LTE (recomendado)</string>
+    <string name="network_4G">4G (recomendado)</string>
+    <string name="network_3G_only">3G sólo</string>
+    <string name="network_3G_auto">2G/3G auto</string>
+    <string name="network_3G">2G/3G preferido</string>
+    <string name="network_2G">2G sólo</string>
+    <string name="network_1x">1x</string>
+    <string name="network_global">Global</string>
+    <string name="battery_saver_action_undefined">Indefinido</string>
+    <string name="battery_saver_title">Modo ahorro de batería</string>
+    <string name="battery_saver_summary">Elija los modos de ahorro de energía para los datos móviles y conexiones WiFi</string>
+    <string name="pref_battery_saver_enable_title">Ahorro de batería</string>
+    <string name="pref_battery_saver_enable_summary">Esto cambiará automáticamente la red en modo de ahorro de energía definida por el usuario o el modo normal en función de los datos móviles y estados de conexión WiFi</string>
+    <string name="pref_battery_saver_normal_mode_title">Modo de red normal</string>
+    <string name="pref_battery_saver_power_saving_mode_title">Modo de red de ahorro de energía</string>
+    <string name="pref_battery_saver_screen_off_title">Cuando la pantalla se apaga</string>
+    <string name="pref_battery_saver_screen_off_summary">Activar el modo de ahorro de energía cuando la pantalla se apaga</string>
+    <string name="pref_battery_saver_ignore_locked_title">Ignorar mientras esté bloqueado</string>
+    <string name="pref_battery_saver_ignore_locked_summary">Cuando la pantalla se enciende, el modo de ahorro de energía no se desactivará hasta que keyguard se desbloquee</string>
+    <string name="pref_battery_saver_mode_change_delay_title">Retraso al cambiar modo</string>
+    <string name="pref_battery_saver_mode_change_delay_summary">Retrasar cambio de modo de ahorro de energía por un número específico de segundos</string>
+    <string name="pref_battery_saver_battery_title">Cuando la batería es baja</string>
+    <string name="pref_battery_saver_battery_summary">Activar el modo de ahorro de energía cuando la batería es baja</string>
+    <string name="pref_battery_saver_mode_battery_level_title">Nivel de batería</string>
+    <string name="pref_battery_saver_mode_battery_level_summary">Cambie al modo de ahorro de energía en: </string>
+    <string name="pref_battery_saver_data_title">Desactivar datos móviles</string>
+    <string name="pref_battery_saver_data_summary">Desactivar conexión de datos móviles cuando el ahorro de energía esté activa</string>
+    <string name="pref_battery_saver_enable_no_mobiledata_summary">Este gestionará automáticamente el uso de la batería del dispositivo al definido por el usuario </string>
+    <string name="pref_battery_saver_wifi_title">Desactivar WiFi</string>
+    <string name="pref_battery_saver_wifi_summary">Desactivar conexión wifi cuando el ahorro de energía activado</string>
+
+    <string name="global_immersive_mode_system_bars_visibility">Visibilidad de barras de sistmea</string>
+    <string name="global_immersive_mode_system_bars_visibility_summary">Mostrar paneles en pantalla de bloqueo en modo global inmersivo</string>
+
+</resources>

@@ -63,7 +63,6 @@ public class AnimationInterfaceSettings extends SettingsPreferenceFragment imple
 
         mToastAnimation = (ListPreference) findPreference(KEY_TOAST_ANIMATION);
         mToastAnimation.setSummary(mToastAnimation.getEntry());
-        if (mToastAnimation != null) {
         int CurrentToastAnimation = Settings.System.getInt(getContentResolver(), Settings.System.ACTIVITY_ANIMATION_CONTROLS[10], 1);
         mToastAnimation.setValueIndex(CurrentToastAnimation); //set to index of default value
         mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
@@ -76,7 +75,7 @@ public class AnimationInterfaceSettings extends SettingsPreferenceFragment imple
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
         final String key = preference.getKey();
 
         if (preference == mCrtMode) {
@@ -89,8 +88,8 @@ public class AnimationInterfaceSettings extends SettingsPreferenceFragment imple
         }
 
         if (preference == mToastAnimation) {
-             int index = mToastAnimation.findIndexOfValue((String) newValue);
-             Settings.System.putString(getContentResolver(), Settings.System.ACTIVITY_ANIMATION_CONTROLS[10], (String) newValue);
+             int index = mToastAnimation.findIndexOfValue((String) objValue);
+             Settings.System.putString(getContentResolver(), Settings.System.ACTIVITY_ANIMATION_CONTROLS[10], (String) objValue);
              mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
              Toast.makeText(mContext, "Toast Test", Toast.LENGTH_SHORT).show();
              return true;

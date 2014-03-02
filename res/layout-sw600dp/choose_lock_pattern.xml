@@ -34,7 +34,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textAppearance="?android:attr/textAppearanceMedium"/>
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/grey_text"/>
 
     </ScrollView>
 
@@ -44,6 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dip"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/grey_text"
         android:visibility="gone"/>
 
     <!-- bottom: lock pattern -->
@@ -70,12 +72,14 @@
             <!-- left / top button: skip, or re-try -->
             <Button android:id="@+id/footerLeftButton"
                 style="@style/SecurityPreferenceButton"
-                android:text="@string/lockpattern_restart_button_text"/>
+                android:text="@string/lockpattern_restart_button_text"
+                android:textColor="@color/grey_text"/>
 
             <!-- right / bottom button: confirm or ok -->
             <Button android:id="@+id/footerRightButton"
                 style="@style/SecurityPreferenceButton"
-                android:text="@string/lockpattern_confirm_button_text"/>
+                android:text="@string/lockpattern_confirm_button_text"
+                android:textColor="@color/grey_text"/>
 
         </LinearLayout>
 
