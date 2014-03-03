@@ -51,7 +51,8 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.VolumePanel;
 
-import com.android.settings.mahdi.SeekBarPreference;
+import com.android.settings.mahdi.SeekBarPreferenceSlim;
+import com.android.settings.mahdi.chameleonos.SeekBarPreference;
 
 import java.util.List;
 
@@ -75,8 +76,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_EMERGENCY_TONE = "emergency_tone";
     private static final String KEY_SOUND_SETTINGS = "sound_settings";
     private static final String KEY_LOCK_SOUNDS = "lock_sounds";
-    private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds";
-    private static final String KEY_SAFE_HEADSET_VOLUME = "safe_headset_volume";
     private static final String KEY_RINGTONE = "ringtone";
     private static final String KEY_NOTIFICATION_SOUND = "notification_sound";
     private static final String KEY_CATEGORY_CALLS = "category_calls_and_notification";
@@ -87,8 +86,8 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_POWER_NOTIFICATIONS = "power_notifications";
     private static final String KEY_POWER_NOTIFICATIONS_VIBRATE = "power_notifications_vibrate";
     private static final String KEY_POWER_NOTIFICATIONS_RINGTONE = "power_notifications_ringtone";
-    private static final String KEY_HEADSET_CONNECT_PLAYER = "headset_connect_player";
     private static final String PREF_LESS_NOTIFICATION_SOUNDS = "less_notification_sounds";
+    private static final String KEY_VOLUME_PANEL_TIMEOUT = "volume_panel_timeout";
 
     private static final String[] NEED_VOICE_CAPABILITY = {
             KEY_RINGTONE, KEY_DTMF_TONE, KEY_CATEGORY_CALLS,
@@ -109,11 +108,12 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mDtmfTone;
     private CheckBoxPreference mSoundEffects;
     private CheckBoxPreference mHapticFeedback;
-    private SeekBarPreference mVibrationDuration;
+    private SeekBarPreferenceSlim mVibrationDuration;
     private Preference mMusicFx;
     private CheckBoxPreference mLockSounds;
     private Preference mRingtonePreference;
     private Preference mNotificationPreference;
+    private SeekBarPreference mVolumePanelTimeout;
 
     private Runnable mRingtoneLookupRunnable;
 
@@ -123,12 +123,9 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mDockSounds;
     private Intent mDockIntent;
     private CheckBoxPreference mDockAudioMediaEnabled;
-    private CheckBoxPreference mVolumeAdustSound;
-    private CheckBoxPreference mSafeHeadsetVolume;
     private CheckBoxPreference mPowerSounds;
     private CheckBoxPreference mPowerSoundsVibrate;
     private Preference mPowerSoundsRingtone;
-    private CheckBoxPreference mHeadsetConnectPlayer;
     private ListPreference mAnnoyingNotifications;
 
     private Vibrator mVib;
@@ -170,9 +167,19 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mVib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         addPreferencesFromResource(R.xml.sound_settings);
 
+        mRingtonePreference = findPreference(KEY_RINGTONE);
+        mNotificationPreference = findPreference(KEY_NOTIFICATION_SOUND);
+        mVolumePanelTimeout = (SeekBarPreference) findPreference(KEY_VOLUME_PANEL_TIMEOUT);
+
         if (TelephonyManager.PHONE_TYPE_CDMA != activePhoneType) {
             // device is not CDMA, do not display CDMA emergency_tone
             getPreferenceScreen().removePreference(findPreference(KEY_EMERGENCY_TONE));
+        }
+
+        if (getResources().getBoolean(com.android.internal.R.bool.config_useFixedVolume)) {
+            // device with fixed volume policy, do not display volumes submenu
+            getPreferenceScreen().removePreference(findPreference(KEY_RING_VOLUME));
+            getPreferenceScreen().removePreference(findPreference(KEY_VOLUME_PANEL_TIMEOUT));
         }
 
         mVolumeOverlay = (ListPreference) findPreference(KEY_VOLUME_OVERLAY);
@@ -182,11 +189,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                 VolumePanel.VOLUME_OVERLAY_EXPANDABLE);
         mVolumeOverlay.setValue(Integer.toString(volumeOverlay));
         mVolumeOverlay.setSummary(mVolumeOverlay.getEntry());
-
-        if (getResources().getBoolean(com.android.internal.R.bool.config_useFixedVolume)) {
-            // device with fixed volume policy, do not display volumes submenu
-            getPreferenceScreen().removePreference(findPreference(KEY_RING_VOLUME));
-        }
 
         mVibrateWhenRinging = (CheckBoxPreference) findPreference(KEY_VIBRATE);
         mVibrateWhenRinging.setPersistent(false);
@@ -207,7 +209,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                 Settings.System.HAPTIC_FEEDBACK_ENABLED, 1) != 0);
         int userMillis = Settings.System.getInt(resolver,
                 Settings.System.MINIMUM_VIBRATION_DURATION, 0);
-        mVibrationDuration = (SeekBarPreference) findPreference(KEY_VIBRATION_DURATION);
+        mVibrationDuration = (SeekBarPreferenceSlim) findPreference(KEY_VIBRATION_DURATION);
         mVibrationDuration.setInitValue(userMillis);
         mVibrationDuration.setInterval(1);
         mVibrationDuration.displaySameValue(true);
@@ -220,8 +222,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mLockSounds.setChecked(Settings.System.getInt(resolver,
                 Settings.System.LOCKSCREEN_SOUNDS_ENABLED, 1) != 0);
 
-        mRingtonePreference = findPreference(KEY_RINGTONE);
-        mNotificationPreference = findPreference(KEY_NOTIFICATION_SOUND);
+        int statusVolumePanelTimeout = Settings.System.getInt(resolver,
+                    Settings.System.VOLUME_PANEL_TIMEOUT, 3000);
+            mVolumePanelTimeout.setValue(statusVolumePanelTimeout / 1000);
+            mVolumePanelTimeout.setOnPreferenceChangeListener(this);
 
         if (mVib == null || !mVib.hasVibrator()) {
             removePreference(KEY_VIBRATE);
@@ -271,22 +275,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                 }
             }
         };
-
-        mVolumeAdustSound = (CheckBoxPreference) findPreference(KEY_VOLUME_ADJUST_SOUNDS);
-        mVolumeAdustSound.setChecked(Settings.System.getInt(resolver,
-                Settings.System.VOLUME_ADJUST_SOUNDS_ENABLED, 1) == 1);
-        mVolumeAdustSound.setOnPreferenceChangeListener(this);
-
-	mSafeHeadsetVolume = (CheckBoxPreference) findPreference(KEY_SAFE_HEADSET_VOLUME);
-        mSafeHeadsetVolume.setPersistent(false);
-        boolean safeMediaVolumeEnabled = getResources().getBoolean(
-                com.android.internal.R.bool.config_safe_media_volume_enabled);
-        mSafeHeadsetVolume.setChecked(Settings.System.getInt(resolver,
-                Settings.System.SAFE_HEADSET_VOLUME, safeMediaVolumeEnabled ? 1 : 0) != 0);
-
-        mHeadsetConnectPlayer = (CheckBoxPreference) findPreference(KEY_HEADSET_CONNECT_PLAYER);
-        mHeadsetConnectPlayer.setChecked(Settings.System.getInt(resolver,
-                Settings.System.HEADSET_CONNECT_PLAYER, 0) != 0);
 
         mAnnoyingNotifications = (ListPreference) findPreference(PREF_LESS_NOTIFICATION_SOUNDS);
         int notificationThreshold = Settings.System.getInt(getContentResolver(),
@@ -405,14 +393,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_SOUNDS_ENABLED,
                     mLockSounds.isChecked() ? 1 : 0);
 
-	} else if (preference == mSafeHeadsetVolume) {
-            Settings.System.putInt(getContentResolver(), Settings.System.SAFE_HEADSET_VOLUME,
-                    mSafeHeadsetVolume.isChecked() ? 1 : 0);
-
-        } else if (preference == mHeadsetConnectPlayer) {
-            Settings.System.putInt(getContentResolver(), Settings.System.HEADSET_CONNECT_PLAYER,
-                    mHeadsetConnectPlayer.isChecked() ? 1 : 0);
-
         } else if (preference == mMusicFx) {
             // let the framework fire off the intent
             return false;
@@ -477,12 +457,8 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             } catch (NumberFormatException e) {
                 Log.e(TAG, "could not persist emergency tone setting", e);
             }
-        }
-        if (KEY_VOLUME_ADJUST_SOUNDS.equals(key)) {
-            Settings.System.putInt(getContentResolver(),
-                Settings.System.VOLUME_ADJUST_SOUNDS_ENABLED,
-                (Boolean) objValue ? 1 : 0);		
-	} else if (preference == mVolumeOverlay) {
+        }		
+        if (preference == mVolumeOverlay) {
             final int value = Integer.valueOf((String) objValue);
             final int index = mVolumeOverlay.findIndexOfValue((String) objValue);
             Settings.System.putInt(getContentResolver(),
@@ -492,8 +468,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             final int val = Integer.valueOf((String) objValue);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, val);
-        }
-        if (preference == mVibrationDuration) {
+        } else if (preference == mVolumePanelTimeout) {
+            int volumePanelTimeout = (Integer) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.VOLUME_PANEL_TIMEOUT, volumePanelTimeout * 1000);
+        } else if (preference == mVibrationDuration) {
             int value = Integer.parseInt((String) objValue);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.MINIMUM_VIBRATION_DURATION, value);

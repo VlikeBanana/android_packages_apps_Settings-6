@@ -41,7 +41,7 @@ import com.android.internal.util.mahdi.DeviceUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.mahdi.SeekBarPreference;
+import com.android.settings.mahdi.SeekBarPreferenceSlim;
 
 import java.io.File;
 
@@ -65,8 +65,8 @@ public class NotificationDrawerStyle extends SettingsPreferenceFragment implemen
 
     private ListPreference mNotificationWallpaper;
     private ListPreference mNotificationWallpaperLandscape;
-    SeekBarPreference mWallpaperAlpha;
-    SeekBarPreference mNotificationAlpha;
+    SeekBarPreferenceSlim mWallpaperAlpha;
+    SeekBarPreferenceSlim mNotificationAlpha;
 
     private File mImageTmp;
 
@@ -108,7 +108,7 @@ public class NotificationDrawerStyle extends SettingsPreferenceFragment implemen
             Settings.System.putFloat(getContentResolver(),
                     Settings.System.NOTIFICATION_BACKGROUND_ALPHA, 0.1f);
         }
-        mWallpaperAlpha = (SeekBarPreference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
+        mWallpaperAlpha = (SeekBarPreferenceSlim) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
         mWallpaperAlpha.setInitValue((int) (transparency * 100));
         mWallpaperAlpha.setProperty(Settings.System.NOTIFICATION_BACKGROUND_ALPHA);
         mWallpaperAlpha.setOnPreferenceChangeListener(this);
@@ -121,7 +121,7 @@ public class NotificationDrawerStyle extends SettingsPreferenceFragment implemen
             Settings.System.putFloat(getContentResolver(),
                     Settings.System.NOTIFICATION_ALPHA, 0.0f);
         }
-        mNotificationAlpha = (SeekBarPreference) findPreference(PREF_NOTIFICATION_ALPHA);
+        mNotificationAlpha = (SeekBarPreferenceSlim) findPreference(PREF_NOTIFICATION_ALPHA);
         mNotificationAlpha.setInitValue((int) (transparency * 100));
         mNotificationAlpha.setProperty(Settings.System.NOTIFICATION_ALPHA);
         mNotificationAlpha.setOnPreferenceChangeListener(this);

@@ -15,7 +15,7 @@ import com.android.settings.R;
 
 import android.provider.Settings;
 
-public class SeekBarPreference extends Preference
+public class SeekBarPreferenceSlim extends Preference
         implements OnSeekBarChangeListener {
 
     public static int maximum = 100;
@@ -34,7 +34,7 @@ public class SeekBarPreference extends Preference
 
     private OnPreferenceChangeListener changer;
 
-    public SeekBarPreference(Context context, AttributeSet attrs) {
+    public SeekBarPreferenceSlim(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 

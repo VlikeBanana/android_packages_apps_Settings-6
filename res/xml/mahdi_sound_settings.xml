@@ -16,21 +16,44 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/sound_title"
+    android:title="@string/advanced_sound_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.android.settings.mahdi.SystemSettingCheckBoxPreference
-        android:key="volbtn_music_controls"
-        android:title="@string/volbtn_music_controls_title"
-        android:summary="@string/volbtn_music_controls_summary"
-        android:defaultValue="false" />
+    <PreferenceCategory
+        android:title="@string/title_general"/>
 
-    <ListPreference
-        android:key="button_volume_default_screen"
-        android:title="@string/button_volume_default_title"
-        android:summary="@string/button_volume_default_summary"
-        android:entries="@array/button_volume_default_entries"
-        android:entryValues="@array/button_volume_default_values"
-        android:defaultValue="0" />
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+            android:key="volume_music_controls"
+            android:title="@string/volbtn_music_controls_title"
+            android:summary="@string/volbtn_music_controls_summary"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="button_volume_default_screen"
+            android:title="@string/button_volume_default_title"
+            android:summary="@string/button_volume_default_summary"
+            android:entries="@array/button_volume_default_entries"
+            android:entryValues="@array/button_volume_default_values"
+            android:defaultValue="0" />
+
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+            android:key="volume_adjust_sounds_enabled"
+            android:title="@string/volume_adjust_sounds_enable_title"
+            android:summary="@string/volume_adjust_sounds_enable_summary"
+            android:defaultValue="true" />
+
+    <PreferenceCategory
+        android:title="@string/headset_category_title"/>
+
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+            android:key="safe_headset_volume"
+            android:title="@string/safe_headset_volume_title"
+            android:summary="@string/safe_headset_volume_summary"
+            android:defaultValue="true" />
+
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+            android:key="headset_connect_player"
+            android:title="@string/headset_connect_player_title"
+            android:defaultValue="false" />
 
 </PreferenceScreen>
