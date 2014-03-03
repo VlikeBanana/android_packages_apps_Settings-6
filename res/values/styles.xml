@@ -90,19 +90,19 @@
     </style>
 
     <style name="VertDivider">
-        <item name="android:layout_width">@dimen/vert_divider_width</item>
-        <item name="android:layout_height">fill_parent</item>
-        <item name="android:background">@color/divider_color</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">0.0dip</item>
+        <item name="android:background">@android:color/transparent</item>
         <item name="android:focusable">false</item>
         <item name="android:clickable">false</item>
-        <item name="android:layout_marginLeft">@dimen/vert_divider_side</item>
+        <item name="android:layout_marginLeft">0.0dip</item>
     </style>
 
     <!-- We'd like to have this as 16dip hight including paddingTop/paddingBottom to
          be consistent with ProgressBar -->
     <style name="TopDivider">
-        <item name="android:layout_width">@dimen/divider_height_top</item>
-        <item name="android:layout_height">@dimen/divider_height_top</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">0.0dip</item>
         <item name="android:background">@android:color/transparent</item>
         <item name="android:focusable">false</item>
         <item name="android:clickable">false</item>

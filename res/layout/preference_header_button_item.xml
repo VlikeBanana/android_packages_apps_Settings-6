@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2013 The Android Open Source Project
+     These portions have been modified by the Schism Project 
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -18,26 +19,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:descendantFocusability="blocksDescendants"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:minHeight="52dp"
     android:theme="@style/Theme.Settings.Main"
     android:background="@drawable/background_list_view">
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_marginStart="0dip"
-        android:layout_marginEnd="0dip"
-        android:layout_height="wrap_content">
-
-    <ListView
-        android:id="@+id/listview"
-        android:layout_width="@dimen/header_icon_width"
         android:layout_height="wrap_content"
-        android:cacheColorHint="@android:color/transparent"
-        android:divider="@drawable/background_border"
-        android:dividerHeight="1dp"
-        android:listSelector="@drawable/background_list_view" />
-    
+        android:layout_marginStart="0dip"
+        android:layout_marginEnd="0dip">
+
     <ImageView
         android:id="@+id/icon"
         android:layout_width="@dimen/header_icon_width"
@@ -83,11 +75,11 @@
 
    <View
        android:id="@+id/divider"
-       android:background="@android:color/transparent"
+       style="@style/ListSeparator"
        android:layout_marginTop="0dp"
        android:layout_marginBottom="0dp"
        android:divider="@android:color/transparent"
-       android:dividerHeight="0dip" 
+       android:dividerHeight="0dip"
        android:left="0dip"
        android:right="0dip"
        android:top="0dip"
