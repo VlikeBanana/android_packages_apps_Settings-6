@@ -1592,7 +1592,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pref_battery_saver_wifi_title">Disable WiFi</string>
     <string name="pref_battery_saver_wifi_summary">Disable wifi connection when power saving activated</string>
 
-    <string name="global_immersive_mode_system_bars_visibility">System bars visibility</string>
+    <!-- Lockscreen system bar visibility -->
+    <string name="global_immersive_mode_system_bars_visibility">System bar visibility</string>
     <string name="global_immersive_mode_system_bars_visibility_summary">Show panels on lockscreen in global immersive mode</string>
 
     <!-- Driving mode -->
@@ -1688,5 +1689,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="noti_reminder_sound_title">Notify sound</string>
     <string name="noti_reminder_sound_looping">Until dismissed</string>
     <string name="noti_reminder_ringtone">Notify ringtone</string>
+
+    <!-- Lockscreen see through -->
+    <string name="lockscreen_see_through_title">See through</string>
+    <string name="lockscreen_see_through_summary">Shows the content behind your lockscreen but your data may be visible to those around you.</string>
 
 </resources>
