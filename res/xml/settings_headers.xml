@@ -176,7 +176,8 @@
         android:fragment="com.android.settings.mahdi.PrivacySettings"
         android:icon="@drawable/ic_settings_privacy"
         android:title="@string/privacy_settings_mahdi_title"
-        android:id="@+id/privacy_settings_mahdi"  />
+        android:id="@+id/privacy_settings_mahdi" 
+        android:layout_gravity="fill" />
 
     <!-- Security -->
     <header
