@@ -22,7 +22,9 @@
     android:layout_height="wrap_content"
     android:minHeight="52dp"
     android:theme="@style/Theme.Settings.Main"
-    android:background="@drawable/background_list_view">
+    android:background="@drawable/background_list_view"
+    android:divider="@drawable/background_border"
+    android:dividerHeight="1.0dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -41,6 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginTop="-25dip"
         android:layout_marginLeft="15dp" />
 
     </LinearLayout>
@@ -75,7 +78,7 @@
 
    <View
        android:id="@+id/divider"
-       style="@style/ListSeparator"
+       style="@style/VertDivider"
        android:layout_marginTop="0dp"
        android:layout_marginBottom="0dp"
        android:divider="@android:color/transparent"
