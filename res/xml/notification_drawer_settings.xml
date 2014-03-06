@@ -111,6 +111,11 @@
         android:key="options"
         android:title="@string/additional_options_title">
 
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+            android:key="status_bar_notif_count"
+            android:title="@string/notification_count_title"
+            android:summary="@string/notification_count_summary" />
+
         <ListPreference
             android:key="notification_hide_labels"
             android:title="@string/notification_hide_labels_title"
