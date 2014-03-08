@@ -178,23 +178,23 @@ public class BatteryHistoryChart extends View {
     public BatteryHistoryChart(Context context, AttributeSet attrs) {
         super(context, attrs);
         
-        mBatteryBackgroundPaint.setARGB(255, 128, 128, 128);
+        mBatteryBackgroundPaint.setARGB(255, 202, 201, 203);
         mBatteryBackgroundPaint.setStyle(Paint.Style.FILL);
-        mBatteryGoodPaint.setARGB(128, 0, 255, 0);
+        mBatteryGoodPaint.setARGB(255, 153, 204, 0);
         mBatteryGoodPaint.setStyle(Paint.Style.STROKE);
-        mBatteryWarnPaint.setARGB(128, 255, 255, 0);
+        mBatteryWarnPaint.setARGB(255, 255, 136, 0);
         mBatteryWarnPaint.setStyle(Paint.Style.STROKE);
-        mBatteryCriticalPaint.setARGB(192, 255, 0, 0);
+        mBatteryCriticalPaint.setARGB(255, 255, 68, 68);
         mBatteryCriticalPaint.setStyle(Paint.Style.STROKE);
-        mChargingPaint.setARGB(255, 0, 128, 0);
+        mChargingPaint.setARGB(255, 0, 255, 0);
         mChargingPaint.setStyle(Paint.Style.STROKE);
         mScreenOnPaint.setStyle(Paint.Style.STROKE);
         mGpsOnPaint.setStyle(Paint.Style.STROKE);
         mWifiRunningPaint.setStyle(Paint.Style.STROKE);
         mWakeLockPaint.setStyle(Paint.Style.STROKE);
         mPhoneSignalChart.setColors(new int[] {
-                0x00000000, 0xffa00000, 0xffa0a000, 0xff808020,
-                0xff808040, 0xff808060, 0xff008000
+                0x00000000, 0xffff4444, 0xffffbb33, 0xffff8800,
+                0xffff8830, 0xffff885e, 0xff99cc00
         });
         
         mTextPaint.density = getResources().getDisplayMetrics().density;
@@ -446,18 +446,18 @@ public class BatteryHistoryChart extends View {
                 mLineWidth = textHeight/3;
             }
             mLevelTop = textHeight + mLineWidth;
-            mScreenOnPaint.setARGB(255, 32, 64, 255);
-            mGpsOnPaint.setARGB(255, 32, 64, 255);
-            mWifiRunningPaint.setARGB(255, 32, 64, 255);
-            mWakeLockPaint.setARGB(255, 32, 64, 255);
+            mScreenOnPaint.setARGB(255, 153, 51, 204);
+            mGpsOnPaint.setARGB(255, 153, 51, 204);
+            mWifiRunningPaint.setARGB(255, 153, 51, 204);
+            mWakeLockPaint.setARGB(255, 153, 51, 204);
         } else {
             mLargeMode = false;
             mLineWidth = mThinLineWidth;
             mLevelTop = 0;
-            mScreenOnPaint.setARGB(255, 0, 0, 255);
-            mGpsOnPaint.setARGB(255, 0, 0, 255);
-            mWifiRunningPaint.setARGB(255, 0, 0, 255);
-            mWakeLockPaint.setARGB(255, 0, 0, 255);
+            mScreenOnPaint.setARGB(255, 153, 51, 204);
+            mGpsOnPaint.setARGB(255, 153, 51, 204);
+            mWifiRunningPaint.setARGB(255, 153, 51, 204);
+            mWakeLockPaint.setARGB(255, 153, 51, 204);
         }
         if (mLineWidth <= 0) mLineWidth = 1;
         mTextPaint.setStrokeWidth(mThinLineWidth);

@@ -34,7 +34,12 @@
 
     <Preference
             android:key="musicfx"
-            android:title="@string/musicfx_title" />    
+            android:title="@string/musicfx_title" />
+
+    <PreferenceScreen
+            android:key="advanced_sound_settings"
+            android:fragment="com.android.settings.mahdi.SoundSettings"
+            android:title="@string/advanced_sound_title" />
 
     <PreferenceCategory
             android:key="category_calls_and_notification"

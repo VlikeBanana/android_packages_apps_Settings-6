@@ -23,6 +23,10 @@
     <string name="mod_version">The Schism version</string>
     <string name="mod_version_default">Unknown</string>
 
+    <!-- About phone screen, Build date of ROM -->
+    <string name="build_date">Build date</string>
+    <string name="build_date_default">2012-01-01-0000</string>
+
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="reset">Reset</string>
@@ -1118,7 +1122,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!--Wakeup when plugged/unplugged -->
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
-    <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged.</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged</string>
 
     <!-- Lockscreen pin shuffle -->
     <string name="lock_numpad_random_title">Change the order of PIN pad numbers</string>
@@ -1260,6 +1264,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="headset_connect_player_title">Launch music app on connect</string>
 
     <!-- Volume default -->
+    <string name="sound_title">Sound</string>
+    <string name="advanced_sound_title">Advanced options</string>
     <string name="button_volume_default_none">None</string>
     <string name="button_volume_default_ringer">Ringer</string>
     <string name="button_volume_default_media">Media</string>

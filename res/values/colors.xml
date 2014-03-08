@@ -29,7 +29,7 @@
 
     <!-- Storage Colors -->
     <color name="memory_used">#F00</color>
-    <color name="memory_avail">#333333</color>
+    <color name="memory_avail">#99666666</color>
     <color name="memory_apps_usage">#99CC00</color>
     <color name="memory_downloads">#33B5E5</color>
     <color name="memory_dcim">#9933CC</color>

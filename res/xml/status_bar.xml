@@ -22,7 +22,7 @@
     <PreferenceCategory
         android:title="@string/title_general">
 
-	<CheckBoxPreference
+        <CheckBoxPreference
             android:key="status_bar_brightness_control"
             android:title="@string/status_bar_toggle_brightness"
             android:summary="@string/status_bar_toggle_brightness_summary"
@@ -37,47 +37,15 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-            android:title="@string/network_traffic_title">
-
-        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
-            android:key="status_bar_network_activity"
-	        android:title="@string/show_activity_indicators_on_status_bar_title"
-            android:summary="@string/show_activity_indicators_on_status_bar_summary"
-            android:defaultValue="false" />
-
-        <ListPreference
-                android:key="network_traffic_state"
-                android:title="@string/show_network_traffic_state"
-                android:entries="@array/show_network_traffic_state_entries"
-                android:entryValues="@array/show_network_traffic_state_values"
-                android:persistent="false" />
-
-        <ListPreference
-                android:key="network_traffic_unit"
-                android:title="@string/show_network_traffic_unit"
-                android:entries="@array/show_network_traffic_unit_entries"
-                android:entryValues="@array/show_network_traffic_unit_values"
-                android:persistent="false" />
-
-        <ListPreference
-                android:key="network_traffic_period"
-                android:title="@string/show_network_traffic_frequency"
-                android:entries="@array/show_network_traffic_frequency_entries"
-                android:entryValues="@array/show_network_traffic_frequency_values"
-                android:persistent="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:title="@string/status_bar_style_title">
 
         <PreferenceScreen
             android:fragment="com.android.settings.mahdi.StatusBarClockStyle"
             android:key="clock_style_pref"
             android:title="@string/status_bar_clock"
-	    android:summary="@string/status_bar_clock_summary" />
+            android:summary="@string/status_bar_clock_summary" />
 
-	<ListPreference
+	    <ListPreference
             android:key="status_bar_battery"
             android:dialogTitle="@string/status_bar_battery_title"
             android:title="@string/status_bar_battery_title"
@@ -89,6 +57,38 @@
             android:key="status_bar_battery_show_percent"
             android:title="@string/status_bar_battery_show_percent_title"
             android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="@string/network_traffic_title">
+
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+            android:key="status_bar_network_activity"
+            android:title="@string/show_activity_indicators_on_status_bar_title"
+            android:summary="@string/show_activity_indicators_on_status_bar_summary"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="network_traffic_state"
+            android:title="@string/show_network_traffic_state"
+            android:entries="@array/show_network_traffic_state_entries"
+            android:entryValues="@array/show_network_traffic_state_values"
+            android:persistent="false" />
+
+        <ListPreference
+            android:key="network_traffic_unit"
+            android:title="@string/show_network_traffic_unit"
+            android:entries="@array/show_network_traffic_unit_entries"
+            android:entryValues="@array/show_network_traffic_unit_values"
+            android:persistent="false" />
+
+        <ListPreference
+            android:key="network_traffic_period"
+            android:title="@string/show_network_traffic_frequency"
+            android:entries="@array/show_network_traffic_frequency_entries"
+            android:entryValues="@array/show_network_traffic_frequency_values"
+            android:persistent="false" />
 
     </PreferenceCategory>
 

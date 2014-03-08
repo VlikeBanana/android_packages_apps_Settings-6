@@ -71,6 +71,8 @@
         <item name="wifi_signal">@drawable/wifi_signal_light</item>
         <item name="android:actionBarStyle">@style/ActionBar</item>
         <item name="android:textColor">@color/grey_text</item>
+        <item name="android:alertDialogTheme">@style/AlertDialog</item>
+        <item name="android:dialogTheme">@style/AlertDialog</item>
     </style>
 
     <style name="Theme.Settings.Main" parent="@android:style/Theme.Holo.Light">
@@ -81,16 +83,18 @@
         <item name="wifi_signal">@drawable/wifi_signal_light</item>
         <item name="android:actionBarStyle">@style/ActionBar</item>
         <item name="android:textColor">@color/grey_text</item>
+        <item name="android:alertDialogTheme">@style/AlertDialog</item>
+        <item name="android:dialogTheme">@style/AlertDialog</item>
+        <item name="android:divider">@null</item>
+        <item name="android:dividerHeight">0.0dp</item>
     </style>
 
     <style name="ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
         <item name="android:icon">@mipmap/ic_settings_actionbar</item>
     </style>
 
-    <style name="ListSeparator" parent="@*android:style/Widget.Holo.Light.TextView.ListSeparator">
+    <style name="AlertDialog" parent="@*android:style/Theme.Holo.Light.Dialog.Alert">
         <item name="android:textColor">@color/grey_text</item>
-        <item name="android:divider">@color/list_divider</item>   
-        <item name="android:dividerHeight">@dimen/list_divider</item>
     </style>
-
+    
 </resources>
