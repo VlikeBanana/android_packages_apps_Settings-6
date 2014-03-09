@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.driving;
+package com.android.settings.mahdi.driving;
 
 import android.app.Activity;
 import android.app.AlertDialog;
