@@ -88,17 +88,17 @@ public class RingerVolumePreference extends VolumePreference {
     };
 
     private static final int[] SEEKBAR_MUTED_RES_ID = new int[] {
-        com.android.internal.R.drawable.ic_audio_vol_mute,
-        com.android.internal.R.drawable.ic_audio_ring_notif_mute,
-        com.android.internal.R.drawable.ic_audio_notification_mute,
-        com.android.internal.R.drawable.ic_audio_alarm_mute
+        R.drawable.ic_audio_vol_mute,
+        R.drawable.ic_audio_ring_notif_mute,
+        R.drawable.ic_audio_notification_mute,
+        R.drawable.ic_audio_alarm_mute
     };
 
     private static final int[] SEEKBAR_UNMUTED_RES_ID = new int[] {
-        com.android.internal.R.drawable.ic_audio_vol,
-        com.android.internal.R.drawable.ic_audio_ring_notif,
-        com.android.internal.R.drawable.ic_audio_notification,
-        com.android.internal.R.drawable.ic_audio_alarm
+        R.drawable.ic_audio_vol,
+        R.drawable.ic_audio_ring_notif,
+        R.drawable.ic_audio_notification,
+        R.drawable.ic_audio_alarm
     };
 
     private ImageView[] mCheckBoxes = new ImageView[SEEKBAR_MUTED_RES_ID.length];
@@ -126,7 +126,7 @@ public class RingerVolumePreference extends VolumePreference {
                         (streamType == AudioManager.STREAM_NOTIFICATION)) &&
                         (mAudioManager.getRingerMode() == AudioManager.RINGER_MODE_VIBRATE)) {
                     mCheckBoxes[i].setImageResource(
-                            com.android.internal.R.drawable.ic_audio_ring_notif_vibrate);
+                            R.drawable.ic_audio_ring_notif_vibrate);
                 } else {
                     mCheckBoxes[i].setImageResource(
                             muted ? SEEKBAR_MUTED_RES_ID[i] : SEEKBAR_UNMUTED_RES_ID[i]);
