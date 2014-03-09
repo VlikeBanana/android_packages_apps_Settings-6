@@ -79,8 +79,8 @@ public class AnimationInterfaceSettings extends SettingsPreferenceFragment imple
         final String key = preference.getKey();
 
         if (preference == mCrtMode) {
-            int value = Integer.parseInt((String) newValue);
-            int index = mCrtMode.findIndexOfValue((String) newValue);
+            int value = Integer.parseInt((String) objValue);
+            int index = mCrtMode.findIndexOfValue((String) objValue);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.SYSTEM_POWER_CRT_MODE,
                     value);
@@ -91,7 +91,7 @@ public class AnimationInterfaceSettings extends SettingsPreferenceFragment imple
              int index = mToastAnimation.findIndexOfValue((String) objValue);
              Settings.System.putString(getContentResolver(), Settings.System.ACTIVITY_ANIMATION_CONTROLS[10], (String) objValue);
              mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
-             Toast.makeText(mContext, "Toast Test", Toast.LENGTH_SHORT).show();
+             Toast.makeText(mContext, "The Schism Toast", Toast.LENGTH_SHORT).show();
              return true;
         }
         return false;

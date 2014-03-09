@@ -80,7 +80,7 @@
         android:key="driving_mode_settings"
         android:title="@string/voice_tts_title"
         android:summary="@string/voice_tts_summary"
-        android:icon="@drawable/ic_settings_driving" 
+        android:icon="@drawable/ic_settings_halo" 
         android:fragment="com.android.settings.mahdi.driving.TtsNotification" />
 
     <PreferenceScreen
