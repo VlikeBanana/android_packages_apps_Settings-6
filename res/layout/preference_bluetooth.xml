@@ -20,12 +20,12 @@
     android:gravity="center_vertical">
 
     <!-- Divider -->
-    <ImageView
+    <View
         android:id="@+id/divider"
-        android:layout_width="wrap_content"
+        android:layout_width="1.0dip"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:src="@drawable/nav_divider"
+        android:background="@color/list_divider"
         android:contentDescription="@null"
          />
 

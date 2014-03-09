@@ -74,14 +74,14 @@
 
     <!-- Divider -->
 
-    <ImageView
+    <View
         android:id="@id/divider"
-        android:layout_width="wrap_content"
+        android:layout_width="1.0dip"
         android:layout_height="match_parent"
         android:layout_centerVertical="true"
         android:layout_toStartOf="@android:id/button2"
         android:contentDescription="@null"
-        android:src="@drawable/nav_divider" />
+        android:background="@color/list_divider" />
 
     <!-- Settings icon -->
 
