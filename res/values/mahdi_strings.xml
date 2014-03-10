@@ -1596,7 +1596,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Driving mode -->
     <string name="voice_tts_title">Driving Mode</string>
-    <string name="voice_tts_summary">Make your phone talk to you while driving</string>
+    <string name="voice_tts_summary">Make your phone speak out all your notifications, calls and texts while you are driving safely.</string>
     <string name="tts_settings_reset_message">Reset all settings to default?</string>
     <string name="voice_tts_notification_title">Drive mode</string>
     <string name="voice_tts_notification_summary_on">Enable driving mode</string>
