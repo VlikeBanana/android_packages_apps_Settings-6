@@ -18,12 +18,12 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <ImageView android:id="@+id/titleDivider"
+    <View android:id="@+id/titleDivider"
         android:layout_width="match_parent"
-        android:layout_height="1dip"
+        android:layout_height="2dip"
         android:scaleType="fitXY"
         android:gravity="fill_horizontal"
-        android:src="@android:drawable/divider_horizontal_dark"
+        android:background="@color/list_divider"
         android:contentDescription="@null" />
 
     <TextView
