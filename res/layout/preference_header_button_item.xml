@@ -22,9 +22,7 @@
     android:layout_height="wrap_content"
     android:minHeight="52dp"
     android:theme="@style/Theme.Settings.Main"
-    android:background="@drawable/background_list_view"
-    android:divider="@drawable/background_border"
-    android:dividerHeight="1.0dp">
+    android:background="@drawable/background_layered">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -79,14 +77,8 @@
    <View
        android:id="@+id/divider"
        style="@style/VertDivider"
-       android:layout_marginTop="0dp"
-       android:layout_marginBottom="0dp"
-       android:divider="@android:color/transparent"
-       android:dividerHeight="0dip"
-       android:left="0dip"
-       android:right="0dip"
-       android:top="0dip"
-       android:bottom="0dip" />
+       android:layout_marginTop="6dp"
+       android:layout_marginBottom="6dp" />
 
    <ImageButton android:id="@+id/buttonWidget"
        android:layout_width="wrap_content"

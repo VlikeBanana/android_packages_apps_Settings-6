@@ -90,8 +90,8 @@
     </style>
 
     <style name="VertDivider">
-        <item name="android:layout_width">0.0dip</item>
-        <item name="android:layout_height">0.0dip</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
         <item name="android:background">@android:color/transparent</item>
         <item name="android:focusable">false</item>
         <item name="android:clickable">false</item>
