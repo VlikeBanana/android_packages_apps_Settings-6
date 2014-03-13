@@ -1630,6 +1630,15 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_saver_network_cdma_title">CDMA Networks</string>
     <string name="battery_saver_system_title">System options</string>
 
+    <string name="ad_redisplay_never">Never</string>
+    <string name="ad_redisplay_1m">1 minute</string>
+    <string name="ad_redisplay_5m">5 minutes</string>
+    <string name="ad_redisplay_15m">15 minutes</string>
+    <string name="ad_redisplay_30m">30 minutes</string>
+    <string name="ad_redisplay_1h">1 hour</string>
+    <string name="ad_redisplay_2h">2 hours</string>
+    <string name="ad_redisplay_5h">5 hours</string>
+
     <!-- Lockscreen system bar visibility -->
     <string name="global_immersive_mode_system_bars_visibility">System bar visibility</string>
     <string name="global_immersive_mode_system_bars_visibility_summary">Show panels on lockscreen in global immersive mode</string>
