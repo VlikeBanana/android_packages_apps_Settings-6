@@ -160,7 +160,7 @@ public class Settings extends PreferenceActivity
             R.id.battery_settings,
             R.id.personal_section,
             R.id.location_settings,
-            R.id.security_settings,
+            R.id.security_settings_header,
             R.id.language_settings,
             R.id.user_settings,
             R.id.account_settings,
@@ -845,7 +845,7 @@ public class Settings extends PreferenceActivity
                      || header.id == R.id.bluetooth_settings
                      || header.id == R.id.profiles_settings) {
                 return HEADER_TYPE_SWITCH;
-            } else if (header.id == R.id.security_settings) {
+            } else if (header.id == R.id.security_settings_header) {
                 return HEADER_TYPE_BUTTON;
             } else {
                 return HEADER_TYPE_NORMAL;
@@ -970,7 +970,7 @@ public class Settings extends PreferenceActivity
                     break;
 
                 case HEADER_TYPE_BUTTON:
-                    if (header.id == R.id.security_settings) {
+                    if (header.id == R.id.security_settings_header) {
                         boolean hasCert = DevicePolicyManager.hasAnyCaCertsInstalled();
                         if (hasCert) {
                             holder.button_.setVisibility(View.GONE);
