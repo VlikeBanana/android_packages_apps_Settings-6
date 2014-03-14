@@ -43,13 +43,6 @@
         android:gravity="center"
         android:layout_marginLeft="15dp" />
 
-    <ListView
-        android:id="@+id/listview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/background_layered"
-        android:listDivider="@drawable/transparent_divider" />
-
     </LinearLayout>
 
     <RelativeLayout

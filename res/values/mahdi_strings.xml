@@ -912,7 +912,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="navigation_bar_width_title">Navigation bar width</string>
     <string name="navigation_bar_width_summary">Navigation bar height if the bar is along a side.</string>
     <string name="navbar_can_move">Show landscape</string>
-    <string name="navbar_can_move_summary">Shows navigation bar in lanscape on the bottom</string>
+    <string name="navbar_can_move_summary">Shows navigation bar in landscape on the bottom</string>
     <string name="navbar_style_dimen_title">Dimensions</string>
     <string name="navbar_button_title">Buttons</string>
     <string name="navbar_targets_title">Ring targets</string>
@@ -1830,5 +1830,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="gerrit_summary">Modified version of mGerrit to view DU as default gerrit</string>
     <string name="google_camera_title">Google Camera</string>
     <string name="google_camera_summary">Google Camera (flashable) with photosphere and HDR mode google_camera</string>
+
+    <!-- Content description of the sync in progress icon for accessibility. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_sync_in_progress">Sync in progress</string>
 
 </resources>

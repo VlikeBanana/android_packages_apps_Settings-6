@@ -68,18 +68,21 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/grey_text</item>
+        <item name="android:listSeparatorTextViewStyle">@style/ListSeparator</item>
     </style>
 
     <style name="TextAppearance.info_small">
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/grey_text</item>
+        <item name="android:listSeparatorTextViewStyle">@style/ListSeparator</item>
     </style>
 
     <style name="TextAppearance.info_value">
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/grey_text</item>
+        <item name="android:listSeparatorTextViewStyle">@style/ListSeparator</item>
     </style>
 
     <style name="TallTitleBarTheme" parent="android:Theme.NoTitleBar">

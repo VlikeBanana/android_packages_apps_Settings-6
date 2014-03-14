@@ -90,8 +90,11 @@
         <item name="android:icon">@mipmap/ic_settings_actionbar</item>
     </style>
 
-    <style name="ListSeparator" parent="@*android:style/Widget.Holo.Light.TextView.ListSeparator">
-        <item name="android:background">@drawable/list_section_divider</item>
+    <style name="ListSeparator" parent="@*android:style/Widget.TextView.ListSeparator">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@color/grey_text</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>
