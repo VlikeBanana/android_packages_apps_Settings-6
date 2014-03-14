@@ -16,23 +16,41 @@
  * limitations under the License.
  */
 -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-<shape xmlns:android="http://schemas.android.com/apk/res/android" 
-    android:shape="rectangle">
-      
-    <stroke
-        android:width="2dp"
+<item>
+<shape android:shape="rectangle" >
+    
+    <solid
         android:color="@color/list_divider" />
-
-    <padding android:left="1dp"
-        android:top="0dp"
-        android:right="1dp"
-        android:bottom="2dp" />
+    
+    <padding
+        android:bottom="1dp"
+        android:left="1dp"
+        android:right="1dp" />
 
     <corners
-        android:bottomLeftRadius="2dp"
-        android:bottomRightRadius="2dp"
-        android:topLeftRadius="2dp"
-        android:topRightRadius="2dp" />
+        android:bottomRightRadius="1dp"
+        android:bottomLeftRadius="1dp"
+        android:topLeftRadius="0dp"
+        android:topRightRadius="0dp" />
 
 </shape>
+</item>
+
+<item>
+<shape android:shape="rectangle" >
+    
+    <padding
+        android:bottom="1dp"
+        android:left="1dp"
+        android:right="1dp"
+        android:top="1dp" />
+
+    <solid
+        android:color="@color/list_divider" />
+
+</shape>
+</item>
+
+</layer-list>

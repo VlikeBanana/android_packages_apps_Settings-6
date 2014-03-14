@@ -107,7 +107,7 @@ public class ProfilesSettings extends SettingsPreferenceFragment {
         mViewPager.setAdapter(mAdapter);
 
         PagerTabStrip tabs = (PagerTabStrip) view.findViewById(R.id.tabs);
-        tabs.setTabIndicatorColorResource(android.R.color.white);
+        tabs.setTabIndicatorColorResource(R.color.list_divider);
 
         mProfileManager = (ProfileManager) getActivity().getSystemService(PROFILE_SERVICE);
 

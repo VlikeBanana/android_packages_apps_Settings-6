@@ -15,9 +15,7 @@
 -->
 
 <preference-headers
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:theme="@style/Theme.Settings.Main"
-        android:background="@drawable/background_list_view">
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Networking Section -->
     <header android:id="@+id/wireless_section"
@@ -37,14 +35,6 @@
         android:fragment="com.android.settings.bluetooth.BluetoothSettings"
         android:title="@string/bluetooth_settings_title"
         android:icon="@drawable/ic_settings_bluetooth2" 
-        android:layout_gravity="fill" />
-    
-    <!-- Location -->
-    <header
-        android:fragment="com.android.settings.location.LocationSettings"
-        android:icon="@drawable/ic_settings_location"
-        android:title="@string/location_settings_title"
-        android:id="@+id/location_settings" 
         android:layout_gravity="fill" />
 
     <!-- Data Usage -->
@@ -162,6 +152,14 @@
         android:title="@string/profiles_settings_title" 
         android:layout_gravity="fill" />
 
+    <!-- Location -->
+    <header
+        android:fragment="com.android.settings.location.LocationSettings"
+        android:icon="@drawable/ic_settings_location"
+        android:title="@string/location_settings_title"
+        android:id="@+id/location_settings" 
+        android:layout_gravity="fill" />
+
     <!-- Application Settings -->
     <header
         android:fragment="com.android.settings.applications.ManageApplications"
@@ -181,7 +179,7 @@
 
     <!-- Security -->
     <header
-        android:id="@+id/security_settings_header"
+        android:id="@+id/security_settings"
         android:fragment="com.android.settings.SecuritySettings"
         android:icon="@drawable/ic_settings_security"
         android:title="@string/security_settings_title"

@@ -971,7 +971,7 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.SecuritySettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                android:resource="@id/security_settings_header" />
+                android:resource="@id/security_settings" />
         </activity>
 
         <activity android:name="MonitoringCertInfoActivity"
@@ -1000,7 +1000,7 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.TrustedCredentialsSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                android:resource="@id/security_settings_header" />
+                android:resource="@id/security_settings" />
         </activity>
 
         <!-- Keep compatibility with old shortcuts. -->
@@ -1012,7 +1012,7 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.SecuritySettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                android:resource="@id/security_settings_header" />
+                android:resource="@id/security_settings" />
         </activity-alias>
 
         <activity android:name="Settings$PrivacySettingsActivity"
@@ -1062,7 +1062,7 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.DeviceAdminSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                android:resource="@id/security_settings_header" />
+                android:resource="@id/security_settings" />
             <meta-data android:name="com.android.settings.PARENT_FRAGMENT_TITLE"
                 android:resource="@string/security_settings_title" />
             <meta-data android:name="com.android.settings.PARENT_FRAGMENT_CLASS"
@@ -1077,7 +1077,7 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.DeviceAdminSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                android:resource="@id/security_settings_header" />
+                android:resource="@id/security_settings" />
             <meta-data android:name="com.android.settings.PARENT_FRAGMENT_TITLE"
                 android:resource="@string/security_settings_title" />
             <meta-data android:name="com.android.settings.PARENT_FRAGMENT_CLASS"
@@ -1711,7 +1711,7 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.CryptKeeperSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                android:resource="@id/security_settings_header" />
+                android:resource="@id/security_settings" />
         </activity>
 
         <activity android:name="Settings$DataUsageSummaryActivity"
@@ -1809,7 +1809,7 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                        android:value="com.android.settings.NotificationAccessSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                       android:resource="@id/security_settings_header" />
+                       android:resource="@id/security_settings" />
         </activity>
 
         <!-- Show regulatory info (from settings item or dialing "*#07#") -->
@@ -2023,7 +2023,7 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.blacklist.BlacklistSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                android:resource="@id/security_settings_header" />
+                android:resource="@id/security_settings" />
         </activity>
 
         <activity android:name="Settings$AnimationInterfaceSettingsActivity"
