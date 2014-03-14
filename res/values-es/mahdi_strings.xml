@@ -1383,34 +1383,108 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
 	
     <!-- Emulate menu key -->
     <string name="emulate_menu_key_title">Emular tecla de menú de hardware</string>
-    <string name="emulate_menu_key_summary">Al pulsar la tecla de menú en navbar se abrirá el menú overflow</string>	
+    <string name="emulate_menu_key_summary">Al pulsar la tecla de menú en navbar se abrirá el menú overflow</string>
+	
     <!-- App ops -->
-    <string name="app_ops_summaries_bluetooth_change">cambio bluetooth</string>
-    <string name="app_ops_labels_bluetooth_change">cambio Bluetooth</string>
-    <string name="app_ops_summaries_data_change">cambio datos</string>
-    <string name="app_ops_labels_data_change">cambio Datos</string>
-    <string name="app_ops_summaries_alarm_wakeup">despertar</string>
+    <string name="app_ops_summaries_wifi_change">cambiar el estado de Wi-Fi</string>
+    <string name="app_ops_labels_wifi_change">Controlar Wi-Fi</string>
+    <string name="app_ops_summaries_bluetooth_change">cambiar el estado de Bluetooth</string>
+    <string name="app_ops_labels_bluetooth_change">Controlar Bluetooth</string>
+    <string name="app_ops_summaries_data_change">cambiar la conexión de red</string>
+    <string name="app_ops_labels_data_change">Controlar conexión de red</string>
+    <string name="app_ops_summaries_alarm_wakeup">despertar el dispositivo</string>
     <string name="app_ops_labels_alarm_wakeup">Despertar</string>
-    <string name="app_ops_summaries_auto_start">inicio automático</string>
-    <string name="app_ops_labels_auto_start">Inicio Automático</string>
-    <!-- App ops categories -->
-    <string name="app_ops_categories_bootup">Arranque</string>
-    <!-- App ops detail -->
-    <string name="app_ops_entry_summary"><xliff:g id="op">%1$s</xliff:g> (usado <xliff:g id="count">%2$s</xliff:g>)</string>
-    <string name="app_ops_allowed_count">Permitido <xliff:g id="count" example="2 times">%s</xliff:g></string>
-    <string name="app_ops_ignored_count">Denegado <xliff:g id="count" example="2 times">%s</xliff:g></string>
-    <string name="app_ops_both_count">Permitido <xliff:g id="count">%1$s</xliff:g>, denegado <xliff:g id="count">%2$s</xliff:g></string>
-    <plurals name="app_ops_count">
-        <item quantity="one">una vez</item>
-        <item quantity="other">%d veces</item>
-    </plurals>
- 
-    <!-- App ops menu options -->
-    <string name="app_ops_show_user_apps">Mostrar apps de ususario</string>
-    <string name="app_ops_show_system_apps">Mostrar apps de sistema</string>
-    <string name="app_ops_reset_counters">Reestablecer contadores permitidos/denegados</string>
-    <string name="app_ops_reset_confirm_title">Confirmar contadores permitidos</string>
-    <string name="app_ops_reset_confirm_mesg">¿Seguro que desea poner a cero los contadores de AppOps?</string>	
+    <string name="app_ops_summaries_auto_start">ejecutarse automáticamente</string>
+    <string name="app_ops_labels_auto_start">Inicio automático</string>
+    <string name="app_ops_categories_bootup">Ejecución</string>
+    <string name="app_ops_entry_summary"><xliff:g id="op">%1$s</xliff:g> (usada <xliff:g id="count">%2$s</xliff:g>)</string>
+    <string name="app_ops_allowed_count">Permitida <xliff:g id="count" example="2 times">%s</xliff:g></string>
+    <string name="app_ops_ignored_count">Denegada <xliff:g id="count" example="2 times">%s</xliff:g></string>
+    <string name="app_ops_both_count">Permitida <xliff:g id="count">%1$s</xliff:g>, denegada <xliff:g id="count">%2$s</xliff:g></string>
+    <string name="app_ops_show_user_apps">Aplicaciones de usuario</string>
+    <string name="app_ops_show_system_apps">Aplicaciones de sistema</string>
+    <string name="app_ops_reset_counters">Restablecer contadores</string>
+    <string name="app_ops_reset_confirm_title">Restablecer contadores</string>
+    <string name="app_ops_reset_confirm_mesg">¿Estás seguro de que quieres restablecer los contadores de operaciones de aplicaciones?</string>
+
+    <string name="app_ops_summaries_access_notifications">acceder a las notificaciones</string>
+    <string name="app_ops_summaries_alarm_volume">volumen de alarma</string>
+    <string name="app_ops_summaries_audio_focus">sonido</string>
+    <string name="app_ops_summaries_bluetooth_volume">volumen de bluetooth</string>
+    <string name="app_ops_summaries_call_phone">llamar directamente a números de teléfono</string>
+    <string name="app_ops_summaries_camera">realizar fotografías y vídeo</string>
+    <string name="app_ops_summaries_cell_scan">ver conexiones de red</string>
+    <string name="app_ops_summaries_coarse_location">ubicación aproximada</string>
+    <string name="app_ops_summaries_draw_on_top">mostrar sobre otras aplicaciones</string>
+    <string name="app_ops_summaries_fine_location">ubicación precisa</string>
+    <string name="app_ops_summaries_gps">GPS</string>
+    <string name="app_ops_summaries_keep_awake">mantener encendido</string>
+    <string name="app_ops_summaries_master_volume">volumen</string>
+    <string name="app_ops_summaries_media_buttons">botones multimedia</string>
+    <string name="app_ops_summaries_media_volume">volumen multimedia</string>
+    <string name="app_ops_summaries_modify_calendar">añadir o modificar eventos de calendario</string>
+    <string name="app_ops_summaries_modify_call_log">modificar registro de llamadas</string>
+    <string name="app_ops_summaries_modify_clipboard">modificar el portapapeles</string>
+    <string name="app_ops_summaries_modify_contacts">modificar tus contactos</string>
+    <string name="app_ops_summaries_modify_settings">modificar los ajustes del sistema</string>
+    <string name="app_ops_summaries_monitor_high_power_location">consultar ubicación precisa</string>
+    <string name="app_ops_summaries_monitor_location">consultar ubicación aproximada</string>
+    <string name="app_ops_summaries_notification">publicar notificación</string>
+    <string name="app_ops_summaries_notification_volume">volumen de notificación</string>
+    <string name="app_ops_summaries_play_audio">reproducir sonido</string>
+    <string name="app_ops_summaries_read_calendar">leer eventos de calendario</string>
+    <string name="app_ops_summaries_read_call_log">leer el registro de llamadas</string>
+    <string name="app_ops_summaries_read_clipboard">consultar el portapapeles</string>
+    <string name="app_ops_summaries_read_contacts">consultar tus contactos</string>
+    <string name="app_ops_summaries_read_icc_sms">leer tus mensajes ICC</string>
+    <string name="app_ops_summaries_read_sms">leer tus mensajes SMS</string>
+    <string name="app_ops_summaries_receive_emergency_sms">recibir mensajes de emergencia SMS</string>
+    <string name="app_ops_summaries_receive_mms">recibir mensajes MMS</string>
+    <string name="app_ops_summaries_receive_sms">recibir mensajes SMS</string>
+    <string name="app_ops_summaries_receive_wap_push">recibir mensajes WAP</string>
+    <string name="app_ops_summaries_record_audio">grabar sonido</string>
+    <string name="app_ops_summaries_ring_volume">volumen de llamada</string>
+    <string name="app_ops_summaries_send_sms">enviar mensajes SMS</string>
+    <string name="app_ops_summaries_vibrate">controlar la vibración</string>
+    <string name="app_ops_summaries_voice_volume">volumen de voz</string>
+    <string name="app_ops_summaries_wifi_scan">ver conexiones wi-fi</string>
+    <string name="app_ops_summaries_write_icc_sms">editar tus mensajes ICC</string>
+    <string name="app_ops_summaries_write_sms">editar tus mensajes SMS</string>
+
+    <string name="app_ops_labels_access_notifications">Acceso a notificaciones</string>
+    <string name="app_ops_labels_alarm_volume">Sonido</string>
+    <string name="app_ops_labels_bluetooth_volume">Volumen de voz</string>
+    <string name="app_ops_labels_call_phone">Llamar</string>
+    <string name="app_ops_labels_camera">Cámara</string>
+    <string name="app_ops_labels_draw_on_top">Mostrar encima</string>
+    <string name="app_ops_labels_keep_awake">Volumen de llamada</string>
+    <string name="app_ops_labels_location">Volumen de alarma</string>
+    <string name="app_ops_labels_media_buttons">Botones multimedia</string>
+    <string name="app_ops_labels_modify_calendar">Modificar calendario</string>
+    <string name="app_ops_labels_modify_call_log">Modificar registro de llamadas</string>
+    <string name="app_ops_labels_modify_clipboard">Modificar portapapeles</string>
+    <string name="app_ops_labels_modify_contacts">Modificar contactos</string>
+    <string name="app_ops_labels_modify_settings">Modificar ajustes</string>
+    <string name="app_ops_labels_notification_toast">Notificación/Mensaje</string>
+    <string name="app_ops_labels_notification_volume">Volumen</string>
+    <string name="app_ops_labels_play_audio">Reproducir sonido</string>
+    <string name="app_ops_labels_read_calendar">Leer calendario</string>
+    <string name="app_ops_labels_read_call_log">Leer registro de llamadas</string>
+    <string name="app_ops_labels_read_clipboard">Leer portapapeles</string>
+    <string name="app_ops_labels_read_contacts">Consultar contactos</string>
+    <string name="app_ops_labels_read_sms_db">Leer SMS</string>
+    <string name="app_ops_labels_receive_mms">Recibir SMS/MMS</string>
+    <string name="app_ops_labels_receive_sms">Recibir SMS/MMS</string>
+    <string name="app_ops_labels_record_audio">Grabar sonido</string>
+    <string name="app_ops_labels_send_sms">Enviar SMS/MMS</string>
+    <string name="app_ops_labels_vibrate">Vibrar</string>
+    <string name="app_ops_labels_write_sms_db">Escribir SMS</string>
+
+    <string name="app_ops_categories_device">Dispositivo</string>
+    <string name="app_ops_categories_location">Ubicación</string>
+    <string name="app_ops_categories_media">Media</string>
+    <string name="app_ops_categories_messaging">Mensajes</string>
+    <string name="app_ops_categories_personal">Personal</string>
 	
     <!-- Screen off animation options -->
     <string name="system_power_crt_mode_title">Modo de animación CRT</string>
