@@ -255,6 +255,18 @@
         android:title="@string/development_settings_title" 
         android:layout_gravity="fill" />
 
+    <!-- Kernel Tweaker -->
+    <header 
+            android:id="@+id/kernel_tweaker"
+            android:title="@string/kernel_tweaker"
+            android:icon="@drawable/ic_settings_performance"
+            android:layout_gravity="fill">
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.dsht.kerneltweaker.MainActivity"
+                android:targetPackage="com.dsht.kerneltweaker" />
+    </header>
+
     <!-- Superuser -->
     <header
         android:id="@+id/superuser"

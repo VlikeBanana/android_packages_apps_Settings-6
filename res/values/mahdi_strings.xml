@@ -1777,5 +1777,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Notification count -->
     <string name="notification_count_title">Notification count</string>
     <string name="notification_count_summary">Show the pending notification counts as overlays on the status bar</string>
+
+    <!-- Kernel Tweaker -->
+    <string name="kernel_tweaker">Kernel Tweaker</string>
     
 </resources>
