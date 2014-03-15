@@ -1895,12 +1895,6 @@
                 android:value="com.android.settings.mahdi.DisplayRotation" />
         </activity>
 
-        <activity android:name=".mahdi.CustomizationSettings" />
-        <activity android:name=".mahdi.PowerMenu" />
-	    <activity android:name=".notificationlight.NotificationLightSettings" />
-	    <activity android:name=".notificationlight.BatteryLightSettings" />
-	    <activity android:name=".profiles.ProfilesSettings" />
-
         <!-- Pseudo-activity used to provide an intent-filter entry point to expanded-desktop config -->
          <activity android:name="Settings$PowerMenuSettingsActivity"
             android:label="@string/power_menu_title"
