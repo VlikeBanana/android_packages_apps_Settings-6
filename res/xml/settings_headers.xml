@@ -255,14 +255,6 @@
         android:title="@string/development_settings_title" 
         android:layout_gravity="fill" />
 
-    <!-- Performance Controls -->
-    <header
-        android:id="@+id/performance_controls"
-        android:fragment="com.brewcrewfoo.performance.activities.MainActivity"
-        android:icon="@drawable/ic_settings_performance"
-        android:title="@string/performance_settings" 
-        android:layout_gravity="fill" />
-
     <!-- Superuser -->
     <header
         android:id="@+id/superuser"

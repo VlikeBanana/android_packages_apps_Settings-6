@@ -292,9 +292,6 @@
     <string name="remove_blacklist_entry">Do you want to remove this blacklist entry?</string>
     <string name="select_contact">Select contact</string>
 
-    <!-- Performance Control -->
-    <string name="performance_settings">Performance</string>
-
     <!-- Sound settings -->
     <string name="volume_category">Volume</string>
     <string name="advanced_sound_title">Advanced options</string>
@@ -1780,5 +1777,5 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Notification count -->
     <string name="notification_count_title">Notification count</string>
     <string name="notification_count_summary">Show the pending notification counts as overlays on the status bar</string>
-
+    
 </resources>
