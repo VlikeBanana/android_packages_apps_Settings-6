@@ -2025,5 +2025,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- OneClick Scroll -->
     <string name="oneclick_scroll_title">OneClick Scroll</string>
     <string name="oneclick_scroll_summary">Manoeuvre to the top or bottom of any page with just one click</string>
+
+    <!-- Peek Notifications -->
+    <string name="peek_notifications_title">Notification peek</string>
+    <string name="peek_notifications_summary">Show latest notification after picking up your device</string>
     
 </resources>

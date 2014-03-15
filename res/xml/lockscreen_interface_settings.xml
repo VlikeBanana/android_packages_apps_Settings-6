@@ -36,6 +36,11 @@
             android:summary="@string/lockscreen_notifications_summary"
             android:widgetLayout="@layout/listview_embedded_switchpreference" />
 
+        <CheckBoxPreference
+            android:key="peek_notifications"
+            android:title="@string/peek_notifications_title"
+            android:summary="@string/peek_notifications_summary" />
+
         <ListPreference
             android:key="lockscreen_battery_status"
             android:persistent="false"
