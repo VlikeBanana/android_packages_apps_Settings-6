@@ -31,6 +31,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.pm.UserInfo;
 import android.content.res.Resources;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.os.UserManager;
@@ -40,6 +41,7 @@ import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceGroup;
+import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
@@ -51,6 +53,14 @@ import com.android.internal.widget.LockPatternUtils;
 import com.android.settings.R;
 import com.android.settings.mahdi.HardwareKeys;
 
+import org.omnirom.omnigears.backup.BackupService;
+import org.omnirom.omnigears.preference.NumberPickerPreference;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -105,6 +115,8 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private static final String CATEGORY_ADDITIONAL = "additional_options";
     private static final String LOCK_NUMPAD_RANDOM = "lock_numpad_random";
     private static final String KEY_VISIBLE_GESTURE = "visiblegesture";
+    private static final String MENU_UNLOCK_PREF = "menu_unlock";
+    private static final String KEY_BACKUP_CATEGORY = "backup_category";
 
     private PackageManager mPM;
     private DevicePolicyManager mDPM;
@@ -146,6 +158,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
     public SecuritySettings() {
         super(null /* Don't ask for restrictions pin on creation. */);
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
