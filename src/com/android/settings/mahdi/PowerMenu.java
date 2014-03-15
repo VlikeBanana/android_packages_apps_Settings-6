@@ -44,6 +44,7 @@ private static final String KEY_SCREENRECORD = "power_menu_screenrecord";
     private static final String KEY_IMMERSIVE_MODE = "power_menu_immersive_mode";
     private static final String KEY_AIRPLANE = "power_menu_airplane";
     private static final String KEY_SILENT = "power_menu_silent";
+    private static final String POWER_MENU_ONTHEGO_ENABLED = "power_menu_onthego_enabled";    
 
     private CheckBoxPreference mRebootPref;
     private ListPreference mProfilesPref;
@@ -52,6 +53,7 @@ private static final String KEY_SCREENRECORD = "power_menu_screenrecord";
     ListPreference mImmersiveModePref;
     private CheckBoxPreference mAirplanePref;
     private CheckBoxPreference mSilentPref;
+    private CheckBoxPreference mOnTheGoPowerMenu;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -83,6 +85,11 @@ private static final String KEY_SCREENRECORD = "power_menu_screenrecord";
 	mScreenrecordPref = (CheckBoxPreference) findPreference(KEY_SCREENRECORD);
         mScreenrecordPref.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.POWER_MENU_SCREENRECORD_ENABLED, 0) == 1));
+
+        mOnTheGoPowerMenu = (CheckBoxPreference) prefSet.findPreference(POWER_MENU_ONTHEGO_ENABLED);
+        mOnTheGoPowerMenu.setChecked(Settings.System.getInt(resolver,
+                Settings.System.POWER_MENU_ONTHEGO_ENABLED, 0) == 1);
+        mOnTheGoPowerMenu.setOnPreferenceChangeListener(this);
 
         mImmersiveModePref = (ListPreference) prefSet.findPreference(KEY_IMMERSIVE_MODE);
         mImmersiveModePref.setOnPreferenceChangeListener(this);
@@ -130,6 +137,11 @@ private static final String KEY_SCREENRECORD = "power_menu_screenrecord";
             Settings.System.putInt(getContentResolver(),
                     Settings.System.POWER_MENU_SCREENRECORD_ENABLED,
                     value ? 1 : 0);      
+        } else if (preference == mOnTheGoPowerMenu) {
+            value = mOnTheGoPowerMenu.isChecked();
+            Settings.System.putInt(getContentresolver(),
+                    Settings.System.POWER_MENU_ONTHEGO_ENABLED, 
+                    value ? 1 : 0);
         } else if (preference == mRebootPref) {
             value = mRebootPref.isChecked();
             Settings.System.putInt(getContentResolver(),
