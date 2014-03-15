@@ -2001,4 +2001,36 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="headset_plug_enable_title">Opens music app when headset is plugged</string>
     <string name="headset_plug_enable_summary">When checked, everytime you plug in your headset, your default music player opens up</string>
 
+    <!-- Backups -->
+    <!-- Title for the BackupSettings activity and the backups category in InstalledAppDetails -->
+    <string name="backups_title">Backups</string>
+    <!-- Manage applications, label for perform backup button -->
+    <string name="restore_backup">Restore</string>
+    <!-- Manage applications, label for restore backup button -->
+    <string name="create_backup">Backup</string>
+    <!-- Title of the preference select the backup folder -->
+    <string name="backup_location_title">Backup location</string>
+    <!-- Title of the preference to change maximum number of backups kept per package -->
+    <string name="backup_history_title">Backup history</string>
+    <!-- Summary of the preference to change maximum number of backups kept per package -->
+    <string name="backup_history_summary">Maximum number of backups to keep per package.</string>
+    <!-- Title if the dialog to move existing backups to the new location after a new backup location was selected. -->
+    <string name="backup_move_new_location">Move all existing backups to the new location?</string>
+    <!-- Title of the dialog to trim backup history after backup_history preference was changed -->
+    <string name="backup_history_trim">Trim backup history?</string>
+    <!-- Toast message if backup folder is missing -->
+    <string name="backup_location_missing">Backup location is not set or deleted, using default:  %s</string>
+    <!-- Text in the notification displayed while moving backups -->
+    <string name="backup_notification_moving">Moving backups to new location</string>
+    <!-- Text in the notification displayed while deleting backups -->
+    <string name="backup_notification_deleting">Deleting backups</string>
+    <!-- Title of ManageBackupsActivity -->
+    <string name="manage_backups_activity_title">Manage Backups</string>
+    <!-- Description of ManageBackupsActivity -->
+    <string name="manage_backups_activity_description">Create, restore and delete backups</string>
+    <!-- Displayed as a toast in ManageBackupsActivity if a backup is requested, but no app selected -->
+    <string name="no_apps_selected">No apps selected</string>
+    <!-- Displayed as a toast in ManageBackupsActivity if a restore/delete is requested, but no backup selected -->
+    <string name="no_backups_selected">No backups selected</string>
+
 </resources>

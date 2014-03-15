@@ -30,4 +30,7 @@
         <attr name="unitsRight" format="string|reference" />
     </declare-styleable>
     
+    <!-- Default number of maximum backups per package -->
+    <integer name="backup_history_default">3</integer>
+
 </resources>
