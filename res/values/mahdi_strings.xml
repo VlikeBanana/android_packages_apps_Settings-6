@@ -1245,33 +1245,13 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="experimental_webview"></string>
     <string name="experimental_webview_summary"></string>
 
-    <!-- security settings menu unlock -->
+    <!-- Security settings menu unlock -->
     <string name="unlock_menu_unlock_title">Menu unlock</string>
     <string name="unlock_menu_unlock_summary">Pressing the menu button unlocks the device</string>
 
-    <!--  development shortcut -->
+    <!--  Development shortcut -->
     <string name="development_shortcut_title">Development shortcut</string>
     <string name="development_shortcut_summary">Enable \'wipe data\' and \'force close\' options in notification area and recent apps list</string>
-
-    <!-- Recents panel menu -->
-    <string name="recents_panel_settings_title">Recents panel</string>
-    <string name="recents_panel_settings_summary">Enable a clear all button in the recents panel and more</string>
-
-    <!-- Recents clear all -->
-    <string name="show_recent_clear_all_button_title">Clear all button</string>
-    <string name="show_recent_clear_all_button_summary">Show clear all button within the recent applications view</string>
-    <string name="recent_clear_all_button_location_title">Clear all button position</string>
-    <string name="recent_clear_all_button_location_summary">Choose position of the clear all button</string>
-    <string name="recent_clear_all_button_location_top_left">Top left</string>
-    <string name="recent_clear_all_button_location_top_right">Top right</string>
-    <string name="recent_clear_all_button_location_bottom_left">Bottom left</string>
-    <string name="recent_clear_all_button_location_bottom_right">Bottom right</string>
-
-    <!-- Memory Indicator -->
-    <string name="show_recents_memory_indicator_title">Memory indicator</string>
-    <string name="show_recents_memory_indicator_summary">Show a memory indicator within the recent applications view</string>
-    <string name="recents_memory_indicator_location_title">Memory indicator position</string>
-    <string name="recents_memory_indicator_location_summary">Choose position of the memory indicator</string>
 
     <!-- Message of dialog confirming that user wants to restart their device with a new runtime -->
     <string name="custom_runtime_warning_title">Warning</string>
@@ -1784,6 +1764,18 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     
     <!-- On-the-go -->
     <string name="title_tile_onthego">On-The-Go</string>
+
+    <!-- Recent panel -->
+    <string name="recent_panel_category">Recent apps panel</string>
+    <string name="recent_panel_scale_title">Size</string>
+    <string name="recent_panel_scale_summary">Recent apps panel size in percent.</string>
+    <string name="recent_panel_100">100% (default)</string>
+    <string name="recent_panel_85">85%</string>
+    <string name="recent_panel_70">70%</string>
+
+    <!-- ATTENTION: RTL languages need to replace left with right -->
+    <string name="recent_panel_lefty_mode_title">Show on the left edge</string>
+    <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge.</string>
     
     <!-- Download Center -->
     <string name="download_category_title">Download Center</string>
