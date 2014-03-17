@@ -528,8 +528,8 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' cancella la riga selezionata
     <string name="app_ops_labels_call_phone">Chiamate telefono</string>
     <string name="app_ops_labels_camera">Fotocamera</string>
     <string name="app_ops_labels_draw_on_top">Traccia in alto</string>
-    <string name="app_ops_labels_keep_awake">Volume suoneria</string>
-    <string name="app_ops_labels_location">Volume sveglia</string>
+    <string name="app_ops_labels_keep_awake">Wakelock</string>
+    <string name="app_ops_labels_location">Posizione</string>
     <string name="app_ops_labels_media_buttons">Pulsanti multimediali</string>
     <string name="app_ops_labels_modify_calendar">Modifica calendario</string>
     <string name="app_ops_labels_modify_call_log">Modifica registro chiamate</string>
