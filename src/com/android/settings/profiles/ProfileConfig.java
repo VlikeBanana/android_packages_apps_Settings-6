@@ -275,7 +275,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
 
             // Expanded Desktop
             mGlobalImmersiveModePreference = new ListPreference(getActivity());
-            mGlobalImmersiveModePreference.setTitle(R.string.power_menu_immersive_mode);
+            mGlobalImmersiveModePreference.setTitle(R.string.immersive_mode_title);
             mGlobalImmersiveModePreference.setEntries(R.array.profile_global_immersive_entries);
             mGlobalImmersiveModePreference.setEntryValues(R.array.profile_global_immersive_values);
             mGlobalImmersiveModePreference.setPersistent(false);

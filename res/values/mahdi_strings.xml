@@ -90,6 +90,7 @@
     <string name="power_menu_reboot_title">Reboot menu</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
     <string name="power_menu_screenrecord_title">Screen record</string>
+    <string name="power_menu_onthego_title">On-The-Go Mode</string>
     <string name="power_menu_profiles_title">Profile switcher</string>
     <string name="power_menu_profiles_disabled">Disabled</string>
     <string name="power_menu_profiles_lock">Disabled on lockscreen</string>
@@ -291,9 +292,6 @@
     <string name="remove_blacklist_number_title">Remove number</string>
     <string name="remove_blacklist_entry">Do you want to remove this blacklist entry?</string>
     <string name="select_contact">Select contact</string>
-
-    <!-- Performance Control -->
-    <string name="performance_settings">Performance</string>
 
     <!-- Sound settings -->
     <string name="volume_category">Volume</string>
@@ -1798,4 +1796,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="notification_count_title">Notification count</string>
     <string name="notification_count_summary">Show the pending notification counts as overlays on the status bar</string>
 
+    <!-- Kernel Tweaker -->
+    <string name="kernel_tweaker">Kernel Tweaker</string>
+    
+    <!-- On-the-go -->
+    <string name="title_tile_onthego">On-The-Go</string>
+    
 </resources>
