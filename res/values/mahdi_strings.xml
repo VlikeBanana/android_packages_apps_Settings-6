@@ -1782,4 +1782,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Kernel Tweaker -->
     <string name="kernel_tweaker">Kernel Tweaker</string>
     
+    <!-- On-the-go -->
+    <string name="title_tile_onthego">On-The-Go</string>
+    
 </resources>
