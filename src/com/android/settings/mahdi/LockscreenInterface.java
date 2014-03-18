@@ -55,7 +55,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String KEY_BATTERY_STATUS = "lockscreen_battery_status";
     private static final String BATTERY_AROUND_LOCKSCREEN_RING = "battery_around_lockscreen_ring";
     private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
-    private static final String PREF_LOCKSCREEN_TORCH = "lockscreen_torch";
+    private static final String PREF_LOCKSCREEN_TORCH = "lockscreen_glowpad_torch";
         
     private PreferenceCategory mAdditionalOptions;
     private ListPreference mBatteryStatus;
@@ -108,8 +108,11 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         }
 
         // Remove glowpad torch if device doesn't have a torch
-        if (!DeviceUtils.deviceSupportsTorch(getActivity())) {
-            prefs.removePreference(mGlowpadTorch);
+        mGlowpadTorch = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_TORCH);
+        if (!Utils.isPhone(getActivity())) {
+            PreferenceCategory lockscreen_shortcuts_category =
+                (PreferenceCategory) findPreference(LOCKSCREEN_SHORTCUTS_CATEGORY);
+            lockscreen_shortcuts_category.removePreference(mGlowpadTorch);
         }
 
         // Update battery status
