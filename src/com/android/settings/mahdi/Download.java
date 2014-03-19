@@ -44,8 +44,11 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
     Preference mPAGapps;
     Preference mXposed;
     Preference mXposedMod;
+<<<<<<< HEAD
     Preference mGerrit;
     Preference mGoogleCamera;
+=======
+>>>>>>> kk-slim
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,8 +62,11 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
         mPAGapps = findPreference("pa_gapps");
         mXposed = findPreference("xposed");
         mXposedMod = findPreference("xposed_mod");
+<<<<<<< HEAD
         mGerrit = findPreference("gerrit");
         mGoogleCamera = findPreference("google_camera");
+=======
+>>>>>>> kk-slim
     }
 
     @Override
