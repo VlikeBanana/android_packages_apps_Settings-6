@@ -1443,7 +1443,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Animation Control -->
     <string name="interface_animation_title">Animation Control</string>
-    <string name="interface_animation_summary">Choose alternative animations for System, Listview, Scroll, Keyboard, Toasts and Progress Bars</string>
+    <string name="interface_animation_summary">Choose alternative animations for System, Listview, Scroll and more</string>
 
     <!-- ListView animation -->
     <string name="system_animation_title">System</string>
@@ -1666,7 +1666,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Driving mode -->
     <string name="voice_tts_title">Driving Mode</string>
-    <string name="voice_tts_summary">Make your phone speak out all your notifications, calls and texts while you are driving safely.</string>
+    <string name="voice_tts_summary">Make your phone speak out all your notifications and texts while you are driving</string>
     <string name="tts_settings_reset_message">Reset all settings to default?</string>
     <string name="voice_tts_notification_title">Drive mode</string>
     <string name="voice_tts_notification_summary_on">Enable driving mode</string>
@@ -1858,4 +1858,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Content description of the sync in progress icon for accessibility. [CHAR LIMIT=NONE] -->
     <string name="accessibility_sync_in_progress">Sync in progress</string>
 
+    <!-- App Circle Sidebar -->
+    <string name="app_circle_bar_title">App circle sidebar</string>
+    <string name="app_circle_sidebar_summary_real">Start launching apps faster from a sidebar and open multiple apps on one screen to multitask</string>
+    <string name="app_circle_bar_summary">Show circle app launcher after touching right side of screen</string>
+    <string name="app_circle_bar_included_apps_title">Included apps</string>
+    <string name="app_circle_bar_included_apps_summary">Apps will show in app circle sidebar</string>
+    <string name="category_app_circle_bar_title">App launcher</string>
 </resources>
