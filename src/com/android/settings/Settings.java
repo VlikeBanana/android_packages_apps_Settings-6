@@ -104,8 +104,6 @@ import com.android.settings.profiles.ProfileConfig;
 import com.android.settings.profiles.ProfilesSettings;
 import com.android.settings.profiles.ProfileEnabler;
 
-import com.brewcrewfoo.performance.activities.MainActivity;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -367,7 +365,6 @@ public class Settings extends PreferenceActivity
         QuietHours.class.getName(),
         CustomizationSettings.class.getName(),
         DisplayRotation.class.getName(),
-        com.brewcrewfoo.performance.activities.MainActivity.class.getName(),
         HomeSettings.class.getName(),
         ProfilesSettings.class.getName(),
         ProfileConfig.class.getName(),

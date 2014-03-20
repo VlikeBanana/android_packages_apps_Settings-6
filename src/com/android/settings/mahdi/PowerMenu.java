@@ -82,14 +82,13 @@ private static final String KEY_SCREENRECORD = "power_menu_screenrecord";
         mScreenshotPref.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.POWER_MENU_SCREENSHOT_ENABLED, 0) == 1));
 
-	mScreenrecordPref = (CheckBoxPreference) findPreference(KEY_SCREENRECORD);
+	    mScreenrecordPref = (CheckBoxPreference) prefSet.findPreference(KEY_SCREENRECORD);
         mScreenrecordPref.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.POWER_MENU_SCREENRECORD_ENABLED, 0) == 1));
 
         mOnTheGoPowerMenu = (CheckBoxPreference) prefSet.findPreference(POWER_MENU_ONTHEGO_ENABLED);
-        mOnTheGoPowerMenu.setChecked(Settings.System.getInt(resolver,
-                Settings.System.POWER_MENU_ONTHEGO_ENABLED, 0) == 1);
-        mOnTheGoPowerMenu.setOnPreferenceChangeListener(this);
+        mOnTheGoPowerMenu.setChecked((Settings.System.getInt(getContentResolver(), 
+                Settings.System.POWER_MENU_ONTHEGO_ENABLED, 0) == 1));
 
         mImmersiveModePref = (ListPreference) prefSet.findPreference(KEY_IMMERSIVE_MODE);
         mImmersiveModePref.setOnPreferenceChangeListener(this);
@@ -139,7 +138,7 @@ private static final String KEY_SCREENRECORD = "power_menu_screenrecord";
                     value ? 1 : 0);      
         } else if (preference == mOnTheGoPowerMenu) {
             value = mOnTheGoPowerMenu.isChecked();
-            Settings.System.putInt(getContentresolver(),
+            Settings.System.putInt(getContentResolver(),
                     Settings.System.POWER_MENU_ONTHEGO_ENABLED, 
                     value ? 1 : 0);
         } else if (preference == mRebootPref) {

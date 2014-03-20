@@ -25,7 +25,7 @@
             android:key="keyguard_style"
             android:fragment="com.android.settings.mahdi.LockscreenStyle"
             android:title="@string/lockscreen_style_title_main"
-            andoid:summary="@string/lockscreen_style_summary_main" />
+            android:summary="@string/lockscreen_style_summary_main" />
 
         <CheckBoxPreference
             android:key="lock_before_unlock"

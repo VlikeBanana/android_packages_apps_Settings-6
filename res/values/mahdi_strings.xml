@@ -843,6 +843,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_style_reset_message">Reset all lockscreen colors?</string>
     <string name="lockscreen_icon_title">Lock handle icon</string>
     <string name="lockscreen_lock_icon_custom">Custom icon</string>
+    <string name="lockscreen_lock_icon_slim">Slim-type icon</string>
     <string name="lockscreen_lock_icon_default">Default icon</string>
     <string name="lockscreen_colorize_handle_title">Colorize custom handle</string>
     <string name="lockscreen_colorize_handle_summary">Lock color will be set to the lock handle</string>
@@ -1779,6 +1780,18 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Notification count -->
     <string name="notification_count_title">Notification count</string>
     <string name="notification_count_summary">Show the pending notification counts as overlays on the status bar</string>
+
+    <!-- System Bars -->
+    <string name="system_bars_title">System bars</string>
+    <string name="system_bars_summary">Change status and navigation bar options</string>
+
+    <string name="immersive_mode_title">Immersive mode</string>
+    <string name="summary_immersive_mode">%1$s</string>
+    <string name="immersive_mode_summary_status_bar">With status bar</string>
+    <string name="immersive_mode_summary_no_status_bar">Without status bar</string>
+    <string name="immersive_mode_disabled">Off</string>
+    <string name="immersive_mode_status_bar">With status bar</string>
+    <string name="immersive_mode_no_status_bar">Without status bar</string>
 
     <!-- Kernel Tweaker -->
     <string name="kernel_tweaker">Kernel Tweaker</string>

@@ -181,7 +181,7 @@ public class QuickSettingsUtil {
                 "com.android.systemui:drawable/ic_qs_media_play"));
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_ONTHEGO, R.string.title_tile_onthego,
-                "com.android.systemui:drawable/ic_qs_onthego"
+                "com.android.systemui:drawable/ic_qs_onthego"));
     }
 
     private static void registerTile(QuickSettingsUtil.TileInfo info) {
@@ -237,7 +237,7 @@ public class QuickSettingsUtil {
         // Don't show the Camera tile if the device has no cameras
         if (!QSUtils.deviceSupportsCamera()) {
             removeTile(TILE_CAMERA);
-            removeTile(TILE_ONTHEGO)
+            removeTile(TILE_ONTHEGO);
         }
     }
 

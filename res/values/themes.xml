@@ -98,9 +98,8 @@
         <item name="android:tabStripRight">@color/list_divider</item>
     </style>
 
-    <style name="ListSeparator" parent="@android:style/Widget.TextView.ListSeparator">
+    <style name="ListSeparator" parent="@*android:style/Widget.Holo.Light.TextView.ListSeparator">
         <item name="android:background">@drawable/list_section_divider</item>
-        <item name="android:textAllCaps">true</item>
     </style>
 
 </resources>
