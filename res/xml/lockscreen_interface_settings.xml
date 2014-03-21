@@ -79,6 +79,12 @@
     <PreferenceCategory
         android:title="@string/style_title"
         android:key="lockscreen_style_category" >
+        
+        <PreferenceScreen
+            android:key="keyguard_style"
+            android:fragment="com.android.settings.mahdi.LockscreenStyle"
+            android:title="@string/lockscreen_style_title_main"
+            android:summary="@string/lockscreen_style_summary_main" />
 
         <CheckBoxPreference
             android:key="see_through"
