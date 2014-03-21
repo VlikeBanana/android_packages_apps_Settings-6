@@ -21,12 +21,6 @@
         android:key="additional_options"
         android:title="@string/additional_options_title">
 
-        <PreferenceScreen
-            android:key="keyguard_style"
-            android:fragment="com.android.settings.mahdi.LockscreenStyle"
-            android:title="@string/lockscreen_style_title_main"
-            android:summary="@string/lockscreen_style_summary_main" />
-
         <CheckBoxPreference
             android:key="lock_before_unlock"
             android:title="@string/lock_before_unlock_title"
