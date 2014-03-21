@@ -72,7 +72,6 @@
         <item name="android:actionBarStyle">@style/ActionBar</item>
         <item name="android:textColorPrimary">@color/primary_text_color</item>
         <item name="android:textColorSecondary">@color/secondary_text_color</item>
-        <item name="android:tabWidgetStyle">@style/TabWidget</item>
     </style>
 
     <style name="Theme.Settings.Main" parent="@android:style/Theme.Holo.Light">
@@ -84,18 +83,11 @@
         <item name="android:actionBarStyle">@style/ActionBar</item>
         <item name="android:textColorPrimary">@color/primary_text_color</item>
         <item name="android:textColorSecondary">@color/secondary_text_color</item>
-        <item name="android:tabWidgetStyle">@style/TabWidget</item>
         <item name="android:listDivider">@drawable/transparent_divider</item>
-        <item name="android:listSeparatorTextViewStyle">@style/ListSeparator</item>
     </style>
 
     <style name="ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
         <item name="android:icon">@mipmap/ic_settings_actionbar</item>
-    </style>
-    
-    <style name="TabWidget" parent="@android:style/Widget.Holo.Light.TabWidget">
-        <item name="android:tabStripLeft">@color/list_divider</item>
-        <item name="android:tabStripRight">@color/list_divider</item>
     </style>
 
     <style name="ListSeparator" parent="@*android:style/Widget.Holo.Light.TextView.ListSeparator">

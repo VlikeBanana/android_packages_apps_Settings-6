@@ -21,20 +21,14 @@
     android:layout_height="match_parent"
     android:minHeight="52dp"
     android:theme="@style/Theme.Settings.Main"
-    android:background="@drawable/background_layered">
+    android:background="@drawable/background_layered"
+    android:listDivider="@drawable/transparent_divider">
     
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="0dip"
         android:layout_marginEnd="0dip">
-
-    <ListView
-        android:id="@+id/listview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="5dp"
-        android:clipToPadding="false" />
 
     <ImageView
         android:id="@+id/icon"
@@ -46,8 +40,11 @@
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:singleLine="true"
         android:gravity="center"
-        android:layout_marginLeft="15dp" />
+        android:layout_marginLeft="15dp" 
+        android:layout_marginTop="6dip"
+        android:layout_marginBottom="6dip" />
 
     </LinearLayout>
 
@@ -77,6 +74,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:ellipsize="end"
             android:maxLines="2" />
+
     </RelativeLayout>
 
 </LinearLayout>
