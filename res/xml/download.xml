@@ -15,7 +15,18 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/download_category_title" >
+    android:title="@string/download_category_title">
+
+    <PreferenceCategory
+        android:key="theschism_downloads"
+        android:title="@string/schism_title">
+
+    <Preference
+        android:key="schism_download"
+        android:title="@string/schism_real_title"
+        android:summary="@string/schism_summary" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="google_apps"
