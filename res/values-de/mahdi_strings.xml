@@ -1443,7 +1443,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="app_ops_categories_personal">Persönlich</string>	
     <string name="app_ops_categories_messaging">Nachrichten</string>
     <string name="app_ops_categories_media">Medien</string>
-    <string name="app_ops_categories_device">Gerät/string>
+    <string name="app_ops_categories_device">Gerät</string>
     <string name="app_ops_categories_bootup">Systemstart</string>
  
     <!-- App ops detail -->
