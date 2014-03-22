@@ -72,6 +72,7 @@
         <item name="android:actionBarStyle">@style/ActionBar</item>
         <item name="android:textColorPrimary">@color/primary_text_color</item>
         <item name="android:textColorSecondary">@color/secondary_text_color</item>
+        <item name="listSeparatorTextViewStyle">@style/ListSeparator</item>
     </style>
 
     <style name="Theme.Settings.Main" parent="@android:style/Theme.Holo.Light">
@@ -84,6 +85,7 @@
         <item name="android:textColorPrimary">@color/primary_text_color</item>
         <item name="android:textColorSecondary">@color/secondary_text_color</item>
         <item name="android:listDivider">@drawable/transparent_divider</item>
+        <item name="listSeparatorTextViewStyle">@style/ListSeparator</item>
     </style>
 
     <style name="ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
@@ -92,9 +94,8 @@
 
     <style name="ListSeparator" parent="@*android:style/Widget.TextView.ListSeparator">
         <item name="android:background">@android:color/transparent</item>
+        <item name="android:padding">0dp</item>
         <item name="android:textColor">@color/grey_text</item>
-        <item name="android:textAllCaps">true</item>
-        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>
