@@ -33,6 +33,8 @@ import android.view.WindowManagerGlobal;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.android.internal.util.mahdi.DeviceUtils;
+
 public class PowerMenu extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
     private static final String TAG = "PowerMenu";
