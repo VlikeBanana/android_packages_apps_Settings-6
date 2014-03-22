@@ -65,6 +65,9 @@ private static final String KEY_SCREENRECORD = "power_menu_screenrecord";
 
         PreferenceScreen prefSet = getPreferenceScreen();
 
+        findPreference(Settings.System.POWER_MENU_ONTHEGO_ENABLED).setEnabled(
+                DeviceUtils.hasCamera(getActivity()));
+
         mRebootPref = (CheckBoxPreference) findPreference(KEY_REBOOT);
         mRebootPref.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.POWER_MENU_REBOOT_ENABLED, 1) == 1));
