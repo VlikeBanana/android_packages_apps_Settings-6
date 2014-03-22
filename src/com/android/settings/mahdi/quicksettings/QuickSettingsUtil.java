@@ -63,7 +63,6 @@ import android.util.Log;
 import com.android.internal.telephony.Phone;
 import com.android.internal.util.mahdi.QSUtils;
 import com.android.internal.util.mahdi.DeviceUtils;
-import com.android.internal.util.nameless.NamelessUtils;
 import com.android.settings.R;
 
 import java.io.File;
