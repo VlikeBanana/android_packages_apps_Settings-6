@@ -40,12 +40,12 @@ import com.android.settings.Utils;
 
 public class Download extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
-    Preference mSchismDownload;
+    Preference mSchismRom;
+    Preference mSchismChangelog;
     Preference mMultiDPIGapps;
     Preference mPAGapps;
     Preference mXposed;
     Preference mXposedMod;
-    Preference mGerrit;
     Preference mGoogleCamera;
 
     @Override
@@ -56,12 +56,12 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
 
         final ContentResolver resolver = getActivity().getContentResolver();
 
-        mSchismDownload = findPreference("schism_download");
+        mSchismDownload = findPreference("schism_rom");
+        mSchismChangelog = findPreference("schism_changelog");
         mMultiDPIGapps = findPreference("multi_dpi_gapps");
         mPAGapps = findPreference("pa_gapps");
         mXposed = findPreference("xposed");
         mXposedMod = findPreference("xposed_mod");
-        mGerrit = findPreference("gerrit");
         mGoogleCamera = findPreference("google_camera");
     }
 
@@ -75,6 +75,12 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
         if (preference == mSchismDownload) {
             Uri uri = Uri.parse("http://goo.gl/woJ9h9");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+            return true;
+        } else if (preference == mSchismChangelog) {
+            Uri uri = Uri.parse("http://goo.gl/mPBh73")
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            shartActivity(intent);
             return true;
         } else if (preference == mMultiDPIGapps) {
             Uri uri = Uri.parse("http://goo.gl/EMDpJp");
@@ -93,11 +99,6 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
             return true;
         } else if (preference == mXposedMod) {
             Uri uri = Uri.parse("http://goo.gl/5J860t");
-            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-            startActivity(intent);
-            return true;
-        } else if (preference == mGerrit) {
-            Uri uri = Uri.parse("http://goo.gl/kecgnt");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;

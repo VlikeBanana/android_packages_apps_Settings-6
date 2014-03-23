@@ -18,13 +18,18 @@
     android:title="@string/download_category_title">
 
     <PreferenceCategory
-        android:key="theschism_downloads"
-        android:title="@string/schism_title">
+        android:key="schism_downloads"
+        android:title="@string/schism_category">
 
     <Preference
-        android:key="schism_download"
-        android:title="@string/schism_real_title"
-        android:summary="@string/schism_summary" />
+        android:key="schism_rom"
+        android:title="@string/schism_rom_title"
+        android:summary="@string/schism_rom_summary" />
+
+    <Preference
+        android:key="schism_changelog"
+        android:title="@string/schism_changelog_title"
+        android:summary="@string/schism_changelog_summary" />
 
     </PreferenceCategory>
 
@@ -68,11 +73,6 @@
     <PreferenceCategory
         android:key="misc_category"
         android:title="@string/misc_category">
-
-    <Preference
-        android:key="gerrit"
-        android:title="@string/gerrit_title"
-        android:summary="@string/gerrit_summary" />
 
     <Preference
         android:key="google_camera"
