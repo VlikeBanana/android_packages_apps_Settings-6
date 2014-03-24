@@ -56,7 +56,7 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
 
         final ContentResolver resolver = getActivity().getContentResolver();
 
-        mSchismDownload = findPreference("schism_rom");
+        mSchismRom = findPreference("schism_rom");
         mSchismChangelog = findPreference("schism_changelog");
         mMultiDPIGapps = findPreference("multi_dpi_gapps");
         mPAGapps = findPreference("pa_gapps");
@@ -72,7 +72,7 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mSchismDownload) {
+        if (preference == mSchismRom) {
             Uri uri = Uri.parse("http://goo.gl/woJ9h9");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
@@ -80,7 +80,7 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
         } else if (preference == mSchismChangelog) {
             Uri uri = Uri.parse("http://goo.gl/mPBh73");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-            shartActivity(intent);
+            startActivity(intent);
             return true;
         } else if (preference == mMultiDPIGapps) {
             Uri uri = Uri.parse("http://goo.gl/EMDpJp");
