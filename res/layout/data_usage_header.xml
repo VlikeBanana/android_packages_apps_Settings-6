@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:showDividers="middle|end"
-            android:divider="?android:attr/listDivider" />
+            android:divider="@drawable/data_divider" />
     </FrameLayout>
 
     <include layout="@layout/data_usage_cycles" />

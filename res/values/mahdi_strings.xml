@@ -442,7 +442,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_navbar">Navigation Bar</string>
     <string name="title_tile_network_traffic">Network traffic</string>
     <string name="title_tile_music">Music</string>
-    <string name="title_tile_quick_record">Quick Record</string>
     <string name="title_tile_contact">Contact</string>
     <string name="title_tile_custom">Custom</string>
     <string name="custom_tile_dialog_text">Each action will add a new state to the tile. Each click changes to the next state. Long-press to add long-press actions. If no click action exists the long-action icon will be used for the tile. This allows you to change states by clicking and launch actions by long-pressing.</string>
