@@ -89,6 +89,7 @@
     <string name="power_menu_summary">View or change the power menu list</string>
     <string name="power_menu_reboot_title">Reboot menu</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
+    <string name="power_menu_screenrecord_title">Screen Record</string>
     <string name="power_menu_onthego_title">On-The-Go Mode</string>
     <string name="power_menu_profiles_title">Profile switcher</string>
     <string name="power_menu_profiles_disabled">Disabled</string>

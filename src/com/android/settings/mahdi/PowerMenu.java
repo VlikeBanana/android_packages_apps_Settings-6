@@ -42,6 +42,7 @@ public class PowerMenu extends SettingsPreferenceFragment implements
     private static final String KEY_REBOOT = "power_menu_reboot";    
     private static final String KEY_PROFILES = "power_menu_profiles";
     private static final String KEY_SCREENSHOT = "power_menu_screenshot";
+    private static final String KEY_SCREENRECORD = "power_menu_screenrecord";
     private static final String KEY_IMMERSIVE_MODE = "power_menu_immersive_mode";
     private static final String KEY_AIRPLANE = "power_menu_airplane";
     private static final String KEY_SILENT = "power_menu_silent";
@@ -50,6 +51,7 @@ public class PowerMenu extends SettingsPreferenceFragment implements
     private CheckBoxPreference mRebootPref;
     private ListPreference mProfilesPref;
     private CheckBoxPreference mScreenshotPref;
+    private CheckBoxPreference mScreenRecordPref;
     ListPreference mImmersiveModePref;
     private CheckBoxPreference mAirplanePref;
     private CheckBoxPreference mSilentPref;
@@ -84,6 +86,10 @@ public class PowerMenu extends SettingsPreferenceFragment implements
         mScreenshotPref = (CheckBoxPreference) findPreference(KEY_SCREENSHOT);
         mScreenshotPref.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.POWER_MENU_SCREENSHOT_ENABLED, 0) == 1));
+
+        mScreenRecordPref = (CheckBoxPreference) findPreference(KEY_SCREENRECORD);
+        mScreenRecordPref.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.POWER_MENU_SCREENRECORD_ENABLED, 0) == 1));
 
         mOnTheGoPowerMenu = (CheckBoxPreference) prefSet.findPreference(POWER_MENU_ONTHEGO_ENABLED);
         mOnTheGoPowerMenu.setChecked((Settings.System.getInt(getContentResolver(), 
@@ -129,7 +135,12 @@ public class PowerMenu extends SettingsPreferenceFragment implements
             value = mScreenshotPref.isChecked();
             Settings.System.putInt(getContentResolver(),
                     Settings.System.POWER_MENU_SCREENSHOT_ENABLED,
-                    value ? 1 : 0);     
+                    value ? 1 : 0);
+        } else if (preference == mScreenRecordPref) {
+            value = mScreenRecordPref.isChecked();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.POWER_MENU_SCREENRECORD_ENABLED,
+                    value ? 1 : 0);
         } else if (preference == mOnTheGoPowerMenu) {
             value = mOnTheGoPowerMenu.isChecked();
             Settings.System.putInt(getContentResolver(),
