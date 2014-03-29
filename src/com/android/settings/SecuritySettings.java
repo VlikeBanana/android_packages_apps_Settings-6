@@ -710,6 +710,9 @@ public class SecuritySettings extends RestrictedSettingsFragment
         if (mVisibleDots != null) {
             mVisibleDots.setChecked(lockPatternUtils.isVisibleDotsEnabled());
         }
+        if (mVisibleGesture != null) {
+            mVisibleGesture.setChecked(lockPatternUtils.isVisibleGestureEnabled());
+        }
         if (mPowerButtonInstantlyLocks != null) {
             mPowerButtonInstantlyLocks.setChecked(lockPatternUtils.getPowerButtonInstantlyLocks());
         }
