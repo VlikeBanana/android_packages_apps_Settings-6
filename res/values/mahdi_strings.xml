@@ -1901,13 +1901,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge.</string>
     
     <!-- Download Center -->
-    <string name="download_category_title">Schism Download Center</string>
-    <string name="download_category_summary">Download the latest Schism ROM, latest G-APPS, apps and various Xposed modules specifically for your device</string>
-    <string name="schism_category">Schism Downloads</string>
-    <string name="schism_rom_title">The Schism ROM Updates</string>
+    <string name="download_category_title">Schism download centers</string>
+    <string name="download_category_summary">Download the latest Schism updates, G-Apps, apps and various Xposed modules</string>
+    <string name="schism_category">Schism downloads</string>
+    <string name="schism_rom_title">The Schism ROM updates</string>
     <string name="schism_rom_summary">Download the latest Schism ROM update from our website and flash manually in your recovery</string>
-    <string name="schism_changelog_title">The Schism ROM Changelog</string>
-    <string name="schism_changelog_summary">View the latest changes for latest Schism update so you know what you are expecting</string>
     <string name="gapps_category">GAPPS Packages</string>
     <string name="xposed_category">Xposed Framework</string>
     <string name="multidpigapps_title">Multi-DPI Gapps</string>
@@ -1917,7 +1915,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="misc_category">Miscellanous Apps</string>
     <string name="xposed_warning">WARNING</string>
     <string name="xposed_title">Xposed Installer</string>
-    <string name="xposed_summary">While Xposed is proven to be a very useful tool, some modules may cause issues/bugs in custom ROMs. Please uninstall all modules before reporting any bugs that you may come across while using Xposed.</string>
+    <string name="xposed_summary">While Xposed is proven to be a very useful tool, some modules may cause issues/bugs in custom ROMs. Please disable modules before reporting bugs that you face.</string>
     <string name="xposed_mod_title">Module Repository</string>
     <string name="xposed_mod_summary">Browse and install modules to be used with Xposed Framework</string>
     <string name="google_camera_title">Google Camera</string>
@@ -1982,5 +1980,14 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_style_reset_message">Reset style entries to default?</string>
     <string name="pie_disable_ime_triggers_title">Reduce trigger size on keyboard</string>
     <string name="pie_disable_ime_triggers_summary">Reduces left and right trigger size if keyboard is active</string>
+
+    <!-- Changelog -->
+    <string name="changelog_title">The Schism Changelog</string>
+    <string name="changelog_title_summary">View recent changes to The Schism</string>
+    <string name="changelog_loading">Loading changelog\u2026</string>
+    <string name="changelog_error">Unable to load changelog</string>
+    <string name="changelog_unknown">Unknown</string>
+    <string name="changelog_version">Version</string>
+    
 
 </resources>

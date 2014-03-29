@@ -26,10 +26,11 @@
         android:title="@string/schism_rom_title"
         android:summary="@string/schism_rom_summary" />
 
-    <Preference
-        android:key="schism_changelog"
-        android:title="@string/schism_changelog_title"
-        android:summary="@string/schism_changelog_summary" />
+    <PreferenceScreen android:key="schism_changelog"
+        android:title="@string/changelog_title"
+        android:summary="@string/changelog_title_summary"
+        android:fragment="com.android.settings.mahdi.cm.ChangeLog" >
+    </PreferenceScreen>
 
     </PreferenceCategory>
 

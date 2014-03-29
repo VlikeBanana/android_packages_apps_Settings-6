@@ -21,8 +21,8 @@
         <Preference android:key="download_center"
                 android:fragment="com.android.settings.mahdi.Download"
                 android:title="@string/download_category_title" 
-                android:summary="@string/download_category_summary" />
-                
+                android:summary="@string/download_category_summary" />	
+
         <!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
                 android:title="@string/device_status" 

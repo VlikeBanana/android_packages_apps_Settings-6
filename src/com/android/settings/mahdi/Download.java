@@ -41,7 +41,6 @@ import com.android.settings.Utils;
 public class Download extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     Preference mSchismRom;
-    Preference mSchismChangelog;
     Preference mMultiDPIGapps;
     Preference mPAGapps;
     Preference mXposed;
@@ -57,7 +56,6 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
         final ContentResolver resolver = getActivity().getContentResolver();
 
         mSchismRom = findPreference("schism_rom");
-        mSchismChangelog = findPreference("schism_changelog");
         mMultiDPIGapps = findPreference("multi_dpi_gapps");
         mPAGapps = findPreference("pa_gapps");
         mXposed = findPreference("xposed");
@@ -74,11 +72,6 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mSchismRom) {
             Uri uri = Uri.parse("http://goo.gl/woJ9h9");
-            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-            startActivity(intent);
-            return true;
-        } else if (preference == mSchismChangelog) {
-            Uri uri = Uri.parse("http://goo.gl/mPBh73");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;
