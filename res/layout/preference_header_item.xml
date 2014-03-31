@@ -40,7 +40,7 @@
     <TextView
         android:id="@+id/text"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/header_icon_width"
         android:gravity="center"
         android:layout_marginLeft="15dp" />
 
