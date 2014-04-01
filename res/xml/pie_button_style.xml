@@ -27,7 +27,7 @@
              android:title="@string/pie_button_color_title"
              android:defaultValue="0xff0099cc" />
 
-        <com.android.settings.widget.SeekBarPreference
+        <com.android.settings.mahdi.SeekBarPreferenceSlim
              android:key="pie_button_alpha"
              android:title="@string/pie_button_alpha_title" />
 
