@@ -171,7 +171,8 @@ public class Settings extends PreferenceActivity
             R.id.nfc_payment_settings,
             R.id.home_settings,
             R.id.privacy_settings_mahdi,
-            R.id.customization_settings
+            R.id.customization_settings,
+            R.id.fake_listitem
     };
 
     private SharedPreferences mDevelopmentPreferences;
@@ -823,13 +824,14 @@ public class Settings extends PreferenceActivity
         static final int HEADER_TYPE_NORMAL = 1;
         static final int HEADER_TYPE_SWITCH = 2;
         static final int HEADER_TYPE_BUTTON = 3;
+        static final int HEADER_TYPE_FAKE = 4;
         private static final int HEADER_TYPE_COUNT = HEADER_TYPE_BUTTON + 1;
 
         private final WifiEnabler mWifiEnabler;
         private final BluetoothEnabler mBluetoothEnabler;
         private AuthenticatorHelper mAuthHelper;
         private DevicePolicyManager mDevicePolicyManager;
-    private final ProfileEnabler mProfileEnabler;
+    	private final ProfileEnabler mProfileEnabler;
 
         private static class HeaderViewHolder {
             ImageView icon;
@@ -851,6 +853,8 @@ public class Settings extends PreferenceActivity
                 return HEADER_TYPE_SWITCH;
             } else if (header.id == R.id.security_settings) {
                 return HEADER_TYPE_BUTTON;
+            } else if (header.id == R.id.fake_listitem) {
+            	return HEADER_TYPE_FAKE;
             } else {
                 return HEADER_TYPE_NORMAL;
             }
@@ -937,6 +941,14 @@ public class Settings extends PreferenceActivity
                         holder.divider_ = view.findViewById(R.id.divider);
                         break;
 
+                    case HEADER_TYPE_FAKE:
+                    	view = mInflater.inflate(R.layout.preference_header_fake_item, parent,
+                    			false);
+                        holder.icon = (ImageView) view.findViewById(R.id.fake_icon);
+                        holder.title = (TextView) view.findViewById(R.id.fake_text);
+                        holder.summary = (TextView) view.findViewById(R.id.summary);
+                        break;
+
                     case HEADER_TYPE_NORMAL:
                         view = mInflater.inflate(
                                 R.layout.preference_header_item, parent,
@@ -1005,6 +1017,10 @@ public class Settings extends PreferenceActivity
                 case HEADER_TYPE_NORMAL:
                     updateCommonHeaderView(header, holder);
                     break;
+
+                case HEADER_TYPE_FAKE:
+                	updateCommonHeaderView(header, holder);
+                	break;
             }
 
             return view;

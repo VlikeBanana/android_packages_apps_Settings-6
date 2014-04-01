@@ -19,6 +19,9 @@
     <string name="rom_settings_title">Schism Settings</string>
     <string name="advanced_section_title">Advanced Settings</string>
 
+    <!-- Theming Strings -->
+    <string name="empty_title"></string>
+
     <!-- About phone screen, ROM Version -->
     <string name="mod_version">The Schism version</string>
     <string name="mod_version_default">Unknown</string>

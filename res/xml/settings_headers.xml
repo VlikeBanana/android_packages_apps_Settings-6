@@ -282,4 +282,11 @@
         android:icon="@drawable/ic_settings_about"
         android:title="@string/about_settings" 
         android:layout_gravity="fill" />
+
+    <!-- Fake Listitem --> 
+    <header
+        android:id="@+id/fake_listitem"
+        android:title="@string/empty_title" 
+        android:layout_gravity="fill" />
+
 </preference-headers>
