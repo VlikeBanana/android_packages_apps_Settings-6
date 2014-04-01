@@ -67,11 +67,11 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
     private ColorPickerPreference mPieBackgroundColor;
     private ColorPickerPreference mPieSnapColor;
     private ColorPickerPreference mPieTextColor;
-    private SeekBarPreference mPieBackgroundAlpha;
+    private SeekBarPreferenceSlim mPieBackgroundAlpha;
     private CheckBoxPreference mShowSnap;
     private CheckBoxPreference mShowText;
     private CheckBoxPreference mShowBackground;
-    private SeekBarPreference mPieControlSize;
+    private SeekBarPreferenceSlim mPieControlSize;
     private CheckBoxPreference mMirrorRightPie;
 
     @Override
@@ -101,7 +101,7 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
         mPieTextColor = (ColorPickerPreference) findPreference(PREF_PIE_TEXT_COLOR);
         mPieTextColor.setOnPreferenceChangeListener(this);
 
-        mPieBackgroundAlpha = (SeekBarPreference) findPreference(PREF_PIE_BACKGROUND_ALPHA);
+        mPieBackgroundAlpha = (SeekBarPreferenceSlim) findPreference(PREF_PIE_BACKGROUND_ALPHA);
         mPieBackgroundAlpha.setOnPreferenceChangeListener(this);
 
         mShowSnap = (CheckBoxPreference) findPreference(PREF_PIE_SHOW_SNAP);
@@ -113,7 +113,7 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
         mShowBackground = (CheckBoxPreference) findPreference(PREF_PIE_SHOW_BACKGROUND);
         mShowBackground.setOnPreferenceChangeListener(this);
 
-        mPieControlSize = (SeekBarPreference) findPreference(PREF_PIE_CONTROL_SIZE);
+        mPieControlSize = (SeekBarPreferenceSlim) findPreference(PREF_PIE_CONTROL_SIZE);
         mPieControlSize.setOnPreferenceChangeListener(this);
 
         mMirrorRightPie = (CheckBoxPreference) findPreference(PREF_PIE_MIRROR_RIGHT);

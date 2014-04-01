@@ -104,6 +104,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
     private static final String CATEGORY_ADDITIONAL = "additional_options";
     private static final String LOCK_NUMPAD_RANDOM = "lock_numpad_random";
+    private static final String KEY_VISIBLE_GESTURE = "visiblegesture";
 
     private PackageManager mPM;
     private DevicePolicyManager mDPM;

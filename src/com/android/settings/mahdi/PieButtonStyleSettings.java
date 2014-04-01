@@ -73,8 +73,8 @@ public class PieButtonStyleSettings extends SettingsPreferenceFragment implement
     ColorPickerPreference mPieButtonOutlineColor;
     ColorPickerPreference mPieIconColor;
     ListPreference mPieIconColorMode;
-    SeekBarPreference mPieButtonAlpha;
-    SeekBarPreference mPieButtonPressedAlpha;
+    SeekBarPreferenceSlim mPieButtonAlpha;
+    SeekBarPreferenceSlim mPieButtonPressedAlpha;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -116,11 +116,11 @@ public class PieButtonStyleSettings extends SettingsPreferenceFragment implement
         mPieIconColor.setOnPreferenceChangeListener(this);
 
         mPieButtonAlpha =
-                (SeekBarPreference) findPreference(PREF_PIE_BUTTON_ALPHA);
+                (SeekBarPreferenceSlim) findPreference(PREF_PIE_BUTTON_ALPHA);
         mPieButtonAlpha.setOnPreferenceChangeListener(this);
 
         mPieButtonPressedAlpha =
-                (SeekBarPreference) findPreference(PREF_PIE_BUTTON_PRESSED_ALPHA);
+                (SeekBarPreferenceSlim) findPreference(PREF_PIE_BUTTON_PRESSED_ALPHA);
         mPieButtonPressedAlpha.setOnPreferenceChangeListener(this);
 
         mPieIconColorMode =

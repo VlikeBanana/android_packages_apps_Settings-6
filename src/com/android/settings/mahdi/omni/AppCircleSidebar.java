@@ -44,7 +44,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class MoreInterfaceSettings extends SettingsPreferenceFragment implements
+public class AppCircleSidebar extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "AppCircleSidebar";
 

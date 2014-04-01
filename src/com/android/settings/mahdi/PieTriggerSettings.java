@@ -71,7 +71,7 @@ public class PieTriggerSettings extends SettingsPreferenceFragment
         mDisableImeTriggers.setOnPreferenceChangeListener(this);
     }
 
-  @Override 74
+  @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         int triggerSlots = 0;
         if (preference == mDisableImeTriggers) {
