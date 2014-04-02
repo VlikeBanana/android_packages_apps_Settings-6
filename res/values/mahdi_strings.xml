@@ -1900,27 +1900,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Show on the left edge</string>
     <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge</string>
-    
-    <!-- Download Center -->
-    <string name="download_category_title">Schism download center</string>
-    <string name="download_category_summary">Download the latest Schism updates, G-Apps and more</string>
-    <string name="schism_category">Schism downloads</string>
-    <string name="schism_rom_title">The Schism ROM updates</string>
-    <string name="schism_rom_summary">Check for the latest Schism updates now with our Schism OTA app</string>
-    <string name="gapps_category">GAPPS Packages</string>
-    <string name="xposed_category">Xposed Framework</string>
-    <string name="multidpigapps_title">Multi-DPI Gapps</string>
-    <string name="multidpigapps_summary">Multi DPI Gapps are generally recommended if you\'re changing system density to anything else</string>
-    <string name="pagapps_title">PA Gapps</string>
-    <string name="pagapps_summary">Fully packed with the majority of GAPPS, these are commonly used by users that do not want to download them later</string>
-    <string name="misc_category">Miscellanous Apps</string>
-    <string name="xposed_warning">WARNING</string>
-    <string name="xposed_title">Xposed Installer</string>
-    <string name="xposed_summary">While Xposed is proven to be a great app, some of its modules may cause issues in custom ROMs</string>
-    <string name="xposed_mod_title">Module Repository</string>
-    <string name="xposed_mod_summary">Browse and install modules to be used with Xposed Framework</string>
-    <string name="google_camera_title">Google Camera</string>
-    <string name="google_camera_summary">Google Camera (flashable) with photosphere and HDR mode</string>
 
     <!-- Content description of the sync in progress icon for accessibility. [CHAR LIMIT=NONE] -->
     <string name="accessibility_sync_in_progress">Sync in progress</string>
@@ -1982,12 +1961,4 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_disable_ime_triggers_title">Reduce trigger size on keyboard</string>
     <string name="pie_disable_ime_triggers_summary">Reduces left and right trigger size if keyboard is active</string>
 
-    <!-- Changelog -->
-    <string name="changelog_title">The Schism changelog</string>
-    <string name="changelog_title_summary">View recent changes to The Schism</string>
-    <string name="changelog_loading">Loading changelog\u2026</string>
-    <string name="changelog_error">Unable to load changelog</string>
-    <string name="changelog_unknown">Unknown</string>
-    <string name="changelog_version">Version</string>
-    
 </resources>

@@ -1704,8 +1704,6 @@
             android:theme="@style/CryptKeeperBlankTheme"
         />
 
-        <activity android:name=".mahdi.Download" />
-        
         <!-- Pseudo-activity used to provide an intent-filter entry point to sound packages settings-->
         <activity android:name="Settings$SoundPackageSettingsActivity"
                 android:label="@string/sound_packages_title"
