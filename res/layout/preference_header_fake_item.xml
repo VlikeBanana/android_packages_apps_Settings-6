@@ -20,7 +20,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minHeight="52dp"
-    android:theme="@style/Theme.Settings.Main"
     android:background="@drawable/background_layered"
     android:listDivider="@drawable/transparent_divider"
     android:visibility="invisible">
@@ -58,6 +57,7 @@
         android:layout_marginTop="6dip"
         android:layout_marginBottom="6dip"
         android:layout_weight="1"
+        android:listDivider="@drawable/list_divider"
         android:visibility="invisible">
 
         <TextView android:id="@+id/fake_title"

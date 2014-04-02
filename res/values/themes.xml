@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2010 The Android Open Source Project
+     Modified by 2014 - The Schism Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,6 +16,7 @@
 -->
 
 <resources>
+
     <attr name="ic_menu_add" format="reference" />
     <attr name="ic_menu_moreoverflow" format="reference" />
     <attr name="ic_wps" format="reference" />
@@ -72,19 +74,7 @@
         <item name="android:actionBarStyle">@style/ActionBar</item>
         <item name="android:textColorPrimary">@color/primary_text_color</item>
         <item name="android:textColorSecondary">@color/secondary_text_color</item>
-        <item name="android:listSeparatorTextViewStyle">@style/ListSeparator</item>
-    </style>
-
-    <style name="Theme.Settings.Main" parent="@android:style/Theme.Holo.Light">
-        <item name="apnPreferenceStyle">@style/ApnPreference</item>
-        <item name="ic_menu_add">@drawable/ic_menu_add_light</item>
-        <item name="ic_menu_moreoverflow">@*android:drawable/ic_menu_moreoverflow_holo_light</item>
-        <item name="ic_wps">@drawable/ic_wps_light</item>
-        <item name="wifi_signal">@drawable/wifi_signal_light</item>
-        <item name="android:actionBarStyle">@style/ActionBar</item>
-        <item name="android:textColorPrimary">@color/primary_text_color</item>
-        <item name="android:textColorSecondary">@color/secondary_text_color</item>
-        <item name="android:listDivider">@drawable/transparent_divider</item>
+        <item name="android:listDivider">@drawable/list_divider</item>
         <item name="android:listSeparatorTextViewStyle">@style/ListSeparator</item>
     </style>
 
@@ -97,7 +87,7 @@
         <item name="android:textColor">@color/grey_text</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:padding">2dp</item>
+        <item name="android:padding">5dp</item>
     </style>
 
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2013 The Android Open Source Project
-     These portions have been modified by the Schism Project 
+     Modified by 2014 - The Schism Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -19,11 +19,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:descendantFocusability="blocksDescendants"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="@dimen/header_icon_width"
     android:minHeight="52dp"
-    android:theme="@style/Theme.Settings.Main"
-    android:background="@drawable/background_layered"
-    android:listDivider="@drawable/transparent_divider">
+    android:background="@drawable/background_layered">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -40,9 +38,9 @@
     
     <TextView
         android:id="@+id/text"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/header_icon_width"
-        android:gravity="center"
+        android:layout_gravity="center"
         android:layout_marginLeft="15dp" />
 
     </LinearLayout>
@@ -56,7 +54,14 @@
         android:layout_marginBottom="6dip"
         android:layout_weight="1">
 
-        <TextView android:id="@+android:id/title"
+        <View
+            android:id="@+id/sub_divider"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@drawable/list_divider" />
+
+        <TextView 
+            android:id="@+android:id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:singleLine="true"
@@ -64,7 +69,8 @@
             android:ellipsize="marquee"
             android:fadingEdge="horizontal" />
 
-        <TextView android:id="@+android:id/summary"
+        <TextView 
+            android:id="@+android:id/summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@android:id/title"
@@ -72,6 +78,12 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:ellipsize="end"
             android:maxLines="2" />
+
+        <View
+            android:id="@+id/sub_divider"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@drawable/list_divider" />
 
     </RelativeLayout>
 

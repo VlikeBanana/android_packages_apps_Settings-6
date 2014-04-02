@@ -25,8 +25,8 @@
         android:color="@color/list_divider" />
 
     <padding 
-        android:top="2dp"
-        android:bottom="2dp" 
+        android:top="1dp"
+        android:bottom="1dp" 
         android:left="1dp"
         android:right="0dp" />
 

@@ -243,7 +243,7 @@
         <!-- Top-level settings -->
 
         <activity android:name="Settings$WifiSettingsActivity"
-                android:theme="@style/Theme.Settings.Main"
+                android:theme="@style/Theme.Settings"
                 android:uiOptions="splitActionBarWhenNarrow"
                 android:taskAffinity=""
                 android:label="@string/wifi_settings"
