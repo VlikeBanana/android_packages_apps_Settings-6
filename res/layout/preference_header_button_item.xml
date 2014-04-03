@@ -21,7 +21,6 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/header_icon_width"
     android:minHeight="52dp"
-    android:divider="@drawable/list_section_divider"
     android:background="@drawable/background_layered">
 
     <LinearLayout
