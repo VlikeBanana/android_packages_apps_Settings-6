@@ -23,6 +23,7 @@
     android:layout_height="wrap_content"
     android:minHeight="56dp"
     android:gravity="center_vertical"
+    android:divider="@drawable/list_divider"
     android:paddingEnd="?android:attr/scrollbarSize">
     
     <ImageView

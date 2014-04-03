@@ -21,6 +21,7 @@
     android:layout_height="@dimen/header_icon_width"
     android:layout_gravity="center"
     android:minHeight="52dp"
+    android:divider="@drawable/list_section_divider"
     android:background="@drawable/background_layered">
 
     <LinearLayout
@@ -53,8 +54,7 @@
         android:layout_marginEnd="6dip"
         android:layout_marginTop="6dip"
         android:layout_marginBottom="6dip"
-        android:layout_weight="1"
-        android:divider="@drawable/list_divider">
+        android:layout_weight="1">
 
         <TextView 
             android:id="@+android:id/title"

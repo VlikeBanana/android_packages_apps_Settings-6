@@ -23,13 +23,10 @@ import java.util.prefs.PreferenceChangeListener;
 import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
-import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
-import android.preference.SwitchPreference;
 import android.provider.Settings;
 
 import com.android.settings.R;
@@ -49,7 +46,7 @@ public class ButtonSettings extends SettingsPreferenceFragment {
     private static final String KEY_HARDWARE_KEYS_CATEGORY = "hardware_keys_category";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";    
 
-    private PreferenceScreen mHardwareKeys;    
+    private PreferenceScreen mHardwareKeys;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,7 +56,7 @@ public class ButtonSettings extends SettingsPreferenceFragment {
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
-        final Resources res = getResources();		
+        final Resources res = getResources();
 
         // Only show the hardware keys config on a device that does not have a navbar
         mHardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
@@ -67,7 +64,7 @@ public class ButtonSettings extends SettingsPreferenceFragment {
             if (!res.getBoolean(R.bool.config_has_hardware_buttons)) {
                 getPreferenceScreen().removePreference(mHardwareKeys);
                 getPreferenceScreen().removePreference((PreferenceCategory) findPreference(KEY_HARDWARE_KEYS_CATEGORY));
-            }        
+            }
         }
     }
 }
