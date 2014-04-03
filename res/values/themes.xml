@@ -78,6 +78,17 @@
         <item name="android:listSeparatorTextViewStyle">@style/ListSeparator</item>
     </style>
 
+    <style name="Theme.Settings.Sub" parent="@android:style/Theme.Holo.Light">
+        <item name="apnPreferenceStyle">@style/ApnPreference</item>
+        <item name="ic_menu_add">@drawable/ic_menu_add_light</item>
+        <item name="ic_menu_moreoverflow">@*android:drawable/ic_menu_moreoverflow_holo_light</item>
+        <item name="ic_wps">@drawable/ic_wps_light</item>
+        <item name="wifi_signal">@drawable/wifi_signal_light</item>
+        <item name="android:actionBarStyle">@style/ActionBar</item>
+        <item name="android:textColorPrimary">@color/primary_text_color</item>
+        <item name="android:textColorSecondary">@color/secondary_text_color</item>
+    </style>
+
     <style name="ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
         <item name="android:icon">@mipmap/ic_settings_actionbar</item>
     </style>
