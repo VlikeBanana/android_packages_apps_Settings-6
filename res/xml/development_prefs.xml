@@ -296,9 +296,13 @@
             android:title="@string/show_all_anrs"
             android:summary="@string/show_all_anrs_summary"/>
 
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+            android:key="disable_fc_notifications"
+            android:title="@string/disable_fc_notifications_title"
+            android:summary="@string/disable_fc_notifications_summary" />
+
         <PreferenceScreen
             android:id="@+id/wakelock_blocker"
-            android:layout="@layout/preference_wakelockblocker"
             android:title="@string/wakelock_blocker"
             android:fragment="com.android.settings.mahdi.WakeLockBlocker" />
 
