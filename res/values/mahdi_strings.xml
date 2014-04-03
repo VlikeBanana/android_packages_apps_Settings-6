@@ -1836,6 +1836,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_see_through_title">See through</string>
     <string name="lockscreen_see_through_summary">Shows the content behind your lockscreen but your data may be visible to those around you!</string>
 
+    <!-- Lockscreen Wallpaper -->
+    <string name="lockscreen_wallpaper_title">Lockscreen wallpaper</string>
+    <string name="lockscreen_wallpaper_summary">You can choose a different wallpaper for your lockscreen</string>
+
     <!-- Double-tap to sleep -->
     <string name="double_tap_sleep_title">Double-tap to sleep</string>
     <string name="double_tap_to_sleep_summary">View or change double-tap to sleep options</string>
