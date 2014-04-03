@@ -74,7 +74,7 @@
         <item name="android:actionBarStyle">@style/ActionBar</item>
         <item name="android:textColorPrimary">@color/primary_text_color</item>
         <item name="android:textColorSecondary">@color/secondary_text_color</item>
-        <item name="android:listDivider">@drawable/list_divider</item>
+        <item name="android:listDivider">@android:color/transparent</item>
         <item name="android:listSeparatorTextViewStyle">@style/ListSeparator</item>
     </style>
 
