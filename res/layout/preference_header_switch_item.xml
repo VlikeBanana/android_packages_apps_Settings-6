@@ -75,12 +75,6 @@
             android:ellipsize="end"
             android:maxLines="2" />
 
-        <View
-            android:id="@+id/sub_divider"
-            android:layout_width="wrap_content"
-            android:layout_height="1dp"
-            android:background="@drawable/list_divider" />
-
     </RelativeLayout>
 
    <Switch android:id="@+id/switchWidget"
