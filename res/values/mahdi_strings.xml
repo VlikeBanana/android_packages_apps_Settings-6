@@ -889,7 +889,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="notification_drawer_title">Notification drawer</string>
     <string name="notification_drawer_summary">Add shortcuts, enable quick settings ribbons and more</string>
     <string name="notification_shortcuts_settings_title">Shortcuts</string>
-    <string name="notification_shortcuts_settings_summary">Add shortcuts to the notification drawer</string>
+    <string name="notification_shortcuts_settings_summary">Add shortcuts to the bottom of the notification drawer</string>
 
     <!-- Notification hide labels -->
     <string name="notification_hide_labels_title">Hide notification labels</string>
@@ -1941,5 +1941,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Disable FC Notifications -->
     <string name="disable_fc_notifications_title">Disable FC Notifications</string>
     <string name="disable_fc_notifications_summary">This will hide all force close notifications</string>
+
+    <!-- Notification drawer brightness slider -->
+    <string name="brightness_slider_title">Brightness slider</string>
+    <string name="brightness_slider_summary">Enable a brightness slider in the notification drawer</string>
 
 </resources>

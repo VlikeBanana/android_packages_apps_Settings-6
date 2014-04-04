@@ -50,6 +50,7 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
     private static final String PREF_NOTI_REMINDER_ENABLED = "noti_reminder_enabled";
     private static final String PREF_NOTI_REMINDER_INTERVAL = "noti_reminder_interval";
     private static final String PREF_NOTI_REMINDER_RINGTONE = "noti_reminder_ringtone";
+    private static final String PREF_BRIGHTNESS_SLIDER = "notification_brightness_slider";
 
     private ListPreference mHideLabels;
     private CheckBoxPreference mStatusBarCustomHeader;
@@ -57,6 +58,7 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
     private ListPreference mReminderInterval;
     private ListPreference mReminderMode;
     private RingtonePreference mReminderRingtone;
+    private CheckBoxPreference mBrightnessSlider;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -112,6 +114,11 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
         mReminderRingtone.setSummary(alert.getTitle(getActivity()));
         mReminderRingtone.setOnPreferenceChangeListener(this);
         mReminderRingtone.setEnabled(mode != 0);
+
+        mBrightnessSlider = (CheckBoxPreference) findPreference(PREF_BRIGHTNESS_SLIDER);
+        mBrightnessSlider.setChecked(Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.NOTIFICATION_BRIGHTNESS_SLIDER, 0, UserHandle.USER_CURRENT) == 1);
+        mBrightnessSlider.setOnPreferenceChangeListener(this);
 
         PreferenceCategory additionalOptions =
             (PreferenceCategory) prefs.findPreference(PREF_NOTIFICATION_OPTIONS);
@@ -174,6 +181,11 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
             Settings.System.putStringForUser(getContentResolver(),
                     Settings.System.REMINDER_ALERT_RINGER,
                     val.toString(), UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mBrightnessSlider) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(resolver,
+                Settings.System.NOTIFICATION_BRIGHTNESS_SLIDER, value ? 1 : 0);
             return true;
         }
         return false;
