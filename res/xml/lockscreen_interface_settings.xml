@@ -25,7 +25,7 @@
     </PreferenceScreen>
 
     <PreferenceCategory
-        android:title="@string/style_title"
+        android:title="@string/lockscreen_general_title"
         android:key="lockscreen_general_category" >
 
 	<PreferenceScreen
@@ -51,16 +51,10 @@
             android:defaultValue="true" />
 
         <com.android.settings.mahdi.SystemSettingCheckBoxPreference
-            android:key="lockscreen_see_through"
-            android:title="@string/lockscreen_see_through_title"
-            android:summary="@string/lockscreen_see_through_summary"
-            android:defaultValue="false" />
-
-        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
-	    android:key="global_immersive_mode_system_bars_visibility"
-	    android:title="@string/global_immersive_mode_system_bars_visibility"
-	    android:summary="@string/global_immersive_mode_system_bars_visibility_summary"
-	    android:defaultValue="false" />
+	       android:key="global_immersive_mode_system_bars_visibility"
+	       android:title="@string/global_immersive_mode_system_bars_visibility"
+	       android:summary="@string/global_immersive_mode_system_bars_visibility_summary"
+	       android:defaultValue="false" />
 
     </PreferenceCategory>
 
@@ -89,7 +83,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/style_title"
+        android:title="@string/lockscreen_style_title"
         android:key="lockscreen_style_category" >
         
         <PreferenceScreen
@@ -98,8 +92,8 @@
             android:title="@string/lockscreen_style_title_main"
             android:summary="@string/lockscreen_style_summary_main" />
 
-        <CheckBoxPreference
-            android:key="see_through"
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+            android:key="lockscreen_see_through"
             android:title="@string/lockscreen_see_through_title"
             android:summary="@string/lockscreen_see_through_summary"
             android:defaultValue="false" />
@@ -113,12 +107,6 @@
                     android:targetPackage="com.android.wallpapercropper"
                     android:targetClass="com.android.wallpapercropper.LockscreenWallpaper" />
         </Preference>
-
-        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
-            android:key="global_immersive_mode_system_bars_visibility"
-            android:title="@string/global_immersive_mode_system_bars_visibility"
-            android:summary="@string/global_immersive_mode_system_bars_visibility_summary"
-            android:defaultValue="false" />
 
     </PreferenceCategory>
 	    

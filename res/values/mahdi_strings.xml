@@ -1838,7 +1838,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Lockscreen Wallpaper -->
     <string name="lockscreen_wallpaper_title">Lockscreen wallpaper</string>
-    <string name="lockscreen_wallpaper_summary">You can choose a different wallpaper for your lockscreen</string>
+    <string name="lockscreen_wallpaper_summary">Choose a different wallpaper for your lockscreen</string>
+
+    <!-- Lockscreen Category -->
+    <string name="lockscreen_general_title">Lockscreen General</string>
+    <string name="lockscreen_style_category_title">Lockscreen Style</string>
 
     <!-- Double-tap to sleep -->
     <string name="double_tap_sleep_title">Double-tap to sleep</string>
@@ -1856,18 +1860,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Notification count -->
     <string name="notification_count_title">Notification count</string>
     <string name="notification_count_summary">Show the pending notification counts as overlays on the status bar</string>
-
-    <!-- System Bars -->
-    <string name="system_bars_title">System bars</string>
-    <string name="system_bars_summary">Change status and navigation bar options</string>
-
-    <string name="immersive_mode_title">Immersive mode</string>
-    <string name="summary_immersive_mode">%1$s</string>
-    <string name="immersive_mode_summary_status_bar">With status bar</string>
-    <string name="immersive_mode_summary_no_status_bar">Without status bar</string>
-    <string name="immersive_mode_disabled">Off</string>
-    <string name="immersive_mode_status_bar">With status bar</string>
-    <string name="immersive_mode_no_status_bar">Without status bar</string>
 
     <!-- Kernel Tweaker -->
     <string name="kernel_tweaker">Kernel Tweaker</string>
