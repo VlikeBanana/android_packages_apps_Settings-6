@@ -865,7 +865,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Lockscreen style settings -->
     <string name="lockscreen_style_title_main">Lockscreen theme styles</string>
-    <string name="lockscreen_style_summary_main">Choose custom colors lock handles and glowpad and customize your lockrings and much more</string>
+    <string name="lockscreen_style_summary_main">Style up your lock handles and glowpad along with much more</string>
     <string name="lockscreen_style_reset_message">Reset all lockscreen colors?</string>
     <string name="lockscreen_icon_title">Lock handle icon</string>
     <string name="lockscreen_lock_icon_custom">Custom icon</string>
@@ -1318,10 +1318,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="ime_switcher_notify">Selector notification</string>
     <string name="ime_switcher_notify_summary">Display input method selector notification</string>
 
-    <!-- Themes settings  -->
-    <string name="themes_settings_title">Themes</string>
-    <string name="themes_settings_summary">Change themes with T-Mobiles theme engine</string>
-
     <!-- Notification drawer background -->
     <string name="notification_style_title">Style</string>    
     <string name="notification_background_title">Background style</string>
@@ -1732,11 +1728,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Driving mode -->
     <string name="voice_tts_title">Driving Mode</string>
-    <string name="voice_tts_summary">Make your phone speak out all your notifications and texts while you are driving</string>
+    <string name="voice_tts_summary">Control how your notifications and messages are read aloud whilst driving</string>
     <string name="tts_settings_reset_message">Reset all settings to default?</string>
-    <string name="voice_tts_notification_title">Drive mode</string>
-    <string name="voice_tts_notification_summary_on">Enable driving mode</string>
-    <string name="voice_tts_notification_summary_off">Disable driving mode</string>
+    <string name="voice_tts_notification_title">Driving mode</string>
+    <string name="voice_tts_notification_summary_on">Driving mode enabled</string>
+    <string name="voice_tts_notification_summary_off">Driving mode disabled</string>
     <string name="voice_tts_volume_title">Volume</string>
     <string name="voice_tts_volume_summary">Set volume for speak</string>
     <string name="voice_tts_call_title">Incoming call</string>
@@ -1789,7 +1785,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="voice_tts_time">Time is</string>
     <string name="voice_tts_date">Date is</string>
     <string name="voice_tts_music">Now playing</string>
-    <string name="voice_tts_engine_started">Drive Mode Ready</string>
+    <string name="voice_tts_engine_started">Driving Mode Ready</string>
     <string name="unknown_tts">Unknown</string>
     <string name="unknown_number_tts">Unknown number</string>
     <string name="time_one">One</string>
@@ -1864,7 +1860,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Kernel Tweaker -->
     <string name="kernel_tweaker">Kernel Tweaker</string>
     
-    <!-- On-the-go -->
+    <!-- On-The-Go -->
     <string name="title_tile_onthego">On-The-Go</string>
 
     <!-- Recent panel -->
@@ -1884,7 +1880,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- App Circle Sidebar -->
     <string name="app_circle_bar_title">App circle sidebar</string>
-    <string name="app_circle_sidebar_summary_real">Start launching apps faster from a sidebar and open multiple apps on one screen to multitask</string>
+    <string name="app_circle_sidebar_summary_real">Launch apps from a scrollable sidebar and have multiple windows open simultaneously</string>
     <string name="app_circle_bar_summary">Show circle app launcher after touching right side of screen</string>
     <string name="app_circle_bar_included_apps_title">Included apps</string>
     <string name="app_circle_bar_included_apps_summary">Apps will show in app circle sidebar</string>
@@ -1893,7 +1889,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Pie Control -->
     <string name="pie_settings_category_title">PIE Settings</string>
     <string name="pie_control_title">SlimPIE</string>
-    <string name="pie_control_summary_real">Use PIE in immersive mode and not use the navigation bar ever again</string>
     <string name="pie_control_summary">Enable pie controls</string>
     <string name="pie_control_size">Navigation size</string>
     <string name="pie_control_trigger_positions">Trigger options</string>
