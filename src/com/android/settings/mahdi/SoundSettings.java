@@ -49,8 +49,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
     private static final String CATEGORY_VOLUME = "button_volume_keys";
     private static final String BUTTON_VOLUME_DEFAULT = "button_volume_default_screen";
+    private static final String KEY_SAFE_HEADSET_VOLUME = "safe_headset_volume";
 
     private ListPreference mVolumeDefault;
+    private CheckBoxPreference mSafeHeadsetVolume;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,13 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
         final PreferenceCategory volumeCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_VOLUME);
+
+        mSafeHeadsetVolume = (CheckBoxPreference) findPreference(KEY_SAFE_HEADSET_VOLUME);
+        mSafeHeadsetVolume.setPersistent(false);
+        boolean safeMediaVolumeEnabled = getResources().getBoolean(
+                com.android.internal.R.bool.config_safe_media_volume_enabled);
+        mSafeHeadsetVolume.setChecked(Settings.System.getInt(resolver,
+                Settings.System.SAFE_HEADSET_VOLUME, safeMediaVolumeEnabled ? 1 : 0) != 0);
 
         if (hasVolumeRocker()) {
             mVolumeDefault = (ListPreference) findPreference(BUTTON_VOLUME_DEFAULT);
@@ -92,6 +101,18 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             return true;
         }
         return false;
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mSafeHeadsetVolume) {
+            Settings.System.putInt(getContentResolver(), Settings.System.SAFE_HEADSET_VOLUME,
+                    mSafeHeadsetVolume.isChecked() ? 1 : 0);
+        } else {
+            // If we didn't handle it, let preferences handle it.
+            return super.onPreferenceTreeClick(preferenceScreen, preference);
+        }
+        return true;
     }
 
     public void removeListEntry(ListPreference list, String valuetoRemove) {

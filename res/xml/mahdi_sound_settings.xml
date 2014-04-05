@@ -45,15 +45,10 @@
     <PreferenceCategory
         android:title="@string/headset_category_title"/>
 
-        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+        <CheckBoxPreference
             android:key="safe_headset_volume"
             android:title="@string/safe_headset_volume_title"
             android:summary="@string/safe_headset_volume_summary"
             android:defaultValue="true" />
-
-        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
-            android:key="headset_connect_player"
-            android:title="@string/headset_connect_player_title"
-            android:defaultValue="false" />
 
 </PreferenceScreen>

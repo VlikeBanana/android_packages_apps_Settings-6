@@ -68,6 +68,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_VIBRATE = "vibrate_when_ringing";
     private static final String KEY_VOLUME_OVERLAY = "volume_overlay";
     private static final String KEY_RING_VOLUME = "ring_volume";
+    private static final String KEY_INCREASING_RING = "increasing_ring";
     private static final String KEY_MUSICFX = "musicfx";
     private static final String KEY_DTMF_TONE = "dtmf_tone";
     private static final String KEY_SOUND_EFFECTS = "sound_effects";
@@ -91,7 +92,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
     private static final String[] NEED_VOICE_CAPABILITY = {
             KEY_RINGTONE, KEY_DTMF_TONE, KEY_CATEGORY_CALLS,
-            KEY_EMERGENCY_TONE, KEY_VIBRATE
+            KEY_EMERGENCY_TONE, KEY_INCREASING_RING, KEY_VIBRATE
     };
 
     private static final int MSG_UPDATE_RINGTONE_SUMMARY = 1;
@@ -199,14 +200,17 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mDtmfTone.setPersistent(false);
         mDtmfTone.setChecked(Settings.System.getInt(resolver,
                 Settings.System.DTMF_TONE_WHEN_DIALING, 1) != 0);
+
         mSoundEffects = (CheckBoxPreference) findPreference(KEY_SOUND_EFFECTS);
         mSoundEffects.setPersistent(false);
         mSoundEffects.setChecked(Settings.System.getInt(resolver,
                 Settings.System.SOUND_EFFECTS_ENABLED, 1) != 0);
+
         mHapticFeedback = (CheckBoxPreference) findPreference(KEY_HAPTIC_FEEDBACK);
         mHapticFeedback.setPersistent(false);
         mHapticFeedback.setChecked(Settings.System.getInt(resolver,
                 Settings.System.HAPTIC_FEEDBACK_ENABLED, 1) != 0);
+
         int userMillis = Settings.System.getInt(resolver,
                 Settings.System.MINIMUM_VIBRATION_DURATION, 0);
         mVibrationDuration = (SeekBarPreferenceSlim) findPreference(KEY_VIBRATION_DURATION);
@@ -217,6 +221,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mVibrationDuration.isMilliseconds(true);
         mVibrationDuration.setProperty(Settings.System.MINIMUM_VIBRATION_DURATION);
         mVibrationDuration.setOnPreferenceChangeListener(this);
+        
         mLockSounds = (CheckBoxPreference) findPreference(KEY_LOCK_SOUNDS);
         mLockSounds.setPersistent(false);
         mLockSounds.setChecked(Settings.System.getInt(resolver,

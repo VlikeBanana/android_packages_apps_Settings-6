@@ -1508,7 +1508,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="system_power_crt_mode_scale">Scale down</string>
 
     <!-- Animation Control -->
-    <string name="interface_animation_title">Animation Control</string>
+    <string name="interface_animation_title">Animation control</string>
     <string name="interface_animation_summary">Choose alternative animations for System, Listview, Scroll and more</string>
 
     <!-- ListView animation -->
@@ -1731,7 +1731,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="global_immersive_mode_system_bars_visibility_summary">Show panels on lockscreen in global immersive mode</string>
 
     <!-- Driving mode -->
-    <string name="voice_tts_title">Driving Mode</string>
+    <string name="voice_tts_title">Driving mode</string>
     <string name="voice_tts_summary">Control how your notifications and messages are read aloud whilst driving</string>
     <string name="tts_settings_reset_message">Reset all settings to default?</string>
     <string name="voice_tts_notification_title">Driving mode</string>
@@ -1789,7 +1789,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="voice_tts_time">Time is</string>
     <string name="voice_tts_date">Date is</string>
     <string name="voice_tts_music">Now playing</string>
-    <string name="voice_tts_engine_started">Driving Mode Ready</string>
+    <string name="voice_tts_engine_started">Driving mode ready</string>
     <string name="unknown_tts">Unknown</string>
     <string name="unknown_number_tts">Unknown number</string>
     <string name="time_one">One</string>
@@ -1833,9 +1833,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="noti_reminder_interval_4s">4 seconds</string>
 
     <!-- Lockscreen see through -->
-    <string name="lockscreen_see_through_title">See through</string>
-    <string name="lockscreen_see_through_summary">Shows the content behind your lockscreen but your data may be visible to those around you!</string>
-
+    <string name="lockscreen_see_through_title">Lockscreen blur</string>
+    <string name="lockscreen_see_through_summary">Blurs and displays the content behind your lockscreen but your data may be visible to those around you!</string>
+    
     <!-- Lockscreen Wallpaper -->
     <string name="lockscreen_wallpaper_title">Lockscreen wallpaper</string>
     <string name="lockscreen_wallpaper_summary">Choose a different wallpaper for your lockscreen</string>
@@ -1862,7 +1862,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="notification_count_summary">Show the pending notification counts as overlays on the status bar</string>
 
     <!-- Kernel Tweaker -->
-    <string name="kernel_tweaker">Kernel Tweaker</string>
+    <string name="kernel_tweaker">Kernel tweaker</string>
     
     <!-- On-The-Go -->
     <string name="title_tile_onthego">On-The-Go</string>
