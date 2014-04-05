@@ -47,12 +47,17 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
     private static final String TAG = "SoundSettings";
 
-    private static final String CATEGORY_VOLUME = "button_volume_keys";
+    private static final String CATEGORY_VOLUME = "category_volume";
     private static final String BUTTON_VOLUME_DEFAULT = "button_volume_default_screen";
     private static final String KEY_SAFE_HEADSET_VOLUME = "safe_headset_volume";
+    private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
+    private static final String KEY_VOLUME_ADJUST_SOUND = "volume_adjust_sounds_enabled";
 
+    private PreferenceCategory volumeCategory;
     private ListPreference mVolumeDefault;
     private CheckBoxPreference mSafeHeadsetVolume;
+    private CheckBoxPreference mSwapVolumeButtons;
+    private CheckBoxPreference mVolumeAdjustSound;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,7 +79,21 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mSafeHeadsetVolume.setChecked(Settings.System.getInt(resolver,
                 Settings.System.SAFE_HEADSET_VOLUME, safeMediaVolumeEnabled ? 1 : 0) != 0);
 
+        mVolumeAdjustSound = (CheckBoxPreference) findPreference(KEY_VOLUME_ADJUST_SOUND);
+
+        if (!Utils.isPhone(getActivity())) {
+             PreferenceCategory category_volume =
+                (PreferenceCategory) findPreference(CATEGORY_VOLUME);
+            category_volume.removePreference(mVolumeAdjustSound);       
+        }
+ 
         if (hasVolumeRocker()) {
+            int swapVolumeKeys = Settings.System.getInt(getContentResolver(),
+                    Settings.System.SWAP_VOLUME_KEYS_ON_ROTATION, 0);
+            mSwapVolumeButtons = (CheckBoxPreference)
+                    prefScreen.findPreference(KEY_SWAP_VOLUME_BUTTONS);
+            mSwapVolumeButtons.setChecked(swapVolumeKeys > 0);
+
             mVolumeDefault = (ListPreference) findPreference(BUTTON_VOLUME_DEFAULT);
             String currentDefault = Settings.System.getString(resolver, Settings.System.VOLUME_KEYS_DEFAULT);
             if (!Utils.isVoiceCapable(getActivity())) {
@@ -108,6 +127,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         if (preference == mSafeHeadsetVolume) {
             Settings.System.putInt(getContentResolver(), Settings.System.SAFE_HEADSET_VOLUME,
                     mSafeHeadsetVolume.isChecked() ? 1 : 0);
+        } else if (preference == mSwapVolumeButtons) {
+            int value = mSwapVolumeButtons.isChecked()
+                    ? (Utils.isTablet(getActivity()) ? 2 : 1) : 0;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SWAP_VOLUME_KEYS_ON_ROTATION, value);
         } else {
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);

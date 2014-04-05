@@ -1835,7 +1835,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Lockscreen see through -->
     <string name="lockscreen_see_through_title">Lockscreen blur</string>
     <string name="lockscreen_see_through_summary">Blurs and displays the content behind your lockscreen but your data may be visible to those around you!</string>
-    
+
     <!-- Lockscreen Wallpaper -->
     <string name="lockscreen_wallpaper_title">Lockscreen wallpaper</string>
     <string name="lockscreen_wallpaper_summary">Choose a different wallpaper for your lockscreen</string>
@@ -1945,5 +1945,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Notification drawer brightness slider -->
     <string name="brightness_slider_title">Brightness slider</string>
     <string name="brightness_slider_summary">Enable a brightness slider in the notification drawer</string>
+ 
+    <!-- Swap volume buttons -->
+    <string name="swap_volume_buttons_title">Reorient volume buttons</string>
+    <string name="swap_volume_buttons_summary">Swap volume buttons when the screen is rotated</string>
 
 </resources>
