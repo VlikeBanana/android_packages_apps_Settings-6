@@ -131,7 +131,6 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
             // Nothing for tablets, large screen devices and non mobile devices which doesn't show
             // information in notification drawer.....remove options
             additionalOptions.removePreference(mHideLabels);
-            prefs.removePreference(additionalOptions);
         }
 
     }
