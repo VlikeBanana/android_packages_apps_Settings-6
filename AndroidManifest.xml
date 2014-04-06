@@ -226,6 +226,7 @@
 
         <activity android:name="Settings$WirelessSettingsActivity"
                 android:taskAffinity="com.android.settings"
+                android:theme="@style/Theme.Settings.Sub"
                 android:label="@string/wireless_networks_settings_title"
                 android:parentActivityName="Settings">
             <intent-filter>
@@ -268,6 +269,7 @@
         <activity-alias android:name=".wifi.WifiSettings"
                 android:uiOptions="splitActionBarWhenNarrow"
                 android:taskAffinity="com.android.settings"
+                android:theme="@style/Theme.Settings.Sub"
                 android:label="@string/wifi_settings"
                 android:targetActivity="Settings$WifiSettingsActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize"
@@ -400,6 +402,7 @@
         <activity android:name="Settings$BluetoothSettingsActivity"
                 android:uiOptions="splitActionBarWhenNarrow"
                 android:configChanges="orientation|keyboardHidden|screenSize"
+                android:theme="@style/Theme.Settings.Sub"
                 android:label="@string/bluetooth_settings_title"
                 android:taskAffinity=""
                 android:excludeFromRecents="true">
@@ -420,6 +423,7 @@
         <activity-alias android:name=".bluetooth.BluetoothSettings"
                 android:uiOptions="splitActionBarWhenNarrow"
                 android:label="@string/bluetooth_settings_title"
+                android:theme="@style/Theme.Settings.Sub"
                 android:targetActivity="Settings$BluetoothSettingsActivity"
                 android:exported="true"
                 android:clearTaskOnLaunch="true">
@@ -519,6 +523,7 @@
 
         <activity android:name="Settings$DateTimeSettingsActivity"
                 android:label="@string/date_and_time"
+                android:theme="@style/Theme.Settings.Sub"
                 android:taskAffinity=""
                 android:excludeFromRecents="true">
             <intent-filter>
@@ -688,6 +693,7 @@
 
         <activity android:name="Settings$SoundSettingsActivity"
                 android:label="@string/sound_settings"
+                android:theme="@style/Theme.Settings.Sub"
                 android:taskAffinity=""
                 android:excludeFromRecents="true">
             <intent-filter>
@@ -736,6 +742,7 @@
         <!-- Keep compatibility with old shortcuts. -->
         <activity-alias android:name="DisplaySettings"
                 android:label="@string/display_settings"
+                android:theme="@style/Theme.Settings.Sub"
                 android:exported="true"
                 android:targetActivity="Settings$DisplaySettingsActivity">
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
@@ -942,6 +949,7 @@
         <activity android:name="Settings$LocationSettingsActivity"
                 android:uiOptions="splitActionBarWhenNarrow"
                 android:label="@string/location_settings_title"
+                android:theme="@style/Theme.Settings.Sub"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:taskAffinity=""
                 android:excludeFromRecents="true">
@@ -960,6 +968,7 @@
 
         <activity android:name="Settings$SecuritySettingsActivity"
                 android:label="@string/security_settings_title"
+                android:theme="@style/Theme.Settings.Sub"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:taskAffinity=""
                 android:parentActivityName="Settings">
@@ -1008,6 +1017,7 @@
         <!-- Keep compatibility with old shortcuts. -->
         <activity-alias android:name="SecuritySettings"
                 android:label="@string/security_settings_title"
+                android:theme="@style/Theme.Settings.Sub"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:exported="true"
                 android:targetActivity="Settings$SecuritySettingsActivity">
@@ -1851,6 +1861,7 @@
         
         <activity android:name="Settings$CustomizationSettingsActivity"
                 android:label="@string/customization_settings_title"
+                android:theme="@style/Theme.Settings.Sub"
                 android:taskAffinity=""
                 android:excludeFromRecents="true">
             <intent-filter>
