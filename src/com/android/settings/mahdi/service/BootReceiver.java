@@ -20,16 +20,10 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import com.android.settings.mahdi.batterysaver.BatterySaverHelper;
-
 public class BootReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-
-        if (BatterySaverHelper.deviceSupportsMobileData(context)) {
-                BatterySaverHelper.scheduleService(context);
-                SmsCallController.getInstance(context).scheduleService();
-        }
+        SmsCallController.getInstance(context).scheduleService();
     }
 }
