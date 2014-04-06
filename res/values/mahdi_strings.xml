@@ -1674,8 +1674,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="data_usage_enable_batterysaver">Battery saver</string>
 
     <!-- Battery saver mode -->
-    <string name="network_lte">LTE (recommended)</string>
-    <string name="network_4G">4G (recommended)</string>
     <string name="network_3G_only">3G Only</string>
     <string name="network_3G_auto">2G/3G Auto</string>
     <string name="network_3G">2G/3G Preferred</string>
@@ -1698,21 +1696,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pref_battery_saver_battery_title">When battery low</string>
     <string name="pref_battery_saver_battery_summary">Activate power saving mode when battery low</string>
     <string name="pref_battery_saver_mode_battery_level_title">Battery level</string>
-    <string name="pref_battery_saver_mode_battery_level_summary">Change to power saving mode at: </string>
+    <string name="pref_battery_saver_mode_battery_level_summary">Changing power saving mode at the specified battery level</string>
     <string name="pref_battery_saver_data_title">Disable mobile data</string>
     <string name="pref_battery_saver_data_summary">Disable mobile data connection when power saving activated</string>
     <string name="pref_battery_saver_enable_no_mobiledata_summary">This will automatically manage your device battery usage to user-defined</string>
     <string name="pref_battery_saver_wifi_title">Disable WiFi</string>
     <string name="pref_battery_saver_wifi_summary">Disable wifi connection when power saving activated</string>
-
-    <string name="ad_redisplay_never">Never</string>
-    <string name="ad_redisplay_1m">1 minute</string>
-    <string name="ad_redisplay_5m">5 minutes</string>
-    <string name="ad_redisplay_15m">15 minutes</string>
-    <string name="ad_redisplay_30m">30 minutes</string>
-    <string name="ad_redisplay_1h">1 hour</string>
-    <string name="ad_redisplay_2h">2 hours</string>
-    <string name="ad_redisplay_5h">5 hours</string>
 
     <!-- Lockscreen system bar visibility -->
     <string name="global_immersive_mode_system_bars_visibility">System bar visibility</string>
