@@ -52,7 +52,7 @@ public class PowerMenu extends SettingsPreferenceFragment implements
     private ListPreference mProfilesPref;
     private CheckBoxPreference mScreenshotPref;
     private CheckBoxPreference mScreenRecordPref;
-    ListPreference mImmersiveModePref;
+    private ListPreference mImmersiveModePref;
     private CheckBoxPreference mAirplanePref;
     private CheckBoxPreference mSilentPref;
     private CheckBoxPreference mOnTheGoPowerMenu;
