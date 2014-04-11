@@ -46,7 +46,7 @@ public class PowerMenu extends SettingsPreferenceFragment implements
     private static final String KEY_IMMERSIVE_MODE = "power_menu_immersive_mode";
     private static final String KEY_AIRPLANE = "power_menu_airplane";
     private static final String KEY_SILENT = "power_menu_silent";
-    private static final String POWER_MENU_ONTHEGO_ENABLED = "power_menu_onthego_enabled";    
+    private static final String KEY_ONTHEGO = "power_menu_onthego_enabled";
 
     private CheckBoxPreference mRebootPref;
     private ListPreference mProfilesPref;
@@ -55,7 +55,7 @@ public class PowerMenu extends SettingsPreferenceFragment implements
     private ListPreference mImmersiveModePref;
     private CheckBoxPreference mAirplanePref;
     private CheckBoxPreference mSilentPref;
-    private CheckBoxPreference mOnTheGoPowerMenu;
+    private CheckBoxPreference mOnthegoPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -91,8 +91,8 @@ public class PowerMenu extends SettingsPreferenceFragment implements
         mScreenRecordPref.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.POWER_MENU_SCREENRECORD_ENABLED, 0) == 1));
 
-        mOnTheGoPowerMenu = (CheckBoxPreference) prefSet.findPreference(POWER_MENU_ONTHEGO_ENABLED);
-        mOnTheGoPowerMenu.setChecked((Settings.System.getInt(getContentResolver(), 
+        mOnthegoPref = (CheckBoxPreference) prefSet.findPreference(POWER_MENU_ONTHEGO_ENABLED);
+        mOnthegoPref.setChecked((Settings.System.getInt(getContentResolver(), 
                 Settings.System.POWER_MENU_ONTHEGO_ENABLED, 0) == 1));
 
         mImmersiveModePref = (ListPreference) prefSet.findPreference(KEY_IMMERSIVE_MODE);
@@ -141,8 +141,8 @@ public class PowerMenu extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.POWER_MENU_SCREENRECORD_ENABLED,
                     value ? 1 : 0);
-        } else if (preference == mOnTheGoPowerMenu) {
-            value = mOnTheGoPowerMenu.isChecked();
+        } else if (preference == mOnthegoPref) {
+            value = mOnthegoPref.isChecked();
             Settings.System.putInt(getContentResolver(),
                     Settings.System.POWER_MENU_ONTHEGO_ENABLED, 
                     value ? 1 : 0);
