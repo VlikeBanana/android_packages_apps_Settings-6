@@ -54,6 +54,11 @@
                 android:dialogTitle="@string/dialog_title_font_size" />
 
         <PreferenceScreen
+                android:key="slim_recents"
+                android:title="@string/slim_recents_category"
+                android:fragment="com.android.settings.mahdi.Recents" />
+
+        <PreferenceScreen
                 android:key="wifi_display"
                 android:title="@string/wifi_display_settings_title"
                 android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
