@@ -36,13 +36,13 @@
 
     <PreferenceScreen
         android:key="pie_style"
-        android:fragment="com.android.settings.mahdi.PieStyleSettings"
+        android:fragment="com.android.settings.mahdi.pie.PieStyleSettings"
         android:title="@string/pie_style"
         android:dependency="pie_control" />
 
     <PreferenceScreen
         android:key="pie_trigger"
-        android:fragment="com.android.settings.mahdi.PieTriggerSettings"
+        android:fragment="com.android.settings.mahdi.pie.PieTriggerSettings"
         android:title="@string/pie_control_trigger_positions"
         android:dependency="pie_control" />
 

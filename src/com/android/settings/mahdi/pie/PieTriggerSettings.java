@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.mahdi;
+package com.android.settings.mahdi.pie;
 
 import android.content.ContentResolver;
 import android.database.ContentObserver;
@@ -71,9 +71,10 @@ public class PieTriggerSettings extends SettingsPreferenceFragment
         mDisableImeTriggers.setOnPreferenceChangeListener(this);
     }
 
-  @Override
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         int triggerSlots = 0;
+        int counter = 0;
         if (preference == mDisableImeTriggers) {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.PIE_IME_CONTROL,
@@ -83,6 +84,9 @@ public class PieTriggerSettings extends SettingsPreferenceFragment
                 boolean checked = preference == mTrigger[i]
                         ? (Boolean) newValue : mTrigger[i].isChecked();
                 if (checked) {
+                    if (!TRIGGER[i].equals("pie_control_trigger_top")) {
+                        counter++;
+                    }
                     triggerSlots |= 1 << i;
                 }
             }
@@ -92,6 +96,7 @@ public class PieTriggerSettings extends SettingsPreferenceFragment
         updatePieTriggers();
         return true;
     }
+
 
     @Override
     public void onResume() {

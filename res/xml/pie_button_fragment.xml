@@ -19,7 +19,7 @@
 
     <PreferenceScreen
         android:key="pie_button_style"
-        android:fragment="com.android.settings.mahdi.PieButtonStyleSettings"
+        android:fragment="com.android.settings.mahdi.pie.PieButtonStyleSettings"
         android:title="@string/pie_button_style"
         android:summary="@string/pie_button_style_summary" />
 
