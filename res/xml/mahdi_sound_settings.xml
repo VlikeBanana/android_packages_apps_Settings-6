@@ -56,5 +56,11 @@
             android:title="@string/safe_headset_volume_title"
             android:summary="@string/safe_headset_volume_summary"
             android:defaultValue="true" />
+        
+        <CheckBoxPreference
+            android:key="headset_plug"
+            android:title="@string/headset_plug_enable_title"
+            android:summary="@string/headset_plug_enable_summary"
+            android:defaultValue="false" />
 
 </PreferenceScreen>

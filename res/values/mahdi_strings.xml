@@ -1980,4 +1980,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Shortcuts -->
     <string name="shortcut_picker">Actions</string>  
 
+    <!-- Headset plug -->
+    <string name="headset_plug_enable_title">Opens music app when headset is plugged</string>
+    <string name="headset_plug_enable_summary">When checked, everytime you plug in your headset, your default music player opens up</string>
+
 </resources>
