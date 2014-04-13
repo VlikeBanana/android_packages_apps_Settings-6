@@ -36,7 +36,7 @@ import android.provider.Settings.SettingNotFoundException;
 import android.telephony.TelephonyManager;
 import com.android.internal.telephony.Phone;
 
-import com.android.settings.mahdi.SeekBarPreference;
+import com.android.settings.mahdi.chameleonos.SeekBarPreference;
 import com.android.settings.mahdi.batterysaver.BatterySaverHelper;
 import com.android.settings.mahdi.TimeRangePreference;
 import com.android.settings.SettingsPreferenceFragment;
