@@ -258,7 +258,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
             } else  if (indexOf == 2) {
                 deleteLockIcon();
             } else {
-                resizeSlimLock();
+                resizeSchismLock();
             }
             return true;
         } else if (preference == mColorizeCustom) {
@@ -322,8 +322,8 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         if (value == null) {
             resId = R.string.lockscreen_lock_icon_default;
             mLockIcon.setValueIndex(2);
-        } else if (value.contains("slim_lock")) {
-            resId = R.string.lockscreen_lock_icon_slim;
+        } else if (value.contains("schism_lock")) {
+            resId = R.string.lockscreen_lock_icon_schism;
             mLockIcon.setValueIndex(1);
         } else {
             resId = R.string.lockscreen_lock_icon_custom;
@@ -376,21 +376,21 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         updateLockSummary();
     }
 
-    private void resizeSlimLock() {
-        Bitmap slimLock = BitmapFactory.decodeResource(getResources(), R.drawable.slim_lock);
-        if (slimLock != null) {
+    private void resizeSchismLock() {
+        Bitmap schismLock = BitmapFactory.decodeResource(getResources(), R.drawable.schism_lock);
+        if (schismLock != null) {
             String path = null;
             int px = requestImageSize();
-            slimLock = Bitmap.createScaledBitmap(slimLock, px, px, true);
+            schismLock = Bitmap.createScaledBitmap(schismLock, px, px, true);
             try {
                 mLockImage.createNewFile();
                 mLockImage.setWritable(true, false);
                 File image = new File(getActivity().getFilesDir() + File.separator
-                            + "slim_lock" + System.currentTimeMillis() + ".png");
+                            + "schism_lock" + System.currentTimeMillis() + ".png");
                 path = image.getAbsolutePath();
                 mLockImage.renameTo(image);
                 FileOutputStream outPut = new FileOutputStream(image);
-                slimLock.compress(Bitmap.CompressFormat.PNG, 100, outPut);
+                schismLock.compress(Bitmap.CompressFormat.PNG, 100, outPut);
                 image.setReadable(true, false);
                 outPut.flush();
                 outPut.close();

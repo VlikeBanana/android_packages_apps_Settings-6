@@ -1555,7 +1555,7 @@
     <!-- Lockscreen lock icon values -->
     <string-array name="lock_icon_entries">
         <item>@string/lockscreen_lock_icon_custom</item>
-        <item>@string/lockscreen_lock_icon_slim</item>
+        <item>@string/lockscreen_lock_icon_schism</item>
         <item>@string/lockscreen_lock_icon_default</item>
     </string-array>
  
