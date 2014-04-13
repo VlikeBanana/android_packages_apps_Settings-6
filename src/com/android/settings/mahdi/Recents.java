@@ -36,8 +36,6 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-import com.android.settings.mahdi.util.Helpers;
-
 public class Recents extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "Recents";
@@ -70,7 +68,7 @@ public class Recents extends SettingsPreferenceFragment implements
 
         // i have no idea wat im doin
         mRecentPanelExpandedMode = (ListPreference) findPreference(RECENT_PANEL_EXPANDED_MODE);
-        String recentPanelExpandedMode = Settings.System.getString(resolver, Settings.System.RECENT_PANEL_EXPANDED_MODE, 0);
+        String recentPanelExpandedMode = Settings.System.getString(resolver, Settings.System.RECENT_PANEL_EXPANDED_MODE);
         if (recentPanelExpandedMode != null) {
             mRecentPanelExpandedMode.setValue(recentPanelExpandedMode + "");
         }

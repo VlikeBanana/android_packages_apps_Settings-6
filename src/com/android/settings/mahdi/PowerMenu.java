@@ -91,7 +91,7 @@ public class PowerMenu extends SettingsPreferenceFragment implements
         mScreenRecordPref.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.POWER_MENU_SCREENRECORD_ENABLED, 0) == 1));
 
-        mOnthegoPref = (CheckBoxPreference) prefSet.findPreference(POWER_MENU_ONTHEGO_ENABLED);
+        mOnthegoPref = (CheckBoxPreference) prefSet.findPreference(KEY_ONTHEGO);
         mOnthegoPref.setChecked((Settings.System.getInt(getContentResolver(), 
                 Settings.System.POWER_MENU_ONTHEGO_ENABLED, 0) == 1));
 
