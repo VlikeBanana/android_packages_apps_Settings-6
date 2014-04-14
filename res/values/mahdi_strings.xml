@@ -417,6 +417,60 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lock_before_unlock_title">Show slider before secure unlock</string>
     <string name="lock_before_unlock_summary">Show slider lockscreen before secure unlock mechanism</string>
 
+    <!-- Shake to secure -->
+    <string name="shake_to_secure_title">Shake the lockscreen to enable security</string>
+    <string name="shake_to_secure_summary">Security will be disabled after each successful unlock</string>
+    <string name="shake_to_secure_dlg_title">Warning:</string>
+    <string name="shake_to_secure_dlg_message">Your device will be insecure until you explicitly shake to enable a temporary secure lock.  Once secure: if your device is successfully unlocked it will become insecure until you shake again.</string>
+    <string name="shake_secure_timeout_title">Automatically resecure</string>
+    <string name="shake_secure_timeout_disabled">Never automatically secure</string>
+    <string name="shake_secure_timeout_1min">1 minute after screen turned off</string>
+    <string name="shake_secure_timeout_5min">5 minutes after screen turned off</string>
+    <string name="shake_secure_timeout_10min">10 minutes after screen turned off</string>
+    <string name="shake_secure_timeout_30min">30 minutes after screen turned off</string>
+
+    <!-- Lockscreen pin shuffle -->
+    <string name="lock_numpad_random_title">Change the order of PIN pad numbers</string>
+    <string name="lock_numpad_random_dialog_title">PIN pad random order</string>
+    <string name="lock_numpad_random_off">Disabled</string>
+    <string name="lock_numpad_random_always">Always</string>
+    <string name="lock_numpad_random_on_request">On request</string>
+
+    <!-- Sizes for pattern lockscreen -->
+    <string name="lock_pattern_size_3">3x3</string>
+    <string name="lock_pattern_size_4">4x4</string>
+    <string name="lock_pattern_size_5">5x5</string>
+    <string name="lock_pattern_size_6">6x6</string>
+
+    <!-- Whether a visible red line will be drawn after the user has drawn the unlock pattern incorrectly -->
+    <string name="lockpattern_settings_enable_error_path_title">Show pattern error</string>
+    <!-- Whether the dots will be drawn when using the lockscreen pattern -->
+    <string name="lockpattern_settings_enable_dots_title">Show pattern dots</string>
+
+    <!-- Security settings home unlock -->
+    <string name="unlock_home_unlock_title">Home unlock</string>
+    <string name="unlock_home_unlock_summary">Pressing the home button unlocks the device</string>
+
+    <!-- Quick unlock -->
+    <string name="unlock_quick_unlock_control_title">Quick unlock</string>
+    <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
+
+    <!-- Slide lock delay -->
+    <string name="delay_and_timeout_title">Lock delay</string>
+    <string name="slide_lock_delay_title">Delay screen lock</string>
+    <string name="slide_lock_timeout_delay_title">Delay after timeout</string>
+    <string name="slide_lock_screenoff_delay_title">Delay after turned off</string>
+    <string name="slide_lock_delay_none">None</string>
+    <string name="slide_lock_delay_1s">1 second</string>
+    <string name="slide_lock_delay_5s">5 seconds</string>
+    <string name="slide_lock_delay_10s">10 seconds</string>
+    <string name="slide_lock_delay_15s">15 seconds</string>
+    <string name="slide_lock_delay_30s">30 seconds</string>
+    <string name="slide_lock_delay_1m">1 minute</string>
+    <string name="slide_lock_delay_5m">5 minutes</string>
+    <string name="slide_lock_delay_10m">10 minutes</string>
+    <string name="slide_lock_delay_30m">30 minutes</string>
+
     <!-- Quick settings panel  -->
     <string name="quick_settings_panel_title">Quick settings panel</string>
     <string name="quick_settings_summary">Add or remove tiles and change other quick settings options</string>
@@ -1143,10 +1197,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="icon_picker_gallery_title">Gallery</string>
     <string name="icon_picker_pack_title">Icon pack</string>
 
-    <!--Quick unlock -->
-    <string name="unlock_quick_unlock_control_title">Quick unlock</string>
-    <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
-
     <!-- Wakeup options -->
     <string name="display_category_wakeup_options_title">Wakeup options</string>
 
@@ -1227,47 +1277,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Summary for "Configure lockscreen" when security gesture is enabled [CHAR LIMIT=45] -->
     <string name="unlock_set_unlock_mode_gesture">Gesture</string>
-
-    <!-- Sizes for pattern lockscreen -->
-    <string name="lock_pattern_size_3">3x3</string>
-    <string name="lock_pattern_size_4">4x4</string>
-    <string name="lock_pattern_size_5">5x5</string>
-    <string name="lock_pattern_size_6">6x6</string>
-
-    <!-- Whether a visible red line will be drawn after the user has drawn the unlock pattern incorrectly -->
-    <string name="lockpattern_settings_enable_error_path_title">Show pattern error</string>
-    <!-- Whether the dots will be drawn when using the lockscreen pattern -->
-    <string name="lockpattern_settings_enable_dots_title">Show pattern dots</string>
-
-    <!-- Lock screen vibrate settings -->
-    <string name="lockscreen_vibrate_enabled_title">Vibrate</string>
-    <string name="lockscreen_vibrate_enabled_head">Vibrate when unlocking</string>
-
-    <!-- security settings menu unlock -->
-    <string name="unlock_menu_unlock_title">Menu unlock</string>
-    <string name="unlock_menu_unlock_summary">Pressing the menu button unlocks the device</string>
-    <!-- security settings home unlock -->
-    <string name="unlock_home_unlock_title">Home unlock</string>
-    <string name="unlock_home_unlock_summary">Pressing the home button unlocks the device</string>
-    <!--Quick unlock -->
-    <string name="unlock_quick_unlock_control_title">Quick unlock</string>
-    <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
-
-    <!-- Slide lock delay -->
-    <string name="delay_and_timeout_title">Lock delay</string>
-    <string name="slide_lock_delay_title">Delay screen lock</string>
-    <string name="slide_lock_timeout_delay_title">Delay after timeout</string>
-    <string name="slide_lock_screenoff_delay_title">Delay after turned off</string>
-    <string name="slide_lock_delay_none">None</string>
-    <string name="slide_lock_delay_1s">1 second</string>
-    <string name="slide_lock_delay_5s">5 seconds</string>
-    <string name="slide_lock_delay_10s">10 seconds</string>
-    <string name="slide_lock_delay_15s">15 seconds</string>
-    <string name="slide_lock_delay_30s">30 seconds</string>
-    <string name="slide_lock_delay_1m">1 minute</string>
-    <string name="slide_lock_delay_5m">5 minutes</string>
-    <string name="slide_lock_delay_10m">10 minutes</string>
-    <string name="slide_lock_delay_30m">30 minutes</string>
 
     <!-- Delete apn confirmation dialog message -->
     <string name="confirm_delete_apn">The APN will be deleted.</string>
