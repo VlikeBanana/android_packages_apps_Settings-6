@@ -64,7 +64,6 @@ public class BatterySaverSettings extends SettingsPreferenceFragment implements
     private static final String PREF_KEY_BATTERY_SAVER_TIMERANGE = "pref_battery_saver_timerange";
 
     private static final String CATEGORY_RADIO = "category_battery_saver_radio";
-    private static final String CATEGORY_NETWORK = "category_battery_saver_network";
     private static final String CATEGORY_NETWORK_GSM = "category_battery_saver_network_gsm";
     private static final String CATEGORY_NETWORK_CDMA = "category_battery_saver_network_cdma";
 
@@ -239,7 +238,6 @@ public class BatterySaverSettings extends SettingsPreferenceFragment implements
             prefSet.removePreference(findPreference(CATEGORY_RADIO));
             prefSet.removePreference(findPreference(CATEGORY_NETWORK_GSM));
             prefSet.removePreference(findPreference(CATEGORY_NETWORK_CDMA));
-            prefSet.removePreference(findPreference(CATEGORY_NETWORK));
         }
 
         mSmartBluetoothEnabled = (CheckBoxPreference) prefSet.findPreference(PREF_KEY_BATTERY_SAVER_MODE_BLUETOOTH);
