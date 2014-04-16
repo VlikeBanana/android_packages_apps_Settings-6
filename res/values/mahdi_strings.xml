@@ -1814,7 +1814,24 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- On-The-Go -->
     <string name="title_tile_onthego">On-The-Go</string>
 
-    <!-- Slim recents panel -->
+    <!-- Recents panel -->
+    <string name="recents_panel_title">Recents app panel</string>
+    <string name="recents_panel_summary">Choose from various options for your recents panel</string>
+    <string name="aosb_or_slim_recents_title">Use Slim recents</string>
+    <string name="aosb_or_slim_recents_summary">Replaces the recents screen with new Slim recents using an Google Card design</string>
+
+    <!-- AOSB Recents options -->
+    <string name="aosp_recents_category">AOSB Recents</string>
+    <string name="show_recent_clear_all_button_title">Clear all button</string>
+    <string name="show_recent_clear_all_button_summary">Show clear all button within the recent applications view</string>
+    <string name="recent_clear_all_button_location_title">Clear all button position</string>
+    <string name="recent_clear_all_button_location_summary">Choose position of the clear all button</string>
+    <string name="recent_clear_all_button_location_top_left">Top left</string>
+    <string name="recent_clear_all_button_location_top_right">Top right</string>
+    <string name="recent_clear_all_button_location_bottom_left">Bottom left</string>
+    <string name="recent_clear_all_button_location_bottom_right">Bottom right</string>
+
+    <!-- Slim Recents options -->
     <string name="slim_recents_category">Slim Recents</string>
     <string name="recent_panel_category">Recent apps panel</string>
     <string name="recent_panel_scale_title">Size</string>
