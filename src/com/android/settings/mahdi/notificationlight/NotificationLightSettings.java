@@ -450,7 +450,6 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
                     mLightEnabled ? 1 : 0);
             mDefaultPref.setEnabled(mLightEnabled);
             mCustomEnabledPref.setEnabled(mLightEnabled);
-            mScreenOnEnabledPref.setEnabled(mLightEnabled);
             setCustomEnabled();
         } else if (CUSTOM_PREF.equals(key)) {
             mCustomEnabled = (Boolean) objValue;
