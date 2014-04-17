@@ -932,6 +932,7 @@
 
         <activity android:name="Settings$AppOpsSummaryActivity"
                 android:label="@string/app_ops_settings"
+                android:theme="@style/Theme.Settings.Sub"
                 android:taskAffinity=""
                 android:excludeFromRecents="true">
             <intent-filter>
