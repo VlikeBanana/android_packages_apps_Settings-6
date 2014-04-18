@@ -54,8 +54,8 @@
                 android:dialogTitle="@string/dialog_title_font_size" />
 
         <PreferenceScreen
-                android:key="slim_recents"
-                android:title="@string/slim_recents_category"
+                android:key="recents_panel_settings"
+                android:title="@string/recents_panel_title"
                 android:fragment="com.android.settings.mahdi.Recents" />
 
         <PreferenceScreen
