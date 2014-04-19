@@ -149,11 +149,9 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private CheckBoxPreference mLockBeforeUnlock;
     private CheckBoxPreference mQuickUnlockScreen;
     private ListPreference mLockNumpadRandom;
-    private CheckBoxPreference mMenuUnlock;
     private ListPreference mSlideLockTimeoutDelay;
     private ListPreference mSlideLockScreenOffDelay;
     private CheckBoxPreference mVisibleGesture;
-
 
     public SecuritySettings() {
         super(null /* Don't ask for restrictions pin on creation. */);
@@ -180,13 +178,6 @@ public class SecuritySettings extends RestrictedSettingsFragment
         addPreferencesFromResource(R.xml.security_settings);
         root = getPreferenceScreen();
 
-        // Mahdi-Rom - allows for calling the settings screen with stock or mahdi view
-        boolean isMahdiSecurity = false;
-        Bundle args = getArguments();
-        if (args != null) {
-             isMahdiSecurity = args.getBoolean("mahdi_security");
-         }
-
         final ContentResolver resolver = getContentResolver();
         final Resources res = getResources();
 
@@ -205,10 +196,10 @@ public class SecuritySettings extends RestrictedSettingsFragment
             } else {
                 resid = R.xml.security_settings_chooser;
             }
-        } else if (mLockPatternUtils.usingBiometricWeak() &&
+            } else if (mLockPatternUtils.usingBiometricWeak() &&
                 mLockPatternUtils.isBiometricWeakInstalled()) {
             resid = R.xml.security_settings_biometric_weak;
-        } else {
+            } else {
             switch (mLockPatternUtils.getKeyguardStoredPasswordQuality()) {
                 case DevicePolicyManager.PASSWORD_QUALITY_SOMETHING:
                     resid = R.xml.security_settings_pattern;
@@ -227,7 +218,6 @@ public class SecuritySettings extends RestrictedSettingsFragment
             }
         }
         addPreferencesFromResource(resid);
-
 
         // Add options for device encryption
         mIsPrimary = UserHandle.myUserId() == UserHandle.USER_OWNER;
@@ -275,65 +265,41 @@ public class SecuritySettings extends RestrictedSettingsFragment
                     KEY_POWER_INSTANTLY_LOCKS);
             checkPowerInstantLockDependency();
 
-	// Add the additional Mahdi-Rom settings
-        addPreferencesFromResource(R.xml.security_settings_mahdi);
-
             // Lock before Unlock
             mLockBeforeUnlock = (CheckBoxPreference) root
                     .findPreference(LOCK_BEFORE_UNLOCK);
-            mLockBeforeUnlock.setChecked(Settings.Secure.getInt(resolver,
-                    Settings.Secure.LOCK_BEFORE_UNLOCK, 0) == 1);
-
-            // disable lock options if lock screen set to NONE
-            // or if using pattern as a primary lock screen or
-            // as a backup to biometric
-            if ((!mLockPatternUtils.isSecure() && mLockPatternUtils.isLockScreenDisabled())
-                || (mLockPatternUtils.isLockPatternEnabled())) {               
-            if (mLockPatternUtils.isLockPatternEnabled()) {
-                mLockBeforeUnlock.setEnabled(true);
-            } else {
-                mLockBeforeUnlock.setEnabled(false);
-            }             
-            } else if (mLockPatternUtils.isLockPasswordEnabled()) {                
-                mLockBeforeUnlock.setEnabled(true);                       
-            } else {                
-                mLockBeforeUnlock.setEnabled(false);
+            if (mLockBeforeUnlock != null) {
+                mLockBeforeUnlock.setChecked(
+                        Settings.Secure.getInt(getContentResolver(),
+                        Settings.Secure.LOCK_BEFORE_UNLOCK, 0) == 1);
+                mLockBeforeUnlock.setOnPreferenceChangeListener(this);
             }
 
-            CheckBoxPreference quickUnlockScreen = (CheckBoxPreference)
-                    findPreference(Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL);
-            CheckBoxPreference menuUnlock = (CheckBoxPreference)
-                    findPreference(Settings.System.MENU_UNLOCK_SCREEN);
-            CheckBoxPreference homeUnlock = (CheckBoxPreference)
-                    findPreference(Settings.System.HOME_UNLOCK_SCREEN);
-            CheckBoxPreference vibratePref = (CheckBoxPreference)
-                    findPreference(Settings.System.LOCKSCREEN_VIBRATE_ENABLED);
+            // Quick Unlock Screen Control
+            mQuickUnlockScreen = (CheckBoxPreference) root
+                    .findPreference(LOCKSCREEN_QUICK_UNLOCK_CONTROL);
+            if (mQuickUnlockScreen != null) {
+                mQuickUnlockScreen.setChecked(Settings.System.getInt(getContentResolver(),
+                        Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, 0) == 1);
+            }
+
+            // Add the additional Mahdi-Rom settings
+            addPreferencesFromResource(R.xml.security_settings_mahdi);
 
             final int deviceKeys = res.getInteger(
                     com.android.internal.R.integer.config_deviceHardwareKeys);
             final PreferenceGroup additionalPrefs =
                     (PreferenceGroup) findPreference(CATEGORY_ADDITIONAL);
 
+            CheckBoxPreference homeUnlock = (CheckBoxPreference)
+                    findPreference(Settings.System.HOME_UNLOCK_SCREEN);
+
             // hide all lock options if lock screen set to NONE
             if (mLockPatternUtils.isLockScreenDisabled()) {
-                root.removePreference(additionalPrefs);                
-            // hide the quick unlock and vibrate if using Pattern
-            } else if (mLockPatternUtils.isLockPatternEnabled()) {
-                additionalPrefs.removePreference(vibratePref);
-                additionalPrefs.removePreference(quickUnlockScreen);
-            // hide vibrate on unlock options if using PIN/password
-            // as primary lock screen or as backup to biometric
-            } else if (mLockPatternUtils.isLockPasswordEnabled()) {
-                additionalPrefs.removePreference(vibratePref);
-            // hide the quick unlock if its not using PIN/password
-            // as a primary lock screen or as a backup to biometric
-            } else if (!mLockPatternUtils.isLockPasswordEnabled()) {
-                additionalPrefs.removePreference(quickUnlockScreen);
-            }
-            
+                root.removePreference(additionalPrefs);
             // Hide the HomeUnlock setting if no home button is available
-            if ((deviceKeys & HardwareKeys.KEY_MASK_HOME) == 0) {
-                additionalPrefs.removePreference(homeUnlock);
+            } else if ((deviceKeys & HardwareKeys.KEY_MASK_HOME) == 0) {
+                root.removePreference(additionalPrefs);
             }
         }
 
@@ -802,9 +768,6 @@ public class SecuritySettings extends RestrictedSettingsFragment
             lockPatternUtils.setVisibleDotsEnabled(isToggled(preference));
         } else if (KEY_POWER_INSTANTLY_LOCKS.equals(key)) {
             lockPatternUtils.setPowerButtonInstantlyLocks(isToggled(preference));
-	    } else if (preference == mLockBeforeUnlock) {
-            Settings.Secure.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.Secure.LOCK_BEFORE_UNLOCK, isToggled(preference) ? 1 : 0);      
         } else if (preference == mShowPassword) {
             Settings.System.putInt(getContentResolver(), Settings.System.TEXT_SHOW_PASSWORD,
                     mShowPassword.isChecked() ? 1 : 0);
@@ -818,6 +781,10 @@ public class SecuritySettings extends RestrictedSettingsFragment
         } else if (KEY_TOGGLE_VERIFY_APPLICATIONS.equals(key)) {
             Settings.Global.putInt(getContentResolver(), Settings.Global.PACKAGE_VERIFIER_ENABLE,
                     mToggleVerifyApps.isChecked() ? 1 : 0);
+        } else if (preference == mQuickUnlockScreen) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL,
+                    isToggled(preference) ? 1 : 0);
         } else {
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -870,6 +837,10 @@ public class SecuritySettings extends RestrictedSettingsFragment
                     Integer.valueOf((String) value));
             mLockNumpadRandom.setValue(String.valueOf(value));
             mLockNumpadRandom.setSummary(mLockNumpadRandom.getEntry());
+        } else if (preference == mLockBeforeUnlock) {
+            Settings.Secure.putInt(getContentResolver(),
+                    Settings.Secure.LOCK_BEFORE_UNLOCK,
+                    ((Boolean) value) ? 1 : 0);
         } else if (preference == mSlideLockTimeoutDelay) {
             int slideTimeoutDelay = Integer.valueOf((String) value);
             Settings.System.putInt(getContentResolver(),
