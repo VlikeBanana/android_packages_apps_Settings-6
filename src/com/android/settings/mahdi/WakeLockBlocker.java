@@ -77,7 +77,7 @@ public class WakeLockBlocker extends SettingsPreferenceFragment {
                         if(checked){
                             check.setTextColor(getResources().getColor(android.R.color.holo_red_light));
                         } else {
-                            check.setTextColor(getResources().getColor(android.R.color.grey_text));
+                            check.setTextColor(getResources().getColor(R.color.grey_text));
                         }
                     }
             });
