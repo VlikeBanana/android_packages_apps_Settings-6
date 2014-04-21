@@ -74,7 +74,6 @@
     <uses-permission android:name="android.permission.SYSTEM_NOTIFICATION_LISTENER" />
     <uses-permission android:name="android.permission.READ_PHONE_BLACKLIST" />
     <uses-permission android:name="android.permission.CHANGE_PHONE_BLACKLIST" />
-    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
 
     <permission
         android:name="android.permission.REQUEST_SUPERUSER"
@@ -2152,23 +2151,5 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
-        <service
-            android:name="com.android.settings.mahdi.backup.BackupService" />
-
-        <activity
-            android:name="com.android.settings.mahdi.backup.ManageBackupsActivity"
-            android:label="@string/manage_backups_activity_title"
-            android:taskAffinity="com.android.settings"
-            android:theme="@android:style/Theme.Holo.Light.DialogWhenLarge"
-            android:launchMode="singleTask" />
-
-        <activity
-           android:name="com.android.settings.mahdi.backup.BackupSettings"
-           android:label="@string/backups_title"
-           android:taskAffinity="com.android.settings"
-           android:theme="@style/Theme.Settings.Sub"
-           android:launchMode="singleTask" />
-
     </application>
 </manifest>

@@ -65,13 +65,6 @@
                 android:persistent="false"
                 android:fragment="com.android.settings.NotificationAccessSettings"/>
 
-        <PreferenceScreen
-            android:title="@string/backups_title"
-            android:key="backup_category">
-            <intent android:targetPackage="com.android.settings"
-                    android:targetClass="com.android.settings.mahdi.backup.BackupSettings"/>
-        </PreferenceScreen>
-
     </PreferenceCategory>
 
     <PreferenceCategory android:key="credentials_management"
@@ -105,5 +98,4 @@
                     android:targetClass="com.android.settings.CredentialStorage"/>
         </Preference>
     </PreferenceCategory>
-
 </PreferenceScreen>
