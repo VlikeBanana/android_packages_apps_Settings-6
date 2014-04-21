@@ -104,9 +104,9 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.android.settings.mahdi.backup.Backup;
-import com.android.settings.mahdi.backup.BackupView;
-import com.android.settings.mahdi.backup.BackupService;
+import org.omnirom.omnigears.backup.Backup;
+import org.omnirom.omnigears.backup.BackupView;
+import org.omnirom.omnigears.backup.BackupService;
 
 /**
  * Activity to display application information from Settings. This activity presents

@@ -55,8 +55,8 @@ import com.android.internal.widget.LockPatternUtils;
 import com.android.settings.R;
 import com.android.settings.mahdi.HardwareKeys;
 
-import com.android.settings.mahdi.backup.BackupService;
-import com.android.settings.mahdi.omni.NumberPickerPreference;
+import org.omnirom.omnigears.backup.BackupService;
+import org.omnirom.omnigears.preference.NumberPickerPreference;
 
 import java.io.File;
 import java.io.IOException;
