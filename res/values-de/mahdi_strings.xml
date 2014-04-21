@@ -22,9 +22,6 @@ limitations under the License.
     <string name="rom_settings_title">Schism Einstellunge</string>
     <string name="advanced_section_title">Erweiterte Einstellungen</string>
 
-    <!-- Theming Strings -->
-    <string name="empty_title"></string>
-
     <!-- About phone screen, Mod Version -->
     <string name="mod_version">Schism Rom Version</string>
     <string name="mod_version_default">Unbekannt</string>
@@ -38,7 +35,6 @@ limitations under the License.
     
     <!-- About phone screen, Free memory info -->
     <string name="mem_info">Speicher</string>
-    <!-- About phone screen, status item label -->
 
     <!-- General strings -->
     <string name="ok">OK</string>
@@ -1223,12 +1219,8 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="lockgesture_change_lock_pin_label">EntsperrPIN ändern</string>
     <!-- Security & location settings screen, change unlock gesture screen instruction when the user chooses "Change unlock gesture".  We first ask the user toe nter the current pattern, and this is the message seen -->
     <string name="lockgesture_need_to_unlock">Gespeicherte Geste bestätigen</string>
-    <!-- Do not translate. -->
-    <string name="lockgesture_need_to_unlock_footer" />
     <!-- Security & location settings screen, change unlock gesture screen instruction if user draws incorrect pattern -->
     <string name="lockgesture_need_to_unlock_wrong">Nochmal versuchen:</string>
-    <!-- Do not translate. -->
-    <string name="lockgesture_need_to_unlock_wrong_footer" />
     <!-- Security & location settings screen, change unlock gesture screen instruction on top of screen.  This si when they are supposed to draw a new unlock pattern (for example, if they are changing their unlock patterns)..-->
     <string name="lockgesture_recording_intro_header">Entsperrgeste zeichnen:</string>
     <!-- Security & location settings screen, change unlock gesture screen hint on bottom of screen.  We are telling them to press the menu button to see more options or help. -->
@@ -1418,10 +1410,6 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="show_enter_key_summary">Zeige Eingabe statt Emoticons</string>
     <string name="ime_switcher_notify">Auswahlbenachrichtigung</string>
     <string name="ime_switcher_notify_summary">Benachrichtigung zur Auswahl der Eingabemethode in der Statusleiste anzeigen</string>
-
-    <!-- Themes settings -->
-    <string name="themes_settings_title">Themen Auswahl</string>
-    <string name="themes_settings_summary">Änderungen der Benutzeroberfläche durch CM11 kompatible Themen</string>
 
     <!-- Notification drawer background -->
     <string name="notification_style_title">Aussehen</string>
@@ -1804,7 +1792,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="voice_tts_notif_summary">Sprache für neue Benachrichtigungen de-/aktivieren</string>
     <string name="voice_tts_notif_read_title">Neue Benachrichtigungen Vorlesen</string>
     <string name="voice_tts_notif_read_summary">Sprache für das Vorlesen neuer Benachrichtigungen de-/aktivieren</string>
-    <string name="voice_tts_whitelist_title">Enthaltene Apps<string>
+    <string name="voice_tts_whitelist_title">Enthaltene Apps</string>
     <string name="voice_tts_whitelist_summary">Die Apps, deren Benachrichtigungen vorgelesen werden</string>
     <string name="voice_tts_music_title">Aktuelles Lied</string>
     <string name="voice_tts_music_summary">Sprache für den Titel des aktuellen Lieds de-/aktivieren</string>
@@ -1889,7 +1877,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Am linken Rand anzeigen</string>
-    <string name="recent_panel_lefty_mode_summary">Das Panel auf der linken Seite anzeigen/string>
+    <string name="recent_panel_lefty_mode_summary">Das Panel auf der linken Seite anzeigen</string>
 
     <!-- Content description of the sync in progress icon for accessibility. [CHAR LIMIT=NONE] -->
     <string name="accessibility_sync_in_progress">Synchronisation läuft</string>
@@ -2098,14 +2086,6 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="lockscreen_lock_color_summary">Farbe des Entsperrmechanismus</string>
     <string name="lockscreen_dots_color_title">Punktefarbe</string>
     <string name="lockscreen_dots_color_summary">Farbe der Punkte des Glow-Pads</string>
- 
-    <!-- Themes -->
-    <string name="theme_settings_title_slim">Design</string>
-    <string name="theme_auto_mode_title">Dunkles UI</string>
-    <string name="theme_auto_mode_off">Manuell</string>
-    <string name="theme_auto_mode_lightsensor">Bei Änderung der Lichtverhältnisse</string>
-    <string name="theme_auto_mode_twilight">Tageszeitabhängig</string>
-    <string name="theme_auto_switch_mode_error">Automatischer Änderungsmodus durch Lichtverhältnisse aktiviert. Manuelles Umschalten nicht möglich.</string>
 
     <!-- Double-tap to sleep -->
     <string name="double_tap_sleep_title">Double-Tap-Schlafmodus</string>
@@ -2145,5 +2125,4 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <!-- Headset plug -->
     <string name="headset_plug_enable_title">Öffnet den Musikplayer, wenn das Headset eingesteckt wird</string>
     <string name="headset_plug_enable_summary">Wenn aktiviert, wird jedes mal, wenn das Headset angeschlossen ist, der Musikplayer gestartet</string>
-
 </resources>
