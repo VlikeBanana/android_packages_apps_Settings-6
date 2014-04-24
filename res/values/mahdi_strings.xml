@@ -91,7 +91,7 @@
     <string name="power_menu_summary">View or change the power menu list</string>
     <string name="power_menu_reboot_title">Reboot menu</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
-    <string name="power_menu_screenrecord_title">Screen Record</string>
+    <string name="power_menu_screenrecord_title">Screen record</string>
     <string name="power_menu_onthego_title">On-The-Go Mode</string>
     <string name="power_menu_profiles_title">Profile switcher</string>
     <string name="power_menu_profiles_disabled">Disabled</string>
@@ -1827,10 +1827,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="recents_panel_title">Recents app panel</string>
     <string name="recents_panel_summary">Choose from various options for your recents panel</string>
     <string name="aosb_or_slim_recents_title">Use Slim recents</string>
-    <string name="aosb_or_slim_recents_summary">Replaces the recents screen with new Slim recents using an Google Card design</string>
+    <string name="aosb_or_slim_recents_summary">Replaces the recents screen with new Slim recents using a Google Card design</string>
 
     <!-- AOSB Recents options -->
-    <string name="aosp_recents_category">AOSB Recents</string>
+    <string name="aosp_recents_category">AOSP Recents</string>
     <string name="show_recent_clear_all_button_title">Clear all button</string>
     <string name="show_recent_clear_all_button_summary">Show clear all button within the recent applications view</string>
     <string name="recent_clear_all_button_location_title">Clear all button position</string>
@@ -1841,7 +1841,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="recent_clear_all_button_location_bottom_right">Bottom right</string>
 
     <!-- Slim Recents options -->
-    <string name="slim_recents_category">Slim Recents</string>
+    <string name="slim_recents_category">Slim recents</string>
     <string name="recent_panel_category">Recent apps panel</string>
     <string name="recent_panel_scale_title">Size</string>
     <string name="recent_panel_scale_summary">Recent apps panel size in percent</string>
@@ -1871,7 +1871,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Pie Control -->
     <string name="pie_settings_category_title">PIE Settings</string>
-    <string name="pie_control_title">SlimPIE</string>
+    <string name="pie_control_title">PIE settings</string>
     <string name="pie_control_summary">Enable pie controls</string>
     <string name="pie_control_size">Navigation size</string>
     <string name="pie_control_trigger_positions">Trigger options</string>
@@ -2012,5 +2012,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Bluetooth accept all file types -->
     <string name="bluetooth_accept_all_files">Accept all file types</string>
+
+    <!-- Screen record settings -->
+    <string name="screen_record_settings">Screen record settings</string>
+    <string name="screen_record_enable_touches_title">Enable pointer</string>
+    <string name="screen_record_enable_touches_summary">Enable visual pointer to show touches during screen recording</string>
+    <string name="screen_record_enable_mic_title">Use microphone</string>
+    <string name="screen_record_enable_mic_summary">Use microphone as audio input during screen recording</string>
 
 </resources>
