@@ -19,13 +19,14 @@
     android:title="@string/lockscreen_notifications"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <SwitchPreference
+        android:key="lockscreen_notifications"
+        android:title="@string/lockscreen_notifications"
+        android:summary="@string/lockscreen_notifications_summary" />
+
     <PreferenceCategory
         android:key="category_general"
-        android:title="@string/general" >
-        <CheckBoxPreference
-            android:key="lockscreen_notifications"
-            android:title="@string/lockscreen_notifications"
-            android:summary="@string/lockscreen_notifications_summary" />
+        android:title="@string/general">
 
         <CheckBoxPreference
             android:key="pocket_mode"

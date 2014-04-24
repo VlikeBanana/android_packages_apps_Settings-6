@@ -381,7 +381,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         if (schismLock != null) {
             String path = null;
             int px = requestImageSize();
-            mahdiLock = Bitmap.createScaledBitmap(mahdiLock, px, px, true);
+            schismLock = Bitmap.createScaledBitmap(schismLock, px, px, true);
             try {
                 mLockImage.createNewFile();
                 mLockImage.setWritable(true, false);

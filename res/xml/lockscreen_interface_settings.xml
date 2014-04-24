@@ -28,11 +28,13 @@
         android:title="@string/lockscreen_general_title"
         android:key="lockscreen_general_category" >
 
-	<PreferenceScreen
+	<com.android.settings.mahdi.lsn.LockscreenNotificationsPreference
             android:key="lockscreen_notifications"
+            android:defaultValue="false"
             android:fragment="com.android.settings.mahdi.lsn.LockscreenNotifications"
             android:title="@string/lockscreen_notifications"
-            android:summary="@string/lockscreen_notifications_summary">
+            android:summary="@string/lockscreen_notifications_summary"
+            android:widgetLayout="@layout/listview_embedded_switchpreference" />
         </PreferenceScreen>
 
         <ListPreference
@@ -44,7 +46,7 @@
             android:entryValues="@array/lockscreen_battery_status_values"
             android:defaultValue="0" />
 
-        <CheckBoxPreference
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
             android:key="battery_around_lockscreen_ring"
             android:title="@string/battery_around_lockscreen_ring"
       	    android:summary="@string/battery_around_lockscreen_ring_summary"

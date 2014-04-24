@@ -22,6 +22,7 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -44,6 +45,8 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
+import com.android.settings.mahdi.lsn.LockscreenNotificationsPreference;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -55,22 +58,18 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final int DLG_ENABLE_EIGHT_TARGETS = 0;
 
     private static final String LOCKSCREEN_GENERAL_CATEGORY = "lockscreen_general_category";
-    private static final String KEY_LOCKSCREEN_MODLOCK_ENABLED = "lockscreen_modlock_enabled";
+    private static final String KEY_ADDITIONAL_OPTIONS = "options_group";
     private static final String KEY_BATTERY_STATUS = "lockscreen_battery_status";
-    private static final String BATTERY_AROUND_LOCKSCREEN_RING = "battery_around_lockscreen_ring";
+    private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
+    private static final String KEY_LOCKSCREEN_NOTIFICATONS = "lockscreen_notifications";
     private static final String LOCKSCREEN_SHORTCUTS_CATEGORY = "lockscreen_shortcuts_category";
     private static final String PREF_LOCKSCREEN_EIGHT_TARGETS = "lockscreen_eight_targets";
     private static final String PREF_LOCKSCREEN_TORCH = "lockscreen_glowpad_torch";
     private static final String PREF_LOCKSCREEN_SHORTCUTS = "lockscreen_shortcuts";
-    private static final String LOCKSCREEN_BACKGROUND_STYLE = "lockscreen_background_style";
 
-    private static final String LOCKSCREEN_WALLPAPER_TEMP_NAME = ".lockwallpaper";
-
-    private static final int REQUEST_PICK_WALLPAPER = 201;
-        
     private PreferenceCategory mAdditionalOptions;
+    private LockscreenNotificationsPreference mLockscreenNotifications;
     private ListPreference mBatteryStatus;
-    private CheckBoxPreference mLockRingBattery;
     private CheckBoxPreference mLockscreenEightTargets;
     private CheckBoxPreference mGlowpadTorch;
     private Preference mShortcuts;
@@ -106,14 +105,12 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         mAdditionalOptions = (PreferenceCategory) 
                 prefs.findPreference(KEY_ADDITIONAL_OPTIONS);
 
+        mLockscreenNotifications = (LockscreenNotificationsPreference) findPreference(KEY_LOCKSCREEN_NOTIFICATONS);
+
         mBatteryStatus = (ListPreference) findPreference(KEY_BATTERY_STATUS);
         if (mBatteryStatus != null) {
             mBatteryStatus.setOnPreferenceChangeListener(this);
-        }                
-
-        mLockRingBattery = (CheckBoxPreference)findPreference(BATTERY_AROUND_LOCKSCREEN_RING);
-        mLockRingBattery.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.BATTERY_AROUND_LOCKSCREEN_RING, 0) == 1);
+        }
 
         mLockscreenEightTargets = (CheckBoxPreference) findPreference(
                 PREF_LOCKSCREEN_EIGHT_TARGETS);
@@ -180,12 +177,9 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {        
-        if (preference == mLockRingBattery) {
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.BATTERY_AROUND_LOCKSCREEN_RING, mLockRingBattery.isChecked() ? 1 : 0);    
-        }
-       return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
+        if (preference == mLockscreenNotifications) {
+            return super.onPreferenceTreeClick(preferenceScreen, preference);
+        }  
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
