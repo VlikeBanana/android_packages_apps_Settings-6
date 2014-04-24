@@ -2059,7 +2059,7 @@
         <activity
             android:name="CreateSlimShortcut"
             android:label="@string/shortcut_picker"
-            android:icon="@drawable/slim_lock"
+            android:icon="@drawable/schism_lock"
             android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"
             android:excludeFromRecents="true"
             android:configChanges="orientation|keyboardHidden|screenSize" >
