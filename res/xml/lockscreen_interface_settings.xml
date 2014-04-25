@@ -35,7 +35,6 @@
             android:title="@string/lockscreen_notifications"
             android:summary="@string/lockscreen_notifications_summary"
             android:widgetLayout="@layout/listview_embedded_switchpreference" />
-        </PreferenceScreen>
 
         <ListPreference
             android:key="lockscreen_battery_status"
