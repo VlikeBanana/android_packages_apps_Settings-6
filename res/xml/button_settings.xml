@@ -63,4 +63,16 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+      android:key="shake_events_category"
+      android:title="@string/shake_events_title">
+
+    <PreferenceScreen
+        android:key="shake_events"
+        android:fragment="com.android.settings.mahdi.slim.ShakeEvents"
+        android:title="@string/shake_events_title"
+        android:summary="@string/shake_events_summary" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

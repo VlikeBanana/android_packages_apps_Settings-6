@@ -86,6 +86,8 @@ import com.android.settings.mahdi.NavbarSettings;
 import com.android.settings.mahdi.quicksettings.QuickSettingsTiles;
 import com.android.settings.mahdi.QuietHours;
 import com.android.settings.mahdi.superuser.PolicyNativeFragment;
+import com.android.settings.mahdi.slim.ShakeEvents;
+import com.android.settings.net.MobileDataEnabler;
 import com.android.settings.nfc.AndroidBeam;
 import com.android.settings.nfc.PaymentSettings;
 import com.android.settings.print.PrintJobSettingsFragment;
@@ -372,7 +374,8 @@ public class Settings extends PreferenceActivity
         NavbarSettings.class.getName(),
         com.android.settings.mahdi.PrivacySettings.class.getName(),
         com.android.settings.mahdi.superuser.PolicyNativeFragment.class.getName(),
-        com.android.settings.mahdi.quicksettings.QuickSettingsTiles.class.getName()     
+        com.android.settings.mahdi.quicksettings.QuickSettingsTiles.class.getName(),
+        ShakeEvents.class.getName()
     };
 
     @Override
@@ -1203,5 +1206,6 @@ public class Settings extends PreferenceActivity
     public static class DisplayRotationSettingsActivity extends Settings { /* empty */ }
     public static class ProfilesSettingsActivity extends Settings { /* empty */ }
     public static class NavbarSettingsActivity extends Settings { /* empty */ }
-    public static class MainActivity extends Settings { /* empty */ }   
+    public static class MainActivity extends Settings { /* empty */ }
+    public static class ShakeEventsSettingsActivity extends Settings { /* empty */ }
 }

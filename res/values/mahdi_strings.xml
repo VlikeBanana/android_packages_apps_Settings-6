@@ -474,6 +474,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_profile">Profile</string>
     <string name="title_tile_autorotate">Orientation</string>
     <string name="title_tile_settings">Settings</string>
+    <string name="title_tile_shake">Shake events</string>
     <string name="title_tile_sound">Sound</string>
     <string name="title_tile_sync">Sync</string>
     <string name="title_tile_wifiap">Wi-Fi AP</string>
@@ -2079,5 +2080,14 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="data_usage_cycle_editor_subtitle_cm">Date of each cycle:</string>
     <!-- Subtitle of dialog for editing data usage cycle length. [CHAR LIMIT=32] -->
     <string name="data_usage_lengths_spinner_subtitle">Cycle length:</string>
+
+    <!-- Shake Events -->
+    <string name="shake_events_title">Shake events</string>
+    <string name="shake_events_summary">Use shake events to perform custom actions</string>
+    <string name="shake_events_enabled_title">Enable shake listener</string>
+    <string name="shake_events_normal_title">Active shake events</string>
+    <string name="shake_event_x_title">Activity to launch when shaken horizontally</string>
+    <string name="shake_event_y_title">Activity to launch when shaken vertically</string>
+    <string name="shake_event_z_title">Activity to launch when shaken back-and-forth</string>
 
 </resources>
