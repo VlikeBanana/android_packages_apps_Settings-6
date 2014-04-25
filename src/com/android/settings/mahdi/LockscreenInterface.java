@@ -176,10 +176,12 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {        
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mLockscreenNotifications) {
             return super.onPreferenceTreeClick(preferenceScreen, preference);
-        }  
+        }
+       return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
