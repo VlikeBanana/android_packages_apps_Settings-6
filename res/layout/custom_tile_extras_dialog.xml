@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="?android:attr/textAppearanceSmall"
+        android:textColor="@color/primary_text_color"
         android:text="@string/custom_tile_dialog_extra_text" />
 
         <LinearLayout

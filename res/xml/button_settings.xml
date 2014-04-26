@@ -52,4 +52,15 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+      android:key="recent_panel_category"
+      android:title="@string/recents_panel_title">
+
+    <PreferenceScreen
+        android:key="recents_panel_settings"
+        android:title="@string/recents_panel_title"
+        android:fragment="com.android.settings.mahdi.Recents" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

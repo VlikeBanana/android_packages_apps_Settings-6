@@ -94,9 +94,6 @@
     <string name="power_menu_screenrecord_title">Screen record</string>
     <string name="power_menu_onthego_title">On-The-Go Mode</string>
     <string name="power_menu_profiles_title">Profile switcher</string>
-    <string name="power_menu_profiles_disabled">Disabled</string>
-    <string name="power_menu_profiles_lock">Disabled on lockscreen</string>
-    <string name="power_menu_profiles_all">Always show</string>
     <string name="power_menu_immersive_mode">Immersive mode</string>
     <string name="summary_immersive_mode">%1$s</string>
     <string name="immersive_mode_summary_status_bar">With status bar</string>

@@ -132,19 +132,6 @@
         <item>2</item>
     </string-array>
 
-    <!-- Profiles -->
-    <string-array name="power_menu_profiles_entries">
-        <item>@string/power_menu_profiles_disabled</item>
-        <item>@string/power_menu_profiles_lock</item>
-        <item>@string/power_menu_profiles_all</item>
-    </string-array>
-
-    <string-array name="power_menu_profiles_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
     <!-- Profile global immersive mode options. Do not translate. -->
     <string-array name="profile_global_immersive_entries" translatable="false">
         <item>@string/profile_lockmode_default</item>

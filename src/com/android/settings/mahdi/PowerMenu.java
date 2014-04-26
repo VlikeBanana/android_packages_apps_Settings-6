@@ -39,22 +39,12 @@ public class PowerMenu extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
     private static final String TAG = "PowerMenu";
 
-    private static final String KEY_REBOOT = "power_menu_reboot";    
-    private static final String KEY_PROFILES = "power_menu_profiles";
-    private static final String KEY_SCREENSHOT = "power_menu_screenshot";
     private static final String KEY_SCREENRECORD = "power_menu_screenrecord";
     private static final String KEY_IMMERSIVE_MODE = "power_menu_immersive_mode";
-    private static final String KEY_AIRPLANE = "power_menu_airplane";
-    private static final String KEY_SILENT = "power_menu_silent";
     private static final String KEY_ONTHEGO = "power_menu_onthego_enabled";
 
-    private CheckBoxPreference mRebootPref;
-    private ListPreference mProfilesPref;
-    private CheckBoxPreference mScreenshotPref;
     private CheckBoxPreference mScreenRecordPref;
     private ListPreference mImmersiveModePref;
-    private CheckBoxPreference mAirplanePref;
-    private CheckBoxPreference mSilentPref;
     private CheckBoxPreference mOnthegoPref;
 
     @Override
@@ -67,25 +57,6 @@ public class PowerMenu extends SettingsPreferenceFragment implements
 
         findPreference(Settings.System.POWER_MENU_ONTHEGO_ENABLED).setEnabled(
                 DeviceUtils.hasCamera(getActivity()));
-
-        mRebootPref = (CheckBoxPreference) findPreference(KEY_REBOOT);
-        mRebootPref.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.POWER_MENU_REBOOT_ENABLED, 1) == 1));
-
-	mProfilesPref = (ListPreference) findPreference(KEY_PROFILES);
-        mProfilesPref.setOnPreferenceChangeListener(this);
-        int mProfileShow = Settings.System.getInt(getContentResolver(),
-                Settings.System.POWER_MENU_PROFILES_ENABLED, 1);
-        mProfilesPref.setValue(String.valueOf(mProfileShow));
-        mProfilesPref.setSummary(mProfilesPref.getEntries()[mProfileShow]);
-        // Only enable if System Profiles are also enabled
-        boolean enabled = Settings.System.getInt(getContentResolver(),
-                Settings.System.SYSTEM_PROFILES_ENABLED, 1) == 1;
-        mProfilesPref.setEnabled(enabled);
-
-        mScreenshotPref = (CheckBoxPreference) findPreference(KEY_SCREENSHOT);
-        mScreenshotPref.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.POWER_MENU_SCREENSHOT_ENABLED, 0) == 1));
 
         mScreenRecordPref = (CheckBoxPreference) findPreference(KEY_SCREENRECORD);
         mScreenRecordPref.setChecked((Settings.System.getInt(getContentResolver(),
@@ -101,13 +72,6 @@ public class PowerMenu extends SettingsPreferenceFragment implements
         mImmersiveModePref.setValue(String.valueOf(expandedDesktopValue));
         updateExpandedDesktopSummary(expandedDesktopValue);        
 
-        mAirplanePref = (CheckBoxPreference) findPreference(KEY_AIRPLANE);
-        mAirplanePref.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.POWER_MENU_AIRPLANE_ENABLED, 1) == 1));                
-
-        mSilentPref = (CheckBoxPreference) findPreference(KEY_SILENT);
-        mSilentPref.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.POWER_MENU_SILENT_ENABLED, 1) == 1));
     } 
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -116,13 +80,6 @@ public class PowerMenu extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.GLOBAL_IMMERSIVE_MODE_STYLE, expandedDesktopValue);
             updateExpandedDesktopSummary(expandedDesktopValue);
-         } else if (preference == mProfilesPref) {
-            int mProfileShow = Integer.valueOf((String) newValue);
-            int index = mProfilesPref.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.POWER_MENU_PROFILES_ENABLED, mProfileShow);
-            mProfilesPref.setSummary(mProfilesPref.getEntries()[index]);
-            return true;
         }
         return false;
     }       
@@ -131,12 +88,7 @@ public class PowerMenu extends SettingsPreferenceFragment implements
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         boolean value;
 
-        if (preference == mScreenshotPref) {
-            value = mScreenshotPref.isChecked();
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.POWER_MENU_SCREENSHOT_ENABLED,
-                    value ? 1 : 0);
-        } else if (preference == mScreenRecordPref) {
+        if (preference == mScreenRecordPref) {
             value = mScreenRecordPref.isChecked();
             Settings.System.putInt(getContentResolver(),
                     Settings.System.POWER_MENU_SCREENRECORD_ENABLED,
@@ -145,21 +97,6 @@ public class PowerMenu extends SettingsPreferenceFragment implements
             value = mOnthegoPref.isChecked();
             Settings.System.putInt(getContentResolver(),
                     Settings.System.POWER_MENU_ONTHEGO_ENABLED, 
-                    value ? 1 : 0);
-        } else if (preference == mRebootPref) {
-            value = mRebootPref.isChecked();
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.POWER_MENU_REBOOT_ENABLED,
-                    value ? 1 : 0);        
-       } else if (preference == mAirplanePref) {
-            value = mAirplanePref.isChecked();
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.POWER_MENU_AIRPLANE_ENABLED,
-                    value ? 1 : 0);       
-       } else if (preference == mSilentPref) {
-            value = mSilentPref.isChecked();
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.POWER_MENU_SILENT_ENABLED,
                     value ? 1 : 0);
         } else {
             return super.onPreferenceTreeClick(preferenceScreen, preference);
