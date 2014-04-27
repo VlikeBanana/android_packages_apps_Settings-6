@@ -19,7 +19,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="@drawable/appwidget_bg_holo" >
+    android:background="@drawable/appwidget_bg_holo">
 
     <LinearLayout
         android:id="@+id/btn_wifi"
@@ -43,9 +43,10 @@
 
         <ImageView
             android:id="@+id/ind_wifi"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scaleType="fitXY"
+            android:layout_gravity="center"
+            android:scaleType="center"
             android:contentDescription="@null"
             />
         </LinearLayout>
@@ -79,9 +80,10 @@
 
         <ImageView
             android:id="@+id/ind_bluetooth"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scaleType="fitXY"
+            android:layout_gravity="center"
+            android:scaleType="center"
             android:contentDescription="@null"
             />
 
@@ -116,9 +118,10 @@
 
         <ImageView
             android:id="@+id/ind_location"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scaleType="fitXY"
+            android:layout_gravity="center"
+            android:scaleType="center"
             android:contentDescription="@null"
             />
     </LinearLayout>
@@ -152,9 +155,9 @@
 
         <ImageView
             android:id="@+id/ind_sync"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scaleType="fitXY"
+            android:layout_gravity="center"
             android:contentDescription="@null"
             />
     </LinearLayout>
@@ -188,9 +191,10 @@
 
         <ImageView
             android:id="@+id/ind_brightness"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scaleType="fitXY"
+            android:layout_gravity="center"
+            android:scaleType="center"
             android:contentDescription="@null"
             />
     </LinearLayout>

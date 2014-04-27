@@ -78,21 +78,21 @@ public class SettingsAppWidgetProvider extends AppWidgetProvider {
     private static final int POS_RIGHT = 2;
 
     private static final int[] IND_DRAWABLE_OFF = {
-        R.drawable.appwidget_settings_ind_off_l_holo,
-        R.drawable.appwidget_settings_ind_off_c_holo,
-        R.drawable.appwidget_settings_ind_off_r_holo
+        R.drawable.ic_appwidget_tab_circle_holo_off,
+        R.drawable.ic_appwidget_tab_circle_holo_off,
+        R.drawable.ic_appwidget_tab_circle_holo_off
     };
 
     private static final int[] IND_DRAWABLE_MID = {
-        R.drawable.appwidget_settings_ind_mid_l_holo,
-        R.drawable.appwidget_settings_ind_mid_c_holo,
-        R.drawable.appwidget_settings_ind_mid_r_holo
+        R.drawable.ic_appwidget_tab_circle_holo_on,
+        R.drawable.ic_appwidget_tab_circle_holo_on,
+        R.drawable.ic_appwidget_tab_circle_holo_on
     };
 
     private static final int[] IND_DRAWABLE_ON = {
-        R.drawable.appwidget_settings_ind_on_l_holo,
-        R.drawable.appwidget_settings_ind_on_c_holo,
-        R.drawable.appwidget_settings_ind_on_r_holo
+        R.drawable.ic_appwidget_tab_circle_holo_on,
+        R.drawable.ic_appwidget_tab_circle_holo_on,
+        R.drawable.ic_appwidget_tab_circle_holo_on
     };
 
     /** Minimum brightness at which the indicator is shown at half-full and ON */
@@ -736,7 +736,7 @@ public class SettingsAppWidgetProvider extends AppWidgetProvider {
             views.setImageViewResource(R.id.img_brightness,
                     R.drawable.ic_appwidget_settings_brightness_auto_holo);
             views.setImageViewResource(R.id.ind_brightness,
-                    R.drawable.appwidget_settings_ind_on_r_holo);
+                    R.drawable.ic_appwidget_tab_circle_holo_on);
         } else {
             final int brightness = getBrightness(context);
             final PowerManager pm = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
@@ -767,10 +767,10 @@ public class SettingsAppWidgetProvider extends AppWidgetProvider {
             // Set the ON state
             if (brightness > half) {
                 views.setImageViewResource(R.id.ind_brightness,
-                        R.drawable.appwidget_settings_ind_on_r_holo);
+                        R.drawable.ic_appwidget_tab_circle_holo_on);
             } else {
                 views.setImageViewResource(R.id.ind_brightness,
-                        R.drawable.appwidget_settings_ind_off_r_holo);
+                        R.drawable.ic_appwidget_tab_circle_holo_off);
             }
         }
     }
