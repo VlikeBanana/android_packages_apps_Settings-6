@@ -60,6 +60,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String LOCKSCREEN_GENERAL_CATEGORY = "lockscreen_general_category";
     private static final String KEY_ADDITIONAL_OPTIONS = "options_group";
     private static final String KEY_BATTERY_STATUS = "lockscreen_battery_status";
+    private static final String KEY_ENABLE_POWER_MENU = "lockscreen_enable_power_menu";
     private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
     private static final String KEY_LOCKSCREEN_NOTIFICATONS = "lockscreen_notifications";
     private static final String LOCKSCREEN_SHORTCUTS_CATEGORY = "lockscreen_shortcuts_category";
@@ -70,6 +71,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private PreferenceCategory mAdditionalOptions;
     private LockscreenNotificationsPreference mLockscreenNotifications;
     private ListPreference mBatteryStatus;
+    private CheckBoxPreference mEnablePowerMenu;
     private CheckBoxPreference mLockscreenEightTargets;
     private CheckBoxPreference mGlowpadTorch;
     private Preference mShortcuts;
@@ -112,6 +114,12 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             mBatteryStatus.setOnPreferenceChangeListener(this);
         }
 
+        // Enable / disable power menu on lockscreen
+        mEnablePowerMenu = (CheckBoxPreference) findPreference(KEY_ENABLE_POWER_MENU);
+        mEnablePowerMenu.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.LOCKSCREEN_ENABLE_POWER_MENU, 1) == 1);
+        mEnablePowerMenu.setOnPreferenceChangeListener(this);
+
         mLockscreenEightTargets = (CheckBoxPreference) findPreference(
                 PREF_LOCKSCREEN_EIGHT_TARGETS);
         mLockscreenEightTargets.setChecked(Settings.System.getInt(
@@ -143,7 +151,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             mBatteryStatus.setValueIndex(batteryStatus);
             mBatteryStatus.setSummary(mBatteryStatus.getEntries()[batteryStatus]);
         }
-                
+
         final int unsecureUnlockMethod = Settings.Secure.getInt(getActivity().getContentResolver(),
                 Settings.Secure.LOCKSCREEN_UNSECURE_USED, 1);
 
@@ -198,6 +206,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         } else if (preference == mLockscreenEightTargets) {
             showDialogInner(DLG_ENABLE_EIGHT_TARGETS, (Boolean) objValue);
             return true;
+        } else if (preference == mEnablePowerMenu) {
+            boolean objValue = (Boolean) value;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LOCKSCREEN_ENABLE_POWER_MENU, objValue ? 1 : 0);
         }
         return false;
     }
