@@ -1990,7 +1990,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_saver_mode_core">Core</string>
     <string name="battery_saver_cpu_mode_title">Activate CPU power saving mode</string>
     <string name="pref_battery_saver_cpu_warning_title">Attention:</string>
-    <string name="pref_battery_saver_cpu_warning_summary">we never can guarantee this will work on device</string>
+    <string name="pref_battery_saver_cpu_warning_summary">We can never guarantee this will work on your device</string>
     <string name="pref_battery_saver_network_title">Smart network change</string>
     <string name="pref_battery_saver_network_summary">Allow changing network to normal mode with specific interval time after screen turn off and power saving mode enabled</string>
     <string name="pref_battery_saver_nosignal_title">Smart network signal</string>
