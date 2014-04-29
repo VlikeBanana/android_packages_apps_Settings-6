@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012-2013 The Schism-Rom Project
+<!-- Copyright (C) 2012-2013 The Mahdi-Rom Project
+Modifed by 2014 - The Schism Project
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -14,28 +15,23 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Custom settings -->
-    <string name="custom_settings_category">Individualisierung</string>
 
     <!-- Customization Interface settings -->
     <string name="customization_settings_title">Mehr...</string>
-    <string name="rom_settings_title">Schism Einstellunge</string>
+	<string name="rom_settings_title">Schism Einstellunge</string>
     <string name="advanced_section_title">Erweiterte Einstellungen</string>
+
+	<!-- Theming Strings -->
+    <string name="empty_title"></string>
 
     <!-- About phone screen, Mod Version -->
     <string name="mod_version">Schism Rom Version</string>
     <string name="mod_version_default">Unbekannt</string>
-    
+	
     <!-- About phone screen, Build date of ROM -->
     <string name="build_date">Build-Datum</string>
     <string name="build_date_default">2012-01-01-0000</string>
-    
-    <!-- About device screen, Cpu info. -->
-    <string name="cpu_info">CPU</string>
-    
-    <!-- About phone screen, Free memory info -->
-    <string name="mem_info">Speicher</string>
-
+	
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="reset">Zurücksetzen</string>
@@ -96,12 +92,9 @@ limitations under the License.
     <string name="power_menu_reboot_title">Neustart-Menü</string>
     <string name="power_menu_screenshot_title">Bildschirmfoto</string>
     <string name="power_menu_screenrecord_title">Bildschirmrekorder</string>
-    <string name="power_menu_onthego_title">On-The-Go Modus</string>
+  	<string name="power_menu_onthego_title">On-The-Go Modus</string>
     <string name="power_menu_profiles_title">Profilwechsel</string>
-    <string name="power_menu_profiles_disabled">Deaktiviert</string>
-    <string name="power_menu_profiles_lock">Bei Display-Sperre deaktiviert</string>
-    <string name="power_menu_profiles_all">Immer an</string>
-    <string name="power_menu_immersive_mode">Erweiterter Desktop</string>
+  	<string name="power_menu_immersive_mode">Erweiterter Desktop</string>
     <string name="summary_immersive_mode">%1$s</string>
     <string name="immersive_mode_summary_status_bar">Mit Statusleiste</string>
     <string name="immersive_mode_summary_no_status_bar">Ohne Statusleiste</string>
@@ -299,9 +292,6 @@ limitations under the License.
     <string name="remove_blacklist_entry">Soll dieser Sperrlisteneintrag entfernt werden?</string>
     <string name="select_contact">Kontakt auswählen</string>
 
-    <!-- Performance Control -->
-    <string name="performance_settings">Leistungsverhalten</string>
-
     <!-- Sound settings -->
     <string name="volume_category">Lautstärke</string>
     <string name="advanced_sound_title">Weitere Optionen</string>
@@ -332,7 +322,7 @@ limitations under the License.
     <string name="headset_category_title">Kopfhörer</string>
     <string name="headset_connect_player_title">Starte die Musik-App beim Einstecken</string>
     
-    <!-- Volume Steps -->
+	<!-- Volume Steps -->
     <string name="volume_steps_title">Lautstärke-Schritte</string>
     <string name="volume_steps_60">60</string>
     <string name="volume_steps_45">45</string>
@@ -385,29 +375,7 @@ limitations under the License.
     <string name="auto_brightness_help_dialog_title">Hilfe</string>
     <string name="auto_brightness_help_text"><b>Wie wird die Helligkeit berechnet?</b>
 \n\n
-Der Verlauf der Helligkeit wird durch eine <i>kubische Interpolation</i> anhand der
-gegebenen Anzahl an <i>Stützstellen</i> berechnet - anders als gemeinhin angenommen, wird
-einem bestimmten Umgebungshelligkeitsbereich nicht eine konstante Bildschirmhelligkeit
-zugeordnet. Durch diese Art der Berechnung verursachen kleine Änderungen der Umgebungshelligkeit
-keine großen Sprünge der Bildschirmhelligkeit.\n
-Da die Abschätzung des exakten Verlaufs allerdings nicht ganz einfach ist, kann der berechnete
-Verlauf im Vorschaufenster betrachtet werden. Die Vorschau zeigt den Verlauf mit <i>logarithmischer</i>
-Skalierung, so dass alle Stützstellen unterscheidbar sind. Bei Verwendung einer linearen Skalierung
-wären die tendenziell wichtigeren Stützstellen im unteren Bereich der Umgebungshelligkeit nicht
-zu unterscheiden.
-\n\n
-<b>Wie kann der Helligkeitsverlauf verändert werden?</b>
-\n\n
-Jede Zeile in der Helligkeitsliste entspricht einer <i>Stützstelle</i> des Helligkeitsverlaufs.
-Der Bildschirmhelligkeitswert der Stützstelle kann mittels des Schiebereglers in der Zeile
-verändert werden. Während des Schiebens wird die momentane Bildschirmhelligkeit auf den gewählten
-Wert eingestellt, um die gewählte Helligkeit abschätzen zu können.\n
-Durch langes Drücken auf die Zeilen stehen weitere Optionen zur Verfügung. Durch Auswahl von
-\"Bearbeiten\" können sowohl der Umgebungshelligkeitswert der Stützstelle verändert als auch der
-Bildschirmhelligkeitswert manuell eingegeben werden. Die Auswahl von \"Helligkeitsstufe aufteilen\"
-erlaubt die Duplizierung einer Zeile in eine zweite Zeile, um zusätzliche Stützstellen hinzuzufügen.
-Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverlauf entfernt werden.
-    </string>
+Der Verlauf der Helligkeit wird durch eine <i>kubische Interpolation</i> anhand der gegebenen Anzahl an <i>Stützstellen</i> berechnet - anders als gemeinhin angenommen, wird einem bestimmten Umgebungshelligkeitsbereich nicht eine konstante Bildschirmhelligkeit zugeordnet. Durch diese Art der Berechnung verursachen kleine Änderungen der Umgebungshelligkeit keine großen Sprünge der Bildschirmhelligkeit.\nDa die Abschätzung des exakten Verlaufs allerdings nicht ganz einfach ist, kann der berechnete Verlauf im Vorschaufenster betrachtet werden. Die Vorschau zeigt den Verlauf mit <i>logarithmischer</i> Skalierung, so dass alle Stützstellen unterscheidbar sind. Bei Verwendung einer linearen Skalierung wären die tendenziell wichtigeren Stützstellen im unteren Bereich der Umgebungshelligkeit nicht zu unterscheiden.\n\n<b>Wie kann der Helligkeitsverlauf verändert werden?</b>\n\nJede Zeile in der Helligkeitsliste entspricht einer <i>Stützstelle</i> des Helligkeitsverlaufs. Der Bildschirmhelligkeitswert der Stützstelle kann mittels des Schiebereglers in der Zeile verändert werden. Während des Schiebens wird die momentane Bildschirmhelligkeit auf den gewählten Wert eingestellt, um die gewählte Helligkeit abschätzen zu können.\nDurch langes Drücken auf die Zeilen stehen weitere Optionen zur Verfügung. Durch Auswahl von \"Bearbeiten\" können sowohl der Umgebungshelligkeitswert der Stützstelle verändert als auch der Bildschirmhelligkeitswert manuell eingegeben werden. Die Auswahl von \"Helligkeitsstufe aufteilen\" erlaubt die Duplizierung einer Zeile in eine zweite Zeile, um zusätzliche Stützstellen hinzuzufügen. Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverlauf entfernt werden.</string>
 
     <string name="auto_brightness_sensitivity_title">Regelungsträgheit</string>
     <string name="auto_brightness_sensitivity_verylow">Sehr niedrig</string>
@@ -425,6 +393,60 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="additional_options_title">Weitere Optionen</string>
     <string name="lock_before_unlock_title">Wischen vor sicherer Display-Sperre</string>
     <string name="lock_before_unlock_summary">Entsperren mit Wischzielen vor der sicheren Display-Sperre</string>
+
+    <!-- Shake to secure -->
+    <string name="shake_to_secure_title">Sperrbildschirm schütteln, um Sicherheit einzuschalten</string>
+    <string name="shake_to_secure_summary">Sicherheit wird nach erfolgreichem Entsperren augfehoben</string>
+    <string name="shake_to_secure_dlg_title">Warnung:</string>
+    <string name="shake_to_secure_dlg_message">Das Gerät wird nicht gesichert sein, bis es deutlich geschüttelt wird, um einen temporären Schutz zu aktivieren. Solange es gesichert ist: Wenn das Gerät einmal erfolgreich entsperrt wird, bleibt es bis zum nächsten Schütteln ungesichert.</string>
+    <string name="shake_secure_timeout_title">Automatisch wieder sichern</string>
+    <string name="shake_secure_timeout_disabled">Nie automatisc sichern</string>
+    <string name="shake_secure_timeout_1min">1 Minute nachden der Bildschirm ausgeht</string>
+    <string name="shake_secure_timeout_5min">5 Minuten nachden der Bildschirm ausgeht</string>
+    <string name="shake_secure_timeout_10min">10 Minuten nachden der Bildschirm ausgeht</string>
+    <string name="shake_secure_timeout_30min">30 Minuten nachden der Bildschirm ausgeht</string>
+
+    <!-- Lockscreen pin shuffle -->
+    <string name="lock_numpad_random_title">Anordnung der PIN-Tasten ändern</string>
+    <string name="lock_numpad_random_dialog_title">Zufälliges Anordnen der PIN-Tasten</string>
+    <string name="lock_numpad_random_off">Deaktiviert</string>
+    <string name="lock_numpad_random_always">Immer</string>
+    <string name="lock_numpad_random_on_request">Auf Anfrage</string>
+
+    <!-- Sizes for pattern lockscreen -->
+    <string name="lock_pattern_size_3">3x3</string>
+    <string name="lock_pattern_size_4">4x4</string>
+    <string name="lock_pattern_size_5">5x5</string>
+    <string name="lock_pattern_size_6">6x6</string>
+
+    <!-- Whether a visible red line will be drawn after the user has drawn the unlock pattern incorrectly -->
+    <string name="lockpattern_settings_enable_error_path_title">Fehler beim Muster zeigen</string>
+    <!-- Whether the dots will be drawn when using the lockscreen pattern -->
+    <string name="lockpattern_settings_enable_dots_title">Punkte des Patterns zeigen</string>
+
+    <!-- Security settings home unlock -->
+    <string name="unlock_home_unlock_title">Home-Entsperren</string>
+    <string name="unlock_home_unlock_summary">Das Gerät duch den Home-Button entsperren</string>
+
+    <!-- Quick unlock -->
+    <string name="unlock_quick_unlock_control_title">Schelles Entsperren</string>
+    <string name="unlock_quick_unlock_control_summary">Automatisch entsperren, wenn die richtige PIN/das Passwort eingegeben wurde</string>
+
+    <!-- Slide lock delay -->
+    <string name="delay_and_timeout_title">Sperrverzögerung</string>
+    <string name="slide_lock_delay_title">Display-Sperre verzögern</string>
+    <string name="slide_lock_timeout_delay_title">Verzögerung nach Timeout</string>
+    <string name="slide_lock_screenoff_delay_title">Verzögerung nach Abschalten</string>
+    <string name="slide_lock_delay_none">Keine</string>
+    <string name="slide_lock_delay_1s">1 Sekunde</string>
+    <string name="slide_lock_delay_5s">5 Sekunden</string>
+    <string name="slide_lock_delay_10s">10 Sekunden</string>
+    <string name="slide_lock_delay_15s">15 Sekunden</string>
+    <string name="slide_lock_delay_30s">30 Sekunden</string>
+    <string name="slide_lock_delay_1m">1 Minute</string>
+    <string name="slide_lock_delay_5m">5 Minuten</string>
+    <string name="slide_lock_delay_10m">10 Minuten</string>
+    <string name="slide_lock_delay_30m">30 Minuten</string>
 
     <!-- Quick settings panel -->
     <string name="quick_settings_panel_title">Schnelleinstellungen</string>
@@ -463,7 +485,6 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="title_tile_navbar">Navigationsleiste</string>
     <string name="title_tile_network_traffic">Netzwerk-Traffic</string>
     <string name="title_tile_music">Musik</string>
-    <string name="title_tile_quick_record">Schnelle Aufnahme</string>
     <string name="title_tile_contact">Kontakt</string>
     <string name="title_tile_custom">Benutzerdefiniert</string>
     <string name="custom_tile_dialog_text">Jede Aktion wird eine neue Funktion zu den Kacheln hinzuzufügen. Jeder Tip aktiviert die nächste Funktion. Langer Druck fügt eine weitere Funktion für langes Drücken hinzu. Wenn keine Tipp-Aktion festgelegt wurde wird das Symbol für langes Drücken gesetzt. Damit können sie Funktionen durch kurzes Tippen ändern und Aktionen durch langes Drücken starten.</string>
@@ -475,7 +496,6 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="custom_tile_long_press">Langer Druck:</string>
     <string name="custom_tile_null_warning">Zuerst muss eine Aktion festgelegt werden</string>
     <string name="custom_tile_resolve_name">Unbekannt</string>
-    <string name="title_tile_theme">Design-Umschalter</string>
 
     <string name="title_dynamic_tiles">Dynamische Kacheln</string>
     <string name="dynamic_tiles_note_title">Hinweis</string>
@@ -516,7 +536,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
 
     <string name="pref_network_mode_title">Netzwerkmodi</string>
     <string name="pref_screentimeout_mode_title">Bildschirm-Timeout</string>
-    <string name="pref_ring_mode_title">Klingelmodi</string>    
+    <string name="pref_ring_mode_title">Klingelmodi</string>	
     <string name="pref_music_mode_title">Musikmodi</string>
     <string name="music_tile_mode_background">Album anzeigen</string>
     <string name="music_tile_mode_tracktitle">Titel anzeigen</string>
@@ -548,7 +568,8 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="haptic_qs_tiles_title">Beim Drücken vibrieren</string>
     <string name="haptic_qs_tiles_summary">Vibration beim Drücken der Kacheln</string>
 
-    <!-- This exists as part of Power widget already, re-use them If Power widget is removed, re-enable these -->
+    <!-- This exists as part of Power widget already, re-use them 
+    If Power widget is removed, re-enable these -->
     <string name="pref_ring_mode_title">Klingelmodi</string>
     <string name="pref_ring_mode_summary">Klingelmodi, zwischen denen umgeschaltet wird</string>
     <string name="cm_sound_mode_silent">Lautlos</string>
@@ -666,7 +687,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="privacy_guard_filter_does_not_match">Es sind keine Apps mit passenden Berechtigungen installiert</string>
     <string name="privacy_guard_help_title">Hilfe</string>
     <string name="privacy_guard_reset_title">Zurücksetzen</string>
-    <string name="privacy_guard_reset_text">Berechtigungen zurücksetzen?</string>   
+    <string name="privacy_guard_reset_text">Berechtigungen zurücksetzen?</string>	
     <string name="privacy_guard_help_text">An dieser Stelle kann der Datenschutz für einzelne Apps durch einfache Berührung ein- und ausgeschaltet werden. Ausgewählte Apps haben keinen Zugriff auf persönliche Daten wie Kontakte, Nachrichten oder das Anrufprotokoll. Langes Drücken auf einen Eintrag öffnet die Detailanzeige für diese App.\n\nStandardmäßig werden in das System integrierte Apps nicht angezeigt. Wenn diese angezeigt werden sollen, kann dies mit der entsprechenden Menü-Option ausgewählt werden.</string>
     <string name="privacy_guard_manager_show_system_apps">Integrierte Apps anzeigen</string>
     <string name="privacy_guard_manager_filter_permissions">Berechtigungsfilter</string>
@@ -757,14 +778,14 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <!-- Button shorcut actions -->
     <string name="shortcut_action_navbar">Navigationsleiste</string>
     <string name="shortcut_action_pie">PIE-Controls</string>
-    <string name="shortcut_action_app">App</string>
+	<string name="shortcut_action_app">App</string>
     <string name="shortcut_action_home">Home</string>
     <string name="shortcut_action_back">Zurück</string>
     <string name="shortcut_action_recent">Anwendungsverlauf</string>
     <string name="shortcut_action_lastapp">Letzte App</string>
     <string name="shortcut_action_search">Suche</string>
     <string name="shortcut_action_search">In App-Suche</string>
-    <string name="shortcut_action_voice_search">Sprachsuche</string>    
+    <string name="shortcut_action_voice_search">Sprachsuche</string>	
     <string name="shortcut_action_screenshot">Bildschirmfoto</string>
     <string name="shortcut_action_menu">Menü</string>
     <string name="shortcut_action_ime">Eingabemethode wählen</string>
@@ -781,8 +802,6 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="shortcut_action_ring_silent">Ton/Stumm</string>
     <string name="shortcut_action_ring_vib_silent">Ton/Vibration/Stumm</string>
     <string name="shortcut_action_torch">Taschenlampe</string>
-    <string name="shortcut_action_theme_switch">Design-Umschalter</string>
-    <string name="shortcut_action_omniswitch">OmniSwitch</string>
     <string name="shortcut_action_longpress">Lange drücken:</string>
     <string name="shortcut_action_select_action_longpress">Aktion bei lange drücken:</string>
     <string name="shortcut_action_select_action">Aktion auswählen:</string>
@@ -797,7 +816,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="shortcut_image_not_valid">Die gewählte App hat kein gütiges Symbol oder wird nicht unterstützt. Bitte eine andere App auswählen.</string>
     <string name="shortcut_duplicate_entry">Die gewünschte Aktion kann nicht zweimal ausgewählt werden</string>
     
-    <string name="shortcut_action_help_shortcut">Verknüpfung</string>
+	<string name="shortcut_action_help_shortcut">Verknüpfung</string>
     <string name="shortcut_action_help_button">Eintrag</string>
     <string name="shortcut_action_help_icon">, Auswahl der Symbole öffnet die Konfigurationsoptionen</string>
     <string name="shortcut_action_help_main">Um einen %1$s hinzuzufügen wähle das Hinzufügensymbol. Wenn ein %1$s hinzugefügt wurde, kann durch verschieben des Positionssymbols dessen Plazierung angepasst werden. %2$s\n\nUm einen %1$s, zu entfernen diesen einfach nach links oder rechts raus wischen.\n\nUm die Standardwerte wieder herzustellen benutze das Zurücksetzen-Symbol.</string>
@@ -805,10 +824,6 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Entfernen des Eintrgs %1$s aus der Liste wird die zweite Reihe der PIE-Controls deaktivieren.</string>
     <string name="shortcut_action_help">Hilfe</string>
 
-    <string name="icon_picker_type">Symbol auswählen:</string>
-    <string name="icon_default">Standard</string>
-    <string name="icon_presets">System</string>
-    <string name="icon_custom">Gallerie</string>
     <string name="shortcuts_icon_picker_alarm">Alarm</string>
     <string name="shortcuts_icon_picker_andy">Andy</string>
     <string name="shortcuts_icon_picker_battery">Akku</string>
@@ -1054,47 +1069,6 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="show_activity_indicators_on_status_bar_title">Netzwerkaktivität</string>
     <string name="show_activity_indicators_on_status_bar_summary">Darstellung der Netzwerkaktivität im Empfangs- bzw. WLAN-Symbol in der Statusleiste</string>
 
-    <!-- Screen recorder -->
-    <string name="screen_recorder_title">Bildschirm Rekorder</string>
-    <string name="screen_recorder_summary">Bildschirm Rekorder Einstellungen</string>
-    <string name="screen_recorder_video_dimensions_title">Auflösung</string>
-    <string name="screen_recorder_video_bitrate_title">Bitrate</string>
-    <string name="screen_recorder_record_audio_title">Ton aufnehmen</string>
-    <string name="screen_recorder_record_audio_summary">Ton über das Mikrofon mit aufnehmen</string>
-    <!-- video sizes -->
-    <string name="screen_recorder_size_240x400">240x400</string>
-    <string name="screen_recorder_size_360x640">360x640</string>
-    <string name="screen_recorder_size_480x800">480x800</string>
-    <string name="screen_recorder_size_480x854">480x854</string>
-    <string name="screen_recorder_size_540x960">540x960</string>
-    <string name="screen_recorder_size_600x1024">600x1024</string>
-    <string name="screen_recorder_size_720x1280">720x1280</string>
-    <!-- frame rates -->
-    <string name="screen_recorder_bitrate_title_100000">100 kB/s</string>
-    <string name="screen_recorder_bitrate_title_250000">250 kB/s</string>
-    <string name="screen_recorder_bitrate_title_500000">500 kB/s</string>
-    <string name="screen_recorder_bitrate_title_1000000">1 MB/s</string>
-    <string name="screen_recorder_bitrate_title_2000000">2 MB/s</string>
-    <string name="screen_recorder_bitrate_title_3000000">3 MB/s</string>
-    <string name="screen_recorder_bitrate_title_4000000">4 MB/s</string>
-    <string name="screen_recorder_bitrate_title_5000000">5 MB/s</string>
-    <string name="screen_recorder_bitrate_title_10000000">10 MB/s</string>
-    <string name="screen_recorder_bitrate_title_20000000">20 MB/s</string>
-    <string name="screen_recorder_bitrate_title_50000000">50 MB/s</string>
-    <string name="screen_recorder_bitrate_title_100000000">100 MB/s</string>
-    <string name="screen_recorder_bitrate_100000">100000</string>
-    <string name="screen_recorder_bitrate_250000">250000</string>
-    <string name="screen_recorder_bitrate_500000">500000</string>
-    <string name="screen_recorder_bitrate_1000000">1000000</string>
-    <string name="screen_recorder_bitrate_2000000">2000000</string>
-    <string name="screen_recorder_bitrate_3000000">3000000</string>
-    <string name="screen_recorder_bitrate_4000000">4000000</string>
-    <string name="screen_recorder_bitrate_5000000">5000000</string>
-    <string name="screen_recorder_bitrate_10000000">10000000</string>
-    <string name="screen_recorder_bitrate_20000000">20000000</string>
-    <string name="screen_recorder_bitrate_50000000">50000000</string>
-    <string name="screen_recorder_bitrate_100000000">100000000</string>
-
     <!-- Lockscreen widget settings -->
     <string name="title_widgets">Widgets</string>
     <string name="lockscreen_widgets_title">Widgets</string>
@@ -1145,31 +1119,43 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="excluded_apps_summary">Ausgewähle Applikationen werden von der Anzeige auf dem Locksreen ausgeschlossen</string>
     <string name="notification_color">Farbe des Benachrichtigungshintergrunds</string>
 
-    <!-- Lock Screen Shortcuts -->
+    <!-- Lock Screen -->
     <string name="title_shortcuts">Sperrbildschirm-Anwendungen</string>
+    <!-- Lock Screen Targets -->
     <string name="lockscreen_target_info">Schieber zur gewünschten Position ziehen, um dort eine Anwendung zu platzieren</string>
     <string name="lockscreen_target_title">Sperrbildschirm-Anwendungen</string>
     <string name="lockscreen_target_summary">Anwendungen zum Sperrbildschirm hinzufügen</string>
+    <string name="lockscreen_target_color_title">Target icon color</string>
+    <string name="lockscreen_eight_targets_title">Eight slider targets</string>
+    <string name="lockscreen_eight_targets_summary">Enable eight custom lock screen targets.</string>
+    <string name="lockscreen_enable_eight_targets_dialog">Changing this option resets your current lockscreen targets setup to default.</string>
+    <string name="lockscreen_enable_eight_targets_enabled_dialog">\n\nWith eight lockscreen targets enabled you cannot use your lockscreen shortcuts at the same time.</string>
+    <string name="lockscreen_glowpad_torch_title">Taschenlampe</string>
+    <string name="lockscreen_glowpad_torch_summary">Einschalten der Taschenlampe durch doppeltes Tippen und Halten des Schiebers</string>
     <string name="lockscreen_target_reset">Sperrbildschirm-Anwendungen auf Standard zurückgesetzt</string>
-    <string name="lockscreen_target_reset_title">Zurücksetzen</string>
     <string name="lockscreen_target_reset_message">Anwendungen vom Sperrbildschirm löschen und auf Standard zurücksetzen?</string>
     <string name="lockscreen_target_empty">Nicht zugewiesen</string>
     <string name="lockscreen_target_edit_title">Zuordnung bearbeiten</string>
     <string name="lockscreen_target_edit_msg">Anwendung oder Symbol zum Ändern berühren</string>
-    <string name="lockscreen_glowpad_torch_title">Taschenlampe</string>
-    <string name="lockscreen_glowpad_torch_summary">Einschalten der Taschenlampe durch doppeltes Tippen und Halten des Schiebers</string>
+    
+    <!-- Description of accessibility direction for targets [CHAR LIMIT=NONE] -->
+    <string name="accessibility_target_direction">Wischen, um Ziel zu aktivieren</string>
+    <!-- Description of the unlock target in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_target_unlock">Entsperren</string>
+
+    <!-- Lockscreen Shortcuts -->
+    <string name="lockscreen_shortcuts_title">Shortcuts</string>
+    <string name="lockscreen_shortcuts_summary">Sperrbildschirm-Shortcuts anzeigen und ändern</string>
+    <string name="lockscreen_shorcuts_longpress_title">Shortcuts langer Druck</string>
+    <string name="lockscreen_shorcuts_longpress_summary">Spezielle Shortcuts bei langem Druck öffnen</string>
 
     <!-- Lock screen shortcuts -->
     <string name="picker_activities">Aktivitäten</string>
-    <string name="select_custom_app_title">Anwendung wählen</string>
     <string name="select_custom_activity_title">Aktivität wählen</string>
-    <string name="icon_picker_choose_icon_title">Symbol wählen</string>
     <string name="icon_picker_alarm">Wecker</string>
     <string name="icon_picker_browser">Browser</string>
     <string name="icon_picker_calendar">Kalendar</string>
     <string name="icon_picker_camera">Kamera</string>
-    <string name="icon_picker_chrome">Chrome</string>
-    <string name="icon_picker_contacts">Kontakte</string>
     <string name="icon_picker_email">Email</string>
     <string name="icon_picker_email2">Email Holo</string>
     <string name="icon_picker_facebook">Facebook</string>
@@ -1194,10 +1180,6 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="icon_picker_gallery_title">Gallerie</string>
     <string name="icon_picker_pack_title">Symbolbibliothek</string>
 
-    <!--Quick unlock -->
-    <string name="unlock_quick_unlock_control_title">Schnelles Entsperren</string>
-    <string name="unlock_quick_unlock_control_summary">Automatisches Entsperren nach korrekter Passwort- / Pin-Eingabe</string>
-
     <!-- Wakeup options -->
     <string name="display_category_wakeup_options_title">Einschaltoptionen</string>
 
@@ -1219,8 +1201,12 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="lockgesture_change_lock_pin_label">EntsperrPIN ändern</string>
     <!-- Security & location settings screen, change unlock gesture screen instruction when the user chooses "Change unlock gesture".  We first ask the user toe nter the current pattern, and this is the message seen -->
     <string name="lockgesture_need_to_unlock">Gespeicherte Geste bestätigen</string>
+    <!-- Do not translate. -->
+    <string name="lockgesture_need_to_unlock_footer" />
     <!-- Security & location settings screen, change unlock gesture screen instruction if user draws incorrect pattern -->
     <string name="lockgesture_need_to_unlock_wrong">Nochmal versuchen:</string>
+    <!-- Do not translate. -->
+    <string name="lockgesture_need_to_unlock_wrong_footer" />
     <!-- Security & location settings screen, change unlock gesture screen instruction on top of screen.  This si when they are supposed to draw a new unlock pattern (for example, if they are changing their unlock patterns)..-->
     <string name="lockgesture_recording_intro_header">Entsperrgeste zeichnen:</string>
     <!-- Security & location settings screen, change unlock gesture screen hint on bottom of screen.  We are telling them to press the menu button to see more options or help. -->
@@ -1275,53 +1261,8 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <!-- Summary for "Configure lockscreen" when security gesture is enabled [CHAR LIMIT=45] -->
     <string name="unlock_set_unlock_mode_gesture">Geste</string>
 
-    <!-- Sizes for pattern lockscreen -->
-    <string name="lock_pattern_size_3">3x3</string>
-    <string name="lock_pattern_size_4">4x4</string>
-    <string name="lock_pattern_size_5">5x5</string>
-    <string name="lock_pattern_size_6">6x6</string>
-
-    <!-- Whether a visible red line will be drawn after the user has drawn the unlock pattern incorrectly -->
-    <string name="lockpattern_settings_enable_error_path_title">Fehler anzeigen</string>
-    <!-- Whether the dots will be drawn when using the lockscreen pattern -->
-    <string name="lockpattern_settings_enable_dots_title">Punkte anzeigen</string>
-
-    <!-- Lock screen vibrate settings -->
-    <string name="lockscreen_vibrate_enabled_title">Vibration</string>
-    <string name="lockscreen_vibrate_enabled_head">Beim Entsperren vibrieren</string>
-
-    <!-- security settings menu unlock -->
-    <string name="unlock_menu_unlock_title">Mit Menü entsperren</string>
-    <string name="unlock_menu_unlock_summary">Entsperren durch Drücken der Menü-Taste</string>
-    <!-- security settings home unlock -->
-    <string name="unlock_home_unlock_title">Mit Home entsperren</string>
-    <string name="unlock_home_unlock_summary">Entsperren durch Drücken der Home-Taste</string>
-    <!--Quick unlock -->
-    <string name="unlock_quick_unlock_control_title">Schnelles Entsperren</string>
-    <string name="unlock_quick_unlock_control_summary">Automatisches Entsperren nach richtiger Passwort- / Pin-Eingabe</string>
-
-    <!-- Slide lock delay -->
-    <string name="delay_and_timeout_title">Sperrverzögerung</string>
-    <string name="slide_lock_delay_title">Display-Sperre verzögern</string>
-    <string name="slide_lock_timeout_delay_title">Verzögerung nach Timeout</string>
-    <string name="slide_lock_screenoff_delay_title">Verzögerung nach Abschalten</string>
-    <string name="slide_lock_delay_none">Keine</string>
-    <string name="slide_lock_delay_1s">1 Sekunde</string>
-    <string name="slide_lock_delay_5s">5 Sekunden</string>
-    <string name="slide_lock_delay_10s">10 Sekunden</string>
-    <string name="slide_lock_delay_15s">15 Sekunden</string>
-    <string name="slide_lock_delay_30s">30 Sekunden</string>
-    <string name="slide_lock_delay_1m">1 Minute</string>
-    <string name="slide_lock_delay_5m">5 Minuten</string>
-    <string name="slide_lock_delay_10m">10 Minuten</string>
-    <string name="slide_lock_delay_30m">30 Minuten</string>
-
     <!-- Delete apn confirmation dialog message -->
     <string name="confirm_delete_apn">Der Zugangspunkt wird gelöscht.</string>
-
-    <!--- Lock clock -->
-    <string name="lock_clock_title">Uhren-Widget</string>
-    <string name="lock_clock_summary">Darstellung des \'cLock\' Home- und Sperrbildschirm-Widgets </string>
 
     <!-- AOSP dummy strings -->
     <string name="experimental_webview"></string>
@@ -1330,7 +1271,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <!-- security settings menu unlock -->
     <string name="unlock_menu_unlock_title">Mit Menü entsperren</string>
     <string name="unlock_menu_unlock_summary">Entsperren durch Drücken der Menü-Taste</string>
-
+    
     <!-- development shortcut -->
     <string name="development_shortcut_title">Entwickler-Verküpfung</string>
     <string name="development_shortcut_summary">Aktiviert \'wipe data\' und \'force close\' Optionen in den Benachrichtigungen und im Anwendungsverlauf</string>
@@ -1338,41 +1279,6 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <!-- Recents panel menu -->
     <string name="recents_panel_settings_title">Anwendungsverlauf</string>
     <string name="recents_panel_settings_summary">Konfiguration des Anwendungsverlaufs</string>
-
-    <!-- Recents clear all -->
-    <string name="aosp_recents_category">Google Anwendungsverlauf</string>
-    <string name="show_recent_clear_all_button_title">Clear-All-Button</string>
-    <string name="show_recent_clear_all_button_summary">Fügt dem Anwendungsverlauf einen Clear-All-Button hinzu</string>
-    <string name="recent_clear_all_button_location_title">Position des Clear-All-Button</string>
-    <string name="recent_clear_all_button_location_summary">Position des Clear-All-Button wählen</string>
-    <string name="recent_clear_all_button_location_top_left">Oben Links</string>
-    <string name="recent_clear_all_button_location_top_right">Oben Rechts</string>
-    <string name="recent_clear_all_button_location_bottom_left">Unten Links</string>
-    <string name="recent_clear_all_button_location_bottom_right">Unten Rechts</string>
-
-    <!-- Memory Indicator -->
-    <string name="show_recents_memory_indicator_title">Speicherindikator</string>
-    <string name="show_recents_memory_indicator_summary">Fügt dem Anwendungsverlauf einen Speicherindikator hinzu</string>
-    <string name="recents_memory_indicator_location_title">Position des Speicherindikators</string>
-    <string name="recents_memory_indicator_location_summary">Position des Speicherindikators wählen</string>
-
-    <!-- New Recents Screen -->
-    <string name="new_recents_category">Alternativer Anwendungsverlauf</string>
-    <string name="new_recents_screen_title">Alternativen Anwendungsverlauf der SlimRom benutzen</string>
-    <string name="new_recents_screen_summary">Ersetzt den Bildschirm des Anwendungsverlaufs mit einer auf Grundlage der neuen Google-Karten-Optik basierenden Alternative.</string>
-    <string name="recent_panel_scale_title">Platzbedarf</string>
-    <string name="recent_panel_scale_summary">Feldgröße in Prozent.</string>
-    <string name="recent_panel_100">100% (Standard)</string>
-    <string name="recent_panel_85">85%</string>
-    <string name="recent_panel_70">70%</string>
-
-    <!-- ATTENTION: RTL languages need to replace left with right -->
-    <string name="recent_panel_lefty_mode_title">Am linken Bildschirmrand anzeigen</string>
-    <string name="recent_panel_lefty_mode_summary">Den Anwendungsverlauf links statt rechts anzeigen</string>
-
-    <!-- Message of dialog confirming that user wants to restart their device with a new runtime -->
-    <string name="custom_runtime_warning_title">Achtung!</string>
-    <string name="custom_runtime_warning_message">ART wird von Schism-Rom nicht unterstützt. Diese Einstellung ist nur für experimentelle Versuche und kann zu Datenverlust bis zur Funktionsuntüchtigkeit des Geräts führen. Besuche &lt;a href=\"http://source.android.com/devices/tech/dalvik/art.html\"&gt;Introducing ART&lt;/a&gt; für weiter Informationen.&lt;br/&gt;&lt;br/&gt;Bitte keine Fehlerberichte bei aktivierter ART Runtime.&lt;br/&gt;&lt;br/&gt; Willst du ganz sicher die Runtime von <xliff:g id="old" example="libdvm.so">%1$s</xliff:g> zu <xliff:g id="new" example="libart.so">%2$s</xliff:g> wechseln?</string>
 
     <!-- Less Notification sounds -->
     <string name="notifications_category_title">Benachrichtigungen</string>
@@ -1475,7 +1381,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="app_ops_summaries_coarse_location">Ungefäher Standort</string>
     <string name="app_ops_summaries_fine_location">Genauer Standort</string>
     <string name="app_ops_summaries_gps">GPS</string>
-    <string name="app_ops_summaries_vibrate">Vibration</string> 
+    <string name="app_ops_summaries_vibrate">Vibration</string>	
     <string name="app_ops_summaries_read_contacts">Kontakte lesen</string>
     <string name="app_ops_summaries_modify_contacts">Kontakte ändern</string>
     <string name="app_ops_summaries_read_call_log">Anrufliste lesen</string>
@@ -1485,8 +1391,8 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="app_ops_summaries_wifi_scan">WLAN-Scan</string>
     <string name="app_ops_summaries_notification">Benachrichtigung</string>
     <string name="app_ops_summaries_cell_scan">Mobilfunknetz-Scan</string>
-    <string name="app_ops_summaries_call_phone">Telefonieren</string>   
-    <string name="app_ops_summaries_read_sms">SMS lesen</string>    
+    <string name="app_ops_summaries_call_phone">Telefonieren</string>	
+    <string name="app_ops_summaries_read_sms">SMS lesen</string>	
     <string name="app_ops_summaries_write_sms">SMS schreiben</string>
     <string name="app_ops_summaries_receive_sms">SMS empfangen</string>
     <string name="app_ops_summaries_receive_emergency_sms">Notfall-SMS empfangen</string>
@@ -1509,9 +1415,9 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="app_ops_summaries_voice_volume">Sprachlautstärke</string>
     <string name="app_ops_summaries_ring_volume">Klingeltonlautstärke</string>
     <string name="app_ops_summaries_media_volume">Medienlautstärke</string>
-    <string name="app_ops_summaries_alarm_volume">Weckerlautstärke</string> 
-    <string name="app_ops_summaries_notification_volume">Benachrichtigungslautstärke</string>   
-    <string name="app_ops_summaries_bluetooth_volume">Bluetooth-Lautstärke</string> 
+    <string name="app_ops_summaries_alarm_volume">Weckerlautstärke</string>	
+    <string name="app_ops_summaries_notification_volume">Benachrichtigungslautstärke</string>	
+    <string name="app_ops_summaries_bluetooth_volume">Bluetooth-Lautstärke</string>	
     <string name="app_ops_summaries_keep_awake">Aktiv lassen</string>
     <string name="app_ops_summaries_monitor_location">Standort überwachen</string>
     <string name="app_ops_summaries_monitor_high_power_location">Standort mit hohem Energieverbrauch überwachen</string>
@@ -1529,7 +1435,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="app_ops_labels_read_contacts">Kontakte lesen</string>
     <string name="app_ops_labels_modify_contacts">Kontakte ändern</string>
     <string name="app_ops_labels_read_call_log">Anrufliste lesen</string>
-    <string name="app_ops_labels_modify_call_log">Anrufliste ändern</string>    
+    <string name="app_ops_labels_modify_call_log">Anrufliste ändern</string>	
     <string name="app_ops_labels_read_calendar">Kalender lesen</string>   
     <string name="app_ops_labels_modify_calendar">Kalender ändern</string>   
     <string name="app_ops_labels_notification_toast">Benachrichtigung posten</string>  
@@ -1540,12 +1446,12 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="app_ops_labels_receive_mms">MMS empfangen</string>
     <string name="app_ops_labels_send_sms">SMS schreiben</string>
     <string name="app_ops_labels_modify_settings">Einstellungen ändern</string>
-    <string name="app_ops_labels_draw_on_top">An oberste Position ziehen</string>   
-    <string name="app_ops_labels_access_notifications">Auf Benachrichtigungen zugreifen</string>    
-    <string name="app_ops_labels_camera">Kamera</string>    
-    <string name="app_ops_labels_record_audio">Audio aufnehmen</string> 
-    <string name="app_ops_labels_play_audio">Audio wiedergeben</string> 
-    <string name="app_ops_labels_read_clipboard">Zwischenablage lesen</string>  
+    <string name="app_ops_labels_draw_on_top">An oberste Position ziehen</string>	
+    <string name="app_ops_labels_access_notifications">Auf Benachrichtigungen zugreifen</string>	
+    <string name="app_ops_labels_camera">Kamera</string>	
+    <string name="app_ops_labels_record_audio">Audio aufnehmen</string>	
+    <string name="app_ops_labels_play_audio">Audio wiedergeben</string>	
+    <string name="app_ops_labels_read_clipboard">Zwischenablage lesen</string>	
     <string name="app_ops_labels_modify_clipboard">Zwischenablage ändern</string>
     <string name="app_ops_labels_media_buttons">Medienschaltflächen</string>
     <string name="app_ops_labels_audio_focus">Audio-Fokus</string>
@@ -1554,7 +1460,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="app_ops_labels_ring_volume">Klingeltonlautstärke</string>
     <string name="app_ops_labels_media_volume">Medienlautstärke</string>
     <string name="app_ops_labels_alarm_volume">Weckerlautstärke</string>
-    <string name="app_ops_labels_notification_volume">Benachrichtigungslautstärke</string>  
+    <string name="app_ops_labels_notification_volume">Benachrichtigungslautstärke</string>	
     <string name="app_ops_labels_bluetooth_volume">Bluetooth-lautstärke</string>
     <string name="app_ops_labels_keep_awake">Aktiv lassen</string>
     <string name="app_ops_labels_wifi_change">WLAN ändern</string>
@@ -1565,10 +1471,10 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="app_ops_labels_read_mms">MMS lesen</string>
     <string name="app_ops_labels_write_mms">MMS schreiben</string>
     <string name="app_ops_labels_auto_start">Autostart</string>
-    
+	
     <!-- App ops categories -->
     <string name="app_ops_categories_location">Standort</string>
-    <string name="app_ops_categories_personal">Persönlich</string>  
+    <string name="app_ops_categories_personal">Persönlich</string>	
     <string name="app_ops_categories_messaging">Nachrichten</string>
     <string name="app_ops_categories_media">Medien</string>
     <string name="app_ops_categories_device">Gerät</string>
@@ -1698,6 +1604,25 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="ime_interpolator_title">Interpolator</string>
     <string name="ime_duration_title">Animationsdauer</string>
 
+    <!-- Toast Animation -->
+    <string name="toast_animation_title">Toast Animationen</string>
+    <string name="toast_none_animation">Keine Funktion</string>
+    <string name="toast_default_animation">Standard</string>
+    <string name="toast_fade_animation">Überblenden</string>
+    <string name="toast_SlideRight_animation">Gleiten (Rechts)</string>
+    <string name="toast_SlideLeft_animation">Gleiten (Links)</string>
+    <string name="toast_Xylon_animation">Xylon Animation</string>
+    <string name="toast_Toko_animation">Toko Animation</string>
+    <string name="toast_Tn_animation">Tn Animation</string>
+    <string name="toast_Honami_animation">Honami Animation</string>
+    <string name="toast_FastFade_animation">Schnelles Überblenden</string>
+    <string name="toast_GrowFade_animation">Ansteigendes Überblenden</string>
+    <string name="toast_GrowFadeCenter_animation">Ansteigendes Überblenden (Zentriert)</string>
+    <string name="toast_GrowFadeBottom_animation">Ansteigendes Überblenden (Unten)</string>
+    <string name="toast_Translucent_animation">Transparent</string>
+    <string name="toast_SlideLeftRight_animation">Von Links nach Rechts</string>
+    <string name="toast_SlideRightLeft_animation">Von Rechts nach Links</string>
+
     <!-- Smooth ProgressBar -->
     <string name="progressbar_title">Fortschrittsbalken</string>
     <string name="progressbar_summary">Konfiguration der Fortschrittsbalken</string>
@@ -1721,25 +1646,6 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="progressbar_reset_message">Reset progress bar style to default?</string>
     <string name="ram_bar_button_reset">Farben zurücksetzen</string>
     <string name="ram_bar_reset">Zurücksetzen</string>
-
-    <!-- Toast Animation -->
-    <string name="toast_animation_title">Toast Animationen</string>
-    <string name="toast_none_animation">Keine Funktion</string>
-    <string name="toast_default_animation">Standard</string>
-    <string name="toast_fade_animation">Überblenden</string>
-    <string name="toast_SlideRight_animation">Gleiten (Rechts)</string>
-    <string name="toast_SlideLeft_animation">Gleiten (Links)</string>
-    <string name="toast_Xylon_animation">Xylon Animation</string>
-    <string name="toast_Toko_animation">Toko Animation</string>
-    <string name="toast_Tn_animation">Tn Animation</string>
-    <string name="toast_Honami_animation">Honami Animation</string>
-    <string name="toast_FastFade_animation">Schnelles Überblenden</string>
-    <string name="toast_GrowFade_animation">Ansteigendes Überblenden</string>
-    <string name="toast_GrowFadeCenter_animation">Ansteigendes Überblenden (Zentriert)</string>
-    <string name="toast_GrowFadeBottom_animation">Ansteigendes Überblenden (Unten)</string>
-    <string name="toast_Translucent_animation">Transparent</string>
-    <string name="toast_SlideLeftRight_animation">Von Links nach Rechts</string>
-    <string name="toast_SlideRightLeft_animation">Von Rechts nach Links</string>
 
     <!-- Chamber of Secrets -->
     <string name="chamber_title">Kammer der Geheimnisse</string>
@@ -1792,7 +1698,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="voice_tts_notif_summary">Sprache für neue Benachrichtigungen de-/aktivieren</string>
     <string name="voice_tts_notif_read_title">Neue Benachrichtigungen Vorlesen</string>
     <string name="voice_tts_notif_read_summary">Sprache für das Vorlesen neuer Benachrichtigungen de-/aktivieren</string>
-    <string name="voice_tts_whitelist_title">Enthaltene Apps</string>
+    <string name="voice_tts_whitelist_title">Enthaltene Apps<string>
     <string name="voice_tts_whitelist_summary">Die Apps, deren Benachrichtigungen vorgelesen werden</string>
     <string name="voice_tts_music_title">Aktuelles Lied</string>
     <string name="voice_tts_music_summary">Sprache für den Titel des aktuellen Lieds de-/aktivieren</string>
@@ -1850,6 +1756,25 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="time_ten_to">Zehn vor</string>
     <string name="time_five_to">Fünf vor</string>
 
+    <!-- Notification Reminders -->
+    <string name="noti_reminder_category">Benachrichtigungserinnerung</string>
+    <string name="noti_reminder_enable_title">Benachrichtigungserinnerung aktivieren</string>
+    <string name="noti_reminder_sound_title">Benachrichtigungston</string>
+    <string name="noti_reminder_sound_looping">Bis zum Verwerfen</string>
+    <string name="noti_reminder_ringtone">Benachrichtigungston</string>
+    <string name="noti_reminder_interval">Flip-Intervall</string>
+    <string name="noti_reminder_interval_1s">1 Sekunde</string>
+    <string name="noti_reminder_interval_1dot5s">1,5 Sekunden</string>
+    <string name="noti_reminder_interval_2s">2 Sekunden</string>
+    <string name="noti_reminder_interval_2dot5s">2,5 Sekunden</string>
+    <string name="noti_reminder_interval_3s">3 Sekunden</string>
+    <string name="noti_reminder_interval_3dot5s">3,5 Sekunden</string>
+    <string name="noti_reminder_interval_4s">4 Sekunden</string>
+
+    <!-- Lockscreen see through -->
+    <string name="lockscreen_see_through_title">Hindurchsehen</string>
+    <string name="lockscreen_see_through_summary">Zeigt den Bildschirminhalt hinter dem Sperrbildschirm, Daten können dadurch für Dritte sichtbar sein</string>
+    
     <!-- Lockscreen Wallpaper -->
     <string name="lockscreen_wallpaper_title">Hintergrund des Sperrbildschirms</string>
     <string name="lockscreen_wallpaper_summary">Ein Hintergrundbild für den Sperrbildschirm wählen</string>
@@ -1858,9 +1783,46 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="lockscreen_general_title">Sperrbildschirm - Allgemeines</string>
     <string name="lockscreen_style_category_title">Stil des Sperrbildschirms</string>
 
+    <!-- Double-tap to sleep -->
+    <string name="double_tap_sleep_title">Double-Tap-Schlafmodus</string>
+    <string name="double_tap_to_sleep_summary">Konfiguration des Double-Tap-Schlafmodus</string>
+    <string name="double_tap_sleep_secure_lockscreen_category">Display-Sperre</string>
+    <string name="status_bar_double_tap_sleep_status_bar_title">Statusleiste</string>
+    <string name="status_bar_double_tap_sleep_status_bar_summary">Doppeltes Tippen auf die Statusleiste</string>
+    <string name="status_bar_double_tap_sleep_glowpad_title">Glow-Pad</string>
+    <string name="status_bar_double_tap_sleep_glowpad_summary">Doppeltes Tippen auf das Glow-Pad</string>
+    <string name="status_bar_double_tap_sleep_pin_password_title">Pin und Passwort</string>
+    <string name="status_bar_double_tap_sleep_pin_password_summary">Doppeltes Tippen auf das Eingabefeld</string>
+    <string name="status_bar_double_tap_sleep_pattern_title">Muster</string>
+    <string name="status_bar_double_tap_sleep_pattern_summary">Doppeltes Tippen auf das Muster</string>
+
+    <!-- Notification count -->
+    <string name="notification_count_title">Benachrichtigungsanzahl</string>
+    <string name="notification_count_summary">Die Anzahl der ausstehenden Benachrichtigen als Überlagerung in der Statusleiste anzeigen</string>
+
     <!-- Kernel Tweaker -->
     <string name="kernel_tweaker">Kernel-Anpassungen</string>
     
+    <!-- On-The-Go -->
+    <string name="title_tile_onthego">On-The-Go</string>
+    
+	  <!-- Recents panel -->
+    <string name="recents_panel_title">Zuletzt geöffnete Aps</string>
+    <string name="recents_panel_summary">Verschiedene Optionen zur Anzeige der zuletzt geöffneten Apps</string>
+    <string name="aosb_or_slim_recents_title">Slim recents verwenden</string>
+    <string name="aosb_or_slim_recents_summary">Ersetzt die klassische Anzeige mit den "Slim Recents" im Google-Cards-Design</string>
+
+    <!-- AOSP Recents options -->
+    <string name="aosp_recents_category">AOSP Recents</string>
+    <string name="show_recent_clear_all_button_title">"Clear all"-Button</string>
+    <string name="show_recent_clear_all_button_summary">"Clear all"-Button innerhalb der Anzeige der zuletzt geöffneten Apps</string>
+    <string name="recent_clear_all_button_location_title">"Clear all"-Button Position</string>
+    <string name="recent_clear_all_button_location_summary">Position des Buttons zum Schließen aller Apps wählen</string>
+    <string name="recent_clear_all_button_location_top_left">Oben links</string>
+    <string name="recent_clear_all_button_location_top_right">Oben rechts</string>
+    <string name="recent_clear_all_button_location_bottom_left">Unten links</string>
+    <string name="recent_clear_all_button_location_bottom_right">Unten rechts</string>
+
     <!-- Slim recents panel -->
     <string name="slim_recents_category">Slim Recents</string>
     <string name="recent_panel_category">Panel der letzten Apps</string>
@@ -1877,7 +1839,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Am linken Rand anzeigen</string>
-    <string name="recent_panel_lefty_mode_summary">Das Panel auf der linken Seite anzeigen</string>
+    <string name="recent_panel_lefty_mode_summary">Das Panel auf der linken Seite anzeigen/string>
 
     <!-- Content description of the sync in progress icon for accessibility. [CHAR LIMIT=NONE] -->
     <string name="accessibility_sync_in_progress">Synchronisation läuft</string>
@@ -1954,7 +1916,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="data_usage_enable_batterysaver">Energiesparmodus</string>
 
     <!-- Battery saver mode -->
-    <string name="unit_sec">sec</string>
+	<string name="unit_sec">sec</string>
     <string name="network_lte">LTE (empfohlen)</string>
     <string name="network_4G">4G (empfohlen)</string>
     <string name="network_3G_only">3G</string>
@@ -1965,7 +1927,6 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="network_global">Global</string>
     <string name="battery_saver_action_undefined">Undefiniert</string>
     <string name="battery_saver_title">Energiesparmodus</string>
-    <string name="battery_saver_summary">Energiesparmodus für Mobilfunkdaten- und WiFi-Verbindungen</string>
     <string name="pref_battery_saver_enable_title">Akku sparern</string>
     <string name="pref_battery_saver_enable_summary">Automatisches Umschalten zwischen benutzerdefiniertem Energiespar- und Standardmodus durch Mobilfunkdaten- und WLAN-Verbindungsstatus</string>
     <string name="pref_battery_saver_enable_no_mobiledata_summary">Dies wird den Akkuverbrauch des Geräts automatisch benutzerdefiniert verwalten</string>
@@ -2025,104 +1986,21 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="battery_saver_network_cdma_title">CDMA Netzwerk</string>
     <string name="battery_saver_system_title">System-Optionen</string>
 
-    <string name="ad_redisplay_never">Nie</string>
-    <string name="ad_redisplay_1m">1 Minute</string>
-    <string name="ad_redisplay_5m">5 Minuten</string>
-    <string name="ad_redisplay_15m">15 Minuten</string>
-    <string name="ad_redisplay_30m">30 Minuten</string>
-    <string name="ad_redisplay_1h">1 Stunde</string>
-    <string name="ad_redisplay_2h">2 Stunden</string>
-    <string name="ad_redisplay_5h">5 Stunden</string>
-
-    <!-- Lockscreen system bar visibility -->
-    <string name="system_bar_visibility">Deaktiviert bei aktivierter Display-Sperre</string>
-    <string name="system_bar_visibility_summary">Anzeige der Systemleisten bei aktivierter Display-Sperre im erweiterten Desktop-Modus</string>
-
-    <!-- Notification Reminders -->
-    <string name="noti_reminder_category">Benachrichtigungserinnerung</string>
-    <string name="noti_reminder_enable_title">Benachrichtigungserinnerung aktivieren</string>
-    <string name="noti_reminder_sound_title">Benachrichtigungston</string>
-    <string name="noti_reminder_sound_looping">Bis zum Verwerfen</string>
-    <string name="noti_reminder_ringtone">Benachrichtigungston</string>
-    <string name="noti_reminder_interval">Flip-Intervall</string>
-    <string name="noti_reminder_interval_1s">1 Sekunde</string>
-    <string name="noti_reminder_interval_1dot5s">1,5 Sekunden</string>
-    <string name="noti_reminder_interval_2s">2 Sekunden</string>
-    <string name="noti_reminder_interval_2dot5s">2,5 Sekunden</string>
-    <string name="noti_reminder_interval_3s">3 Sekunden</string>
-    <string name="noti_reminder_interval_3dot5s">3,5 Sekunden</string>
-    <string name="noti_reminder_interval_4s">4 Sekunden</string>
-
-    <!-- Lockscreen see through -->
-    <string name="lockscreen_see_through_title">Hindurchsehen</string>
-    <string name="lockscreen_see_through_summary">Zeigt den Bildschirminhalt hinter dem Sperrbildschirm, Daten können dadurch für Dritte sichtbar sein</string>
-    <string name="blur_behind_title">Unscharfer Hintergrund</string>
-    <string name="blur_behind_summary">Durchsichtiger Hintergrund mit Unschärfe-Effekt</string>
-    <string name="blur_radius_title">Unschärfe-Radius</string>
-    <string name="blur_radius_summary">Radius des Unschärfe-Effekts festlegen</string>
-    <!-- Lockscreen background -->
-    <string name="lockscreen_background">Hintergrund</string>
-    <string name="lockscreen_background_style_title">Benutzerdefiniertes Hintergrundbild festlegen</string>
-    <string name="background_color_fill_title">Farbe</string>
-    <string name="background_default">Standard Hintergrundbild</string>
-    <string name="background_color_fill">Farbfüllung</string>
-    <string name="background_wallpaper">Benutzerdefiniertes Hintergrundbild</string>
-    <string name="transparency">Hintergrundtransparenz</string>
-    <string name="background_result_successful">Hintergrund geändert</string>
-    <string name="background_result_not_successful">Hintergrund nicht geändert</string>
-    <!-- Lockscreen style settings -->
-    <string name="lockscreen_style_reset_message">Alle Farben zurücksetzen?</string>
-    <string name="lockscreen_icon_title">Entsperrsymbol</string>
-    <string name="lockscreen_lock_icon_custom">Benutzerdefiniert</string>
-    <string name="lockscreen_lock_icon_default">Standard</string>
-    <string name="lockscreen_colorize_handle_title">Farbwahl</string>
-    <string name="lockscreen_colorize_handle_summary">Anpassen des ausgewählten Entsperrsysmbols</string>
-    <string name="lockscreen_style_title">Optik-Einstellungen</string>
-    <string name="lockscreen_style_summary">Konfiguration von Hintergrund, Entsperrsymbol und mehr</string>
-    <string name="lockscreen_theme_title">Aussehen</string>
-    <string name="lockscreen_frame_color_title">Rahmenfarbe</string>
-    <string name="lockscreen_frame_color_summary">Farbe des Widgets und des Entsperrrahmens</string>
-    <string name="lockscreen_lock_color_title">Verschlussfarbe</string>
-    <string name="lockscreen_lock_color_summary">Farbe des Entsperrmechanismus</string>
-    <string name="lockscreen_dots_color_title">Punktefarbe</string>
-    <string name="lockscreen_dots_color_summary">Farbe der Punkte des Glow-Pads</string>
-
-    <!-- Double-tap to sleep -->
-    <string name="double_tap_sleep_title">Double-Tap-Schlafmodus</string>
-    <string name="double_tap_to_sleep_summary">Konfiguration des Double-Tap-Schlafmodus</string>
-    <string name="double_tap_sleep_secure_lockscreen_category">Display-Sperre</string>
-    <string name="status_bar_double_tap_sleep_status_bar_title">Statusleiste</string>
-    <string name="status_bar_double_tap_sleep_status_bar_summary">Doppeltes Tippen auf die Statusleiste</string>
-    <string name="status_bar_double_tap_sleep_glowpad_title">Glow-Pad</string>
-    <string name="status_bar_double_tap_sleep_glowpad_summary">Doppeltes Tippen auf das Glow-Pad</string>
-    <string name="status_bar_double_tap_sleep_pin_password_title">Pin und Passwort</string>
-    <string name="status_bar_double_tap_sleep_pin_password_summary">Doppeltes Tippen auf das Eingabefeld</string>
-    <string name="status_bar_double_tap_sleep_pattern_title">Muster</string>
-    <string name="status_bar_double_tap_sleep_pattern_summary">Doppeltes Tippen auf das Muster</string>
-
-    <!-- Notification count -->
-    <string name="notification_count_title">Benachrichtigungsanzahl</string>
-    <string name="notification_count_summary">Die Anzahl der ausstehenden Benachrichtigen als Überlagerung in der Statusleiste anzeigen</string>
-
-    <!-- System Bars -->
-    <string name="system_bars_title">Systemleisten</string>
-    <string name="system_bars_summary">Konfiguration von Status- und Navigationsleiste</string>
-    <string name="immersive_mode_title">Erweiterter Desktop</string>
-    <string name="summary_immersive_mode">%1$s</string>
-    <string name="immersive_mode_summary_status_bar">Statusleiste anzeigen</string>
-    <string name="immersive_mode_summary_no_status_bar">Statusleiste verbergen</string>
-    <string name="immersive_mode_disabled">Aus</string>
-    <string name="immersive_mode_status_bar">Statusleiste anzeigen</string>
-    <string name="immersive_mode_no_status_bar">Statusleiste verbergen</string>
-
-    <!-- On-The-Go -->
-    <string name="power_menu_onthego_title">On-The-Go-Modus</string>
-    <string name="title_tile_onthego">On-The-Go</string>
-    
     <!-- Shortcuts -->
     <string name="shortcut_picker">Aktionen</string>  
 
     <!-- Headset plug -->
     <string name="headset_plug_enable_title">Öffnet den Musikplayer, wenn das Headset eingesteckt wird</string>
     <string name="headset_plug_enable_summary">Wenn aktiviert, wird jedes mal, wenn das Headset angeschlossen ist, der Musikplayer gestartet</string>
+
+<!-- Bluetooth accept all file types -->
+    <string name="bluetooth_accept_all_files">Ale Dateitypen akzeptieren</string>
+
+    <!-- Screen record settings -->
+    <string name="screen_record_settings">Bildschirm-Aufnahme-Einstellungen</string>
+    <string name="screen_record_enable_touches_title">Pointer aktivieren</string>
+    <string name="screen_record_enable_touches_summary">Pointer aktivieren, der während der Aufnahme Berührungen anzeigt</string>
+    <string name="screen_record_enable_mic_title">Mikrophon verwenden</string>
+    <string name="screen_record_enable_mic_summary">Mikrophon während der Aufnahme als Audioquelle verwenden</string>
+
 </resources>
