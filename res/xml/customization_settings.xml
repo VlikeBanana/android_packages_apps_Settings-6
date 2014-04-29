@@ -26,6 +26,17 @@
         android:icon="@drawable/ic_settings_status_bar"
         android:fragment="com.android.settings.mahdi.StatusBar" />
 
+    <Preference
+            android:key="oneclick_scroll"
+            android:title="@string/oneclick_scroll_title"
+            android:summary="@string/oneclick_scroll_summary"
+            android:icon="@drawable/ic_settings_oneclick_scroll"
+            android:persistent="false">
+                <intent
+                    android:targetPackage="com.kiumiu.ca.oneclickscroll"
+                    android:targetClass="com.kiumiu.ca.oneclickscroll.MainActivity" />
+    </Preference>
+
     <PreferenceScreen
         android:key="quick_settings_panel"        
         android:title="@string/quick_settings_panel_title"
