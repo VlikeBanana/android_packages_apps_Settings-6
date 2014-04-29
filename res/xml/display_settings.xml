@@ -45,11 +45,6 @@
                 android:title="@string/screensaver_settings_title"
                 android:fragment="com.android.settings.DreamSettings" />
 
-        <PreferenceScreen
-                android:key="screen_record"
-                android:title="@string/screen_record_settings"
-                android:fragment="com.android.settings.mahdi.ScreenRecordSettings" />
-
         <com.android.settings.WarnedListPreference
                 android:key="font_size"
                 android:title="@string/title_font_size"
