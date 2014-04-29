@@ -1698,7 +1698,7 @@ Der Verlauf der Helligkeit wird durch eine <i>kubische Interpolation</i> anhand 
     <string name="voice_tts_notif_summary">Sprache für neue Benachrichtigungen de-/aktivieren</string>
     <string name="voice_tts_notif_read_title">Neue Benachrichtigungen Vorlesen</string>
     <string name="voice_tts_notif_read_summary">Sprache für das Vorlesen neuer Benachrichtigungen de-/aktivieren</string>
-    <string name="voice_tts_whitelist_title">Enthaltene Apps<string>
+    <string name="voice_tts_whitelist_title">Enthaltene Apps</string>
     <string name="voice_tts_whitelist_summary">Die Apps, deren Benachrichtigungen vorgelesen werden</string>
     <string name="voice_tts_music_title">Aktuelles Lied</string>
     <string name="voice_tts_music_summary">Sprache für den Titel des aktuellen Lieds de-/aktivieren</string>
@@ -1839,7 +1839,7 @@ Der Verlauf der Helligkeit wird durch eine <i>kubische Interpolation</i> anhand 
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Am linken Rand anzeigen</string>
-    <string name="recent_panel_lefty_mode_summary">Das Panel auf der linken Seite anzeigen/string>
+    <string name="recent_panel_lefty_mode_summary">Das Panel auf der linken Seite anzeigen</string>
 
     <!-- Content description of the sync in progress icon for accessibility. [CHAR LIMIT=NONE] -->
     <string name="accessibility_sync_in_progress">Synchronisation läuft</string>
@@ -1993,14 +1993,7 @@ Der Verlauf der Helligkeit wird durch eine <i>kubische Interpolation</i> anhand 
     <string name="headset_plug_enable_title">Öffnet den Musikplayer, wenn das Headset eingesteckt wird</string>
     <string name="headset_plug_enable_summary">Wenn aktiviert, wird jedes mal, wenn das Headset angeschlossen ist, der Musikplayer gestartet</string>
 
-<!-- Bluetooth accept all file types -->
+    <!-- Bluetooth accept all file types -->
     <string name="bluetooth_accept_all_files">Ale Dateitypen akzeptieren</string>
-
-    <!-- Screen record settings -->
-    <string name="screen_record_settings">Bildschirm-Aufnahme-Einstellungen</string>
-    <string name="screen_record_enable_touches_title">Pointer aktivieren</string>
-    <string name="screen_record_enable_touches_summary">Pointer aktivieren, der während der Aufnahme Berührungen anzeigt</string>
-    <string name="screen_record_enable_mic_title">Mikrophon verwenden</string>
-    <string name="screen_record_enable_mic_summary">Mikrophon während der Aufnahme als Audioquelle verwenden</string>
 
 </resources>
