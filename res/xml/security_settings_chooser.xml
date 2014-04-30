@@ -31,6 +31,12 @@
             android:fragment="com.android.settings.mahdi.LockscreenWidgets"
             android:title="@string/lockscreen_widgets_title"/>	
 
+        <CheckBoxPreference
+            android:key="lockscreen_enable_power_menu"
+            android:title="@string/lockscreen_enable_power_menu_title"
+            android:summary="@string/lockscreen_enable_power_menu_summary"
+            android:persistent="false" />
+            
         <PreferenceScreen
             android:fragment="com.android.settings.OwnerInfoSettings"
             android:key="owner_info_settings"

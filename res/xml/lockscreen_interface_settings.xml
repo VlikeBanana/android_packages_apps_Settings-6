@@ -56,12 +56,6 @@
       	    android:summary="@string/battery_around_lockscreen_ring_summary"
             android:defaultValue="true" />
 
-        <CheckBoxPreference
-            android:key="lockscreen_enable_power_menu"
-            android:title="@string/lockscreen_enable_power_menu_title"
-            android:summary="@string/lockscreen_enable_power_menu_summary"
-            android:persistent="false" />
-
         <com.android.settings.mahdi.SystemSettingCheckBoxPreference
             android:key="global_immersive_mode_system_bars_visibility"
             android:title="@string/global_immersive_mode_system_bars_visibility"

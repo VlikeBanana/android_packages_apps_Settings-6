@@ -102,6 +102,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private static final String KEY_VISIBLE_DOTS = "visibledots";
     private static final String LOCK_BEFORE_UNLOCK = "lock_before_unlock";
     private static final String LOCK_NUMPAD_RANDOM = "lock_numpad_random";
+    private static final String KEY_ENABLE_POWER_MENU = "lockscreen_enable_power_menu";
     private static final String KEY_SHAKE_TO_SECURE = "shake_to_secure";
     private static final String KEY_SHAKE_AUTO_TIMEOUT = "shake_auto_timeout";
     private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
@@ -142,6 +143,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private ListPreference mLockNumpadRandom;
     private CheckBoxPreference mShakeToSecure;
     private ListPreference mShakeTimer;
+    private CheckBoxPreference mEnablePowerMenu;
     private CheckBoxPreference mQuickUnlockScreen;
     private ListPreference mSlideLockTimeoutDelay;
     private ListPreference mSlideLockScreenOffDelay;
@@ -311,6 +313,12 @@ public class SecuritySettings extends RestrictedSettingsFragment
             mQuickUnlockScreen.setChecked(Settings.System.getInt(getContentResolver(),
                     Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, 0) == 1);
         }
+
+        // Enable / disable power menu on lockscreen
+        mEnablePowerMenu = (CheckBoxPreference) findPreference(KEY_ENABLE_POWER_MENU);
+        mEnablePowerMenu.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.LOCKSCREEN_ENABLE_POWER_MENU, 1) == 1);
+        mEnablePowerMenu.setOnPreferenceChangeListener(this);
 
         // Lock Numpad Random
         mLockNumpadRandom = (ListPreference) root.findPreference(LOCK_NUMPAD_RANDOM);
@@ -864,12 +872,16 @@ public class SecuritySettings extends RestrictedSettingsFragment
             }
             updateLockAfterPreferenceSummary();
             checkPowerInstantLockDependency();
-	} else if (preference == mLockNumpadRandom) {
+	   } else if (preference == mLockNumpadRandom) {
             Settings.Secure.putInt(getContentResolver(),
                     Settings.Secure.LOCK_NUMPAD_RANDOM,
                     Integer.valueOf((String) value));
             mLockNumpadRandom.setValue(String.valueOf(value));
             mLockNumpadRandom.setSummary(mLockNumpadRandom.getEntry());
+        } else if (preference == mEnablePowerMenu) {
+            boolean newValue = (Boolean) value;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LOCKSCREEN_ENABLE_POWER_MENU, newValue ? 1 : 0);
         } else if (preference == mShakeToSecure) {
             boolean checked = ((Boolean) value);
             if (checked) {
