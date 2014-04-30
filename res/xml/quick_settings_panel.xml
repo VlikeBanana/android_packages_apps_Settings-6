@@ -82,7 +82,7 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
+    <!-- <PreferenceCategory
         android:key="pref_style_settings"
         android:title="@string/status_bar_style_title" >
 
@@ -92,7 +92,7 @@
             android:title="@string/quicksettings_tiles_style"
             android:summary="@string/summary_quicksettings_tiles_style" />
 
-    </PreferenceCategory>
+    </PreferenceCategory> -->
 
     <PreferenceCategory
         android:key="pref_dynamic_tiles"
