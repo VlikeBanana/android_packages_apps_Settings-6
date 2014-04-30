@@ -16,11 +16,9 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/dialog_sound_panel_background">
+        android:layout_height="match_parent">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:background="@drawable/dialog_sound_panel_background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
