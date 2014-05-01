@@ -54,7 +54,7 @@
 
     <PreferenceCategory
       android:key="recent_panel_category"
-      android:title="@string/recents_panel_title">
+      android:title="@string/recent_panel_category">
 
     <PreferenceScreen
         android:key="recents_panel_settings"

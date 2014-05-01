@@ -1829,7 +1829,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_onthego">On-The-Go</string>
 
     <!-- Recents panel -->
-    <string name="recents_panel_title">Recents app panel</string>
+    <string name="recent_panel_category">Panel style</string>
+    <string name="recents_panel_title">Recent app panel</string>
     <string name="recents_panel_summary">Choose from various options for your recents panel</string>
     <string name="aosb_or_slim_recents_title">Use Slim recents</string>
     <string name="aosb_or_slim_recents_summary">Replaces the recents screen with new Slim recents using a Google Card design</string>
@@ -1847,7 +1848,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Slim Recents options -->
     <string name="slim_recents_category">Slim recents</string>
-    <string name="recent_panel_category">Recent apps panel</string>
     <string name="recent_panel_scale_title">Size</string>
     <string name="recent_panel_scale_summary">Recent apps panel size in percent</string>
     <string name="recent_panel_100">100% (default)</string>
@@ -1867,12 +1867,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="accessibility_sync_in_progress">Sync in progress</string>
 
     <!-- App Circle Sidebar -->
+    <string name="category_app_circle_bar_title">App launcher</string>
     <string name="app_circle_bar_title">App circle sidebar</string>
     <string name="app_circle_sidebar_summary_real">Launch apps from a scrollable sidebar and have multiple windows open simultaneously</string>
     <string name="app_circle_bar_summary">Show circle app launcher after touching right side of screen</string>
     <string name="app_circle_bar_included_apps_title">Included apps</string>
     <string name="app_circle_bar_included_apps_summary">Apps will show in app circle sidebar</string>
-    <string name="category_app_circle_bar_title">App launcher</string>
 
     <!-- Pie Control -->
     <string name="pie_settings_category_title">PIE Settings</string>
