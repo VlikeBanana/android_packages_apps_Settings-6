@@ -28,19 +28,6 @@
         android:title="@string/lockscreen_general_title"
         android:key="lockscreen_general_category" >
 
-        <com.android.settings.mahdi.lsn.LockscreenNotificationsPreference
-            android:key="lockscreen_notifications"
-            android:defaultValue="false"
-            android:fragment="com.android.settings.mahdi.lsn.LockscreenNotifications"
-            android:title="@string/lockscreen_notifications"
-            android:summary="@string/lockscreen_notifications_summary"
-            android:widgetLayout="@layout/listview_embedded_switchpreference" />
-
-        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
-            android:key="peek_state"
-            android:title="@string/peek_notifications_title"
-            android:summary="@string/peek_notifications_summary" />
-
         <ListPreference
             android:key="lockscreen_battery_status"
             android:persistent="false"
@@ -61,6 +48,33 @@
             android:title="@string/global_immersive_mode_system_bars_visibility"
             android:summary="@string/global_immersive_mode_system_bars_visibility_summary"
             android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/notification_category"
+        android:key="notification_category">
+
+        <com.android.settings.mahdi.lsn.LockscreenNotificationsPreference
+            android:key="lockscreen_notifications"
+            android:defaultValue="false"
+            android:fragment="com.android.settings.mahdi.lsn.LockscreenNotifications"
+            android:title="@string/lockscreen_notifications"
+            android:summary="@string/lockscreen_notifications_summary"
+            android:widgetLayout="@layout/listview_embedded_switchpreference" />
+
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+            android:key="peek_state"
+            android:title="@string/peek_notifications_title"
+            android:summary="@string/peek_notifications_summary" />
+
+        <ListPreference
+            android:key="peek_pickup_timeout"
+            android:title="@string/peek_pickup_timeout_title"
+            android:persistent="false"
+            android:entries="@array/peek_pickup_timeout_entries"
+            android:entryValues="@array/peek_pickup_timeout_values"
+            android:dependency="peek_state" />
 
     </PreferenceCategory>
 

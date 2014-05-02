@@ -2008,8 +2008,15 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="oneclick_scroll_summary">Manoeuvre to the top or bottom of any page with just one click</string>
 
     <!-- Peek Notifications -->
+    <string name="notification_category">Notifications</string>
     <string name="peek_notifications_title">Peek notifications</string>
     <string name="peek_notifications_summary">Show latest notifications after picking up your device</string>
+    <string name="peek_pickup_timeout_title">Peek pickup timeout</string>
+    <string name="peek_pickup_15seconds">15 seconds (default)</string>
+    <string name="peek_pickup_30seconds">30 seconds</string>
+    <string name="peek_pickup_45seconds">45 seconds</string>
+    <string name="peek_pickup_60seconds">1 minute</string>
+    <string name="peek_pickup_120seconds">2 minutes</string>
 
     <!-- Battery Bar -->
     <string name="battery_bar_title">Battery Bar</string>
