@@ -2042,4 +2042,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion</string>
     <string name="battery_bar_reset_message">Reset battery bar style to default?</string>
 
+    <!-- Show 4G icon instead of LTE. User defined settings -->
+    <string name="show_lte_or_fourgee_title">Show 4G network</string>
+    <string name="show_lte_or_fourgee_summary">This will allow you to show 4G instead of LTE</string>
+
 </resources>

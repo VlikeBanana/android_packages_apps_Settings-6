@@ -27,10 +27,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.database.ContentObserver;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -65,7 +62,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String KEY_BATTERY_STATUS = "lockscreen_battery_status";
     private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
     private static final String KEY_LOCKSCREEN_NOTIFICATONS = "lockscreen_notifications";
-    private static final String KEY_PEEK = "peek_notifications";
     private static final String LOCKSCREEN_SHORTCUTS_CATEGORY = "lockscreen_shortcuts_category";
     private static final String PREF_LOCKSCREEN_EIGHT_TARGETS = "lockscreen_eight_targets";
     private static final String PREF_LOCKSCREEN_TORCH = "lockscreen_glowpad_torch";
@@ -76,7 +72,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private ListPreference mBatteryStatus;
     private CheckBoxPreference mLockscreenEightTargets;
     private CheckBoxPreference mGlowpadTorch;
-    private CheckBoxPreference mPeekNotifications;
     private Preference mShortcuts;
 
     private boolean mCheckPreferences;
@@ -116,12 +111,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         if (mBatteryStatus != null) {
             mBatteryStatus.setOnPreferenceChangeListener(this);
         }
-
-        // Peek notifications
-        mPeekNotifications = (CheckBoxPreference) findPreference(KEY_PEEK);
-        mPeekNotifications.setPersistent(false);
-
-        updatePeekCheckbox();
 
         mLockscreenEightTargets = (CheckBoxPreference) findPreference(
                 PREF_LOCKSCREEN_EIGHT_TARGETS);
@@ -186,19 +175,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         return !getResources().getBoolean(com.android.internal.R.bool.config_showNavigationBar);
     }
 
-    private void updatePeekCheckbox() {
-        boolean enabled = Settings.System.getInt(getContentResolver(),
-                Settings.System.PEEK_STATE, 0) == 1;
-        mPeekNotifications.setChecked(enabled);
-    }
-
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mLockscreenNotifications) {
             return super.onPreferenceTreeClick(preferenceScreen, preference);
-        } else if (preference == mPeekNotifications) {
-            Settings.System.putInt(getContentResolver(), Settings.System.PEEK_STATE,
-                    mPeekNotifications.isChecked() ? 1 : 0);
         }
        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
