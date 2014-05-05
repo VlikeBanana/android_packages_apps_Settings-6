@@ -66,7 +66,9 @@
         <com.android.settings.mahdi.SystemSettingCheckBoxPreference
             android:key="peek_state"
             android:title="@string/peek_notifications_title"
-            android:summary="@string/peek_notifications_summary" />
+            android:summary="@string/peek_notifications_summary"
+            android:dependency="lockscreen_notifications"
+            android:disableDependentsState="true" />
 
         <ListPreference
             android:key="peek_pickup_timeout"
