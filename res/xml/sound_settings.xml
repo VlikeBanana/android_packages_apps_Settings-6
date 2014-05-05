@@ -23,6 +23,11 @@
             android:key="musicfx"
             android:title="@string/musicfx_title" />
 
+    <PreferenceScreen
+        android:key="quiet_hours"               
+        android:fragment="com.android.settings.mahdi.QuietHours"
+        android:title="@string/quiet_hours_title" /> 
+
     <PreferenceCategory
             android:title="@string/volume_category"/>
 
@@ -83,11 +88,6 @@
          android:key="vibrate_when_ringing"
          android:title="@string/vibrate_when_ringing_title"
          android:persistent="false" />
-
-     <PreferenceScreen               
-            android:fragment="com.android.settings.mahdi.QuietHours"
-            android:title="@string/quiet_hours_title" 
-            android:summary="@string/quiet_hours_summary" /> 
 
     <PreferenceCategory
             android:title="@string/sound_category_system_title"/>
