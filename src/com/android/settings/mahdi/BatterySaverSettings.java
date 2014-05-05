@@ -52,8 +52,6 @@ public class BatterySaverSettings extends SettingsPreferenceFragment implements
     private static final String PREF_KEY_BATTERY_SAVER_POWER_SAVING_CDMA_MODE = "pref_battery_saver_power_saving_cdma_mode";
     private static final String PREF_KEY_BATTERY_SAVER_MODE_CHANGE_DELAY = "pref_battery_saver_mode_change_delay";
     private static final String PREF_KEY_BATTERY_SAVER_MODE_BATTERY_LEVEL = "pref_battery_saver_mode_battery_level";
-    private static final String PREF_KEY_BATTERY_SAVER_MODE_BLUETOOTH = "pref_battery_saver_mode_bluetooth";
-    private static final String PREF_KEY_BATTERY_SAVER_MODE_LOCATION = "pref_battery_saver_mode_location";
     private static final String PREF_KEY_BATTERY_SAVER_MODE_DATA = "pref_battery_saver_mode_data";
     private static final String PREF_KEY_BATTERY_SAVER_MODE_NETWORK = "pref_battery_saver_mode_network";
     private static final String PREF_KEY_BATTERY_SAVER_MODE_NOSIGNAL = "pref_battery_saver_mode_nosignal";
@@ -81,8 +79,6 @@ public class BatterySaverSettings extends SettingsPreferenceFragment implements
     private SwitchPreference mBatterySaverEnabled;
     private SeekBarPreference mBatterySaverDelay;
     private SeekBarPreference mLowBatteryLevel;
-    private CheckBoxPreference mSmartBluetoothEnabled;
-    private CheckBoxPreference mSmartLocationEnabled;
     private CheckBoxPreference mSmartBrightnessEnabled;
     private CheckBoxPreference mSmartDataEnabled;
     private CheckBoxPreference mSmartLedEnabled;
@@ -240,24 +236,6 @@ public class BatterySaverSettings extends SettingsPreferenceFragment implements
             prefSet.removePreference(findPreference(CATEGORY_NETWORK_CDMA));
         }
 
-        mSmartBluetoothEnabled = (CheckBoxPreference) prefSet.findPreference(PREF_KEY_BATTERY_SAVER_MODE_BLUETOOTH);
-        if (BatterySaverHelper.deviceSupportsBluetooth()) {
-            mSmartBluetoothEnabled.setChecked(Settings.Global.getInt(mResolver,
-                     Settings.Global.BATTERY_SAVER_BLUETOOTH_MODE, 0) == 1);
-            mSmartBluetoothEnabled.setOnPreferenceChangeListener(this);
-        } else {
-            prefSet.removePreference(mSmartBluetoothEnabled);
-        }
-
-        mSmartLocationEnabled = (CheckBoxPreference) prefSet.findPreference(PREF_KEY_BATTERY_SAVER_MODE_LOCATION);
-        if (BatterySaverHelper.deviceSupportsGps(mContext)) {
-            mSmartLocationEnabled.setChecked(Settings.Global.getInt(mResolver,
-                     Settings.Global.BATTERY_SAVER_LOCATION_MODE, 0) == 1);
-            mSmartLocationEnabled.setOnPreferenceChangeListener(this);
-        } else {
-            prefSet.removePreference(mSmartLocationEnabled);
-        }
-
         mSmartLedEnabled = (CheckBoxPreference) prefSet.findPreference(PREF_KEY_BATTERY_SAVER_MODE_LED);
         if (BatterySaverHelper.deviceSupportsLed(mContext)) {
             mSmartLedEnabled.setChecked(Settings.Global.getInt(mResolver,
@@ -391,14 +369,6 @@ public class BatterySaverSettings extends SettingsPreferenceFragment implements
             int val = ((Integer)newValue).intValue();
             Settings.Global.putInt(mResolver,
                      Settings.Global.BATTERY_SAVER_BATTERY_LEVEL, val);
-        } else if (preference == mSmartBluetoothEnabled) {
-            boolean value = (Boolean) newValue;
-            Settings.Global.putInt(mResolver,
-                     Settings.Global.BATTERY_SAVER_BLUETOOTH_MODE, value ? 1 : 0);
-        } else if (preference == mSmartLocationEnabled) {
-            boolean value = (Boolean) newValue;
-            Settings.Global.putInt(mResolver,
-                     Settings.Global.BATTERY_SAVER_LOCATION_MODE, value ? 1 : 0);
         } else if (preference == mSmartBrightnessEnabled) {
             boolean value = (Boolean) newValue;
             Settings.Global.putInt(mResolver,

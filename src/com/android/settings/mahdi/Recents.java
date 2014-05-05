@@ -97,6 +97,8 @@ public class Recents extends SettingsPreferenceFragment implements
             mRecentClearAllPosition.setValue(recentClearAllPosition);
         }
         mRecentClearAllPosition.setOnPreferenceChangeListener(this);
+
+        updatePreference();
     }
 
     private void updatePreference() {

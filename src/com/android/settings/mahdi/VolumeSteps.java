@@ -125,18 +125,25 @@ public class VolumeSteps extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         if (preference == mVolumeStepsAlarm) {
             updateVolumeSteps(preference.getKey(),Integer.parseInt(objValue.toString()));
+            return true;
         } else if (preference == mVolumeStepsDTMF) {
             updateVolumeSteps(preference.getKey(),Integer.parseInt(objValue.toString()));
+            return true;
         } else if (preference == mVolumeStepsMusic) {
             updateVolumeSteps(preference.getKey(),Integer.parseInt(objValue.toString()));
+            return true;
         } else if (preference == mVolumeStepsNotification) {
             updateVolumeSteps(preference.getKey(),Integer.parseInt(objValue.toString()));
+            return true;
         } else if (preference == mVolumeStepsRing) {
             updateVolumeSteps(preference.getKey(),Integer.parseInt(objValue.toString()));
+            return true;
         } else if (preference == mVolumeStepsSystem) {
             updateVolumeSteps(preference.getKey(),Integer.parseInt(objValue.toString()));
+            return true;
         } else if (preference == mVolumeStepsVoiceCall) {
             updateVolumeSteps(preference.getKey(),Integer.parseInt(objValue.toString()));
+            return true;
         }
 
         return false;

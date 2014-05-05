@@ -169,43 +169,10 @@
             android:key="category_battery_saver_system"
             android:title="@string/battery_saver_system_title"/>
 
-    <PreferenceScreen
-        android:key="pref_battery_saver_mode_cpu"
-        android:dependency="pref_battery_saver_enable"
-        android:title="@string/pref_battery_saver_cpu_title"
-        android:summary="@string/pref_battery_saver_cpu_summary"
-        android:fragment="com.android.settings.mahdi.BatteryCpuSettings" />
-
-    <CheckBoxPreference
-        android:key="pref_battery_saver_mode_bluetooth"
-        android:persistent="false"
-        android:title="@string/pref_battery_saver_bluetooth_title"
-        android:summary="@string/pref_battery_saver_bluetooth_summary"
-        android:dependency="pref_battery_saver_enable"/>
-
-    <CheckBoxPreference
-        android:key="pref_battery_saver_mode_location"
-        android:persistent="false"
-        android:title="@string/pref_battery_saver_location_title"
-        android:summary="@string/pref_battery_saver_location_summary"
-        android:dependency="pref_battery_saver_enable"/>
-
     <com.android.settings.mahdi.GlobalCheckBoxPreference
         android:key="battery_saver_wifi_mode"
         android:title="@string/pref_battery_saver_wifi_title"
         android:summary="@string/pref_battery_saver_wifi_summary"
-        android:dependency="pref_battery_saver_enable"/>
-
-    <com.android.settings.mahdi.GlobalCheckBoxPreference
-        android:key="battery_saver_sync_mode"
-        android:title="@string/pref_battery_saver_sync_title"
-        android:summary="@string/pref_battery_saver_sync_summary"
-        android:dependency="pref_battery_saver_enable"/>
-
-    <com.android.settings.mahdi.GlobalCheckBoxPreference
-        android:key="battery_saver_killall_mode"
-        android:title="@string/pref_battery_saver_killall_title"
-        android:summary="@string/pref_battery_saver_killall_summary"
         android:dependency="pref_battery_saver_enable"/>
 
     <CheckBoxPreference
