@@ -1738,8 +1738,8 @@
         </activity>
 
         <activity
-            android:name="com.android.settings.mahdi.SystemappRemover"
-            android:label="@string/sizer_title"
+            android:name="com.android.settings.mahdi.SystemAppRemover"
+            android:label="@string/system_app_remover"
             android:parentActivityName="Settings" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
