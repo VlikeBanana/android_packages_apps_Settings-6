@@ -52,7 +52,7 @@ import android.widget.Toast;
 
 import com.android.settings.R;
 
-public class SystemappRemover extends Fragment {
+public class SystemAppRemover extends Fragment {
     private final int STARTUP_DIALOG = 1;
     private final int DELETE_DIALOG = 2;
     private final int DELETE_MULTIPLE_DIALOG = 3;
@@ -274,14 +274,14 @@ public class SystemappRemover extends Fragment {
     private void selectDialog(final ArrayList<String> sysAppProfile,
             final ArrayAdapter<String> adapter) {
         AlertDialog.Builder select = new AlertDialog.Builder(getActivity());
-        select.setItems(R.array.slimsizer_profile_array,
+        select.setItems(R.array.schismsizer_profile_array,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         // The 'which' argument contains the index position
                         // of the selected item
                         short state = sdAvailable();
                         File path = new File(Environment
-                                .getExternalStorageDirectory() + "/aicp");
+                                .getExternalStorageDirectory() + "/schism");
                         File savefile = new File(path + "/systemappremover.stf");
                         if (which == 0) {
                             // load profile action
