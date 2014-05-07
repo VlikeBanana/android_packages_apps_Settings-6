@@ -61,14 +61,14 @@
             android:fragment="com.android.settings.mahdi.lsn.LockscreenNotifications"
             android:title="@string/lockscreen_notifications"
             android:summary="@string/lockscreen_notifications_summary"
-            android:widgetLayout="@layout/listview_embedded_switchpreference" />
+            android:widgetLayout="@layout/listview_embedded_switchpreference" 
+            android:disableDependentsState="true" />
 
         <com.android.settings.mahdi.SystemSettingCheckBoxPreference
             android:key="peek_state"
             android:title="@string/peek_notifications_title"
             android:summary="@string/peek_notifications_summary"
-            android:dependency="lockscreen_notifications"
-            android:disableDependentsState="true" />
+            android:dependency="lockscreen_notifications" />
 
         <ListPreference
             android:key="peek_pickup_timeout"
