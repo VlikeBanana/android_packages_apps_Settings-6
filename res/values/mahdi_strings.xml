@@ -1082,6 +1082,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="show_activity_indicators_on_status_bar_title">Activity indicators</string>
     <string name="show_activity_indicators_on_status_bar_summary">Show indicators in signal bars</string>
 
+    <!-- Custom lockscreen options -->
+    <string name="lockscreen_custom_title">Custom lockscreen options</string>
+    <string name="lockscreen_custom_summary">Add shortcuts, enable notifications and more</string>
+
     <!-- Lockscreen widget settings -->
     <string name="title_widgets">Widgets</string>
     <string name="lockscreen_widgets_title">Widgets</string>
@@ -1133,7 +1137,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="notification_color">Notification background color</string>
 
     <!-- Lock Screen -->
-    <string name="title_shortcuts">Slider targets and shortcuts</string>
+    <string name="title_shortcuts">Shortcuts</string>
     <!-- Lock Screen Targets -->
     <string name="lockscreen_target_info">Drag the slider to targets to assign applications</string>
     <string name="lockscreen_target_title">Slider targets</string>

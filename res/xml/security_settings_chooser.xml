@@ -27,9 +27,10 @@
             android:persistent="false"/>
 
         <PreferenceScreen
-            android:key="keyguard_enable_widgets"
-            android:fragment="com.android.settings.mahdi.LockscreenWidgets"
-            android:title="@string/lockscreen_widgets_title"/>	
+            android:key="custom_lockscreen_options"
+            android:fragment="com.android.settings.mahdi.LockscreenInterface"
+            android:title="@string/lockscreen_custom_title"
+            android:summary="@string/lockscreen_custom_summary"/>
 
         <CheckBoxPreference
             android:key="lockscreen_enable_power_menu"

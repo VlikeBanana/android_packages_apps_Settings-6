@@ -17,9 +17,11 @@
 package com.android.settings.mahdi;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.app.admin.DevicePolicyManager;
 import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -35,12 +37,14 @@ import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.preference.PreferenceCategory;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.view.Display;
 import android.view.Window;
 import android.widget.Toast;
 
 import com.android.internal.util.mahdi.DeviceUtils;
+import com.android.internal.widget.LockPatternUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -63,7 +67,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String KEY_BATTERY_STATUS = "lockscreen_battery_status";
     private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
     private static final String KEY_LOCKSCREEN_NOTIFICATONS = "lockscreen_notifications";
+    private static final String KEY_NOTIFICATON_PEEK = "notification_peek";
     private static final String KEY_PEEK_PICKUP_TIMEOUT = "peek_pickup_timeout";
+    private static final String LOCKSCREEN_STYLE_CATEGORY = "lockscreen_style_category";
+    private static final String KEY_ENABLE_WIDGETS = "keyguard_enable_widgets";
     private static final String LOCKSCREEN_SHORTCUTS_CATEGORY = "lockscreen_shortcuts_category";
     private static final String PREF_LOCKSCREEN_EIGHT_TARGETS = "lockscreen_eight_targets";
     private static final String PREF_LOCKSCREEN_TORCH = "lockscreen_glowpad_torch";
@@ -71,7 +78,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 
     private PreferenceCategory mAdditionalOptions;
     private LockscreenNotificationsPreference mLockscreenNotifications;
+    private SwitchPreference mNotificationPeek;
     private ListPreference mPeekPickupTimeout;
+    private PreferenceCategory mStyleCategory;
+    private Preference mEnableKeyguardWidgets;
     private ListPreference mBatteryStatus;
     private CheckBoxPreference mLockscreenEightTargets;
     private CheckBoxPreference mGlowpadTorch;
@@ -81,13 +91,19 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 
     private Activity mActivity;
     private ContentResolver mResolver;
+    private LockPatternUtils mLockPatternUtils;
+    private DevicePolicyManager mDPM;
+    private ChooseLockSettingsHelper mChooseLockSettingsHelper;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         mActivity = getActivity();
-        mResolver = mActivity.getContentResolver();              
+        mResolver = mActivity.getContentResolver();
+        mLockPatternUtils = new LockPatternUtils(getActivity());
+        mDPM = (DevicePolicyManager)getSystemService(Context.DEVICE_POLICY_SERVICE);
+        mChooseLockSettingsHelper = new ChooseLockSettingsHelper(getActivity());            
 
         createCustomLockscreenView();
     }
@@ -108,7 +124,12 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         mAdditionalOptions = (PreferenceCategory) 
                 prefs.findPreference(KEY_ADDITIONAL_OPTIONS);
 
-        mLockscreenNotifications = (LockscreenNotificationsPreference) findPreference(KEY_LOCKSCREEN_NOTIFICATONS);
+        mLockscreenNotifications = (LockscreenNotificationsPreference) prefs.findPreference(KEY_LOCKSCREEN_NOTIFICATONS);
+
+        mNotificationPeek = (SwitchPreference) prefs.findPreference(KEY_NOTIFICATON_PEEK);
+        mNotificationPeek.setChecked(Settings.System.getInt(getContentResolver(), Settings.System.PEEK_STATE, 0) == 1);
+        mNotificationPeek.setOnPreferenceChangeListener(this);
+        updateVisiblePreferences();
 
         mPeekPickupTimeout = (ListPreference) prefs.findPreference(KEY_PEEK_PICKUP_TIMEOUT);
         int peekTimeout = Settings.System.getIntForUser(getContentResolver(),
@@ -116,6 +137,28 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         mPeekPickupTimeout.setValue(String.valueOf(peekTimeout));
         mPeekPickupTimeout.setSummary(mPeekPickupTimeout.getEntry());
         mPeekPickupTimeout.setOnPreferenceChangeListener(this);
+
+        // Link to widget settings showing summary about the actual status
+        // and remove them on low memory devices
+        mEnableKeyguardWidgets = prefs.findPreference(KEY_ENABLE_WIDGETS);
+        if (mEnableKeyguardWidgets != null) {
+            if (ActivityManager.isLowRamDeviceStatic()
+                    || mLockPatternUtils.isLockScreenDisabled()) {
+                // Widgets take a lot of RAM, so disable them on low-memory devices
+                if (mStyleCategory != null) {
+                    mStyleCategory.removePreference(prefs.findPreference(KEY_ENABLE_WIDGETS));
+                    mEnableKeyguardWidgets = null;
+                }
+            } else {
+                final boolean disabled = (0 != (mDPM.getKeyguardDisabledFeatures(null)
+                        & DevicePolicyManager.KEYGUARD_DISABLE_WIDGETS_ALL));
+                if (disabled) {
+                    mEnableKeyguardWidgets.setSummary(
+                            R.string.security_enable_widgets_disabled_summary);                
+                }
+                mEnableKeyguardWidgets.setEnabled(!disabled);
+            }
+        }
 
         mBatteryStatus = (ListPreference) findPreference(KEY_BATTERY_STATUS);
         if (mBatteryStatus != null) {
@@ -169,7 +212,17 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     @Override
     public void onResume() {
         super.onResume();
-        createCustomLockscreenView();
+
+        final LockPatternUtils lockPatternUtils = mChooseLockSettingsHelper.utils();
+
+        if (mEnableKeyguardWidgets != null) {
+            if (!lockPatternUtils.getWidgetsEnabled()) {
+                mEnableKeyguardWidgets.setSummary(R.string.disabled);
+            } else {
+                mEnableKeyguardWidgets.setSummary(R.string.enabled);
+            }
+        }
+
     }
 
     @Override
@@ -205,8 +258,11 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             Settings.System.putInt(cr, Settings.System.LOCKSCREEN_BATTERY_VISIBILITY, value);
             mBatteryStatus.setSummary(mBatteryStatus.getEntries()[index]);
             return true;
-        } else if (preference == mLockscreenEightTargets) {
-            showDialogInner(DLG_ENABLE_EIGHT_TARGETS, (Boolean) objValue);
+        } else if (preference == mNotificationPeek) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(cr, Settings.System.PEEK_STATE,
+                    value ? 1 : 0);
+            updateVisiblePreferences();
             return true;
         } else if (preference == mPeekPickupTimeout) {
             int peekTimeout = Integer.valueOf((String) objValue);
@@ -215,8 +271,30 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
                     peekTimeout, UserHandle.USER_CURRENT);
             updatePeekTimeoutOptions(objValue);
             return true;
+        } else if (preference == mLockscreenEightTargets) {
+            showDialogInner(DLG_ENABLE_EIGHT_TARGETS, (Boolean) objValue);
+            return true;
         }
         return false;
+    }
+
+    private void updateVisiblePreferences() {
+        int peek = Settings.System.getInt(getContentResolver(),
+                Settings.System.PEEK_STATE, 0);
+        int lsn = Settings.System.getInt(getContentResolver(),
+                Settings.System.LOCKSCREEN_NOTIFICATIONS, 0);
+
+        if (peek == 1) {
+            Settings.System.putInt(getContentResolver(),
+                Settings.System.LOCKSCREEN_NOTIFICATIONS, 0);
+            mLockscreenNotifications.setEnabled(false);
+        } else if (lsn == 1) {
+            Settings.System.putInt(getContentResolver(),
+                Settings.System.PEEK_STATE, 0);
+        } else {
+            mLockscreenNotifications.setEnabled(true);
+            mNotificationPeek.setEnabled(true);
+        }
     }
 
     private void updatePeekTimeoutOptions(Object newValue) {

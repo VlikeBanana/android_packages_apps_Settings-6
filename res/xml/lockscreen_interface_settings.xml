@@ -28,21 +28,6 @@
         android:title="@string/lockscreen_general_title"
         android:key="lockscreen_general_category" >
 
-        <ListPreference
-            android:key="lockscreen_battery_status"
-            android:persistent="false"
-            android:dialogTitle="@string/lockscreen_battery_status_title"
-            android:title="@string/lockscreen_battery_status_title"
-            android:entries="@array/lockscreen_battery_status_entries"
-            android:entryValues="@array/lockscreen_battery_status_values"
-            android:defaultValue="0" />
-
-        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
-            android:key="battery_around_lockscreen_ring"
-            android:title="@string/battery_around_lockscreen_ring"
-      	    android:summary="@string/battery_around_lockscreen_ring_summary"
-            android:defaultValue="true" />
-
         <com.android.settings.mahdi.SystemSettingCheckBoxPreference
             android:key="global_immersive_mode_system_bars_visibility"
             android:title="@string/global_immersive_mode_system_bars_visibility"
@@ -64,8 +49,8 @@
             android:widgetLayout="@layout/listview_embedded_switchpreference" 
             android:disableDependentsState="true" />
 
-        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
-            android:key="peek_state"
+        <SwitchPreference
+            android:key="notification_peek"
             android:title="@string/peek_notifications_title"
             android:summary="@string/peek_notifications_summary"
             android:dependency="lockscreen_notifications" />
@@ -76,7 +61,7 @@
             android:persistent="false"
             android:entries="@array/peek_pickup_timeout_entries"
             android:entryValues="@array/peek_pickup_timeout_values"
-            android:dependency="peek_state" />
+            android:dependency="notification_peek" />
 
     </PreferenceCategory>
 
@@ -123,13 +108,27 @@
 
     <PreferenceCategory
         android:title="@string/lockscreen_style_title"
-        android:key="lockscreen_style_category" >
-        
+        android:key="lockscreen_style_category">
+
         <PreferenceScreen
-            android:key="keyguard_style"
-            android:fragment="com.android.settings.mahdi.LockscreenStyle"
-            android:title="@string/lockscreen_style_title_main"
-            android:summary="@string/lockscreen_style_summary_main" />
+            android:key="keyguard_enable_widgets"
+            android:fragment="com.android.settings.mahdi.LockscreenWidgets"
+            android:title="@string/lockscreen_widgets_title" />
+
+        <ListPreference
+            android:key="lockscreen_battery_status"
+            android:persistent="false"
+            android:dialogTitle="@string/lockscreen_battery_status_title"
+            android:title="@string/lockscreen_battery_status_title"
+            android:entries="@array/lockscreen_battery_status_entries"
+            android:entryValues="@array/lockscreen_battery_status_values"
+            android:defaultValue="0" />
+
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+            android:key="battery_around_lockscreen_ring"
+            android:title="@string/battery_around_lockscreen_ring"
+            android:summary="@string/battery_around_lockscreen_ring_summary"
+            android:defaultValue="true" />
 
         <com.android.settings.mahdi.SystemSettingCheckBoxPreference
             android:key="lockscreen_see_through"
@@ -146,6 +145,12 @@
                     android:targetPackage="com.android.wallpapercropper"
                     android:targetClass="com.android.wallpapercropper.LockscreenWallpaper" />
         </Preference>
+
+        <PreferenceScreen
+            android:key="keyguard_style"
+            android:fragment="com.android.settings.mahdi.LockscreenStyle"
+            android:title="@string/lockscreen_style_title_main"
+            android:summary="@string/lockscreen_style_summary_main" />
 
     </PreferenceCategory>
 
