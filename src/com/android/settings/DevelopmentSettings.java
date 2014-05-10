@@ -219,7 +219,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
 
     private ListPreference mRootAccess;
     private Object mSelectedRootValue;
-    private PreferenceScreen mDevelopmentTools
+    private PreferenceScreen mDevelopmentTools;
 
     private CheckBoxPreference mImmediatelyDestroyActivities;
     private ListPreference mAppProcessLimit;
