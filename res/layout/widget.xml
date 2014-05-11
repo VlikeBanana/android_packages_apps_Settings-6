@@ -55,7 +55,7 @@
         </LinearLayout>
 
     <ImageView
-        android:layout_width="1dip"
+        android:layout_width="0dip"
         android:layout_height="match_parent"
         android:background="@drawable/appwidget_settings_divider_holo"
         android:contentDescription="@null"
@@ -96,7 +96,7 @@
     </LinearLayout>
 
     <ImageView
-        android:layout_width="1dip"
+        android:layout_width="0dip"
         android:layout_height="match_parent"
         android:background="@drawable/appwidget_settings_divider_holo"
         android:contentDescription="@null"
@@ -136,7 +136,7 @@
     </LinearLayout>
 
     <ImageView
-        android:layout_width="1dip"
+        android:layout_width="0dip"
         android:layout_height="match_parent"
         android:background="@drawable/appwidget_settings_divider_holo"
         android:contentDescription="@null"
@@ -175,7 +175,7 @@
     </LinearLayout>
 
     <ImageView
-        android:layout_width="1dip"
+        android:layout_width="0dip"
         android:layout_height="match_parent"
         android:background="@drawable/appwidget_settings_divider_holo"
         android:contentDescription="@null"
