@@ -1781,14 +1781,30 @@
         <item>@string/peek_pickup_60seconds</item>
         <item>@string/peek_pickup_120seconds</item>
     </string-array>
-    
+
+    <!-- PEEK wake timeout -->
+    <string-array name="peek_wake_timeout_values" translatable="false">
+        <item>4000</item>
+        <item>7000</item>
+        <item>10000</item>
+        <item>20000</item>
+        <item>30000</item>
+    </string-array>
+
+    <string-array name="peek_wake_timeout_entries" translatable="false">
+        <item>@string/peek_wake_4seconds</item>
+        <item>@string/peek_wake_7seconds</item>
+        <item>@string/peek_wake_10seconds</item>
+        <item>@string/peek_wake_20seconds</item>
+        <item>@string/peek_wake_30seconds</item>
+    </string-array>
+
     <!-- Arrays for root access capability -->
     <string-array name="root_access_entries">
         <item>@string/root_access_none</item>
         <item>@string/root_access_apps</item>
         <item>@string/root_access_adb</item>
         <item>@string/root_access_all</item>
-    </string-array>
 
     <string-array name="root_access_values" translatable="false">
         <item>0</item>
