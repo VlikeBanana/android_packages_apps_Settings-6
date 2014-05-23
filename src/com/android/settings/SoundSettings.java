@@ -45,14 +45,13 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
+import android.preference.SlimSeekBarPreference;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.VolumePanel;
-
-import com.android.settings.mahdi.SeekBarPreferenceSlim;
 
 import java.util.Date;
 import java.util.Calendar;
@@ -111,7 +110,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mDtmfTone;
     private CheckBoxPreference mSoundEffects;
     private CheckBoxPreference mHapticFeedback;
-    private SeekBarPreferenceSlim mVibrationDuration;
+    private SlimSeekBarPreference mVibrationDuration;
     private Preference mMusicFx;
     private CheckBoxPreference mLockSounds;
     private Preference mRingtonePreference;
@@ -219,13 +218,12 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
         int userMillis = Settings.System.getInt(resolver,
                 Settings.System.MINIMUM_VIBRATION_DURATION, 0);
-        mVibrationDuration = (SeekBarPreferenceSlim) findPreference(KEY_VIBRATION_DURATION);
-        mVibrationDuration.setInitValue(userMillis);
+
+        mVibrationDuration = (SlimSeekBarPreference) findPreference(KEY_VIBRATION_DURATION);
         mVibrationDuration.setInterval(1);
-        mVibrationDuration.displaySameValue(true);
-        mVibrationDuration.zeroDefault(true);
+        mVibrationDuration.setDefault(0);
         mVibrationDuration.isMilliseconds(true);
-        mVibrationDuration.setProperty(Settings.System.MINIMUM_VIBRATION_DURATION);
+        mVibrationDuration.setInitValue(userMillis);
         mVibrationDuration.setOnPreferenceChangeListener(this);
         
         mLockSounds = (CheckBoxPreference) findPreference(KEY_LOCK_SOUNDS);
