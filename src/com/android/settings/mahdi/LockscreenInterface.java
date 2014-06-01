@@ -23,11 +23,15 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.admin.DevicePolicyManager;
 import android.content.ActivityNotFoundException;
+import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
@@ -77,6 +81,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String PREF_LOCKSCREEN_EIGHT_TARGETS = "lockscreen_eight_targets";
     private static final String PREF_LOCKSCREEN_TORCH = "lockscreen_glowpad_torch";
     private static final String PREF_LOCKSCREEN_SHORTCUTS = "lockscreen_shortcuts";
+    private static final String PEEK_APPLICATION = "com.jedga.peek";
 
     private PreferenceCategory mAdditionalOptions;
     private LockscreenNotificationsPreference mLockscreenNotifications;
@@ -98,6 +103,23 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private DevicePolicyManager mDPM;
     private ChooseLockSettingsHelper mChooseLockSettingsHelper;
 
+    private PackageStatusReceiver mPackageStatusReceiver;
+    private IntentFilter mIntentFilter;
+
+    private boolean isPeekAppInstalled() {
+        return isPackageInstalled(PEEK_APPLICATION);
+    }
+
+    private boolean isPackageInstalled(String packagename) {
+        PackageManager pm = getActivity().getPackageManager();
+        try {
+            pm.getPackageInfo(packagename, PackageManager.GET_ACTIVITIES);
+            return true;
+        } catch (NameNotFoundException e) {
+           return false;
+        }
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,6 +131,16 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         mChooseLockSettingsHelper = new ChooseLockSettingsHelper(getActivity());            
 
         createCustomLockscreenView();
+
+        if (mPackageStatusReceiver == null) {
+            mPackageStatusReceiver = new PackageStatusReceiver();
+        }
+        if (mIntentFilter == null) {
+            mIntentFilter = new IntentFilter();
+            mIntentFilter.addAction(Intent.ACTION_PACKAGE_ADDED);
+            mIntentFilter.addAction(Intent.ACTION_PACKAGE_REMOVED);
+        }
+        getActivity().registerReceiver(mPackageStatusReceiver, mIntentFilter);
     }
 
     private PreferenceScreen createCustomLockscreenView() {
@@ -221,6 +253,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 
     @Override
     public void onResume() {
+        getActivity().registerReceiver(mPackageStatusReceiver, mIntentFilter);
         super.onResume();
 
         final LockPatternUtils lockPatternUtils = mChooseLockSettingsHelper.utils();
@@ -235,9 +268,21 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 
     }
 
+    private void updateState() {
+        updatePeekCheckbox();
+    }
+
+    private void updatePeekCheckbox() {
+        boolean enabled = Settings.System.getInt(getContentResolver(),
+                Settings.System.PEEK_STATE, 0) == 1;
+        mNotificationPeek.setChecked(enabled && !isPeekAppInstalled());
+        mNotificationPeek.setEnabled(!isPeekAppInstalled());
+      }
+
     @Override
     public void onPause() {
-        super.onPause();        
+        super.onPause();
+        getActivity().unregisterReceiver(mPackageStatusReceiver);
     }
 
     /**
@@ -392,6 +437,18 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
                     getOwner().mLockscreenEightTargets.setChecked(!state);
                     break;
              }
+        }
+    }
+
+    public class PackageStatusReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (action.equals(Intent.ACTION_PACKAGE_ADDED)) {
+                updatePeekCheckbox();
+            } else if(action.equals(Intent.ACTION_PACKAGE_REMOVED)) {
+                updatePeekCheckbox();
+            }
         }
     }
 }
