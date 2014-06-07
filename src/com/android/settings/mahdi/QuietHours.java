@@ -41,6 +41,7 @@ import android.preference.PreferenceGroup;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.preference.RingtonePreference;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.text.InputFilter;
@@ -76,7 +77,7 @@ public class QuietHours extends SettingsPreferenceFragment implements
     private static final int DLG_AUTO_SMS_MESSAGE = 0;
     private static final int DLG_SMS_BYPASS_CODE = 1;
 
-    private CheckBoxPreference mQuietHoursEnabled;
+    private SwitchPreference mQuietHoursEnabled;
     private CheckBoxPreference mQuietHoursRing;
     private CheckBoxPreference mQuietHoursMute;
     private CheckBoxPreference mQuietHoursStill;
@@ -122,7 +123,7 @@ public class QuietHours extends SettingsPreferenceFragment implements
 
             // Load the preferences
             mQuietHoursEnabled =
-                (CheckBoxPreference) prefSet.findPreference(KEY_QUIET_HOURS_ENABLED);
+                (SwitchPreference) prefSet.findPreference(KEY_QUIET_HOURS_ENABLED);
             mQuietHoursTimeRange =
                 (TimeRangePreference) prefSet.findPreference(KEY_QUIET_HOURS_TIMERANGE);
             mQuietHoursRing =

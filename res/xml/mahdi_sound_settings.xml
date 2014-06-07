@@ -23,12 +23,6 @@
         android:key="category_volume"
         android:title="@string/volume_category"/>
 
-        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
-            android:key="volume_music_controls"
-            android:title="@string/volbtn_music_controls_title"
-            android:summary="@string/volbtn_music_controls_summary"
-            android:defaultValue="false" />
-
         <ListPreference
             android:key="button_volume_default_screen"
             android:title="@string/button_volume_default_title"
@@ -36,6 +30,22 @@
             android:entries="@array/button_volume_default_entries"
             android:entryValues="@array/button_volume_default_values"
             android:defaultValue="0" />
+
+        <com.android.settings.mahdi.chameleonos.SeekBarPreference
+            android:key="volume_panel_timeout"
+            android:title="@string/volume_panel_timeout_title"
+            android:summary="@string/volume_panel_timeout_summary"
+            android:max="10"
+            settings:min="1"
+            settings:unitsLeft=""
+            settings:unitsRight="sec"
+            android:persistent="false" />
+
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+            android:key="volume_music_controls"
+            android:title="@string/volbtn_music_controls_title"
+            android:summary="@string/volbtn_music_controls_summary"
+            android:defaultValue="false" />
 
         <com.android.settings.mahdi.SystemSettingCheckBoxPreference
             android:key="volume_adjust_sounds_enabled"

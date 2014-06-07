@@ -32,6 +32,7 @@ import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.view.VolumePanel;
 
+import com.android.settings.mahdi.chameleonos.SeekBarPreference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
@@ -49,6 +50,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
     private static final String CATEGORY_VOLUME = "category_volume";
     private static final String BUTTON_VOLUME_DEFAULT = "button_volume_default_screen";
+    private static final String KEY_VOLUME_PANEL_TIMEOUT = "volume_panel_timeout";
     private static final String KEY_SAFE_HEADSET_VOLUME = "safe_headset_volume";
     private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
     private static final String KEY_VOLUME_ADJUST_SOUND = "volume_adjust_sounds_enabled";
@@ -56,6 +58,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
     private PreferenceCategory volumeCategory;
     private ListPreference mVolumeDefault;
+    private SeekBarPreference mVolumePanelTimeout;
     private CheckBoxPreference mSafeHeadsetVolume;
     private CheckBoxPreference mSwapVolumeButtons;
     private CheckBoxPreference mVolumeAdjustSound;
@@ -73,6 +76,12 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
         final PreferenceCategory volumeCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_VOLUME);
+
+    mVolumePanelTimeout = (SeekBarPreference) findPreference(KEY_VOLUME_PANEL_TIMEOUT);
+        int statusVolumePanelTimeout = Settings.System.getInt(resolver,
+                    Settings.System.VOLUME_PANEL_TIMEOUT, 3000);
+            mVolumePanelTimeout.setValue(statusVolumePanelTimeout / 1000);
+            mVolumePanelTimeout.setOnPreferenceChangeListener(this);
 
         mSafeHeadsetVolume = (CheckBoxPreference) findPreference(KEY_SAFE_HEADSET_VOLUME);
         mSafeHeadsetVolume.setPersistent(false);
@@ -93,6 +102,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                 (PreferenceCategory) findPreference(CATEGORY_VOLUME);
             category_volume.removePreference(mVolumeAdjustSound);       
         }
+
+        if (getResources().getBoolean(com.android.internal.R.bool.config_useFixedVolume)) {
+            // device with fixed volume policy, do not display volumes submenu
+            getPreferenceScreen().removePreference(findPreference(KEY_VOLUME_PANEL_TIMEOUT));
+        }
  
         if (hasVolumeRocker()) {
             int swapVolumeKeys = Settings.System.getInt(getContentResolver(),
@@ -108,8 +122,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             }
             if (currentDefault == null) {
                 currentDefault = mVolumeDefault.getEntryValues()[mVolumeDefault.getEntryValues().length - 1].toString();
+                mVolumeDefault.setSummary(getString(R.string.button_volume_default_summary));
             }
             mVolumeDefault.setValue(currentDefault);
+            mVolumeDefault.setSummary(mVolumeDefault.getEntry());
             mVolumeDefault.setOnPreferenceChangeListener(this);
         } else {
             prefScreen.removePreference(volumeCategory);
@@ -124,6 +140,12 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         if (preference == mVolumeDefault) {
             String value = (String)newValue;
             Settings.System.putString(getActivity().getContentResolver(), Settings.System.VOLUME_KEYS_DEFAULT, value);
+            updateVolumeDefault(newValue);
+            return true;
+        } else if (preference == mVolumePanelTimeout) {
+            int volumePanelTimeout = (Integer) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.VOLUME_PANEL_TIMEOUT, volumePanelTimeout * 1000);
             return true;
         }
         return false;
@@ -147,6 +169,14 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
         return true;
+    }
+
+    private void updateVolumeDefault(Object newValue) {
+        int index = mVolumeDefault.findIndexOfValue((String) newValue);
+        int value = Integer.valueOf((String) newValue);
+        Settings.Secure.putInt(getActivity().getContentResolver(),
+                Settings.System.VOLUME_KEYS_DEFAULT, value);
+        mVolumeDefault.setSummary(mVolumeDefault.getEntries()[index]);
     }
 
     public void removeListEntry(ListPreference list, String valuetoRemove) {

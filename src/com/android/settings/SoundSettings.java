@@ -53,7 +53,6 @@ import android.util.Log;
 import android.view.VolumePanel;
 
 import com.android.settings.mahdi.SeekBarPreferenceSlim;
-import com.android.settings.mahdi.chameleonos.SeekBarPreference;
 
 import java.util.Date;
 import java.util.Calendar;
@@ -91,7 +90,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_POWER_NOTIFICATIONS_VIBRATE = "power_notifications_vibrate";
     private static final String KEY_POWER_NOTIFICATIONS_RINGTONE = "power_notifications_ringtone";
     private static final String PREF_LESS_NOTIFICATION_SOUNDS = "less_notification_sounds";
-    private static final String KEY_VOLUME_PANEL_TIMEOUT = "volume_panel_timeout";
     private static final String KEY_QUIET_HOURS = "quiet_hours";
 
     private static final String[] NEED_VOICE_CAPABILITY = {
@@ -118,7 +116,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mLockSounds;
     private Preference mRingtonePreference;
     private Preference mNotificationPreference;
-    private SeekBarPreference mVolumePanelTimeout;
     private Preference mDockAudioSettings;
     private CheckBoxPreference mDockSounds;
     private Intent mDockIntent;
@@ -171,7 +168,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
         mRingtonePreference = findPreference(KEY_RINGTONE);
         mNotificationPreference = findPreference(KEY_NOTIFICATION_SOUND);
-        mVolumePanelTimeout = (SeekBarPreference) findPreference(KEY_VOLUME_PANEL_TIMEOUT);
 
         if (TelephonyManager.PHONE_TYPE_CDMA != activePhoneType) {
             // device is not CDMA, do not display CDMA emergency_tone
@@ -181,7 +177,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         if (getResources().getBoolean(com.android.internal.R.bool.config_useFixedVolume)) {
             // device with fixed volume policy, do not display volumes submenu
             getPreferenceScreen().removePreference(findPreference(KEY_RING_VOLUME));
-            getPreferenceScreen().removePreference(findPreference(KEY_VOLUME_PANEL_TIMEOUT));
         }
 
         mQuietHours = (PreferenceScreen) findPreference(KEY_QUIET_HOURS);
@@ -238,11 +233,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mLockSounds.setChecked(Settings.System.getInt(resolver,
                 Settings.System.LOCKSCREEN_SOUNDS_ENABLED, 1) != 0);
 
-        int statusVolumePanelTimeout = Settings.System.getInt(resolver,
-                    Settings.System.VOLUME_PANEL_TIMEOUT, 3000);
-            mVolumePanelTimeout.setValue(statusVolumePanelTimeout / 1000);
-            mVolumePanelTimeout.setOnPreferenceChangeListener(this);
-
         if (mVib == null || !mVib.hasVibrator()) {
             removePreference(KEY_VIBRATE);
             removePreference(KEY_HAPTIC_FEEDBACK);
@@ -296,8 +286,13 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         int notificationThreshold = Settings.System.getInt(getContentResolver(),
                 Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD,
                 0);
-        mAnnoyingNotifications.setValue(Integer.toString(notificationThreshold));
-        mAnnoyingNotifications.setOnPreferenceChangeListener(this);
+        if (mAnnoyingNotifications == null) {
+            mAnnoyingNotifications.setSummary(getString(R.string.less_notification_sounds_summary));
+        } else {
+            mAnnoyingNotifications.setValue(Integer.toString(notificationThreshold));
+            mAnnoyingNotifications.setSummary(mAnnoyingNotifications.getEntry());
+            mAnnoyingNotifications.setOnPreferenceChangeListener(this);
+        }
 
         initDockSettings();
 
@@ -500,10 +495,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             final int val = Integer.valueOf((String) objValue);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, val);
-        } else if (preference == mVolumePanelTimeout) {
-            int volumePanelTimeout = (Integer) objValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.VOLUME_PANEL_TIMEOUT, volumePanelTimeout * 1000);
+            updateAnnoyingNotifications(objValue);
         } else if (preference == mVibrationDuration) {
             int value = Integer.parseInt((String) objValue);
             Settings.System.putInt(getContentResolver(),
@@ -530,6 +522,14 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         cal.set(Calendar.MINUTE, mn);
         Date date = cal.getTime();
         return DateFormat.getTimeFormat(getActivity().getApplicationContext()).format(date);
+    }
+
+    private void updateAnnoyingNotifications(Object newValue) {
+        int index = mAnnoyingNotifications.findIndexOfValue((String) newValue);
+        int value = Integer.valueOf((String) newValue);
+        Settings.Secure.putInt(getActivity().getContentResolver(),
+                Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, value);
+        mAnnoyingNotifications.setSummary(mAnnoyingNotifications.getEntries()[index]);
     }
 
     @Override
