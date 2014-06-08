@@ -54,7 +54,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_SAFE_HEADSET_VOLUME = "safe_headset_volume";
     private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
     private static final String KEY_VOLUME_ADJUST_SOUND = "volume_adjust_sounds_enabled";
-    private static final String KEY_HEADSET_PLUG = "headset_plug";
 
     private PreferenceCategory volumeCategory;
     private ListPreference mVolumeDefault;
@@ -62,7 +61,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mSafeHeadsetVolume;
     private CheckBoxPreference mSwapVolumeButtons;
     private CheckBoxPreference mVolumeAdjustSound;
-    private CheckBoxPreference mHeadsetPlug;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -91,11 +89,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                 Settings.System.SAFE_HEADSET_VOLUME, safeMediaVolumeEnabled ? 1 : 0) != 0);
 
         mVolumeAdjustSound = (CheckBoxPreference) findPreference(KEY_VOLUME_ADJUST_SOUND);
-
-        mHeadsetPlug = (CheckBoxPreference) findPreference(KEY_HEADSET_PLUG);
-        mHeadsetPlug.setPersistent(false);
-        mHeadsetPlug.setChecked(Settings.System.getInt(resolver,
-                Settings.System.HEADSET_PLUG_ENABLED, 0) != 0);
 
         if (!Utils.isPhone(getActivity())) {
              PreferenceCategory category_volume =
@@ -161,9 +154,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                     ? (Utils.isTablet(getActivity()) ? 2 : 1) : 0;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SWAP_VOLUME_KEYS_ON_ROTATION, value);
-        } else if (preference == mHeadsetPlug) {
-            Settings.System.putInt(getContentResolver(), Settings.System.HEADSET_PLUG_ENABLED,
-                    mHeadsetPlug.isChecked() ? 1 : 0);
         } else {
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);

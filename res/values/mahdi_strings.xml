@@ -2009,11 +2009,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Shortcuts -->
     <string name="shortcut_picker">Actions</string>  
-
-    <!-- Headset plug -->
-    <string name="headset_plug_enable_title">Opens music app when headset is plugged</string>
-    <string name="headset_plug_enable_summary">When checked, everytime you plug in your headset, your default music player opens up</string>
-
+    
     <!-- Bluetooth accept all file types -->
     <string name="bluetooth_accept_all_files">Accept all file types</string>
     
@@ -2111,4 +2107,5 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shake_sensitivity_summary">Global sensitivity of all shake preferences</string>
     <string name="shake_sensitivity_less_sensitive">Less sensitive</string>
     <string name="shake_sensitivity_more_sensitive">More sensitive</string>
+
 </resources>
