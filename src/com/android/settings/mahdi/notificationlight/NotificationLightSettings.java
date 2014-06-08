@@ -300,6 +300,8 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
                 }
             }
         }
+
+        mPackageAdapter.reloadList();
     }
 
     private void setCustomEnabled() {
@@ -600,7 +602,7 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
     private class PackageAdapter extends BaseAdapter {
         private List<PackageItem> mInstalledPackages = new LinkedList<PackageItem>();
 
-        private void reloadList() {
+        public void reloadList() {
             final Handler handler = new Handler();
             new Thread(new Runnable() {
                 @Override
