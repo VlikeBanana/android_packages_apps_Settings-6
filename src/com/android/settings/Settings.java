@@ -87,7 +87,6 @@ import com.android.settings.mahdi.quicksettings.QuickSettingsTiles;
 import com.android.settings.mahdi.QuietHours;
 import com.android.settings.mahdi.superuser.PolicyNativeFragment;
 import com.android.settings.mahdi.slim.ShakeEvents;
-import com.android.settings.net.MobileDataEnabler;
 import com.android.settings.nfc.AndroidBeam;
 import com.android.settings.nfc.PaymentSettings;
 import com.android.settings.print.PrintJobSettingsFragment;

@@ -47,6 +47,7 @@ import com.android.internal.util.mahdi.DeviceUtils;
 import com.android.internal.widget.LockPatternUtils;
 
 import com.android.settings.R;
+import com.android.settings.ChooseLockSettingsHelper;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
