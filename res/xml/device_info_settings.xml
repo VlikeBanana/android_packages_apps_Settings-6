@@ -18,8 +18,8 @@
         android:title="@string/about_settings">       
 
         <PreferenceScreen android:key="schismota_settings"
-                android:title="@string/system_update_settings_list_item_title" 
-                android:summary="@string/system_update_settings_list_item_summary">
+                android:title="@string/schism_ota_update_title" 
+                android:summary="@string/schism_ota_update_summary">
             <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="com.schism.schismota"
                     android:targetClass="com.schism.schismota.activities.SystemActivity" />

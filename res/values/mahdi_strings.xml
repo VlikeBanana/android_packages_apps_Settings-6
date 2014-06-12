@@ -29,8 +29,8 @@
     <string name="mod_version_default">Unknown</string>
 
     <!-- OTA Strings; About phone screen -->
-    <string name="system_update_settings_list_item_title">The Schism updates</string>
-    <string name="system_update_settings_list_item_summary">Check for system updates here</string>
+    <string name="schism_ota_update_title">Update The Schism</string>
+    <string name="schism_ota_update_summary">Check for system updates</string>
 
     <!-- About phone screen, Build date of ROM -->
     <string name="build_date">Build date</string>
