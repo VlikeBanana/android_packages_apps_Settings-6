@@ -68,6 +68,7 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
     private static final String KEY_MOD_VERSION = "mod_version";
     private static final String KEY_MOD_BUILD_DATE = "build_date";
     private static final String KEY_SCHISMOTA = "schismota_settings";
+    private static final String KEY_SCHISMSTATS = "schism_stats"
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
 
@@ -132,6 +133,12 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
             removePreferenceIfPackageNotInstalled(findPreference(KEY_SCHISMOTA));
         } else {
             getPreferenceScreen().removePreference(findPreference(KEY_SCHISMOTA));
+        }
+
+        if (UserHandle.myUserId() == UserHandle.USER_OWNER) {
+            removePreferenceIfPackageNotInstalled(findPreference(KEY_SCHISMSTATS));
+        } else {
+            getPreferenceScreen().removePreference(findPreference(KEY_SCHISMSTATS));
         }
 
         /*

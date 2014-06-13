@@ -17,12 +17,22 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/about_settings">       
 
-        <PreferenceScreen android:key="schismota_settings"
+        <PreferenceScreen 
+                android:key="schismota_settings"
                 android:title="@string/schism_ota_update_title" 
                 android:summary="@string/schism_ota_update_summary">
             <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="com.schism.schismota"
                     android:targetClass="com.schism.schismota.activities.SystemActivity" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+                android:key="schism_stats"
+                android:title="@string/schism_stats_title"
+                android:summary="@string/schism_stats_summary">
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="android.romstats"
+                    android:targetClass="android.romstats.AnonymousStats" />
         </PreferenceScreen>
 
         <!-- Device status - launches activity -->

@@ -28,9 +28,13 @@
     <string name="mod_version">The Schism version</string>
     <string name="mod_version_default">Unknown</string>
 
-    <!-- OTA Strings; About phone screen -->
+    <!-- SchismOTA strings-->
     <string name="schism_ota_update_title">Update The Schism</string>
     <string name="schism_ota_update_summary">Check for system updates</string>
+
+    <!-- Schism Stats strings --> 
+    <string name="schism_stats_title">The Schism statistics</string>
+    <string name="schism_stats_summary">Join our anonymous statistics reporting to help The Schism get better</string>
 
     <!-- About phone screen, Build date of ROM -->
     <string name="build_date">Build date</string>
