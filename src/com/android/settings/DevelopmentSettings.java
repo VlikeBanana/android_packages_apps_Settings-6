@@ -316,7 +316,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             if (debugDebuggingCategory != null) {
                 debugDebuggingCategory.removePreference(mVerifyAppsOverUsb);
             } else {
-                mVerifyAppsOverUsb.setEnabled(false);
+                mVerifyAppsOverUsb.setEnabled(yes);
             }
         }
         mStrictMode = findAndInitCheckboxPref(STRICT_MODE_KEY);
